@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meus Links</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+	<div id="container">
+		
+    	<div id="profile">
+        	<img src="./assets/foto.png" alt="Avatar">
+			<div class="meu-nome">
+				<p>João Alberto<span>.</span></p>
+			</div>
+    	</div>
+
+		<div id="switch" onclick="toggleMode()">
+			<button>
+			</button>
+			<span></span>
+	  	</div>
+
+	  	<div class="texto">
+			<p id="bio">
+				🖊️ Web Designer & Front-end.<br>
+				💡 Transformo ideias em interfaces
+		</p>
+	  	</div>
+
+	  	<div class="link-linha">
+			<span id="links">Links que irão te ajudar</span>
+			<span id="linha"></span>
+	  	</div>
+
+	  	<ul>
+			<li>
+				<a href="#" class="coming-soon">
+					Acesse meu site
+					<span class="badge">em construção</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="https://joaoa21.github.io/portfolio/" target="_blank">Meu portólio</a>
+			</li>
+
+			<li>
+				<a href="http://wa.me/5581988780144" target="_blank">Vamos conversar?</a>
+			</li>
+	  	</ul>
+
+		<div class="link-linha baixo">
+			<span id="links">Minhas ferramentas</span>
+			<span id="linha"></span>
+	  	</div>
+
+		<ul>
+			<li>
+				<a class="tool" href="https://kompres.com.br/" target="_blank">
+					Kompres
+					<span>Compressor e conversor de Imagens</span>
+				</a>
+			</li>
+
+			<li>
+				<a class="tool" href="https://joaoa21.github.io/email-generator/" target="_blank">
+					Email Generator
+					<span>Gerador de email em HTML</span>
+				</a>
+			</li>
+	  	</ul>
+
+		<div id="social">
+			<a target="_blank" class="social" href="https://github.com/joaoa21"><i class="fa-brands fa-github"></i></a>
+			<a target="_blank" class="social" href="https://www.instagram.com/joaoa2/"><i class="fa-brands fa-instagram"></i></a>
+			<a target="_blank" class="social disabled" href="https://www.behance.net/joaoa21"><i class="fab fa-behance"></i></a>
+			<a target="_blank" class="social" href="https://www.linkedin.com/in/joaoa210/"><i class="fa-brands fa-linkedin-in"></i></a>
+		</div>
+
+		<!--<footer>
+			<img src="" alt="">
+	  	</footer>-->
+    </div>
+
+	<!--Ícones-->
+	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+	<!--Biblioteca Lenis -->
+	<script src="https://unpkg.com/@studio-freight/lenis@1.0.36/bundled/lenis.min.js"></script>
+
+	<!--Seu script -->
+	<script src="./script.js"></script>
+
+
+  </body>
+</html>

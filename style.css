@@ -1,0 +1,356 @@
+/* ============================================================
+   PALETA + FONTES
+============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	/* texto */
+	--text-color: #e8e4dc;
+	--text-color2: rgba(232, 228, 220, 0.55);
+
+	/* superfícies (cards, switch) */
+	--stroke-color: rgba(255, 255, 255, 0.1);
+	--surface-color: rgba(255, 255, 255, 0.05);
+	--surface-color-hover: rgba(0, 212, 255, 0.18);
+	--social-link-hover: #00d4ff;
+
+	/* switch */
+	--switch-bg: url(./assets/moon-stars.svg);
+
+	/* background dinâmico */
+	--bg-base: #080a0f;
+	--blob-1: rgba(0, 212, 255, 0.20);
+	--blob-2: rgba(255, 107, 53, 0.10);
+	--blob-3: rgba(0, 212, 255, 0.10);
+}
+
+.light {
+	--text-color: #14181f;
+	--text-color2: rgba(20, 24, 31, 0.55);
+	--stroke-color: rgba(0, 0, 0, 0.1);
+	--surface-color: rgba(255, 255, 255, 0.45);
+	--surface-color-hover: rgba(0, 169, 204, 0.18);
+	--social-link-hover: #007d96;
+	--switch-bg: url(./assets/sun.svg);
+
+	--bg-base: #f7f3ea;
+	--blob-1: rgba(0, 169, 204, 0.28);
+	--blob-2: rgba(255, 107, 53, 0.16);
+	--blob-3: rgba(0, 169, 204, 0.14);
+}
+
+.disabled {
+	display: none;
+}
+
+/* ============================================================
+   BODY + BACKGROUND DINÂMICO
+============================================================ */
+body {
+	background-color: var(--bg-base);
+	min-height: 100dvh;
+	position: relative;
+	overflow-x: hidden;
+	transition: background-color 0.6s ease;
+}
+
+/* primeira camada de blobs — ciano + coral */
+body::before {
+	content: '';
+	position: fixed;
+	inset: -10%;
+	z-index: 0;
+	pointer-events: none;
+	background:
+		radial-gradient(ellipse 70% 55% at 20% 30%, var(--blob-1) 0%, transparent 60%),
+		radial-gradient(ellipse 60% 50% at 80% 70%, var(--blob-2) 0%, transparent 65%);
+	animation: blobDrift1 70s ease-in-out infinite;
+	will-change: transform;
+}
+
+/* segunda camada — em fase contrária */
+body::after {
+	content: '';
+	position: fixed;
+	inset: -10%;
+	z-index: 0;
+	pointer-events: none;
+	background:
+		radial-gradient(ellipse 55% 45% at 50% 90%, var(--blob-3) 0%, transparent 60%),
+		radial-gradient(ellipse 45% 35% at 70% 20%, var(--blob-1) 0%, transparent 55%);
+	animation: blobDrift2 90s ease-in-out infinite;
+	will-change: transform;
+}
+
+@keyframes blobDrift1 {
+	0%, 100% { transform: translate(0, 0) scale(1); }
+	33%      { transform: translate(5%, -3%) scale(1.04); }
+	66%      { transform: translate(-3%, 4%) scale(0.97); }
+}
+
+@keyframes blobDrift2 {
+	0%, 100% { transform: translate(0, 0) scale(1); }
+	33%      { transform: translate(-4%, 3%) scale(0.96); }
+	66%      { transform: translate(6%, -3%) scale(1.05); }
+}
+
+body * {
+	font-family: "Outfit", "Inter", sans-serif;
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+/* ============================================================
+   CONTAINER (precisa estar acima dos blobs)
+============================================================ */
+#container {
+	position: relative;
+	z-index: 1;
+
+	width: 100%;
+	max-width: 580px;
+	margin: 56px auto 0px;
+	padding: 0 24px;
+}
+
+/* ============================================================
+   PROFILE
+============================================================ */
+#profile {
+	text-align: center;
+	padding: 24px;
+}
+
+#profile img {
+	width: 160px;
+	border-radius: 50%;
+  	object-fit: cover;
+}
+
+#profile p {
+	font-weight: 500;
+	line-height: 24px;
+	margin-top: 40px;
+}
+
+.meu-nome p {
+	font-size: 50px;
+	font-family: "Bebas Neue", sans-serif;
+}
+
+.meu-nome span {
+	font-size: 85px;
+	font-family: "Bebas Neue", sans-serif;
+	color: #00d4ff;
+}
+
+/* ============================================================
+   SWITCH
+============================================================ */
+#switch {
+	position: relative;
+	width: 64px;
+	height: 24px;
+	margin: 4px auto;
+	padding: 20px 0 45px;
+}
+
+#switch button {
+	width: 32px;
+	height: 32px;
+	background: white var(--switch-bg) no-repeat center;
+	border: 0;
+	border-radius: 50%;
+	cursor: pointer;
+
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	transform: translateY(-50%);
+
+	animation: slide-out .3s;
+}
+
+#switch button:hover {
+	outline: 8px solid var(--surface-color-hover);
+}
+
+.light #switch button {
+	animation: slide-in .3s forwards;
+}
+
+#switch span {
+	display: block;
+	width: 64px;
+	height: 24px;
+	background-color: var(--surface-color);
+	border: 1px solid var(--stroke-color);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 9999px;
+}
+
+/* ============================================================
+   BIO
+============================================================ */
+#bio {
+	text-align: center;
+	padding: 10px 0px 20px;
+	font-weight: 300;
+	line-height: 28px;
+}
+
+/* ============================================================
+   LINKS
+============================================================ */
+#links {
+	padding: 20px 0px;
+	color: var(--text-color2);
+	font-weight: 300;
+}
+
+.link-linha {
+	display: flex;
+	gap: 0px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.link-linha.baixo {
+	margin-top: 30px;
+}
+
+#linha {
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--social-link-hover) 30%,
+        var(--social-link-hover) 70%,
+        transparent
+    );
+    opacity: 0.6;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+ul li a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 16px 24px;
+	background: var(--surface-color);
+	border: 1px solid var(--stroke-color);
+	border-radius: 8px;
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	font-weight: 500;
+	transition: all .5s;
+
+	&.tool {
+		flex-direction: column;
+
+		span {
+			font-size: 13px;
+			margin-top: 5px;
+			font-style: italic;
+			color: #7d7d7d;
+		}
+	}
+}
+
+ul li a:hover {
+	background: var(--surface-color-hover);
+	border: 1px solid var(--social-link-hover);
+	transform: translateY(-4px);
+}
+
+/* ============================================================
+   SOCIAL
+============================================================ */
+#social {
+	display: flex;
+	gap: 50px;
+	padding: 40px 0;
+	font-size: 26px;
+	align-items: center;
+	justify-content: center;
+}
+
+.fa-brands, .fab {
+	color: var(--text-color2);
+	transition: all .5s;
+}
+
+.fa-brands:hover, .fab:hover {
+	color: var(--social-link-hover);
+	transform: translateY(-4px);
+}
+
+ul li a.coming-soon {
+    gap: 10px;
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+ul li a.coming-soon .badge {
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text-color2);
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    padding-left: 10px;
+    border-left: 1px solid var(--stroke-color);
+}
+
+ul li a.coming-soon:hover {
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    transform: none;
+}
+
+footer {
+	padding: 24px 0;
+	text-align: center;
+}
+
+footer img {
+	opacity: 80%;
+}
+
+/* ============================================================
+   ANIMAÇÕES DO SWITCH (mantidas)
+============================================================ */
+@keyframes slide-in {
+	from { left: 0; }
+	to   { left: 50%; }
+}
+
+@keyframes slide-out {
+	from { left: 50%; }
+	to   { left: 0; }
+}
+
+/* ============================================================
+   ACESSIBILIDADE: respeitar quem prefere menos movimento
+============================================================ */
+@media (prefers-reduced-motion: reduce) {
+	body::before, body::after {
+		animation: none;
+	}
+}

@@ -1,0 +1,333 @@
+html, body {
+  background-color: #1B1E1C;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* — Reset escopado para não vazar pro resto do site — */
+  .jdo-multiplas *,
+  .jdo-multiplas *::before,
+  .jdo-multiplas *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+ 
+  /* — Variáveis da marca Jogo de Ouro — */
+  .jdo-multiplas {
+    --jdo-green:#22c55e;
+    --jdo-green-dim:rgba(34, 197, 94, 0.15);
+    --jdo-green-glow:rgba(34, 197, 94, 0.35);
+    --jdo-gold:#f5c842;
+    --jdo-gold-dim:rgba(245, 200, 66, 0.12);
+    --jdo-bg: #1B1E1C;
+    --jdo-card:#2c352e;
+    --jdo-card-border:rgba(255, 255, 255, 0.07);
+    --jdo-text:#e8edf2;
+    --jdo-muted:rgba(232, 237, 242, 0.5);
+    --jdo-divider:rgba(255, 255, 255, 0.06);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+ 
+  /* — Wrapper da seção — */
+  .jdo-multiplas {
+    background: var(--jdo-bg);
+    padding: 24px 0 28px;
+    overflow: hidden;
+    width: 100%;
+  }
+ 
+  /* — Cabeçalho da seção — */
+  .jdo-section-head {
+    padding: 0 20px 16px;
+  }
+  .jdo-section-head h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--jdo-text);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .jdo-section-head p {
+    font-size: 0.78rem;
+    color: var(--jdo-muted);
+    margin-top: 3px;
+  }
+ 
+  /* — Wrapper do carrossel — */
+  .jdo-carousel-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+ 
+  /* — Track de scroll — */
+  .jdo-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 4px 20px 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+  }
+  .jdo-track::-webkit-scrollbar { display: none; }
+ 
+  /* — Botões de navegação — */
+  .jdo-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--jdo-card-border);
+    background: rgba(15, 25, 35, 0.92);
+    background-color: rgba(3, 82, 41, 0.226);
+    color: var(--jdo-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .jdo-nav:hover {
+    background: var(--jdo-green-dim);
+    border-color: var(--jdo-green);
+    box-shadow: 0 0 12px var(--jdo-green-glow);
+  }
+  
+  .jdo-nav-prev { left: 8px; }
+  .jdo-nav-next { right: 8px; }
+
+  .jdo-nav {
+    /* ...mantém o resto... */
+    width: 40px;
+    height: 40px;
+    background: rgba(15, 25, 35, 0.85);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+ 
+  /* — Card individual — */
+  .jdo-card {
+    flex: 0 0 380px;
+    background: var(--jdo-card);
+    border: 1px solid var(--jdo-card-border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .jdo-card:hover {
+    border-color: rgba(34, 197, 94, 0.25);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  }
+ 
+  /* — Topo do card: contador de apostas — */
+  .jdo-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 12px;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(245, 200, 66, 0.08) 100%);
+    border-bottom: 1px solid var(--jdo-divider);
+  }
+  .jdo-pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--jdo-green);
+    box-shadow: 0 0 6px var(--jdo-green);
+    animation: jdoPulse 1.8s ease-in-out infinite;
+  }
+  @keyframes jdoPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.75); }
+  }
+  .jdo-apostas-count {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--jdo-green);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+ 
+  /* — Body do card: lista de eventos — */
+  .jdo-card-body {
+    padding: 18px 10px;
+    flex: 1;
+  }
+  .jdo-event-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    gap: 8px;
+    border-bottom: 1px solid var(--jdo-divider);
+  }
+  .jdo-event-row:last-child { border-bottom: none; }
+ 
+  .jdo-event-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
+  }
+  .jdo-team-badge {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.05);
+  }
+  /* Placeholder quando não há imagem */
+  .jdo-badge-placeholder {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--jdo-green-dim), rgba(255,255,255,0.05));
+    border: 1px solid var(--jdo-card-border);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--jdo-green);
+    text-transform: uppercase;
+  }
+ 
+  .jdo-team-texts {
+    min-width: 0;
+  }
+  .jdo-team-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--jdo-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+  }
+  .jdo-matchup {
+    font-size: 0.65rem;
+    color: var(--jdo-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+    line-height: 1;
+  }
+ 
+  .jdo-odd {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .jdo-odd-star {
+  color: #f5c842;
+  font-size: 0.85rem;
+  -webkit-text-stroke: 0px; /* garante que não herda stroke do site */
+} 
+
+  .jdo-odd-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--jdo-text);
+    letter-spacing: -0.01em;
+  }
+ 
+  /* — Rodapé do card: logo SuperMúltipla + CTA — */
+  .jdo-card-footer {
+    padding: 10px 14px;
+    border-top: 1px solid var(--jdo-divider);
+  }
+  .jdo-super-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 5px;
+  }
+  .jdo-super-icon {
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .jdo-super-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, var(--jdo-green), var(--jdo-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .jdo-super-cta {
+    font-size: 0.68rem;
+    color: var(--jdo-muted);
+    line-height: 1.3;
+    padding-bottom: 10px;
+  }
+ 
+  /* — Botão de odds — */
+  .jdo-odds-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--jdo-green-dim);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    margin: 0 14px 14px;
+    width: calc(100% - 28px);
+  }
+  .jdo-odds-btn:hover {
+    background: rgba(34, 197, 94, 0.22);
+    border-color: var(--jdo-green);
+    box-shadow: 0 0 14px var(--jdo-green-glow);
+  }
+  .jdo-odds-original {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--jdo-muted);
+    text-decoration: line-through;
+  }
+  .jdo-odds-arrow {
+    font-size: 0.7rem;
+    color: var(--jdo-muted);
+  }
+  .jdo-odds-boosted {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--jdo-green);
+    letter-spacing: -0.01em;
+  }
+ 
+  /* — Responsivo — */
+  @media (max-width: 600px) {
+    .jdo-card { flex: 0 0 230px; }
+    .jdo-section-head h2 { font-size: 1.15rem; }
+  }
