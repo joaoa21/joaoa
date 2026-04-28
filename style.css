@@ -1653,16 +1653,46 @@
 
 .error-content h1 {
   font-family: var(--font-display);
-  font-size: clamp(72px, 12vw, 160px);
+  font-size: clamp(56px, 10vw, 160px);
   line-height: 0.9;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   margin-bottom: 28px;
+}
+
+.error-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.error-title > span {
+  display: block;
+  line-height: 0.9;
+}
+
+.error-title .accent {
+  display: inline;
+  line-height: inherit;
+}
+
+.error-title span:first-child {
+  font-size: clamp(72px, 9vw, 150px);
+}
+
+.error-title span:last-child {
+  font-size: clamp(72px, 9vw, 150px);
+  white-space: nowrap;
 }
 
 .error-content p {
   font-size: clamp(18px, 2vw, 24px);
   color: var(--text-soft);
   margin-bottom: 38px;
+}
+
+span.accent {
+  color: var(--accent);
 }
 
 @media (max-width: 600px) {
@@ -1677,5 +1707,102 @@
 
   .error-content h1 {
     font-size: clamp(64px, 20vw, 92px);
+  }
+}
+
+@media (max-width: 600px) {
+  .home-projects {
+    padding-inline: 0;
+  }
+
+  .home-project-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .project-preview-card {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .project-thumb {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 22px;
+  }
+
+  .project-preview-info h3 {
+    font-size: 30px;
+  }
+
+  .project-tags {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .project-tags span {
+    font-size: 10px;
+    padding: 7px 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .project-preview-card {
+    padding: 14px;
+  }
+
+  .project-tags span {
+    font-size: 9px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .error-content {
+    max-width: 100%;
+  }
+
+  .error-content h1 {
+    font-size: 64px;
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    margin-bottom: 22px;
+  }
+
+  .error-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .error-actions,
+  .error-content .btn-primary,
+  .error-content .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .error-title {
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+    overflow-wrap: normal;
+  }
+
+  .error-title > span:first-child {
+    font-size: clamp(52px, 18vw, 76px);
+  }
+
+  .error-title > span:last-child {
+    font-size: clamp(42px, 14vw, 58px);
+    white-space: normal;
+    text-wrap: balance;
+  }
+
+  .error-title .accent {
+    display: inline;
   }
 }
