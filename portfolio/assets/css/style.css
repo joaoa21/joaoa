@@ -64,7 +64,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
-    padding-block: 1.1rem;
+    padding-block: 1.4rem;
     background: transparent;
     border-bottom: 1px solid transparent;
     isolation: isolate;
@@ -90,14 +90,22 @@
 
   .nav-logo {
     font-family: var(--font-display);
-    font-size: 35px;
+    font-size: 2rem;
     letter-spacing: 0.08em;
     color: var(--text);
     text-decoration: none;
     line-height: 1;
     transition: color 0.3s ease;
     margin-right: auto;
+    
   }
+
+  @media (max-width: 768px) {
+  .nav-logo {
+    font-size: 1.75rem;
+    letter-spacing: 0.03em;
+  }
+}
 
   .nav-logo .accent { color: var(--accent); }
 
@@ -811,7 +819,7 @@
   .contact-title .accent { color: var(--accent); }
 
   .contact-sub {
-    font-size: 15px;
+    font-size: 18px;
     color: var(--text-soft);
     line-height: 1.6;
     max-width: 440px;
@@ -887,6 +895,67 @@
   }
 
   .contact-secondary a:hover { color: var(--accent); }
+
+  .contact-socials {
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.contact-socials a {
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.contact-socials a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.contact-info {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.contact-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: var(--text-soft);
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.contact-line i {
+  font-size: 22px;
+  width: 22px;
+  text-align: center;
+}
+
+.contact-line:hover {
+  color: var(--accent);
+}
+
+.contact-socials {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
 
   /* ===================== FOOTER ===================== */
   footer {

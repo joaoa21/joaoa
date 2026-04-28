@@ -1,110 +1,218 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meus Links</title>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>João Alberto - Design Digital & Sites</title>
+<meta name="description" content="João Alberto — Web Designer Pleno criando projetos que unem estética e estratégia. Sites, branding, interfaces, CRM e experiências digitais.">
 
-		<link rel="stylesheet" href="style.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<link rel="stylesheet" href="./style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
 
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<body>
+<div class="wrap">
 
-  </head>
-  <body>
-	<div id="container">
-		
-    	<div id="profile">
-        	<img src="./assets/foto.png" alt="Avatar">
-			<div class="meu-nome">
-				<p>João Alberto<span>.</span></p>
-			</div>
-    	</div>
+  <header class="site-nav" id="nav">
+    <div class="nav-inner container">
+      <a class="nav-logo" href="/" aria-label="Voltar para início">
+        João Alberto<span class="accent">.</span>
+      </a>
 
-		<div id="switch" onclick="toggleMode()">
-			<button>
-			</button>
-			<span></span>
-	  	</div>
+      <button class="nav-mobile-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-	  	<div class="texto">
-			<p id="bio">
-				🖊️ Web Designer & Front-end.<br>
-				💡 Transformo ideias em interfaces
-		</p>
-	  	</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
 
-	  	<div class="link-linha">
-			<span id="links">Links que irão te ajudar</span>
-			<span id="linha"></span>
-	  	</div>
+  <main>
+    <section class="home-hero" id="topo">
+      <div class="container home-hero-inner">
+        <aside class="hero-profile reveal">
+          <img src="./assets/img/joao.png" alt="Foto de João Alberto">
+          <span>Web Designer Pleno</span>
+        </aside>
 
-	  	<ul>
-			<li>
-				<a href="#" class="coming-soon">
-					Acesse meu site
-					<span class="badge">em construção</span>
-				</a>
-			</li>
+        <div class="hero-content reveal">
+          <h1>Design digital<br><span>& sites</span></h1>
+          <p class="hero-sub">Projetos que unem estética e estratégia.</p>
 
-			<li>
-				<a href="portfolio/" target="_blank">Meu portólio</a>
-			</li>
+          <div class="hero-actions">
+            <a href="#projetos" class="btn-primary">Ver projetos</a>
+            <a href="#contato" class="btn-secondary">Falar comigo</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			<li>
-				<a href="http://wa.me/5581988780144" target="_blank">Vamos conversar?</a>
-			</li>
-	  	</ul>
+    <section class="home-about" id="sobre">
+      <div class="container home-about-layout">
 
-		<div class="link-linha baixo">
-			<span id="links">Minhas ferramentas</span>
-			<span id="linha"></span>
-	  	</div>
+        <div class="about-copy reveal">
+          <span class="s-num">// Sobre</span>
+          <h2>Design aplicado ao digital<span class="accent">.</span></h2>
 
-		<ul>
-			<li>
-				<a class="tool" href="https://kompres.com.br/" target="_blank">
-					Kompres
-					<span>Compressor e conversor de Imagens</span>
-				</a>
-			</li>
+          <p>
+            Web Designer Pleno com mais de 5 anos de experiência em design e atuação atual em iGaming, criando interfaces, banners, pop-ups, widgets, emails HTML e experiências visuais para CRM e gamificação.
+          </p>
 
-			<li>
-				<a class="tool" href="https://joaoa21.github.io/email-generator/" target="_blank">
-					Email Generator
-					<span>Gerador de email em HTML</span>
-				</a>
-			</li>
-	  	</ul>
+          <p>
+            Antes do iGaming, atuei em agências de publicidade com branding, identidade visual, sites e materiais digitais e impressos para diferentes segmentos.
+          </p>
+        </div>
 
-		<div id="social">
-			<a target="_blank" class="social" href="https://github.com/joaoa21"><i class="fa-brands fa-github"></i></a>
-			<a target="_blank" class="social" href="https://www.instagram.com/joaoa2/"><i class="fa-brands fa-instagram"></i></a>
-			<a target="_blank" class="social disabled" href="https://www.behance.net/joaoa21"><i class="fab fa-behance"></i></a>
-			<a target="_blank" class="social" href="https://www.linkedin.com/in/joaoa210/"><i class="fa-brands fa-linkedin-in"></i></a>
-		</div>
+        <div class="skills-card reveal">
+          <h3>// Stack & Habilidades</h3>
 
-		<!--<footer>
-			<img src="" alt="">
-	  	</footer>-->
+          <div class="skill-row">
+            <strong>Design</strong>
+            <span>Photoshop, Illustrator, Figma</span>
+          </div>
+
+          <div class="skill-row">
+            <strong>Web</strong>
+            <span>HTML, CSS, JavaScript</span>
+          </div>
+
+          <div class="skill-row">
+            <strong>iGaming / CRM</strong>
+            <span>Smartico, Email Marketing, Gamificação</span>
+          </div>
+
+          <div class="skill-row">
+            <strong>IA Generativa</strong>
+            <span>Composição visual aplicada a campanhas</span>
+          </div>
+
+          <div class="skill-row">
+            <strong>Experiência</strong>
+            <span>Branding, sites e comunicação visual</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="home-projects" id="projetos">
+      <div class="container">
+        <div class="projects-head reveal">
+          <span class="s-num">// Projetos</span>
+          <h2 class="s-title">Conheça meus projetos<span class="accent">.</span></h2>
+        </div>
+
+        <div class="home-project-grid reveal">
+
+  <a href="./portfolio/" class="project-preview-card">
+    <div class="project-thumb">
+      <img src="./assets/projetos/1.webp" alt="Prévia do projeto iGaming">
     </div>
 
-	<!--Ícones-->
-	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <div class="project-preview-info">
+      <h3>iGaming</h3>
+      <div class="project-tags">
+        <span>Banners</span>
+        <span>Pop ups</span>
+        <span>CRM</span>
+        <span>Gamificação</span>
+      </div>
+    </div>
+  </a>
 
-	<!--Biblioteca Lenis -->
-	<script src="https://unpkg.com/@studio-freight/lenis@1.0.36/bundled/lenis.min.js"></script>
+  <a href="./projetos/identidade-visual.html" class="project-preview-card">
+    <div class="project-thumb">
+      <img src="./assets/projetos/2.webp" alt="Prévia de identidade visual">
+    </div>
 
-	<script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script>
+    <div class="project-preview-info">
+      <h3>Identidade Visual</h3>
+      <div class="project-tags">
+        <span>Branding</span>
+        <span>Marcas</span>
+      </div>
+    </div>
+  </a>
 
-	<!--Seu script -->
-	<script src="/script.js"></script>
+  <a href="./projetos/sites.html" class="project-preview-card">
+    <div class="project-thumb">
+      <img src="./assets/projetos/3.webp" alt="Prévia de sites">
+    </div>
 
+    <div class="project-preview-info">
+      <h3>Sites</h3>
+      <div class="project-tags">
+        <span>Website</span>
+        <span>Landing Page</span>
+      </div>
+    </div>
+  </a>
 
-  </body>
+</div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="contact-inner">
+        <div class="contact-eyebrow reveal">// Contato</div>
+        <h2 class="contact-title reveal">VAMOS<br>CONVERSAR<span class="accent">?</span></h2>
+        <p class="contact-sub reveal">Tem um projeto em mente ou quer trocar uma ideia? <br> Fale comigo.</p>
+
+        <a class="contact-cta reveal" href="https://wa.me/5581988780144?text=Oi%20Jo%C3%A3o!" target="_blank" rel="noopener">
+          <span>Fale Comigo</span>
+          <span>→</span>
+        </a>
+
+        <div class="contact-info reveal">
+          <a href="mailto:joaoams6@gmail.com" class="contact-line">
+            <i class="fa-regular fa-envelope"></i>
+            <span>joaoams6@gmail.com</span>
+          </a>
+
+          <a href="https://wa.me/5581988780144" target="_blank" rel="noopener" class="contact-line">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>(81) 98878-0144</span>
+          </a>
+
+        </div>
+
+        <div class="contact-socials reveal">
+          <a href="https://github.com/joaoa21" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a href="https://www.instagram.com/joaoa2/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/joaoa210/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© João Alberto<span class="accent">.</span> Todos os direitos reservados.</p>
+    <a href="#" class="back-to-top" aria-label="Voltar ao topo">↑</a>
+  </footer>
+
+</div>
+
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script>
+<script defer src="./main.js"></script>
+</body>
 </html>
