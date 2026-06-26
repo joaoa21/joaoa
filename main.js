@@ -1,7 +1,7 @@
 // Smooth scroll with Lenis. Protected so the page still works if the CDN fails.
 if (window.Lenis) {
   const lenis = new Lenis({
-    duration: 1.4,
+    duration: 1,
     smoothWheel: true,
     wheelMultiplier: 1,
     touchMultiplier: 1,
