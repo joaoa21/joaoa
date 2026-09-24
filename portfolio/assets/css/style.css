@@ -1165,3 +1165,7 @@
     margin-inline: auto;
   }
 }
+
+#trafego {
+  display: none;
+}
