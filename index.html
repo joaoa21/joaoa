@@ -1,234 +1,447 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>João Alberto - Design Digital & Sites</title>
-<meta name="description" content="João Alberto — Web Designer Pleno criando projetos que unem estética e estratégia. Sites, branding, interfaces, CRM e experiências digitais.">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      (() => {
+        const root = document.documentElement;
+        root.classList.add("js", "home-motion");
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-<link rel="stylesheet" href="./style.css">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<script src="https://analytics-hub-production-9abd.up.railway.app/t.js" data-key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf" defer></script>
-</head>
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          root.classList.add("reduce-motion");
+        }
 
-<body>
-<div class="wrap">
-
-  <header class="site-nav" id="nav">
-    <div class="nav-inner container">
-      <a class="nav-logo" href="/" aria-label="Voltar para início">
-        João Alberto<span class="accent">.</span>
-      </a>
-
-      <button class="nav-mobile-toggle" id="navToggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#topo">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+        window.__homeMotionFallback = window.setTimeout(() => {
+          root.classList.add("motion-fallback");
+        }, 1800);
+      })();
+    </script>
+    <link href="https://joaoa.com.br/" rel="canonical" />
+    <meta content="#0f0f0f" name="theme-color" />
+    <meta content="pt_BR" property="og:locale" />
+    <meta content="website" property="og:type" />
+    <meta content="João Alberto" property="og:site_name" />
+    <meta
+      content="João Alberto — Design Digital &amp; Web"
+      property="og:title"
+    />
+    <meta
+      content="Portfólio de João Alberto, Web Designer Pleno em Recife. Projetos de sites, interfaces, branding, CRM, iGaming e experiências digitais."
+      property="og:description"
+    />
+    <meta content="https://joaoa.com.br/" property="og:url" />
+    <meta
+      content="https://joaoa.com.br/assets/img/og-cover.webp"
+      property="og:image"
+    />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta
+      content="João Alberto — Design Digital &amp; Web — prévia"
+      property="og:image:alt"
+    />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta
+      content="João Alberto — Design Digital &amp; Web"
+      name="twitter:title"
+    />
+    <meta
+      content="Portfólio de João Alberto, Web Designer Pleno em Recife. Projetos de sites, interfaces, branding, CRM, iGaming e experiências digitais."
+      name="twitter:description"
+    />
+    <meta
+      content="https://joaoa.com.br/assets/img/og-cover.webp"
+      name="twitter:image"
+    />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>João Alberto - Design Digital &amp; Web</title>
+    <meta
+      content="Portfólio de João Alberto, Web Designer Pleno em Recife. Projetos de sites, interfaces, branding, CRM, iGaming e experiências digitais."
+      name="description"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=DM+Mono:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="./style.css" rel="stylesheet" />
+    <link href="./favicon.svg" rel="icon" type="image/svg+xml" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://joaoa.com.br/#website",
+            "url": "https://joaoa.com.br/",
+            "name": "João Alberto — Design Digital & Web",
+            "inLanguage": "pt-BR",
+            "publisher": {
+              "@id": "https://joaoa.com.br/#person"
+            }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://joaoa.com.br/#webpage",
+            "url": "https://joaoa.com.br/",
+            "name": "João Alberto — Design Digital & Web",
+            "isPartOf": {
+              "@id": "https://joaoa.com.br/#website"
+            },
+            "mainEntity": {
+              "@id": "https://joaoa.com.br/#person"
+            },
+            "inLanguage": "pt-BR"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://joaoa.com.br/#person",
+            "name": "João Alberto",
+            "url": "https://joaoa.com.br/",
+            "image": "https://joaoa.com.br/assets/img/joao.png",
+            "jobTitle": "Web Designer Pleno",
+            "sameAs": [
+              "https://github.com/joaoa21",
+              "https://www.instagram.com/joaoa2/",
+              "https://www.linkedin.com/in/joaoa210/"
+            ],
+            "knowsAbout": [
+              "Web Design",
+              "UI Design",
+              "Design Digital",
+              "Branding",
+              "iGaming",
+              "CRM",
+              "Email Marketing",
+              "Gamificação",
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "homeLocation": {
+              "@type": "Place",
+              "name": "Recife, Pernambuco, Brasil"
+            }
+          }
+        ]
+      }
+    </script>
+    <link href="/site.webmanifest" rel="manifest" />
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+    <!-- ============ 3D STAGE ============ -->
+    <canvas aria-hidden="true" id="stage"></canvas>
+    <!-- ============ HUD ============ -->
+    <div aria-hidden="true" class="hud">
+      <div class="hud-corner hud-bl mono">
+        <span>REC — PE / BR</span>
+        <span>8.05°S · 34.88°W</span>
+      </div>
+      <div class="hud-corner hud-br mono">
+        <span>©2026</span>
+        <span id="hudClock">00:00:00</span>
+      </div>
+      <div class="hud-deg mono">
+        <span id="hudDeg">0°</span>
+        <i></i>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <section class="home-hero" id="topo">
-      <div class="container home-hero-inner">
-        <aside class="hero-profile reveal">
-          <img src="./assets/img/joao.png" alt="Foto de João Alberto">
-          <span>Web Designer Pleno</span>
-        </aside>
-
-        <div class="hero-content reveal">
-          <h1>Design digital<br><span>& Web</span></h1>
-          <p class="hero-sub">Projetos que unem estética e estratégia.</p>
-
-          <div class="hero-actions">
-            <a href="#projetos" class="btn-primary">Ver projetos</a>
-            <a href="#contato" class="btn-secondary">Solicitar Projeto</a>
-          </div>
+    <!-- ============ NAVBAR ============ -->
+    <header class="site-nav" id="nav">
+      <a aria-label="Voltar ao início da página" class="nav-logo" href="#topo"
+        >João Alberto</a
+      >
+      <nav aria-label="Navegação principal" class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#topo">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+        </ul>
+        <a class="nav-cta" href="#contato"
+          >Fale comigo <i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+        ></a>
+      </nav>
+      <button
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Abrir menu"
+        class="nav-mobile-toggle"
+        id="navToggle"
+        type="button"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <!-- ============ HERO · DARK ============ -->
+      <section class="hero" data-blob="hero" data-theme="dark" id="topo">
+        <h1 class="hero-title">
+          <span class="line"><em>Design digital</em></span>
+          <span class="line"
+            ><em>&amp; web<b class="dot">.</b></em></span
+          >
+        </h1>
+        <div class="hero-profile">
+          <img
+            alt="Foto de João Alberto"
+            class="hero-avatar"
+            decoding="async"
+            fetchpriority="high"
+            height="300"
+            src="/assets/img/joao.png"
+            width="300"
+          />
+          <span class="mono">Designer Pleno</span>
         </div>
-      </div>
-    </section>
-
-    <section class="home-about" id="sobre">
-      <div class="container home-about-layout">
-
-        <div class="about-copy reveal">
-          <span class="s-num">// Sobre</span>
-          <h2>Design aplicado ao digital<span class="accent">.</span></h2>
-
-          <p>
-            Web Designer Pleno com mais de 5 anos de experiência em design e atuação atual em iGaming, criando interfaces, banners, pop-ups, widgets, emails HTML e experiências visuais para CRM e gamificação.
-          </p>
-
-          <p>
-            Antes do iGaming, atuei em agências de publicidade com branding, identidade visual, sites e materiais digitais e impressos para diferentes segmentos.
-          </p>
+        <div class="hero-cta">
+          <a class="btn" href="#projetos">
+            <span>Ver projetos</span
+            ><i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a class="btn-reveal" href="#sobre"
+            ><span class="rv-txt">Sobre mim</span></a
+          >
         </div>
-
-        <div class="skills-card reveal">
-          <h3>// Stack & Habilidades</h3>
-
-          <div class="skill-row">
-            <strong>Design</strong>
-            <span>Photoshop, Illustrator, Figma</span>
+      </section>
+      <!-- ============ SOBRE · LIGHT ============ -->
+      <section class="about" data-blob="about" data-theme="light" id="sobre">
+        <div class="sec-head mono"><span>⊕</span><span>01 — SOBRE</span></div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <h2>
+              Uma direção<br />em todas as frentes<span class="dot">.</span>
+            </h2>
+            <p>
+              Designer com mais de 5 anos de experiência, atuando atualmente
+              como Web Designer Pleno em iGaming com interfaces, banners,
+              pop-ups, widgets, emails HTML e experiências visuais para CRM e
+              gamificação.
+            </p>
+            <p>
+              Antes do iGaming, agências de publicidade: branding, identidade
+              visual, sites e materiais digitais e impressos para diferentes
+              segmentos.
+            </p>
           </div>
-
-          <div class="skill-row">
-            <strong>Web</strong>
-            <span>HTML, CSS, JavaScript</span>
-          </div>
-
-          <div class="skill-row">
-            <strong>iGaming / CRM</strong>
-            <span>Smartico, Email Marketing, Gamificação</span>
-          </div>
-
-          <div class="skill-row">
-            <strong>IA Generativa</strong>
-            <span>Composição visual aplicada a campanhas</span>
-          </div>
-
-          <div class="skill-row">
-            <strong>Experiência</strong>
-            <span>Branding, sites e comunicação visual</span>
-          </div>
+          <ul class="stack mono">
+            <li>
+              <strong>DESIGN</strong
+              ><span>Photoshop · Illustrator · Figma</span>
+            </li>
+            <li><strong>WEB</strong><span>HTML · CSS · JavaScript</span></li>
+            <li>
+              <strong>iGAMING / CRM</strong
+              ><span>Smartico · Email Mkt · Gamificação</span>
+            </li>
+            <li>
+              <strong>IA GENERATIVA</strong
+              ><span>Composição visual p/ campanhas</span>
+            </li>
+            <li>
+              <strong>EXPERIÊNCIA</strong
+              ><span>Branding · Sites · Com. visual</span>
+            </li>
+          </ul>
         </div>
-
-      </div>
-    </section>
-
-    <section class="home-projects" id="projetos">
-      <div class="container">
-        <div class="projects-head reveal">
-          <span class="s-num">// Projetos</span>
-          <h2 class="s-title">Conheça meus projetos<span class="accent">.</span></h2>
+      </section>
+      <!-- ============ PROJETOS · DARK ============ -->
+      <section
+        class="projects"
+        data-blob="projects"
+        data-theme="dark"
+        id="projetos"
+      >
+        <div class="sec-head mono">
+          <span>⊕</span><span>02 — PROJETOS</span>
         </div>
-
-        <div class="home-project-grid reveal">
-
-          <a href="./portfolio/" class="project-preview-card">
-            <div class="project-thumb">
-              <img src="./assets/projetos/1.webp" alt="Prévia do projeto iGaming">
+        <h2 class="projects-title">
+          Conheça meus projetos<span class="dot">.</span>
+        </h2>
+        <div class="proj-list">
+          <a class="proj" href="./projetos/igaming/">
+            <span class="proj-i mono">/01</span>
+            <div class="proj-thumb">
+              <img
+                alt="Prévia do projeto iGaming"
+                decoding="async"
+                height="480"
+                loading="lazy"
+                src="./assets/projetos/1.webp"
+                width="720"
+              />
             </div>
-
-            <div class="project-preview-info">
+            <div class="proj-info">
               <h3>iGaming</h3>
-              <div class="project-tags">
-                <span>Banners</span>
-                <span>Pop ups</span>
-                <span>CRM</span>
-                <span>Gamificação</span>
-              </div>
+              <p class="mono">BANNERS · POP-UPS · CRM · GAMIFICAÇÃO</p>
             </div>
+            <span aria-hidden="true" class="proj-arrow"
+              ><i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+            ></span>
           </a>
-
-          <a href="./projetos/identidade-visual" class="project-preview-card">
-            <div class="project-thumb">
-              <img src="./assets/projetos/2.webp" alt="Prévia de identidade visual">
+          <a class="proj" href="./projetos/identidade-visual/">
+            <span class="proj-i mono">/02</span>
+            <div class="proj-thumb">
+              <img
+                alt="Prévia de identidade visual"
+                decoding="async"
+                height="480"
+                loading="lazy"
+                src="./assets/projetos/2.webp"
+                width="720"
+              />
             </div>
-
-            <div class="project-preview-info">
+            <div class="proj-info">
               <h3>Identidade Visual</h3>
-              <div class="project-tags">
-                <span>Branding</span>
-                <span>Marcas</span>
-              </div>
+              <p class="mono">BRANDING · MARCAS</p>
             </div>
+            <span aria-hidden="true" class="proj-arrow"
+              ><i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+            ></span>
           </a>
-
-          <a href="./projetos/sites" class="project-preview-card">
-            <div class="project-thumb">
-              <img src="./assets/projetos/3.webp" alt="Prévia de sites">
+          <a class="proj" href="./projetos/sites/">
+            <span class="proj-i mono">/03</span>
+            <div class="proj-thumb">
+              <img
+                alt="Prévia de sites"
+                decoding="async"
+                height="480"
+                loading="lazy"
+                src="./assets/projetos/3.webp"
+                width="720"
+              />
             </div>
-
-            <div class="project-preview-info">
+            <div class="proj-info">
               <h3>Sites</h3>
-              <div class="project-tags">
-                <span>Website</span>
-                <span>Landing Page</span>
-              </div>
+              <p class="mono">WEBSITE · LANDING PAGE</p>
             </div>
+            <span aria-hidden="true" class="proj-arrow"
+              ><i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+            ></span>
           </a>
-
-          <a href="./projetos/oab/oab-pe-2024.html" class="project-preview-card">
-            <div class="project-thumb">
-              <img src="/projetos/oab/assets/MURAL.webp" alt="Prévia da campanha OAB Pernambuco 2025">
+          <a class="proj" href="./projetos/oab/">
+            <span class="proj-i mono">/04</span>
+            <div class="proj-thumb">
+              <img
+                alt="Prévia da campanha OAB Pernambuco"
+                decoding="async"
+                height="1600"
+                loading="lazy"
+                src="./projetos/oab/assets/mural.webp"
+                width="2400"
+              />
             </div>
-
-            <div class="project-preview-info">
+            <div class="proj-info">
               <h3>Campanha OAB/PE</h3>
-              <div class="project-tags">
-                <span>Campanha</span>
-                <span>OAB</span>
-                <span>Visual 360º</span>
-              </div>
+              <p class="mono">CAMPANHA · VISUAL 360º</p>
             </div>
+            <span aria-hidden="true" class="proj-arrow"
+              ><i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+            ></span>
           </a>
-
         </div>
+        <div class="projects-more">
+          <a class="btn-sweep" href="./projetos/">
+            <span>Ver todos os projetos</span>
+            <span class="sweep-ic"
+              ><i aria-hidden="true" class="fa-solid fa-arrow-right"></i
+            ></span>
+          </a>
+        </div>
+      </section>
+      <!-- ============ CONTATO · LIGHT (referência) ============ -->
+      <section
+        class="contact"
+        data-blob="contact"
+        data-theme="light"
+        id="contato"
+      >
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <h2>Entre em contato, vamos criar algo juntos</h2>
+            <p>
+              Estética forte, mensagem clara e foco em conversão.<br />Cada
+              detalhe conta.
+            </p>
+          </div>
+          <div class="contact-side">
+            <a
+              class="btn"
+              href="https://wa.me/5581988780144?text=Oi%20Jo%C3%A3o!"
+              rel="noopener"
+              target="_blank"
+            >
+              <span>Entre em contato</span
+              ><i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+            </a>
+            <div class="contact-lines">
+              <a href="mailto:joaoams6@gmail.com"
+                ><i aria-hidden="true" class="fa-regular fa-envelope"></i>
+                joaoams6@gmail.com</a
+              >
+              <a
+                href="https://wa.me/5581988780144"
+                rel="noopener"
+                target="_blank"
+                ><i aria-hidden="true" class="fa-brands fa-whatsapp"></i> (81)
+                98878-0144</a
+              >
+            </div>
+            <hr class="contact-divider" />
+            <div class="contact-socials">
+              <a
+                aria-label="GitHub"
+                href="https://github.com/joaoa21"
+                rel="noopener"
+                target="_blank"
+                ><i aria-hidden="true" class="fa-brands fa-github"></i
+              ></a>
+              <a
+                aria-label="Instagram"
+                href="https://www.instagram.com/joaoa2/"
+                rel="noopener"
+                target="_blank"
+                ><i aria-hidden="true" class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                aria-label="LinkedIn"
+                href="https://www.linkedin.com/in/joaoa210/"
+                rel="noopener"
+                target="_blank"
+                ><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ============ FOOTER · sempre escuro (referência) ============ -->
+    <footer>
+      <div class="footer-info">
+        <p>João Alberto © 2026 — Design digital &amp; web</p>
+        <p class="mono">RECIFE — PE / BRASIL</p>
       </div>
-    </section>
-
-    <section id="contato">
-      <div class="contact-inner">
-        <div class="contact-eyebrow reveal">// Contato</div>
-        <h2 class="contact-title reveal">VAMOS<br>CONVERSAR<span class="accent">?</span></h2>
-        <p class="contact-sub reveal">Tem um projeto em mente ou quer trocar uma ideia? <br> Fale comigo.</p>
-
-        <a class="contact-cta reveal" href="https://wa.me/5581988780144?text=Oi%20Jo%C3%A3o!" target="_blank" rel="noopener">
-          <span>Fale Comigo</span>
-          <span>→</span>
-        </a>
-
-        <div class="contact-info reveal">
-          <a href="mailto:joaoams6@gmail.com" class="contact-line">
-            <i class="fa-regular fa-envelope"></i>
-            <span>joaoams6@gmail.com</span>
-          </a>
-
-          <a href="https://wa.me/5581988780144" target="_blank" rel="noopener" class="contact-line">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>(81) 98878-0144</span>
-          </a>
-
-        </div>
-
-        <div class="contact-socials reveal">
-          <a href="https://github.com/joaoa21" target="_blank" rel="noopener" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-
-          <a href="https://www.instagram.com/joaoa2/" target="_blank" rel="noopener" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-
-          <a href="https://www.linkedin.com/in/joaoa210/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© João Alberto<span class="accent">.</span> Todos os direitos reservados.</p>
-    <a href="#" class="back-to-top" aria-label="Voltar ao topo">↑</a>
-  </footer>
-
-</div>
-
-<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-<script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script>
-<script defer src="./main.js"></script>
-</body>
+      <a aria-label="Voltar ao topo" class="to-top" href="#topo">
+        <i aria-hidden="true" class="fa-solid fa-arrow-up"></i>
+      </a>
+    </footer>
+    <script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./main.js" type="module"></script>
+  </body>
 </html>

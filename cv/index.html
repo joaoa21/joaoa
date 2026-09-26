@@ -1,892 +1,274 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>João Alberto - Web Designer</title>
-<meta name="description" content="Web Designer com 4 anos de experiência em design gráfico e digital, focado no mercado de iGaming. CRM, Smartico, gamificação e email marketing.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --bg-dark: #080a0f;
-    --bg-dark-2: #0d1017;
-    --border-dark: rgba(255, 255, 255, 0.06);
-
-    --paper: #ffffff;
-    --ink: #0d1017;
-    --ink-soft: #3a3f4a;
-    --ink-mid: #686d77;
-    --ink-faded: #9aa0aa;
-    --rule: #e4e4e7;
-    --panel: #f6f7f9;
-
-    --accent: #00a9cc;
-    --accent-deep: #007d96;
-    --accent-bright: #00d4ff;
-
-    --font-display: "Bebas Neue", "Impact", sans-serif;
-    --font-sans: "Outfit", "Inter", -apple-system, "Segoe UI", sans-serif;
-    --font-mono: "DM Mono", "JetBrains Mono", "Courier New", monospace;
-
-    --font-serif2: "Fraunces", "GFS Baskerville", "Caladea", Georgia, serif;
-    --font-sans2: "Inter", "Carlito", "Liberation Sans", -apple-system, "Segoe UI", sans-serif;
-  }
-
-  html, body {
-    background: var(--bg-dark);
-    color: var(--ink);
-    font-family: var(--font-sans2);
-    font-size: 10.5pt;
-    line-height: 1.5;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  body {
-    padding: 60px 20px;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    position: relative;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.04;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 180px;
-  }
-
-  body::after {
-    content: '';
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60vw; height: 80vh;
-    background: radial-gradient(ellipse, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  /* ============================= PAGE ============================= */
-  .page {
-    width: 210mm;
-    max-width: 100%;
-    background: var(--paper);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
-                0 0 1px rgba(255, 255, 255, 0.05);
-    padding: 18mm 20mm;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ============================= HEADER ============================= */
-  .header {
-    padding-bottom: 7mm;
-    border-bottom: 1px solid var(--rule);
-    margin-bottom: 7mm;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    gap: 7mm;
-  }
-
-  .header::before {
-    content: "";
-    position: absolute;
-    left: -4mm;
-    top: 6pt;
-    width: 4px;
-    height: 72pt;
-    background: var(--accent);
-  }
-
-  /* foto */
-  .profile-photo {
-    flex-shrink: 0;
-    width: 72pt;
-    height: 72pt;
-    border-radius: 50%;
-    object-fit: cover;
-    background: var(--panel);
-    border: 2px solid var(--paper);
-    box-shadow: 0 0 0 1.5px var(--accent);
-    margin-top: 6pt;
-  }
-
-  /* bloco com nome + tagline + contato */
-  .header-text {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .name {
-    font-family: var(--font-display);
-    font-size: 52pt;
-    font-weight: 400;
-    line-height: 0.92;
-    letter-spacing: 0.02em;
-    color: var(--ink);
-    margin-bottom: 6pt;
-  }
-
-  .name .accent { color: var(--accent); }
-
-  .tagline {
-    font-family: var(--font-mono);
-    font-size: 9pt;
-    font-weight: 400;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12pt;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6pt 10pt;
-  }
-
-  .tagline::before {
-    content: "";
-    width: 24pt;
-    height: 1px;
-    background: var(--accent);
-    flex-shrink: 0;
-  }
-
-  .tagline .dot {
-    color: var(--ink-faded);
-    font-weight: 300;
-  }
-
-  .contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4pt 14pt;
-    font-family: var(--font-sans2);
-    font-size: 9.5pt;
-    color: var(--ink-mid);
-  }
-
-  .contact-row a {
-    color: var(--ink-mid);
-    text-decoration: none;
-    transition: color 0.15s ease;
-    border-bottom: 1px solid transparent;
-  }
-
-  .contact-row a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-
-  .contact-row .sep { color: var(--ink-faded); }
-
-  /* botão portfólio (visível só na tela, some no print) */
-  .portfolio-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8pt;
-    margin-top: 14pt;
-    padding: 7pt 14pt;
-    font-family: var(--font-mono);
-    font-size: 9pt;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent-deep);
-    text-decoration: none;
-    border: 1px solid var(--accent);
-    background: transparent;
-    transition: background 0.25s ease, color 0.6s ease, transform 0.25s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .portfolio-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--accent);
-    transform: translateX(-101%);
-    transition: transform .5s cubic-bezier(.4,0,.2,1);
-    z-index: 0;
-  }
-
-  .portfolio-btn:hover {
-    color: white;
-  }
-
-  .portfolio-btn:hover::before {
-    transform: translateX(0);
-  }
-
-  .portfolio-btn span {
-    position: relative;
-    z-index: 1;
-  }
-
-  .portfolio-btn .arrow {
-    transition: transform 0.25s ease;
-  }
-
-  .portfolio-btn:hover .arrow {
-    transform: translateX(3px);
-  }
-
-  /* ============================= HIGHLIGHTS ============================= */
-  .highlights {
-    background: var(--panel);
-    border-left: 3px solid var(--accent);
-    padding: 5mm 6mm;
-    margin-bottom: 7mm;
-    position: relative;
-  }
-
-  .highlights-title {
-    font-family: var(--font-mono);
-    font-size: 9pt;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent-deep);
-    margin-bottom: 4mm;
-    display: flex;
-    align-items: center;
-    gap: 8pt;
-  }
-
-  .highlights-title::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-  }
-
-  .highlights-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.8mm;
-  }
-
-  .highlights-list li {
-    position: relative;
-    padding-left: 16pt;
-    font-size: 10pt;
-    line-height: 1.5;
-    color: var(--ink-soft);
-  }
-
-  .highlights-list li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 6pt;
-    width: 6pt;
-    height: 6pt;
-    background: var(--accent);
-    transform: rotate(45deg);
-  }
-
-  .highlights-list strong {
-    color: var(--ink);
-    font-weight: 600;
-  }
-
-  /* ============================= SECTION TITLES ============================= */
-  .section { margin-bottom: 7mm; }
-
-  .section-title {
-    font-family: var(--font-mono);
-    font-size: 9pt;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent-deep);
-    margin-bottom: 4mm;
-    padding-bottom: 1.5mm;
-    border-bottom: 1px solid var(--accent);
-    display: flex;
-    align-items: center;
-    gap: 8pt;
-  }
-
-  .section-title::before {
-    content: "//";
-    color: var(--accent);
-    opacity: 0.5;
-    font-weight: 400;
-  }
-
-  /* ============================= SOBRE ============================= */
-  .summary {
-    font-size: 10.5pt;
-    line-height: 1.6;
-    color: var(--ink-soft);
-  }
-
-  .summary strong {
-    color: var(--ink);
-    font-weight: 600;
-  }
-
-  /* ============================= JOBS / PROJECTS ============================= */
-  .job, .project {
-    margin-bottom: 5.5mm;
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
-  .job:last-child, .project:last-child { margin-bottom: 0; }
-
-  .job-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.5mm;
-    gap: 4mm;
-    flex-wrap: wrap;
-  }
-
-  .job-role {
-    font-family: var(--font-display);
-    font-size: 18pt;
-    font-weight: 400;
-    color: var(--ink);
-    letter-spacing: 0.04em;
-    line-height: 1;
-  }
-
-  .job-period {
-    font-family: var(--font-mono);
-    font-size: 9pt;
-    color: var(--ink-faded);
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .job-company {
-    font-family: var(--font-sans);
-    font-size: 10.5pt;
-    font-weight: 500;
-    font-style: italic;
-    color: var(--accent-deep);
-    margin-bottom: 2.5mm;
-    display: block;
-  }
-
-  .job-bullets { list-style: none; padding-left: 0; }
-
-  .job-bullets li {
-    position: relative;
-    padding-left: 14pt;
-    margin-bottom: 1.4mm;
-    font-size: 10pt;
-    line-height: 1.5;
-    color: var(--ink-soft);
-  }
-
-  .job-bullets li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 7pt;
-    width: 6pt;
-    height: 1px;
-    background: var(--accent);
-  }
-
-  .job-bullets strong { color: var(--ink); font-weight: 600; }
-  .job-bullets .metric { color: var(--accent-deep); font-weight: 600; }
-
-  .project-head {
-    display: flex;
-    align-items: baseline;
-    gap: 8pt;
-    margin-bottom: 1.5mm;
-    flex-wrap: wrap;
-  }
-
-  .project-name {
-    font-family: var(--font-display);
-    font-size: 16pt;
-    font-weight: 400;
-    color: var(--ink);
-    letter-spacing: 0.04em;
-    line-height: 1;
-  }
-
-  .project-kind {
-    font-family: var(--font-sans);
-    font-size: 10pt;
-    font-style: italic;
-    color: var(--accent-deep);
-    font-weight: 500;
-  }
-
-  .project-desc {
-    font-size: 10pt;
-    line-height: 1.5;
-    color: var(--ink-soft);
-  }
-
-  .project-stack {
-    display: inline-block;
-    margin-top: 1mm;
-    font-family: var(--font-mono);
-    font-size: 8.5pt;
-    color: var(--ink-faded);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 400;
-  }
-
-  /* ============================= SKILLS ============================= */
-  .skills-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5mm;
-  }
-
-  .skills-list li {
-    font-size: 10pt;
-    line-height: 1.5;
-    color: var(--ink-soft);
-  }
-
-  .skills-list .cat {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 9pt;
-    font-weight: 500;
-    color: var(--accent-deep);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 0.5mm;
-  }
-
-  /* ============================= FORMAÇÃO + IDIOMAS ============================= */
-  .bottom-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10mm;
-  }
-
-  .edu-list, .lang-list { list-style: none; }
-
-  .edu-list li { margin-bottom: 2.8mm; }
-  .edu-list li:last-child { margin-bottom: 0; }
-
-  .edu-school {
-    font-family: var(--font-display);
-    font-size: 14pt;
-    font-weight: 400;
-    color: var(--ink);
-    display: block;
-    letter-spacing: 0.04em;
-    line-height: 1;
-    margin-bottom: 1mm;
-  }
-
-  .edu-course {
-    font-size: 9.5pt;
-    color: var(--ink-soft);
-    display: block;
-  }
-
-  .edu-status {
-    font-size: 8.5pt;
-    color: var(--ink-faded);
-    font-style: italic;
-    font-family: var(--font-mono);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  .lang-list li {
-    margin-bottom: 1.8mm;
-    font-size: 10pt;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 4mm;
-    padding-bottom: 1.5mm;
-    border-bottom: 1px dashed var(--rule);
-  }
-
-  .lang-list li:last-child { border-bottom: none; }
-
-  .lang-name { color: var(--ink); font-weight: 500; }
-
-  .lang-level {
-    color: var(--ink-faded);
-    font-family: var(--font-mono);
-    font-size: 8.5pt;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  /* ============================= MOBILE ============================= */
-  @media (max-width: 768px) {
-    body { padding: 0; background: var(--paper); }
-    body::before, body::after { display: none; }
-
-    .page {
-      width: 100%;
-      box-shadow: none;
-      padding: 28px 22px;
-    }
-
-    .header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-      padding-bottom: 20px;
-      margin-bottom: 20px;
-    }
-
-    .header::before { left: -22px; height: 42pt; }
-
-    .profile-photo {
-      width: 64pt;
-      height: 64pt;
-      margin-top: 0;
-    }
-
-    .name {
-      font-size: clamp(36pt, 11vw, 48pt);
-      letter-spacing: 0.015em;
-    }
-
-    .tagline {
-      font-size: 8pt;
-      letter-spacing: 0.12em;
-      gap: 5pt 8pt;
-    }
-
-    .tagline::before { width: 20pt; }
-
-    .contact-row {
-      gap: 2pt 10pt;
-      font-size: 9pt;
-    }
-
-    .contact-row .sep { display: none; }
-
-    .contact-row > * { width: auto; }
-
-    .highlights {
-      padding: 16px 18px;
-      margin-bottom: 20px;
-    }
-
-    .highlights-list li { font-size: 9.5pt; }
-
-    .job-role { font-size: 16pt; }
-    .job-period { font-size: 8.5pt; }
-    .job-bullets li { font-size: 9.5pt; }
-
-    .project-name { font-size: 14pt; }
-
-    .bottom-grid { grid-template-columns: 1fr; gap: 5mm; }
-
-    .section { margin-bottom: 5mm; }
-    .section-title { font-size: 8.5pt; letter-spacing: 0.18em; }
-  }
-
-  @media (max-width: 420px) {
-    .page { padding: 22px 18px; }
-    .name { font-size: clamp(32pt, 12vw, 42pt); }
-    .tagline { font-size: 7.5pt; letter-spacing: 0.1em; }
-    .tagline::before { display: none; }
-    .profile-photo { width: 56pt; height: 56pt; }
-    .header::before { left: -18px; }
-  }
-
-  /* ============================= PRINT ============================= */
-  @media print {
-    @page { size: A4; margin: 14mm 16mm; }
-    html, body { background: white; padding: 0; margin: 0; }
-    body::before, body::after { display: none; }
-    .page { box-shadow: none; width: 100%; padding: 0; }
-    a { color: inherit; text-decoration: none; }
-    .header { flex-direction: row; }
-    .header::before { left: -6mm; }
-    .profile-photo { width: 72pt; height: 72pt; }
-
-    /* botão portfólio no print: vira link de texto simples, alinhado com os outros contatos */
-    .portfolio-btn {
-      display: inline;
-      padding: 0;
-      margin: 0;
-      border: none;
-      background: transparent;
-      font-family: var(--font-sans2);
-      font-size: 9.5pt;
-      font-weight: 400;
-      letter-spacing: 0;
-      text-transform: none;
-      color: var(--ink-mid);
-    }
-    .portfolio-btn::before { display: none; }
-    .portfolio-btn .arrow { display: none; }
-    .portfolio-btn span:first-child::before {
-      content: " · ";
-      color: var(--ink-faded);
-    }
-    .portfolio-btn span:first-child::after {
-      content: ": joaoa21.github.io/portfolio";
-      color: var(--ink-mid);
-    }
-
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  }
-</style>
-<script src="https://analytics-hub-production-9abd.up.railway.app/t.js" data-key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf" defer></script>
-</head>
-
+<meta charset="utf-8"/>
+<link href="https://joaoa.com.br/cv/" rel="canonical"/><meta content="#f2f0eb" name="theme-color"/><meta content="pt_BR" property="og:locale"/><meta content="website" property="og:type"/><meta content="João Alberto" property="og:site_name"/><meta content="Currículo — João Alberto, Web Designer Pleno" property="og:title"/><meta content="Currículo profissional de João Alberto: design digital, UI, CRM, email marketing, gamificação, HTML/CSS e iGaming." property="og:description"/><meta content="https://joaoa.com.br/cv/" property="og:url"/><meta content="https://joaoa.com.br/assets/img/og-cover.webp" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Currículo — João Alberto, Web Designer Pleno — prévia" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="Currículo — João Alberto, Web Designer Pleno" name="twitter:title"/><meta content="Currículo profissional de João Alberto: design digital, UI, CRM, email marketing, gamificação, HTML/CSS e iGaming." name="twitter:description"/><meta content="https://joaoa.com.br/assets/img/og-cover.webp" name="twitter:image"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Currículo — João Alberto, Web Designer Pleno</title>
+<meta content="Currículo profissional de João Alberto: design digital, UI, CRM, email marketing, gamificação, HTML/CSS e iGaming." name="description"/>
+<meta content="noindex, nofollow" name="robots"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="./style.css" rel="stylesheet"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/></head>
 <body>
-
-<div class="page">
-
-  <!-- ==================== HEADER ==================== -->
-  <header class="header">
-
-    <!--
-      FOTO DE PERFIL
-      ==============
-      Troque o src abaixo pela sua foto:
-      — Hospede a imagem no mesmo repositório do CV (ex: foto.jpg na raiz)
-      — Use proporção 1:1 (quadrada) de pelo menos 300x300px
-      — Pode ser PNG, JPG ou WebP
-      — Se não quiser foto, é só apagar a tag <img> inteira
-    -->
-    <img class="profile-photo" src="assets/foto.png" alt="João Alberto"
-         onerror="this.style.display='none'">
-
-    <div class="header-text">
-      <h1 class="name">JOÃO ALBERTO<span class="accent">.</span></h1>
-      <div class="tagline">
-        Web Designer
-        <span class="dot">/</span>
-        iGaming
-        <span class="dot">/</span>
-        CRM
-        <span class="dot">/</span>
-        Gamificação
-      </div>
-
-      <div class="contact-row">
-        <span>Recife, PE</span>
-        <span class="sep">·</span>
-        <a href="mailto:joaoams6@gmail.com">joaoams6@gmail.com</a>
-        <span class="sep">·</span>
-        <a href="tel:+5581988780144">(81) 98878-0144</a>
-        <span class="sep">·</span>
-        <a href="https://linkedin.com/in/joaoa210" target="_blank" rel="noopener">linkedin.com/in/joaoa210</a>
-      </div>
-
-      <!--
-        BOTÃO PORTFÓLIO
-        Troque o href pelo link do portfólio quando estiver no ar.
-        Ex: https://joaoa21.github.io/portfolio
-      -->
-      <a class="portfolio-btn" href="../portfolio/" target="_blank" rel="noopener">
-        <span>Acessar Portfólio</span>
-        <span class="arrow">→</span>
-      </a>
-    </div>
-  </header>
-
-  <!-- ==================== HIGHLIGHTS ==================== -->
-  <section class="highlights">
-    <h2 class="highlights-title">Destaques</h2>
-    <ul class="highlights-list">
-      <li><strong>4 anos em design gráfico e digital</strong>, com 1 ano dedicado exclusivamente ao mercado de iGaming no setor de CRM da Jogo de Ouro.</li>
-      <li>Responsável pela <strong>Home Page</strong> da casa, com banners, pop-ups, cards de promoções, widgets, etc.</li>
-      <li>Responsável pelos <strong>emails marketing</strong> e toda a <strong>identidade visual de gamificação</strong> da operação: torneios, missões, loja de pontos, roleta, quiz, bolão, etc.</li>
-      <li><strong>Stack diária:</strong> Photoshop, Figma, HTML/CSS para emails com compatibilidade cross-client (Gmail, Outlook/VML), Smartico (CRM) e IA generativa aplicada a bets.</li>
-      <li>Background em liderança criativa: <strong>ex-Diretor de Criação</strong> em agência de publicidade, com gestão de equipe.</li>
-    </ul>
-  </section>
-
-  <!-- ==================== SOBRE ==================== -->
-  <section class="section">
-    <h2 class="section-title">Sobre</h2>
-    <p class="summary">
-      Web Designer focado em iGaming, responsável por toda a experiência visual do jogador na Jogo de Ouro, da home do site à gamificação, passando por emails marketing, pop-ups, inbox e banners promocionais.<br>
-      Atuo no setor de CRM, conectando design com ações de <strong>retenção, engajamento e ciclo de vida do jogador</strong>.<br>
-      Codifico emails em HTML/CSS com compatibilidade cross-client e uso IA generativa aplicada ao nicho de apostas no dia a dia.<br>
-      Antes da Jogo de Ouro, liderei equipes criativas em agências de publicidade, em projetos de branding, identidade visual e campanhas para diferentes segmentos.
-    </p>
-  </section>
-
-  <!-- ==================== EXPERIÊNCIA ==================== -->
-  <section class="section">
-    <h2 class="section-title">Experiência</h2>
-
-    <article class="job">
-      <div class="job-head">
-        <span class="job-role">Web Designer</span>
-        <span class="job-period">abr 2025 — atual</span>
-      </div>
-      <span class="job-company">Jogo de Ouro &nbsp; · &nbsp; iGaming &nbsp; · &nbsp; Setor de CRM</span>
-      <ul class="job-bullets">
-        <li><strong>Email marketing:</strong> criação de emails e inbox na plataforma Smartico (CRM), do layout no Photoshop ao HTML/CSS com compatibilidade cross-client (Gmail, Outlook/VML).</li>
-        <li><strong>Gamificação:</strong>  identidade visual completa dos elementos de gamificação: torneios, missões, loja de pontos, roleta, quiz, bolão, etc.</li>
-        <li><strong>Home do site:</strong> design de layout, banners, widgets, pop-ups, cards de promoção e elementos de destaque.</li>
-        <li><strong>Landing pages:</strong> produção pontual de páginas (afiliados, blog institucional).</li>
-        <li><strong>IA generativa:</strong> uso diário para composição de imagens e key visuals direcionados ao nicho de apostas, com pipeline próprio para garantir consistência visual.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <div class="job-head">
-        <span class="job-role">Diretor de Criação</span>
-        <span class="job-period">ago 2023 — abr 2025</span>
-      </div>
-      <span class="job-company">Agência Birow &nbsp; · &nbsp; Publicidade</span>
-      <ul class="job-bullets">
-        <li><strong>Liderança de equipe criativa</strong> em projetos, orientando equipes e garantindo qualidade visual e técnica.</li>
-        <li>Criação de <strong>marcas e identidades visuais completas</strong>, incluindo direção de arte e manuais.</li>
-        <li>Key visuals (KVs) para campanhas digitais e impressas.</li>
-        <li>Atendimento a clientes de múltiplos segmentos.</li>
-        <li>Fechamento de arquivos para produção gráfica profissional.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <div class="job-head">
-        <span class="job-role">Diretor de Arte</span>
-        <span class="job-period">set 2022 — jul 2023</span>
-      </div>
-      <span class="job-company">Abacaxi Comunicação &nbsp; · &nbsp; Publicidade</span>
-      <ul class="job-bullets">
-        <li>Criação de campanhas publicitárias para diferentes nichos.</li>
-        <li>Design de materiais offline (outdoor, panfleto, cardápio) e online (redes sociais, sites).</li>
-        <li>Desenvolvimento de identidades visuais e materiais institucionais.</li>
-      </ul>
-    </article>
-
-  </section>
-
-  <!-- ==================== PROJETOS ==================== -->
-  <section class="section">
-    <h2 class="section-title">Projetos</h2>
-
-    <article class="project">
-      <div class="project-head">
-        <span class="project-name">Kompres</span>
-        <span class="project-kind">App de compressão de imagens no browser</span>
-      </div>
-      <p class="project-desc">
-        Ferramenta interna criada para resolver o fluxo diário de conversão de PNG para WebP na Jogo de Ouro. Interface drag-and-drop, saída em WebP/PNG/JPEG e download em lote via ZIP. Usado por mim e pela equipe para acelerar a entrega de banners.
-      </p>
-      <span class="project-stack">Stack — HTML · CSS · JavaScript</span>
-    </article>
-
-    <article class="project">
-      <div class="project-head">
-        <span class="project-name">Email Generator</span>
-        <span class="project-kind">Gerador de HTML de email marketing</span>
-      </div>
-      <p class="project-desc">
-        Ferramenta que automatiza a criação de emails HTML compatíveis com Gmail e Outlook/VML. Conta com auto-save, cópia direta para o clipboard via ClipboardItem API e preview. Criado para escalar a entrega do time.
-      </p>
-      <span class="project-stack">Stack — HTML · CSS · JavaScript</span>
-    </article>
-
-    <article class="project">
-      <div class="project-head">
-        <span class="project-name">Widget Múltiplas Populares</span>
-        <span class="project-kind">Componente de parlay para casa de apostas</span>
-      </div>
-      <p class="project-desc">
-        Widget de múltiplas (parlay) de apostas esportivas desenvolvido para a Jogo de Ouro, com cards de jogos, deep links para a casa e styling alinhado à identidade da marca. Integrado ao site principal.
-      </p>
-      <span class="project-stack">Stack — HTML · CSS · JavaScript</span>
-    </article>
-
-  </section>
-
-  <!-- ==================== COMPETÊNCIAS ==================== -->
-  <section class="section">
-    <h2 class="section-title">Competências</h2>
-    <ul class="skills-list">
-      <li>
-        <span class="cat">iGaming / CRM</span>
-        Smartico, Email Marketing, Gamificação, Inbox, Pop-ups, Landing Pages, Banners Promocionais
-      </li>
-      <li>
-        <span class="cat">Design</span>
-        Photoshop, Illustrator, Figma, UI, Branding, Identidade Visual, Key Visuals, Fechamento de Arquivos
-      </li>
-      <li>
-        <span class="cat">Código</span>
-        HTML5, CSS3, JavaScript (aplicado a email marketing e ajustes de site)
-      </li>
-      <li>
-        <span class="cat">IA Generativa</span>
-        Composição de imagens e key visuals aplicados a casas de apostas
-      </li>
-    </ul>
-  </section>
-
-  <!-- ==================== FORMAÇÃO + IDIOMAS ==================== -->
-  <section class="section">
-    <div class="bottom-grid">
-      <div>
-        <h2 class="section-title">Formação</h2>
-        <ul class="edu-list">
-          <li>
-            <span class="edu-school">UniFBV</span>
-            <span class="edu-course">Sistemas de Informação <span class="edu-status">— Cursando</span></span>
-          </li>
-          <li>
-            <span class="edu-school">Descomplica</span>
-            <span class="edu-course">Marketing <span class="edu-status">— Concluído</span></span>
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="section-title">Idiomas</h2>
-        <ul class="lang-list">
-          <li>
-            <span class="lang-name">Português</span>
-            <span class="lang-level">Nativo</span>
-          </li>
-          <li>
-            <span class="lang-name">Inglês</span>
-            <span class="lang-level">Intermediário</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
+<a class="skip-link" href="#curriculo">Pular para o currículo</a>
+<nav aria-label="Ações do currículo" class="cv-toolbar">
+<a aria-label="Voltar para o site de João Alberto" class="toolbar-brand" href="/">João Alberto</a>
+<div class="toolbar-actions">
+<a class="toolbar-portfolio" href="/projetos/" rel="noopener" target="_blank">
+<span class="toolbar-portfolio-text">Portfólio</span>
+<span aria-hidden="true" class="toolbar-portfolio-icon">
+<i class="fa-solid fa-arrow-right"></i>
+</span>
+</a>
+<button class="toolbar-print" id="printCv" type="button">
+        Imprimir / PDF
+      </button>
 </div>
-
+</nav>
+<main class="cv-page" id="curriculo">
+<header class="cv-header" data-reveal="">
+<div class="header-meta mono">
+<span>Currículo profissional</span>
+<span>Recife — PE / BR</span>
+</div>
+<div class="identity">
+<img alt="Foto de João Alberto" class="profile-photo" decoding="async" height="300" onerror="this.hidden = true" src="/assets/img/joao.png" width="300"/>
+<div class="identity-copy">
+<p class="role mono">Web Designer Pleno</p>
+<h1>João Alberto</h1>
+<p class="positioning">UI, CRM, email marketing e gamificação para produtos digitais e iGaming.</p>
+</div>
+</div>
+<div aria-label="Informações de contato" class="contact-grid">
+<a href="mailto:joaoams6@gmail.com" target="_blank">
+<span class="contact-label mono">E-mail</span>
+<span>joaoams6@gmail.com</span>
+</a>
+<a href="https://wa.me/5581988780144" target="_blank">
+<span class="contact-label mono">Telefone</span>
+<span>(81) 98878-0144</span>
+</a>
+<a href="https://linkedin.com/in/joaoa210" rel="noopener" target="_blank">
+<span class="contact-label mono">LinkedIn</span>
+<span>linkedin.com/in/joaoa210</span>
+</a>
+<a href="https://joaoa.com.br/" rel="noopener" target="_blank">
+<span class="contact-label mono">Site</span>
+<span>joaoa.com.br</span>
+</a>
+</div>
+</header>
+<section aria-labelledby="resumo-title" class="summary-card" data-reveal="">
+<div class="section-heading compact">
+<span class="section-index mono">00</span>
+<h2 id="resumo-title">Resumo profissional</h2>
+<span aria-hidden="true" class="section-line"></span>
+</div>
+<p>
+        Web Designer Pleno com <strong>mais de 5 anos de experiência em design gráfico e digital</strong>,
+        atuando em UI, CRM, email marketing, gamificação e campanhas para iGaming. Experiência com
+        Smartico, Adobe Photoshop, Figma e desenvolvimento de emails em HTML/CSS compatíveis com
+        Gmail e Outlook/VML. Background em liderança criativa, branding e direção de arte.
+      </p>
+<ul class="summary-points">
+<li>Atuação conectando design a <strong>retenção, engajamento e ciclo de vida do jogador</strong>.</li>
+<li>Criação de interfaces, landing pages, banners, pop-ups, inbox e experiências de gamificação.</li>
+<li>Aplicação de IA generativa em imagens e key visuals com foco em consistência visual.</li>
+</ul>
+</section>
+<section aria-labelledby="experiencia-title" class="cv-section" data-reveal="">
+<div class="section-heading">
+<span class="section-index mono">01</span>
+<h2 id="experiencia-title">Experiência profissional</h2>
+<span aria-hidden="true" class="section-line"></span>
+</div>
+<div class="timeline">
+<article class="timeline-item">
+<div aria-hidden="true" class="timeline-marker"></div>
+<div class="job-heading">
+<div>
+<h3>Web Designer</h3>
+<p class="company">Jogo de Ouro · iGaming · CRM</p>
+</div>
+<p class="period mono">Abr 2025 — atual</p>
+</div>
+<ul class="detail-list">
+<li><strong>Email marketing e CRM:</strong> criação visual e desenvolvimento de campanhas e inbox na Smartico, do layout ao HTML/CSS, com compatibilidade entre Gmail e Outlook/VML.</li>
+<li><strong>Gamificação:</strong> desenvolvimento da identidade visual de torneios, missões, loja de pontos, roleta, quiz, bolão e outras mecânicas de engajamento.</li>
+<li><strong>Experiência do site:</strong> design de banners, widgets, pop-ups, cards promocionais e áreas de destaque da home.</li>
+<li><strong>Landing pages:</strong> criação de páginas institucionais, afiliados e blog, com foco em consistência visual e responsividade.</li>
+<li><strong>IA generativa:</strong> produção de imagens e key visuals para iGaming com fluxos voltados à consistência visual.</li>
+</ul>
+</article>
+<article class="timeline-item">
+<div aria-hidden="true" class="timeline-marker"></div>
+<div class="job-heading">
+<div>
+<h3>Diretor de Criação</h3>
+<p class="company">Agência Birow · Publicidade</p>
+</div>
+<p class="period mono">Ago 2023 — abr 2025</p>
+</div>
+<ul class="detail-list">
+<li>Liderança e orientação da equipe criativa, acompanhando qualidade visual, direção de arte e execução técnica.</li>
+<li>Desenvolvimento de marcas, identidades visuais, manuais de marca e key visuals.</li>
+<li>Planejamento e desdobramento de campanhas digitais e impressas para clientes de diferentes segmentos.</li>
+<li>Preparação e fechamento de arquivos para produção gráfica profissional.</li>
+</ul>
+</article>
+<article class="timeline-item">
+<div aria-hidden="true" class="timeline-marker"></div>
+<div class="job-heading">
+<div>
+<h3>Diretor de Arte</h3>
+<p class="company">Abacaxi Comunicação · Publicidade</p>
+</div>
+<p class="period mono">Set 2022 — jul 2023</p>
+</div>
+<ul class="detail-list">
+<li>Criação de campanhas publicitárias e peças digitais para clientes de diferentes segmentos.</li>
+<li>Desenvolvimento de materiais online e offline, incluindo redes sociais, sites, outdoors, panfletos e cardápios.</li>
+<li>Criação de identidades visuais e materiais institucionais.</li>
+</ul>
+</article>
+</div>
+</section>
+<section aria-labelledby="competencias-title" class="cv-section" data-reveal="">
+<div class="section-heading">
+<span class="section-index mono">02</span>
+<h2 id="competencias-title">Competências técnicas</h2>
+<span aria-hidden="true" class="section-line"></span>
+</div>
+<div class="skills-grid">
+<article class="skill-group">
+<h3 class="mono">Design e UI</h3>
+<p>Adobe Photoshop, Adobe Illustrator, Figma, UI Design, Web Design, landing pages, design responsivo, branding, identidade visual, direção de arte e key visuals.</p>
+</article>
+<article class="skill-group">
+<h3 class="mono">CRM e iGaming</h3>
+<p>Smartico, CRM, email marketing, inbox, pop-ups, gamificação, torneios, missões, retenção e ciclo de vida do jogador.</p>
+</article>
+<article class="skill-group">
+<h3 class="mono">Web e email</h3>
+<p>HTML5, CSS3, JavaScript, HTML Email, Outlook VML, compatibilidade cross-client e interfaces responsivas.</p>
+</article>
+<article class="skill-group">
+<h3 class="mono">IA generativa</h3>
+<p>Geração e composição de imagens, consistência visual, direção de key visuals e fluxos de produção para campanhas.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="formacao-title" class="cv-section bottom-section" data-reveal="">
+<div class="section-heading">
+<span class="section-index mono">03</span>
+<h2 id="formacao-title">Formação e idiomas</h2>
+<span aria-hidden="true" class="section-line"></span>
+</div>
+<div class="bottom-grid">
+<div>
+<h3 class="subsection-title mono">Formação</h3>
+<ul class="education-list">
+<li>
+<strong>Sistemas de Informação</strong>
+<span>UniFBV</span>
+<small class="mono">Cursando</small>
+</li>
+<li>
+<strong>Marketing</strong>
+<span>Descomplica</span>
+<small class="mono">Concluído</small>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="subsection-title mono">Idiomas</h3>
+<ul class="language-list">
+<li><span>Português</span><small class="mono">Nativo</small></li>
+<li><span>Inglês</span><small class="mono">Intermediário</small></li>
+</ul>
+</div>
+</div>
+</section>
+<footer class="cv-footer">
+<p>João Alberto — Web Designer Pleno</p>
+<p class="mono">joaoa.com.br / 2026</p>
+</footer>
+</main>
+<section aria-label="Currículo de João Alberto para impressão e PDF" class="ats-print">
+<header class="ats-header">
+<h1>João Alberto</h1>
+<p class="ats-role">Web Designer Pleno | UI, CRM, Email Marketing e Gamificação para iGaming</p>
+<p class="ats-contact">Recife, PE | joaoams6@gmail.com | (81) 98878-0144 | linkedin.com/in/joaoa210 | joaoa.com.br</p>
+</header>
+<section class="ats-section">
+<h2>Resumo profissional</h2>
+<p>Web Designer Pleno com mais de 5 anos de experiência em design gráfico e digital, atuando em UI, CRM, email marketing, gamificação e campanhas para iGaming. Experiência com Smartico, Adobe Photoshop, Figma e desenvolvimento de emails em HTML/CSS compatíveis com Gmail e Outlook/VML. Background em liderança criativa, branding e direção de arte.</p>
+</section>
+<section class="ats-section">
+<h2>Experiência profissional</h2>
+<article class="ats-job">
+<div class="ats-job-head">
+<h3>Web Designer | Jogo de Ouro - iGaming / CRM</h3>
+<span>Abr 2025 - Atual</span>
+</div>
+<ul>
+<li>Criação visual e desenvolvimento de campanhas de email marketing e inbox na Smartico, do layout ao HTML/CSS, com compatibilidade entre Gmail e Outlook/VML.</li>
+<li>Desenvolvimento da identidade visual de torneios, missões, loja de pontos, roleta, quiz, bolão e outras mecânicas de gamificação.</li>
+<li>Design de banners, widgets, pop-ups, cards promocionais e áreas de destaque da home.</li>
+<li>Criação de landing pages e páginas institucionais com foco em consistência visual e responsividade.</li>
+<li>Aplicação de IA generativa na produção de imagens e key visuals para iGaming.</li>
+</ul>
+</article>
+<article class="ats-job">
+<div class="ats-job-head">
+<h3>Diretor de Criação | Agência Birow - Publicidade</h3>
+<span>Ago 2023 - Abr 2025</span>
+</div>
+<ul>
+<li>Liderança e orientação da equipe criativa, acompanhando qualidade visual, direção de arte e execução técnica.</li>
+<li>Desenvolvimento de marcas, identidades visuais, manuais de marca e key visuals.</li>
+<li>Planejamento e desdobramento de campanhas digitais e impressas para clientes de diferentes segmentos.</li>
+<li>Preparação e fechamento de arquivos para produção gráfica profissional.</li>
+</ul>
+</article>
+<article class="ats-job">
+<div class="ats-job-head">
+<h3>Diretor de Arte | Abacaxi Comunicação - Publicidade</h3>
+<span>Set 2022 - Jul 2023</span>
+</div>
+<ul>
+<li>Criação de campanhas publicitárias e peças digitais para clientes de diferentes segmentos.</li>
+<li>Desenvolvimento de materiais online e offline, incluindo redes sociais, sites, outdoors, panfletos e cardápios.</li>
+<li>Criação de identidades visuais e materiais institucionais.</li>
+</ul>
+</article>
+</section>
+<section class="ats-section">
+<h2>Competências técnicas</h2>
+<p><strong>Design e UI:</strong> Adobe Photoshop, Adobe Illustrator, Figma, UI Design, Web Design, landing pages, design responsivo, branding, identidade visual, direção de arte e key visuals.</p>
+<p><strong>CRM e iGaming:</strong> Smartico, CRM, email marketing, inbox, pop-ups, gamificação, torneios, missões, retenção e ciclo de vida do jogador.</p>
+<p><strong>Web e email:</strong> HTML5, CSS3, JavaScript, HTML Email, Outlook VML e compatibilidade cross-client.</p>
+<p><strong>IA generativa:</strong> geração e composição de imagens, consistência visual e direção de key visuals.</p>
+</section>
+<section class="ats-section ats-bottom">
+<div>
+<h2>Formação</h2>
+<p><strong>Sistemas de Informação</strong> - UniFBV | Cursando</p>
+<p><strong>Marketing</strong> - Descomplica | Concluído</p>
+</div>
+<div>
+<h2>Idiomas</h2>
+<p>Português - Nativo</p>
+<p>Inglês - Intermediário</p>
+</div>
+</section>
+</section>
 <script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script>
-
-<script src="/cv/script.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>

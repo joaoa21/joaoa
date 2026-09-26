@@ -1,356 +1,547 @@
 /* ============================================================
-   PALETA + FONTES
-============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap');
+   JOÃƒO ALBERTO â€” LINKS Â· PRETO Ã— OFF-WHITE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 :root {
-	/* texto */
-	--text-color: #e8e4dc;
-	--text-color2: rgba(232, 228, 220, 0.55);
+  --ink: #0f0f0f;
+  --paper: #f2f0eb;
 
-	/* superfícies (cards, switch) */
-	--stroke-color: rgba(255, 255, 255, 0.1);
-	--surface-color: rgba(255, 255, 255, 0.05);
-	--surface-color-hover: rgba(0, 212, 255, 0.18);
-	--social-link-hover: #00d4ff;
+  --bg: var(--ink);
+  --fg: var(--paper);
+  --muted: rgba(242, 240, 235, 0.5);
+  --soft: rgba(242, 240, 235, 0.72);
+  --line: rgba(242, 240, 235, 0.14);
+  --chip: rgba(242, 240, 235, 0.06);
 
-	/* switch */
-	--switch-bg: url(./assets/moon-stars.svg);
+  --font-sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "DM Mono", "JetBrains Mono", monospace;
+  --r: 12px;
 
-	/* background dinâmico */
-	--bg-base: #080a0f;
-	--blob-1: rgba(0, 212, 255, 0.20);
-	--blob-2: rgba(255, 107, 53, 0.10);
-	--blob-3: rgba(0, 212, 255, 0.10);
+  color-scheme: dark;
 }
 
-.light {
-	--text-color: #14181f;
-	--text-color2: rgba(20, 24, 31, 0.55);
-	--stroke-color: rgba(0, 0, 0, 0.1);
-	--surface-color: rgba(255, 255, 255, 0.45);
-	--surface-color-hover: rgba(0, 169, 204, 0.18);
-	--social-link-hover: #007d96;
-	--switch-bg: url(./assets/sun.svg);
+html.light {
+  --bg: var(--paper);
+  --fg: #121212;
+  --muted: rgba(18, 18, 18, 0.48);
+  --soft: rgba(18, 18, 18, 0.7);
+  --line: rgba(18, 18, 18, 0.14);
+  --chip: rgba(18, 18, 18, 0.05);
 
-	--bg-base: #f7f3ea;
-	--blob-1: rgba(0, 169, 204, 0.28);
-	--blob-2: rgba(255, 107, 53, 0.16);
-	--blob-3: rgba(0, 169, 204, 0.14);
+  color-scheme: light;
 }
 
-.disabled {
-	display: none;
+html {
+  min-width: 320px;
+  background: var(--bg);
 }
 
-/* ============================================================
-   BODY + BACKGROUND DINÂMICO
-============================================================ */
 body {
-	background-color: var(--bg-base);
-	min-height: 100dvh;
-	position: relative;
-	overflow-x: hidden;
-	transition: background-color 0.6s ease;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  transition:
+    background-color 0.7s ease,
+    color 0.7s ease;
 }
 
-/* primeira camada de blobs — ciano + coral */
+/* grain sutil */
 body::before {
-	content: '';
-	position: fixed;
-	inset: -10%;
-	z-index: 0;
-	pointer-events: none;
-	background:
-		radial-gradient(ellipse 70% 55% at 20% 30%, var(--blob-1) 0%, transparent 60%),
-		radial-gradient(ellipse 60% 50% at 80% 70%, var(--blob-2) 0%, transparent 65%);
-	animation: blobDrift1 70s ease-in-out infinite;
-	will-change: transform;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px;
 }
 
-/* segunda camada — em fase contrária */
-body::after {
-	content: '';
-	position: fixed;
-	inset: -10%;
-	z-index: 0;
-	pointer-events: none;
-	background:
-		radial-gradient(ellipse 55% 45% at 50% 90%, var(--blob-3) 0%, transparent 60%),
-		radial-gradient(ellipse 45% 35% at 70% 20%, var(--blob-1) 0%, transparent 55%);
-	animation: blobDrift2 90s ease-in-out infinite;
-	will-change: transform;
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-@keyframes blobDrift1 {
-	0%, 100% { transform: translate(0, 0) scale(1); }
-	33%      { transform: translate(5%, -3%) scale(1.04); }
-	66%      { transform: translate(-3%, 4%) scale(0.97); }
+::selection {
+  background: var(--fg);
+  color: var(--bg);
 }
 
-@keyframes blobDrift2 {
-	0%, 100% { transform: translate(0, 0) scale(1); }
-	33%      { transform: translate(-4%, 3%) scale(0.96); }
-	66%      { transform: translate(6%, -3%) scale(1.05); }
+.skip-link {
+  position: fixed;
+  top: 0.8rem;
+  left: 50%;
+  z-index: 20;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transform: translate(-50%, calc(-100% - 2rem));
+  transition: transform 0.25s ease;
 }
 
-body * {
-	font-family: "Outfit", "Inter", sans-serif;
-	color: var(--text-color);
-	text-decoration: none;
+.skip-link:focus {
+  transform: translate(-50%, 0);
 }
 
-/* ============================================================
-   CONTAINER (precisa estar acima dos blobs)
-============================================================ */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
+}
+
+/* ============ 3D ============ */
+#stage {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+
+/* ============ ESTADOS INICIAIS DAS ANIMAÇÕES ============ */
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .profile:not(.is-visible),
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .bio:not(.is-visible),
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .theme-toggle:not(.is-visible),
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .link-section:not(.is-visible),
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .socials:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .hud-fixed:not(.is-visible) {
+  opacity: 0;
+}
+
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .profile:not(.is-visible),
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .bio:not(.is-visible),
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .theme-toggle:not(.is-visible),
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .link-section:not(.is-visible),
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .socials:not(.is-visible),
+html.links-motion:not(.reduce-motion):not(.motion-fallback) .hud-fixed:not(.is-visible) {
+  will-change: opacity, transform;
+}
+
+/* ============ HUD ============ */
+.hud {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  pointer-events: none;
+  transition: color 0.7s ease;
+}
+
+.hud-fixed {
+  position: fixed;
+  right: 0;
+  bottom: 1.2rem;
+  left: 0;
+  z-index: 4;
+  padding-inline: 1.4rem;
+}
+
+.hud-flow {
+  display: none;
+}
+
+/* ============ LAYOUT ============ */
 #container {
-	position: relative;
-	z-index: 1;
-
-	width: 100%;
-	max-width: 580px;
-	margin: 56px auto 0px;
-	padding: 0 24px;
+  position: relative;
+  z-index: 3;
+  width: min(100%, 30rem);
+  margin-inline: auto;
+  padding: clamp(2rem, 5vh, 3.5rem) 1.4rem 3rem;
 }
 
-/* ============================================================
-   PROFILE
-============================================================ */
-#profile {
-	text-align: center;
-	padding: 24px;
+.hero-space {
+  height: clamp(260px, 34vh, 360px);
 }
 
-#profile img {
-	width: 160px;
-	border-radius: 50%;
-  	object-fit: cover;
+/* ============ PERFIL ============ */
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-#profile p {
-	font-weight: 500;
-	line-height: 24px;
-	margin-top: 40px;
+.avatar {
+  display: block;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  object-fit: cover;
+  transition: border-color 0.7s ease;
 }
 
-.meu-nome p {
-	font-size: 50px;
-	font-family: "Bebas Neue", sans-serif;
+.who h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-.meu-nome span {
-	font-size: 85px;
-	font-family: "Bebas Neue", sans-serif;
-	color: #00d4ff;
+.who .mono {
+  margin-top: 0.3rem;
+  color: var(--muted);
+  transition: color 0.7s ease;
 }
 
-/* ============================================================
-   SWITCH
-============================================================ */
-#switch {
-	position: relative;
-	width: 64px;
-	height: 24px;
-	margin: 4px auto;
-	padding: 20px 0 45px;
+/* ============ BIO ============ */
+.bio {
+  margin-top: 1.6rem;
+  color: var(--soft);
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: center;
+  transition: color 0.7s ease;
 }
 
-#switch button {
-	width: 32px;
-	height: 32px;
-	background: white var(--switch-bg) no-repeat center;
-	border: 0;
-	border-radius: 50%;
-	cursor: pointer;
-
-	position: absolute;
-	top: 50%;
-	left: 0;
-	z-index: 1;
-	transform: translateY(-50%);
-
-	animation: slide-out .3s;
+/* ============ TEMA ============ */
+.theme-toggle {
+  position: relative;
+  display: block;
+  width: 76px;
+  height: 40px;
+  margin: 1.6rem auto 0;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--chip);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-#switch button:hover {
-	outline: 8px solid var(--surface-color-hover);
+.theme-toggle:is(:hover, :focus-visible) {
+  border-color: var(--muted);
 }
 
-.light #switch button {
-	animation: slide-in .3s forwards;
+.theme-toggle .knob {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 0.8rem;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-#switch span {
-	display: block;
-	width: 64px;
-	height: 24px;
-	background-color: var(--surface-color);
-	border: 1px solid var(--stroke-color);
-	backdrop-filter: blur(4px);
-	-webkit-backdrop-filter: blur(4px);
-	border-radius: 9999px;
+html.light .theme-toggle .knob {
+  transform: translateX(36px);
 }
 
-/* ============================================================
-   BIO
-============================================================ */
-#bio {
-	text-align: center;
-	padding: 10px 0px 20px;
-	font-weight: 300;
-	line-height: 28px;
+/* ============ DIVISOR DE SEÃ‡ÃƒO ============ */
+.link-section {
+  min-width: 0;
 }
 
-/* ============================================================
-   LINKS
-============================================================ */
-#links {
-	padding: 20px 0px;
-	color: var(--text-color2);
-	font-weight: 300;
+.sec {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 2.4rem 0 1rem;
+  color: var(--muted);
+  font-weight: 400;
+  transition: color 0.7s ease;
 }
 
-.link-linha {
-	display: flex;
-	gap: 0px;
-	align-items: center;
-	justify-content: space-between;
+.sec i {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  transition: background-color 0.7s ease;
 }
 
-.link-linha.baixo {
-	margin-top: 30px;
+/* ============ LINKS ============ */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  list-style: none;
 }
 
-#linha {
-    width: 60%;
-    height: 1px;
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--social-link-hover) 30%,
-        var(--social-link-hover) 70%,
-        transparent
-    );
-    opacity: 0.6;
+.links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 58px;
+  padding: 1.05rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--chip);
+  color: var(--fg);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-ul {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
+.links a > span {
+  min-width: 0;
 }
 
-ul li a {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 16px 24px;
-	background: var(--surface-color);
-	border: 1px solid var(--stroke-color);
-	border-radius: 8px;
-	backdrop-filter: blur(4px);
-	-webkit-backdrop-filter: blur(4px);
-	font-weight: 500;
-	transition: all .5s;
-
-	&.tool {
-		flex-direction: column;
-
-		span {
-			font-size: 13px;
-			margin-top: 5px;
-			font-style: italic;
-			color: #7d7d7d;
-		}
-	}
+.links a b {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-weight: 500;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.3s ease;
 }
 
-ul li a:hover {
-	background: var(--surface-color-hover);
-	border: 1px solid var(--social-link-hover);
-	transform: translateY(-4px);
+.links a:is(:hover, :focus-visible) {
+  border-color: var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+  transform: translateY(-2px);
 }
 
-/* ============================================================
-   SOCIAL
-============================================================ */
-#social {
-	display: flex;
-	gap: 50px;
-	padding: 40px 0;
-	font-size: 26px;
-	align-items: center;
-	justify-content: center;
+.links a:is(:hover, :focus-visible) b {
+  color: var(--bg);
+  transform: translate(2px, -2px);
 }
 
-.fa-brands, .fab {
-	color: var(--text-color2);
-	transition: all .5s;
+.links a.tool span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
-.fa-brands:hover, .fab:hover {
-	color: var(--social-link-hover);
-	transform: translateY(-4px);
+.links a.tool small {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.35;
+  transition: color 0.3s ease;
 }
 
-ul li a.coming-soon {
-    gap: 10px;
-    cursor: not-allowed;
-    opacity: 0.5;
-    pointer-events: none;
+.links a.tool:is(:hover, :focus-visible) small {
+  color: var(--bg);
+  opacity: 0.7;
 }
 
-ul li a.coming-soon .badge {
-    font-size: 10px;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--text-color2);
-    text-transform: lowercase;
-    letter-spacing: 0.02em;
-    padding-left: 10px;
-    border-left: 1px solid var(--stroke-color);
+/* ============ REDES SOCIAIS ============ */
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 3.5rem;
+
+  /* reserva espaço para os tooltips sem mover o conteúdo */
+  padding-bottom: 2.8rem;
 }
 
-ul li a.coming-soon:hover {
-    background: var(--surface-color);
-    border: 1px solid var(--stroke-color);
-    transform: none;
+.social-item {
+  position: relative;
 }
 
-footer {
-	padding: 24px 0;
-	text-align: center;
+.social-item a {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--chip);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+
+  color: var(--soft);
+  text-decoration: none;
+  font-size: 1.3rem;
+
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-footer img {
-	opacity: 80%;
+/* preenchimento que sobe */
+.social-fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 0;
+
+  background: var(--fg);
+  z-index: 0;
+
+  transition: height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ============================================================
-   ANIMAÇÕES DO SWITCH (mantidas)
-============================================================ */
-@keyframes slide-in {
-	from { left: 0; }
-	to   { left: 50%; }
+.social-item a i {
+  position: relative;
+  z-index: 1;
+
+  transition:
+    color 0.3s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@keyframes slide-out {
-	from { left: 50%; }
-	to   { left: 0; }
+/* tooltip */
+.social-tooltip {
+  position: absolute;
+  top: calc(100% + 0.7rem);
+  left: 50%;
+  z-index: 5;
+
+  transform: translate(-50%, -0.4rem);
+
+  padding: 0.45rem 0.7rem;
+
+  background: var(--fg);
+  color: var(--bg);
+  border-radius: 7px;
+
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.25s ease,
+    transform .55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ============================================================
-   ACESSIBILIDADE: respeitar quem prefere menos movimento
-============================================================ */
+/* hover e navegação pelo teclado */
+.social-item:is(:hover, :focus-within) a {
+  border-color: var(--fg);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.social-item:is(:hover, :focus-within) .social-fill {
+  height: 100%;
+}
+
+.social-item:is(:hover, :focus-within) a i {
+  color: var(--bg);
+  transform: scale(1.08);
+}
+
+.social-item:is(:hover, :focus-within) .social-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.social-item a:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .hero-space {
+    height: clamp(150px, 20vh, 200px);
+  }
+
+  #container {
+    padding-bottom: 1rem;
+  }
+
+  .hud-fixed {
+    display: none;
+  }
+
+  .hud-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 3.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  #container {
+    padding-inline: 1rem;
+  }
+
+  .profile {
+    gap: 0.8rem;
+  }
+
+  .who h1 {
+    font-size: 1.22rem;
+  }
+
+  .links a {
+    padding-inline: 1rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-	body::before, body::after {
-		animation: none;
-	}
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

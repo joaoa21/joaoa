@@ -1,43 +1,109 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página não encontrada — João Alberto</title>
+<meta charset="utf-8"/>
+<script>
+  (() => {
+    const root = document.documentElement;
+    root.classList.add('js', 'error-motion');
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      root.classList.add('reduce-motion');
+    }
 
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <script src="https://analytics-hub-production-9abd.up.railway.app/t.js" data-key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf" defer></script>
-</head>
-
-<body>
-  <main class="error-page">
-    <a class="nav-logo error-logo" href="/">
-      João Alberto<span class="accent">.</span>
-    </a>
-
-    <section class="error-content">
-      <span class="error-code">// 404</span>
-
-      <h1 class="error-title">
-        <span>Página</span>
-        <span>Não encontrada<span class="accent">.</span></span>
-      </h1>
-
-      <p>
+    window.__errorMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 1800);
+  })();
+</script>
+<link href="https://joaoa.com.br/404.html" rel="canonical"/><meta content="#0f0f0f" name="theme-color"/><meta content="pt_BR" property="og:locale"/><meta content="website" property="og:type"/><meta content="João Alberto" property="og:site_name"/><meta content="Página não encontrada — João Alberto" property="og:title"/><meta content="O endereço acessado não existe ou foi movido. Volte ao portfólio de João Alberto." property="og:description"/><meta content="https://joaoa.com.br/404.html" property="og:url"/><meta content="https://joaoa.com.br/assets/img/og-cover.webp" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Página não encontrada — João Alberto — prévia" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="Página não encontrada — João Alberto" name="twitter:title"/><meta content="O endereço acessado não existe ou foi movido. Volte ao portfólio de João Alberto." name="twitter:description"/><meta content="https://joaoa.com.br/assets/img/og-cover.webp" name="twitter:image"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Página não encontrada - João Alberto</title>
+<meta content="O endereço acessado não existe ou foi movido. Volte ao portfólio de João Alberto." name="description"/>
+<meta content="noindex, nofollow" name="robots"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=DM+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="./error.css" rel="stylesheet"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+<link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/></head>
+<body data-error="404">
+<canvas aria-hidden="true" id="stage"></canvas>
+<a aria-label="Ir para a página inicial de João Alberto" class="brand" href="/">
+    João Alberto
+  </a>
+<div aria-hidden="true" class="hud mono">
+<span>REC — PE / BR</span>
+<span>ERRO 404</span>
+</div>
+<main class="error-shell">
+<div aria-hidden="true" class="error-visual">
+<span class="error-code-backdrop">404</span>
+<div class="retro-tv">
+<div class="tv-antenna">
+<span class="antenna-rod antenna-rod-left"></span>
+<span class="antenna-rod antenna-rod-right"></span>
+<span class="antenna-tip antenna-tip-left"></span>
+<span class="antenna-tip antenna-tip-right"></span>
+<span class="antenna-base"></span>
+</div>
+<div class="tv-body">
+<div class="tv-screen-frame">
+<div class="tv-screen">
+<span class="tv-screen-label">SIGNAL LOST</span>
+</div>
+</div>
+<div class="tv-controls">
+<span class="tv-dial tv-dial-one"></span>
+<span class="tv-dial tv-dial-two"></span>
+<div class="tv-speaker-dots">
+<span class="tv-speaker-dot"></span>
+<span class="tv-speaker-dot"></span>
+<span class="tv-speaker-dot"></span>
+</div>
+<div class="tv-speaker-lines">
+<i></i><i></i><i></i>
+</div>
+</div>
+</div>
+<div class="tv-feet">
+<span></span>
+<span></span>
+</div>
+<span class="tv-ground"></span>
+</div>
+</div>
+<div class="error-copy">
+<span class="error-label mono">// ERRO 404</span>
+<h1>
+        Página não<br/>
+        encontrada<span class="dot">.</span>
+</h1>
+<p class="error-description">
         O caminho que você tentou acessar não existe ou foi movido.
       </p>
-
-      <div class="error-actions">
-        <a href="/" class="btn-primary">
-          Voltar para início
-        </a>
-      </div>
-    </section>
-  </main>
+<div class="actions">
+<a class="btn" href="/">
+<span>Voltar ao início</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</main>
+<noscript>
+<p class="noscript-message">
+      O JavaScript está desativado, mas você ainda pode usar o botão para voltar ao início.
+    </p>
+</noscript>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="./error.js" type="module"></script>
 </body>
 </html>
