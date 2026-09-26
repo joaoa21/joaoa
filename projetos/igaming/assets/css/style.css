@@ -1165,3 +1165,17 @@
     margin-inline: auto;
   }
 }
+
+/* Shared visual direction with the v2 portfolio. */
+:root { --bg:#0f0f0f; --surface:#171717; --surface-2:#202020; --surface-3:#262626; --text:#f2f0eb; --text-soft:rgba(242,240,235,.72); --muted:#aaa89f; --accent:#d6d2c8; --accent-deep:#aaa79e; --accent2:#f2f0eb; --font-display:'Instrument Sans',sans-serif; --font-sans:'Instrument Sans',sans-serif; }
+body::after { display:none; } .category-title,.s-title { font-weight:600; letter-spacing:-.045em; }
+.portfolio-back { display:block; margin:0 auto 1.5rem; color:var(--text-soft); font-size:.8rem; text-decoration:none; }
+html { scroll-padding-top:6rem; } .nav-links a { min-height:44px; display:inline-flex; align-items:center; }
+.nav-mobile-toggle { min-width:44px; min-height:44px; } :focus-visible { outline:2px solid #f2f0eb; outline-offset:5px; }
+@media(prefers-reduced-motion:reduce){ .reveal{opacity:1!important;transform:none!important} *,*::before,*::after{animation:none!important;transition:none!important} }
+
+@media(max-width:900px){.category-title{font-size:clamp(3rem,13vw,6rem)}.contact-title{font-size:clamp(2.2rem,7vw,4.5rem);overflow-wrap:anywhere}.s-title{font-size:clamp(1.7rem,6vw,2.8rem);overflow-wrap:anywhere}.s-head-left{min-width:0}}
+
+#contato::before { font-size:clamp(3rem,17vw,16rem); letter-spacing:0; }
+
+.skip-link{position:fixed;left:1rem;top:-5rem;z-index:2000;padding:1rem;background:#f2f0eb;color:#111}.skip-link:focus{top:1rem}

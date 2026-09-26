@@ -46,7 +46,7 @@ function createBlob({ canvas, sections, activeSection, reducedMotion }) {
   const hasGSAP = typeof window.gsap !== "undefined";
   const activeSec = activeSection;
 
-  const isMobile = window.innerWidth < 760;
+  let isMobile = window.innerWidth <= 760;
   const allowPointerInteraction = !isMobile && !reduced;
 
   const lowPowerDevice =
@@ -604,17 +604,16 @@ function createBlob({ canvas, sections, activeSection, reducedMotion }) {
   };
 
   /*
-    No mobile, o blob funciona como apoio visual e não como
-    protagonista. Sobre e Contato ficam praticamente livres
-    para preservar a leitura dos textos e das competências.
+    No mobile, a nuvem ocupa espaços reservados acima da apresentação,
+    depois das competências e antes do contato, preservando a leitura.
   */
   const MOBILE_STATES = {
     hero: {
       ...DESKTOP_STATES.hero,
-      /* Sobe a nuvem e a mantém atrás do título, longe dos CTAs. */
-      xv: 0.72,
-      ys: 0.365,
-      sr: 0.76,
+      /* A nuvem ocupa o espaço reservado acima do título. */
+      xv: 0,
+      ys: 0.2,
+      sr: 0.55,
       op: 0.66,
       pt: 0.88,
     },
@@ -622,11 +621,11 @@ function createBlob({ canvas, sections, activeSection, reducedMotion }) {
     about: {
       ...DESKTOP_STATES.about,
       /* Encerramento visual: depois da lista de competências. */
-      xv: 0.34,
+      xv: 0,
       ys: 0.91,
-      sr: 0.16,
-      op: 0.36,
-      pt: 0.43,
+      sr: 0.4,
+      op: 0.48,
+      pt: 0.65,
     },
 
     projects: {
@@ -640,15 +639,15 @@ function createBlob({ canvas, sections, activeSection, reducedMotion }) {
 
     contact: {
       ...DESKTOP_STATES.contact,
-      /* No contato mobile, o blob é removido para não invadir as redes. */
-      xv: 1.2,
-      ys: 0.18,
-      sr: 0.01,
-      op: 0,
-      pt: 0.35,
+      /* A nuvem ocupa o espaço reservado acima do contato. */
+      xv: 0,
+      ys: 0.12,
+      sr: 0.4,
+      op: 0.48,
+      pt: 0.65,
     },
   };
-  const STATES = isMobile ? MOBILE_STATES : DESKTOP_STATES;
+  let STATES = isMobile ? MOBILE_STATES : DESKTOP_STATES;
 
   const secByName = {};
 
@@ -852,6 +851,14 @@ function createBlob({ canvas, sections, activeSection, reducedMotion }) {
 
   /* ---------- redimensionamento ---------- */
   const handleResize = () => {
+    isMobile = window.innerWidth <= 760;
+    STATES = isMobile ? MOBILE_STATES : DESKTOP_STATES;
+    transitionTimeline?.kill();
+    pendingName = null;
+    Object.assign(cur, STATES[curName]);
+    anim.op = cur.op;
+    anim.enter = 1;
+    anim.scatter = 0;
     camera.aspect = window.innerWidth / window.innerHeight;
 
     camera.updateProjectionMatrix();
@@ -943,6 +950,12 @@ function createBlob({ canvas, sections, activeSection, reducedMotion }) {
       const rect = section.getBoundingClientRect();
 
       pixelY = rect.top + cur.ys * rect.height;
+      const anchor = isMobile && section.querySelector('[data-blob-anchor]');
+      if (anchor) {
+        const slot = anchor.getBoundingClientRect();
+        pixelX = slot.left + slot.width / 2;
+        pixelY = slot.top + slot.height / 2;
+      }
     }
 
     /* movimento de entrada da seção */

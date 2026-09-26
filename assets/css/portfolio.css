@@ -1,0 +1,10 @@
+.project-launch { margin-top:2rem; } .case-hero-media figcaption { padding:1rem; font-size:.8rem; color:var(--soft); }
+.gallery-open { display:block; width:100%; height:100%; padding:0; border:0; background:none; color:inherit; cursor:zoom-in; }
+.gallery-open:focus-visible { outline:3px solid currentColor; outline-offset:4px; }
+.art-viewer { width:min(96vw,1400px); max-width:96vw; max-height:96dvh; padding:3.5rem 1rem 1rem; border:1px solid #444; border-radius:14px; background:#111; color:#f2f0eb; margin:auto; }
+.art-viewer::backdrop { background:rgba(0,0,0,.88); }
+.art-viewer img { display:block; max-width:100%; max-height:75dvh; object-fit:contain; margin:auto; }
+.art-viewer p { text-align:center; padding:1rem 0 0; font:14px/1.5 'Instrument Sans',sans-serif; }
+.art-viewer button { position:absolute; right:.75rem; top:.5rem; min-height:44px; padding:0 1rem; border:1px solid #666; border-radius:8px; background:#222; color:white; cursor:pointer; }
+body:has(.art-viewer[open]) { overflow:hidden; }
+@media(max-width:480px){ .case-title { overflow-wrap:anywhere; } }

@@ -168,6 +168,12 @@ function syncSection() {
     }
   }
 
+  if (window.innerWidth <= 760) {
+    const slots = sections.map(section => ({section, rect:section.querySelector('[data-blob-anchor]')?.getBoundingClientRect()}))
+      .filter(item => item.rect && item.rect.bottom > 80 && item.rect.top < window.innerHeight);
+    slots.sort((a,b) => Math.abs((a.rect.top+a.rect.bottom)/2-window.innerHeight/2)-Math.abs((b.rect.top+b.rect.bottom)/2-window.innerHeight/2));
+    if (slots.length) candidate = slots[0].section;
+  }
   if (candidate !== activeSection) {
     activeSection = candidate;
     applyTheme(candidate.dataset.theme);
@@ -362,6 +368,7 @@ if (stage) {
         reducedMotion: reduced
       });
 
+      document.documentElement.classList.toggle('no-blob', !blobController);
       if (activeSection && blobController) {
         blobController.setTheme(activeSection.dataset.theme);
         blobController.goTo(activeSection.dataset.blob);
@@ -370,6 +377,7 @@ if (stage) {
     .catch((error) => {
       console.warn('Efeito 3D indisponível; a home continuará funcionando.', error);
       stage.remove();
+      document.documentElement.classList.add('no-blob');
     });
 }
 

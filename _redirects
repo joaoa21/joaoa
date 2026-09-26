@@ -1,3 +1,7 @@
+/portfolio /projetos/igaming/ 301
+/portfolio/ /projetos/igaming/ 301
+/portfolio/index.html /projetos/igaming/ 301
+/portfolio/* /projetos/igaming/:splat 301
 /projetos/oab/oab-pe-2024.html  /projetos/oab/  301
 /403  /403.html  403
 /404  /404.html  404

@@ -1,5 +1,5 @@
 // Smooth scroll with Lenis. Protected so the page still works if the CDN fails.
-if (window.Lenis) {
+if (window.Lenis && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const lenis = new Lenis({
     duration: 1.4,
     smoothWheel: true,
@@ -40,16 +40,24 @@ if (toggle && links) {
   toggle.addEventListener('click', () => {
     toggle.classList.toggle('open');
     links.classList.toggle('open');
+    const open=links.classList.contains('open');
+    links.inert=!open;
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
   });
 
   links.querySelectorAll('a').forEach((anchor) => {
     anchor.addEventListener('click', () => {
       toggle.classList.remove('open');
       links.classList.remove('open');
+      links.inert=window.matchMedia('(max-width:900px)').matches;
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Abrir menu');
     });
   });
 }
 
+document.addEventListener('keydown',e=>{if(e.key==='Escape' && links?.classList.contains('open')){links.classList.remove('open');toggle.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menu');toggle.focus();}});
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
 
@@ -63,3 +71,7 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0, rootMargin: '0px 0px -50px 0px' });
 
 reveals.forEach((el) => obs.observe(el));
+
+const menuMedia=window.matchMedia('(max-width:900px)');
+function syncMenu(){if(links)links.inert=menuMedia.matches&&!links.classList.contains('open');}
+menuMedia.addEventListener('change',syncMenu);document.addEventListener('keydown',e=>{if(e.key==='Escape')syncMenu();});syncMenu();
