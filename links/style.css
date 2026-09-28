@@ -289,7 +289,23 @@ html.light .theme-toggle .knob {
   transition: color 0.7s ease;
 }
 
-.sec i {
+.sec-ic {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--chip);
+  color: var(--fg);
+  font-size: 0.72rem;
+  transition:
+    color 0.7s ease,
+    background-color 0.7s ease,
+    border-color 0.7s ease;
+}
+
+.sec > i {
   flex: 1;
   height: 1px;
   background: var(--line);
@@ -330,9 +346,44 @@ html.light .theme-toggle .knob {
   min-width: 0;
 }
 
+/* texto ocupa o meio; ícone à esquerda e seta à direita */
+.links a > .link-text {
+  flex: 1;
+}
+
+.link-ic {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: -0.2rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 0.9rem;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.links a:is(:hover, :focus-visible) .link-ic {
+  border-color: var(--bg);
+  background: var(--fg);
+  color: var(--bg);
+}
+
 .links a b {
   flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
   color: var(--muted);
+  font-size: 0.85rem;
   font-weight: 500;
   transition:
     transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
@@ -351,7 +402,23 @@ html.light .theme-toggle .knob {
   transform: translate(2px, -2px);
 }
 
-.links a.tool span {
+/* seta diagonal (↗) a partir do ícone fa-arrow-right */
+.links a b i {
+  transform: rotate(-45deg);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.links a:is(:hover, :focus-visible) b i {
+  transform: rotate(0deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .links a b i {
+    transition: none;
+  }
+}
+
+.links a.tool .link-text {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;

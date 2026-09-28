@@ -1,0 +1,157 @@
+/* ============================================================
+   REDES SOCIAIS DO CONTATO
+   Mesmo bloco em todas as páginas (o check-site.mjs confere).
+   ============================================================ */
+
+.contact-networks {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.hub-cta .contact-networks,
+.case-cta .contact-networks {
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.contact-social-item {
+  position: relative;
+}
+
+.contact-social-item a {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--chip);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+
+  color: var(--soft);
+  text-decoration: none;
+  font-size: 1.3rem;
+
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* preenchimento que sobe */
+.contact-social-fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+
+  height: 0;
+  background: var(--fg);
+
+  transition: height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-social-item a i {
+  position: relative;
+  z-index: 1;
+
+  transition:
+    color 0.3s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* tooltip: só existe em dispositivos com mouse (no toque ele ficaria preso) */
+.contact-social-tooltip {
+  display: none;
+}
+
+.contact-social-item a:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
+}
+
+/* ---------- Mouse e teclado ---------- */
+@media (hover: hover) and (pointer: fine) {
+  .contact-networks {
+    /* reserva espaço para os tooltips sem mover o conteúdo */
+    padding-bottom: 2.8rem;
+  }
+
+  .contact-social-tooltip {
+    position: absolute;
+    top: calc(100% + 0.7rem);
+    left: 50%;
+    z-index: 5;
+
+    display: block;
+    padding: 0.45rem 0.7rem;
+
+    background: var(--fg);
+    color: var(--bg);
+    border-radius: 7px;
+
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, -0.4rem);
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.25s ease,
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .contact-social-item:is(:hover, :has(a:focus-visible)) a {
+    border-color: var(--fg);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+  }
+
+  .contact-social-item:is(:hover, :has(a:focus-visible)) .contact-social-fill {
+    height: 100%;
+  }
+
+  .contact-social-item:is(:hover, :has(a:focus-visible)) a i {
+    color: var(--bg);
+    transform: scale(1.08);
+  }
+
+  .contact-social-item:is(:hover, :has(a:focus-visible)) .contact-social-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ---------- Toque: feedback só enquanto o dedo está na tela ---------- */
+@media (hover: none) {
+  .contact-social-item a:active {
+    border-color: var(--fg);
+    transform: scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-networks * {
+    transition: none !important;
+  }
+
+  .contact-social-item a,
+  .contact-social-item a i {
+    transform: none !important;
+  }
+}

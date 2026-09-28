@@ -3,6 +3,8 @@
    Navegação, HUD, Lenis, reveals e inicialização do blob.
    ============================================================ */
 
+import { initMobileMenu } from './nav.js';
+
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 const reduced = motionQuery.matches;
 const gsap = window.gsap;
@@ -40,14 +42,10 @@ if (window.Lenis && !reduced) {
 
 /* ---------- Elementos ---------- */
 const siteNav = document.getElementById('nav');
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
 const hudClock = document.getElementById('hudClock');
 const hud = document.querySelector('.hud');
 const footer = document.querySelector('footer');
 const toTop = document.querySelector('.to-top');
-const mobileMenuQuery = window.matchMedia('(max-width: 860px)');
-const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 /* ---------- Navbar durante o scroll ---------- */
 let scrollFrame = 0;
@@ -68,98 +66,7 @@ window.addEventListener('resize', requestNavUpdate, { passive: true });
 updateNav();
 
 /* ---------- Menu mobile acessível ---------- */
-function syncMenuMode() {
-  if (!navMenu || !navToggle) return;
-
-  if (!mobileMenuQuery.matches) {
-    closeMenu({ restoreFocus: false });
-    navMenu.inert = false;
-  } else if (!navMenu.classList.contains('open')) {
-    navMenu.inert = true;
-  }
-}
-
-function openMenu() {
-  if (!navMenu || !navToggle || !mobileMenuQuery.matches) return;
-
-  navToggle.classList.add('open');
-  navMenu.classList.add('open');
-  navToggle.setAttribute('aria-expanded', 'true');
-  navToggle.setAttribute('aria-label', 'Fechar menu');
-  navMenu.inert = false;
-  document.body.classList.add('no-scroll');
-  lenis?.stop();
-
-  window.requestAnimationFrame(() => {
-    navMenu.querySelector(focusableSelector)?.focus();
-  });
-}
-
-function closeMenu({ restoreFocus = true } = {}) {
-  if (!navMenu || !navToggle) return;
-
-  const wasOpen = navMenu.classList.contains('open');
-
-  navToggle.classList.remove('open');
-  navMenu.classList.remove('open');
-  navToggle.setAttribute('aria-expanded', 'false');
-  navToggle.setAttribute('aria-label', 'Abrir menu');
-  document.body.classList.remove('no-scroll');
-  lenis?.start();
-
-  if (mobileMenuQuery.matches) {
-    navMenu.inert = true;
-  }
-
-  if (!restoreFocus && navMenu.contains(document.activeElement)) {
-    document.activeElement.blur();
-  }
-
-  if (restoreFocus && wasOpen) {
-    navToggle.focus();
-  }
-}
-
-function trapMenuFocus(event) {
-  if (event.key !== 'Tab' || !navMenu?.classList.contains('open')) return;
-
-  const focusable = [...navMenu.querySelectorAll(focusableSelector)]
-    .filter((element) => !element.hasAttribute('disabled'));
-
-  if (!focusable.length) return;
-
-  const first = focusable[0];
-  const last = focusable[focusable.length - 1];
-
-  if (event.shiftKey && document.activeElement === first) {
-    event.preventDefault();
-    last.focus();
-  } else if (!event.shiftKey && document.activeElement === last) {
-    event.preventDefault();
-    first.focus();
-  }
-}
-
-if (navToggle && navMenu) {
-  navToggle.addEventListener('click', () => {
-    navMenu.classList.contains('open') ? closeMenu() : openMenu();
-  });
-
-  navMenu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => closeMenu({ restoreFocus: false }));
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && navMenu.classList.contains('open')) {
-      closeMenu();
-    }
-
-    trapMenuFocus(event);
-  });
-
-  mobileMenuQuery.addEventListener?.('change', syncMenuMode);
-  syncMenuMode();
-}
+const mobileMenu = initMobileMenu({ lenis });
 
 /* ---------- HUD ---------- */
 function updateClock() {
@@ -420,7 +327,10 @@ if (blobCanvas) {
         reducedMotion: reduced
       });
 
-      window.addEventListener('pagehide', () => blobController?.destroy(), { once: true });
+      // Só descarta o WebGL quando a página sai de vez; no back-forward cache ela volta viva.
+      window.addEventListener('pagehide', (event) => {
+        if (!event.persisted) blobController?.destroy();
+      });
     })
     .catch((error) => {
       console.error('Não foi possível carregar o blob do hub:', error);
@@ -431,5 +341,5 @@ if (blobCanvas) {
 // Pause page smoothing while an interactive portfolio dialog owns scrolling.
 document.addEventListener('portfolio:preview', event => {
  if(event.detail.active) lenis?.stop();
- else if(!navMenu?.classList.contains('open')) lenis?.start();
+ else if(!mobileMenu.isOpen()) lenis?.start();
 });

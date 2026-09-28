@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clube de Ouro | Jogo de Ouro</title>
+<title>Clube de Ouro — Projeto iGaming — João Alberto</title>
+<meta name="description" content="Protótipo interativo do programa de fidelidade Clube de Ouro, criado por João Alberto para a Jogo de Ouro.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>
+/* Largura real da página (sem a barra de rolagem) para o trilho de níveis não gerar rolagem horizontal. */
+(()=>{const root=document.documentElement;const sync=()=>root.style.setProperty('--page-w',root.clientWidth+'px');sync();addEventListener('DOMContentLoaded',sync);addEventListener('load',sync);addEventListener('resize',sync);})();
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -336,9 +343,9 @@ h1,h2,h3,.display{font-family:var(--display);font-weight:700;letter-spacing:-.01
 .lv-rail{display:grid;grid-auto-flow:column;grid-auto-columns:300px;gap:16px;
   overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
   padding:6px 0 18px;scrollbar-width:none;
-  width:calc(100vw - max(22px,(100vw - var(--container))/2));
-  margin-right:calc((100vw - min(var(--container),calc(100% - 44px)))/-2);
-  padding-right:max(22px,calc((100vw - var(--container))/2))}
+  width:calc(var(--page-w,100vw) - max(22px,(var(--page-w,100vw) - var(--container))/2));
+  margin-right:calc((var(--page-w,100vw) - min(var(--container),calc(100% - 44px)))/-2);
+  padding-right:max(22px,calc((var(--page-w,100vw) - var(--container))/2))}
 .lv-rail::-webkit-scrollbar{display:none}
 
 .lv{position:relative;scroll-snap-align:start;border-radius:var(--radius-lg);overflow:hidden;
@@ -531,7 +538,7 @@ footer{margin-top:28px;padding:40px 0 48px;border-top:1px solid var(--line);
   .hero{padding:28px 0 42px}
   .store-grid{grid-template-columns:1fr}
   .lv-rail{grid-auto-columns:min(84vw,300px);
-    width:calc(100vw - 14px);margin-right:-14px;padding-right:14px}
+    width:calc(var(--page-w,100vw) - 14px);margin-right:-14px;padding-right:14px}
   .progress{padding:20px}
   .p-next{text-align:left}
   .elo-title{min-width:150px}

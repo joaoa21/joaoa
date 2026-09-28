@@ -28,5 +28,15 @@ for(const file of files.filter(p=>/\.(html|css|js)$/.test(p))){
   }
  }
 }
-console.log(JSON.stringify({pages,scripts,references,errors},null,2));
+// O bloco de redes sociais é repetido nas páginas: todas as cópias precisam ser iguais.
+const socialBlocks=new Map();
+for(const file of files.filter(p=>p.endsWith('.html'))){
+ const block=(await fs.readFile(file,'utf8')).match(/<nav aria-label="Redes sociais" class="contact-networks">[\s\S]*?<\/nav>/)?.[0];
+ if(block)socialBlocks.set(relative(file),block.replace(/>\s+</g,'><').trim());
+}
+if(new Set(socialBlocks.values()).size>1){
+ const [reference]=socialBlocks.values();
+ for(const [name,block] of socialBlocks)if(block!==reference)errors.push(`${name}: bloco de redes sociais diferente das outras páginas`);
+}
+console.log(JSON.stringify({pages,scripts,references,socialBlocks:socialBlocks.size,errors},null,2));
 process.exitCode=errors.length?1:0;

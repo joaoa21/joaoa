@@ -988,30 +988,7 @@ h1, h2 {
   transition: background-color .9s ease;
 }
 
-.contact-socials {
-  display: flex;
-  gap: .7rem;
-}
-
-.contact-socials a {
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: var(--r);
-  color: var(--soft);
-  text-decoration: none;
-  font-size: 1.05rem;
-  transition: background-color .3s ease, color .3s ease, border-color .3s ease, transform .3s ease;
-}
-
-.contact-socials a:hover {
-  background: var(--fg);
-  color: var(--bg);
-  border-color: var(--fg);
-  transform: translateY(-2px);
-}
+/* Redes sociais do contato: /assets/css/contact-socials.css */
 
 /* ============ FOOTER · sempre escuro (referência) ============ */
 
@@ -1376,4 +1353,14 @@ footer {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* ============ ACESSIBILIDADE MOBILE: área de toque e leitura ============ */
+.nav-mobile-toggle { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+.nav-logo { position: relative; }
+.nav-logo::after { content: ""; position: absolute; inset: -12px -8px; }
+
+@media (max-width: 760px) {
+  .mono { font-size: .72rem; }
+  .proj-info p { font-size: .68rem; }
 }

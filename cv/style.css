@@ -964,3 +964,11 @@ button:focus-visible {
  body{padding-top:8rem}
 }
 @media print{.ats-section h2{break-after:avoid;page-break-after:avoid}.ats-print p,.ats-print li{orphans:3;widows:3}}
+
+/* ============ ACESSIBILIDADE MOBILE: área de toque e leitura ============ */
+.toolbar-brand { position: relative; }
+.toolbar-brand::after { content: ""; position: absolute; inset: -12px -8px; }
+
+@media (max-width: 760px) {
+  .mono { font-size: .72rem; }
+}

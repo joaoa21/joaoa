@@ -9,6 +9,8 @@ http.createServer(async(req,res)=>{
  try{
   const url=new URL(req.url,'http://localhost');const name=decodeURIComponent(url.pathname);
   if(name.split('/').some(part=>part.startsWith('.'))){res.writeHead(403).end();return;}
+  // Como a Netlify: pasta sem barra final (/links) redireciona para /links/, mantendo os caminhos relativos corretos.
+  if(!name.endsWith('/')){const stat=await fs.stat(path.resolve(root,'.'+name)).catch(()=>null);if(stat?.isDirectory()){res.writeHead(301,{Location:url.pathname+'/'+url.search});res.end();return;}}
   const rules=(await fs.readFile(path.join(root,'_redirects'),'utf8')).split(/\r?\n/).map(line=>line.trim().split(/\s+/));
   for(const [source,target,status] of rules){
    if(!source||source==='/*')continue;

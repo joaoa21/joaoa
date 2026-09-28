@@ -4,6 +4,8 @@
    O efeito Three.js é carregado separadamente em blob.js.
    ============================================================ */
 
+import { initMobileMenu } from '/assets/js/nav.js';
+
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 const reduced = motionQuery.matches;
 const hasGSAP = typeof window.gsap !== 'undefined';
@@ -36,13 +38,10 @@ if (window.Lenis && !reduced) {
 
 /* ---------- Elementos compartilhados ---------- */
 const siteNav = document.getElementById('nav');
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
 const hudClock = document.getElementById('hudClock');
 const hudDeg = document.getElementById('hudDeg');
 const sections = [...document.querySelectorAll('[data-blob]')];
 const navSectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
-const mobileMenuQuery = window.matchMedia('(max-width: 860px)');
 
 let blobController = null;
 let activeSection = null;
@@ -51,87 +50,7 @@ let degreeTarget = 0;
 let degreeCurrent = 0;
 
 /* ---------- Menu mobile acessível ---------- */
-const menuFocusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
-function syncMenuMode() {
-  if (!navMenu || !navToggle) return;
-
-  if (!mobileMenuQuery.matches) {
-    closeMenu({ restoreFocus: false });
-    navMenu.inert = false;
-  } else if (!navMenu.classList.contains('open')) {
-    navMenu.inert = true;
-  }
-}
-
-function openMenu() {
-  if (!navMenu || !navToggle || !mobileMenuQuery.matches) return;
-
-  navToggle.classList.add('open');
-  navMenu.classList.add('open');
-  navToggle.setAttribute('aria-expanded', 'true');
-  navToggle.setAttribute('aria-label', 'Fechar menu');
-  navMenu.inert = false;
-  document.body.classList.add('no-scroll');
-  lenis?.stop();
-
-  requestAnimationFrame(() => {
-    navMenu.querySelector(menuFocusableSelector)?.focus();
-  });
-}
-
-function closeMenu({ restoreFocus = true } = {}) {
-  if (!navMenu || !navToggle) return;
-
-  const wasOpen = navMenu.classList.contains('open');
-  navToggle.classList.remove('open');
-  navMenu.classList.remove('open');
-  navToggle.setAttribute('aria-expanded', 'false');
-  navToggle.setAttribute('aria-label', 'Abrir menu');
-  document.body.classList.remove('no-scroll');
-  lenis?.start();
-
-  if (mobileMenuQuery.matches) navMenu.inert = true;
-  if (!restoreFocus && navMenu.contains(document.activeElement)) document.activeElement.blur();
-  if (restoreFocus && wasOpen) navToggle.focus();
-}
-
-function trapMenuFocus(event) {
-  if (event.key !== 'Tab' || !navMenu?.classList.contains('open')) return;
-
-  const focusable = [...navMenu.querySelectorAll(menuFocusableSelector)]
-    .filter((element) => !element.hasAttribute('disabled'));
-  if (!focusable.length) return;
-
-  const first = focusable[0];
-  const last = focusable[focusable.length - 1];
-
-  if (event.shiftKey && document.activeElement === first) {
-    event.preventDefault();
-    last.focus();
-  } else if (!event.shiftKey && document.activeElement === last) {
-    event.preventDefault();
-    first.focus();
-  }
-}
-
-if (navToggle && navMenu) {
-  navToggle.addEventListener('click', () => {
-    navMenu.classList.contains('open') ? closeMenu() : openMenu();
-  });
-
-  navMenu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => closeMenu({ restoreFocus: false }));
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && navMenu.classList.contains('open')) closeMenu();
-    trapMenuFocus(event);
-  });
-
-  mobileMenuQuery.addEventListener?.('change', syncMenuMode);
-  syncMenuMode();
-}
+initMobileMenu({ lenis });
 
 /* ---------- HUD ---------- */
 function updateClock() {

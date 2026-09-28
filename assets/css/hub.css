@@ -864,3 +864,16 @@ footer {
     transition-duration: .01ms !important;
   }
 }
+
+/* ============ ACESSIBILIDADE MOBILE: área de toque e leitura ============ */
+.nav-mobile-toggle { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+.nav-logo,
+.hub-back-link,
+.case-back-link { position: relative; }
+.nav-logo::after,
+.hub-back-link::after,
+.case-back-link::after { content: ""; position: absolute; inset: -12px -8px; }
+
+@media (max-width: 760px) {
+  .mono { font-size: .72rem; }
+}
