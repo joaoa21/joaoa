@@ -3,14 +3,29 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"/>
+<script>
+  (() => {
+    const root = document.documentElement;
+    root.classList.add('js');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      root.classList.add('reduce-motion');
+    }
+
+    window.__hubMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 1800);
+  })();
+</script>
 <link href="https://joaoa.com.br/projetos/igaming/" rel="canonical"/><meta content="#0f0f0f" name="theme-color"/><meta content="pt_BR" property="og:locale"/><meta content="website" property="og:type"/><meta content="João Alberto" property="og:site_name"/><meta content="Portfólio iGaming: CRM, Gamificação e Design — João Alberto" property="og:title"/><meta content="Projetos de João Alberto para iGaming: CRM, gamificação, email marketing, banners, pop-ups, widgets e campanhas digitais." property="og:description"/><meta content="https://joaoa.com.br/projetos/igaming/" property="og:url"/><meta content="https://joaoa.com.br/assets/projetos/1.webp" property="og:image"/><meta content="Portfólio iGaming: CRM, Gamificação e Design — João Alberto — prévia" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="Portfólio iGaming: CRM, Gamificação e Design — João Alberto" name="twitter:title"/><meta content="Projetos de João Alberto para iGaming: CRM, gamificação, email marketing, banners, pop-ups, widgets e campanhas digitais." name="twitter:description"/><meta content="https://joaoa.com.br/assets/projetos/1.webp" name="twitter:image"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Portfólio iGaming: CRM, Gamificação e Design — João Alberto</title>
 <meta content="Projetos de João Alberto para iGaming: CRM, gamificação, email marketing, banners, pop-ups, widgets e campanhas digitais." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=DM+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="./assets/css/style.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="/assets/css/hub.css" rel="stylesheet"/>
+<link href="/assets/css/igaming.css" rel="stylesheet"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -23,51 +38,70 @@
   "image": "https://joaoa.com.br/assets/projetos/1.webp",
   "description": "Seleção de projetos de design para iGaming, CRM, gamificação, email marketing, banners, pop-ups e widgets.",
   "inLanguage": "pt-BR"
-}</script><link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><link rel="stylesheet" href="/assets/css/portfolio.css"/></head>
+}</script><link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><link rel="stylesheet" href="/assets/css/portfolio.css"/><script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
 <body>
-<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-<div class="wrap">
-<!-- ============== NAVBAR (glass) ============== -->
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+<!-- ============ 3D STAGE ============ -->
+<canvas aria-hidden="true" id="stage"></canvas>
+<!-- ============ HUD ============ -->
+<div aria-hidden="true" class="hud">
+<div class="hud-corner hud-bl mono">
+<span>REC — PE / BR</span>
+<span>8.05°S · 34.88°W</span>
+</div>
+<div class="hud-corner hud-br mono">
+<span>©2026</span>
+<span id="hudClock">00:00:00</span>
+</div>
+</div>
+<!-- ============ NAVBAR ============ -->
 <header class="site-nav" id="nav">
-<div class="nav-inner container">
-<a aria-label="Voltar para home" class="nav-logo" href="/">
-        João Alberto<span class="accent">.</span>
+<a aria-label="Voltar para o início" class="nav-logo" href="/">João Alberto</a>
+<nav aria-label="Navegação principal" class="nav-menu" id="navMenu">
+<ul class="nav-links">
+<li><a href="/#topo">Início</a></li>
+<li><a href="/#sobre">Sobre</a></li>
+<li><a aria-current="page" href="/projetos/">Projetos</a></li>
+</ul>
+<a class="nav-cta" href="/#contato">
+        Fale comigo
+        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
 </a>
-<button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menu" class="nav-mobile-toggle" id="navToggle" type="button">
-<span></span>
+</nav>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menu" class="nav-mobile-toggle" id="navToggle" type="button">
 <span></span>
 <span></span>
 </button>
-<ul class="nav-links" id="navLinks">
-<li><a href="/">Início</a></li>
-<li><a href="/projetos/">Projetos</a></li><li><a href="/projetos/sites/">Sites</a></li>
-<li><a href="#contato">Contato</a></li>
-</ul>
-</div>
 </header>
-<main id="conteudo">
-<!-- ============== CATEGORIA: iGAMING ============== -->
-<header class="category" id="trabalhos">
-<div class="category-label">
-<span></span>
-<em>/ / /</em>
-<span></span>
-</div>
-<a class="portfolio-back" href="/projetos/">← Todos os projetos</a>
-<h1 class="category-title">iGAMING<span class="accent">.</span></h1>
-<p class="category-desc">
-      Design aplicado ao universo de apostas online.
-    </p>
+<main class="igaming-page" id="conteudo">
+<header class="hub-head">
+<a class="hub-back-link mono" href="/projetos/"><i aria-hidden="true" class="fa-solid fa-arrow-left"></i><span>Voltar para projetos</span></a>
+<div class="hub-label mono"><span></span>PORTFÓLIO</div>
+<h1 class="hub-title">iGaming<span class="dot">.</span></h1>
+<p class="hub-desc">Design para campanhas, CRM e gamificação. Uma seleção de peças e interfaces para o universo de iGaming.</p>
 </header>
+<nav class="gallery-nav" aria-label="Categorias de iGaming"><a href="#trafego">Tráfego pago</a>
+<a href="#popups">Pop-ups</a>
+<a href="#banners">Banners</a>
+<a href="#widgets">Widgets</a>
+<a href="#gamificacao">Gamificação</a>
+<a href="#emails">Emails</a></nav>
 <!-- ============== TRÁFEGO PAGO ============== -->
 <section class="work-section" id="trafego">
 <div class="s-head">
-<div class="s-head-left reveal">
+<div class="s-head-left ">
 <span class="s-num">// 01</span>
-<h3 class="s-title">Tráfego Pago<span class="accent">.</span></h3>
+<h2 class="s-title">Tráfego Pago<span class="dot">.</span></h2>
 </div>
 </div>
-<div class="grid-trafego reveal">
+<div class="grid-trafego ">
 <div class="card">
 <img alt="Peça de campanha para tráfego pago em iGaming — peça 1" decoding="async" height="720" loading="lazy" src="assets/trafego/1.webp" width="720"/>
 </div>
@@ -118,12 +152,12 @@
 <!-- ============== POP-UPS ============== -->
 <section class="work-section" id="popups">
 <div class="s-head">
-<div class="s-head-left reveal">
+<div class="s-head-left ">
 <span class="s-num">// 02</span>
-<h3 class="s-title">Pop-ups<span class="accent">.</span></h3>
+<h2 class="s-title">Pop-ups<span class="dot">.</span></h2>
 </div>
 </div>
-<div class="grid-popups reveal">
+<div class="grid-popups ">
 <div class="card">
 <img alt="Projeto visual para iGaming — peça 1" decoding="async" height="900" loading="lazy" src="assets/pop-up/1.webp" width="720"/>
 </div>
@@ -163,7 +197,7 @@
 </div>
 </section>
 <!-- ============== POP-UP ANIMADO (destaque ao final dos pop-ups) ============== -->
-<section class="work-section popup-anim-section reveal">
+<section class="work-section popup-anim-section ">
 <div class="popup-anim-wrap">
 <span class="popup-anim-label">// Pop-up animado</span>
 <div class="popup-anim-frame">
@@ -173,13 +207,13 @@
 </section>
 <!-- ============== BANNERS ============== -->
 <section class="work-section" id="banners">
-<div class="s-head reveal">
+<div class="s-head ">
 <div class="s-head-left">
 <span class="s-num">// 03</span>
-<h3 class="s-title">Banners<span class="accent">.</span></h3>
+<h2 class="s-title">Banners<span class="dot">.</span></h2>
 </div>
 </div>
-<div class="grid-banners reveal">
+<div class="grid-banners ">
 <!--
         DISTRIBUIÇÃO MASONRY (grid de 6 colunas):
         - <div class="banner short"> ocupa 2 colunas → 1266×600
@@ -254,13 +288,13 @@
 </section>
 <!-- ============== WIDGETS ============== -->
 <section class="work-section" id="widgets">
-<div class="s-head reveal">
+<div class="s-head ">
 <div class="s-head-left">
 <span class="s-num">// 04</span>
-<h3 class="s-title">Widgets<span class="accent">.</span></h3>
+<h2 class="s-title">Widgets<span class="dot">.</span></h2>
 </div>
 </div>
-<div class="grid-widgets reveal">
+<div class="grid-widgets ">
 <div class="widget">
 <img alt="Widget de interface para iGaming — peça 1" decoding="async" height="873" loading="lazy" src="assets/widgets/1.webp" width="1552"/>
 </div>
@@ -294,7 +328,7 @@
 <div class="widget-live-wrap">
 <div class="widget-live-head">
 <span class="widget-live-num">// Widget</span>
-<h4 class="widget-live-name">SUPERMÚLTIPLA</h4>
+<h3 class="widget-live-name">Supermúltipla</h3>
 <span class="widget-live-kind">Carrossel de múltiplas populares</span>
 </div>
 <p class="widget-live-desc">
@@ -308,13 +342,13 @@
 </section>
 <!-- ============== GAMIFICAÇÃO (3D) ============== -->
 <section class="work-section" id="gamificacao">
-<div class="s-head reveal">
+<div class="s-head ">
 <div class="s-head-left">
 <span class="s-num">// 05</span>
-<h3 class="s-title">Gamificação<span class="accent">.</span></h3>
+<h2 class="s-title">Gamificação<span class="dot">.</span></h2>
 </div>
 </div>
-<div class="grid-gamif reveal">
+<div class="grid-gamif ">
 <div class="gamif-card">
 <span class="gamif-card-num">01</span>
 <img alt="Peça de gamificação para iGaming — peça 1" decoding="async" height="512" loading="lazy" src="assets/game/1.webp" width="512"/>
@@ -459,13 +493,13 @@
 </section>
 <!-- ============== EMAIL MARKETING ============== -->
 <section class="work-section" id="emails">
-<div class="s-head reveal">
+<div class="s-head ">
 <div class="s-head-left">
 <span class="s-num">// 06</span>
-<h3 class="s-title">Email Marketing<span class="accent">.</span></h3>
+<h2 class="s-title">Email Marketing<span class="dot">.</span></h2>
 </div>
 </div>
-<div class="grid-emails reveal">
+<div class="grid-emails ">
 <article class="email-card">
 <a aria-label="Abrir Email 01 em HTML" class="email-preview" href="./emails/email-01.html" rel="noopener" target="_blank">
 <img alt="Preview do Email Marketing 01" decoding="async" height="900" loading="lazy" src="./assets/emails/email-01.webp" width="600"/>
@@ -504,47 +538,28 @@
 </article>
 </div>
 </section>
-<!-- ============== CONTATO ============== -->
-<section id="contato">
-<div class="contact-inner">
-<div class="contact-eyebrow reveal">// Contato</div>
-<h2 class="contact-title reveal">VAMOS<br/>CONVERSAR<span class="accent">?</span></h2>
-<p class="contact-sub reveal">Tem um projeto em mente ou quer trocar uma ideia? <br/> Fale comigo.</p>
-<a class="contact-cta reveal" href="https://wa.me/5581988780144?text=Oi%20Jo%C3%A3o!" rel="noopener" target="_blank">
-<span>Fale Comigo</span>
-<span>→</span>
+<section aria-label="Navegação de retorno" class="hub-back-section"><a class="btn-sweep btn-sweep-back" href="/projetos/"><span>Voltar aos projetos</span><span class="sweep-ic"><i aria-hidden="true" class="fa-solid fa-arrow-left"></i></span></a></section><section id="contato" aria-labelledby="titulo-contato" class="hub-cta">
+<h2 id="titulo-contato">Vamos trabalhar juntos<span class="dot">?</span></h2>
+<a class="btn" href="https://wa.me/5581988780144?text=Oi%20Jo%C3%A3o!" rel="noopener" target="_blank">
+<span>Entre em contato</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
 </a>
-<div class="contact-info reveal">
-<a class="contact-line" href="mailto:joaoams6@gmail.com">
-<i class="fa-regular fa-envelope"></i>
-<span>joaoams6@gmail.com</span>
-</a>
-<a class="contact-line" href="https://wa.me/5581988780144" rel="noopener" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-<span>(81) 98878-0144</span>
-</a>
-</div>
-<div class="contact-socials reveal">
-<a aria-label="GitHub" href="https://github.com/joaoa21" rel="noopener" target="_blank">
-<i class="fa-brands fa-github"></i>
-</a>
-<a aria-label="Instagram" href="https://www.instagram.com/joaoa2/" rel="noopener" target="_blank">
-<i class="fa-brands fa-instagram"></i>
-</a>
-<a aria-label="LinkedIn" href="https://www.linkedin.com/in/joaoa210/" rel="noopener" target="_blank">
-<i class="fa-brands fa-linkedin-in"></i>
-</a>
-</div>
-</div>
 </section>
-<!-- ============== FOOTER ============== -->
 </main>
+<!-- ============ FOOTER ============ -->
 <footer>
-<p>© João Alberto<span class="accent">.</span> Todos os direitos reservados.</p>
-<a aria-label="Voltar ao topo" class="back-to-top" href="#">↑</a>
-</footer>
+<div class="footer-info">
+<p>João Alberto © 2026 — Design digital &amp; web</p>
+<p class="mono">RECIFE — PE / BRASIL</p>
 </div>
+<a aria-label="Voltar ao topo" class="to-top" href="#conteudo">
+<i aria-hidden="true" class="fa-solid fa-arrow-up"></i>
+</a>
+</footer>
 <script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script>
-<script defer="" src="./assets/js/main.js"></script>
-<script src="/assets/js/gallery.js" defer></script></body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="/assets/js/hub.js" type="module"></script>
+<script src="/assets/js/gallery.js" defer></script>
+</body>
 </html>
