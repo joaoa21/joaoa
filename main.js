@@ -5,6 +5,7 @@
    ============================================================ */
 
 import { initMobileMenu } from '/assets/js/nav.js';
+import { initHomeMotion } from '/assets/js/home-motion.js';
 
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 const reduced = motionQuery.matches;
@@ -65,7 +66,6 @@ window.setInterval(updateClock, 1000);
 /* ---------- Tema e seção ativa ---------- */
 function applyTheme(theme) {
   document.body.classList.toggle('light', theme === 'light');
-  blobController?.setTheme(theme);
 }
 
 function setActiveNavLink(section) {
@@ -87,16 +87,9 @@ function syncSection() {
     }
   }
 
-  if (window.innerWidth <= 760) {
-    const slots = sections.map(section => ({section, rect:section.querySelector('[data-blob-anchor]')?.getBoundingClientRect()}))
-      .filter(item => item.rect && item.rect.bottom > 80 && item.rect.top < window.innerHeight);
-    slots.sort((a,b) => Math.abs((a.rect.top+a.rect.bottom)/2-window.innerHeight/2)-Math.abs((b.rect.top+b.rect.bottom)/2-window.innerHeight/2));
-    if (slots.length) candidate = slots[0].section;
-  }
   if (candidate !== activeSection) {
     activeSection = candidate;
     applyTheme(candidate.dataset.theme);
-    blobController?.goTo(candidate.dataset.blob);
     setActiveNavLink(candidate);
   }
 }
@@ -109,6 +102,16 @@ function updateFromScroll() {
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   degreeTarget = maxScroll > 0 ? (window.scrollY / maxScroll) * 360 : 0;
   syncSection();
+  syncBlobExit();
+}
+
+/* ---------- Blob só no hero: some conforme o hero sai da tela ---------- */
+const heroSection = document.querySelector('.hero');
+
+function syncBlobExit() {
+  if (!blobController || !heroSection) return;
+  const rect = heroSection.getBoundingClientRect();
+  blobController.setExit(rect.height > 0 ? -rect.top / rect.height : 0);
 }
 
 function requestScrollUpdate() {
@@ -137,142 +140,8 @@ if (reduced) {
   requestAnimationFrame(animateDegree);
 }
 
-/* ---------- Animações de interface ---------- */
-const homeRoot = document.documentElement;
-const homeMotionFallback = window.__homeMotionFallback;
-
-function showHomeWithoutAnimation() {
-  if (homeMotionFallback) window.clearTimeout(homeMotionFallback);
-  homeRoot.classList.add('motion-fallback');
-}
-
-function finishHomeElement(element, clearProps = 'opacity,transform') {
-  if (!element) return;
-  element.classList.add('is-visible');
-  window.gsap?.set(element, { clearProps });
-}
-
-if (hasGSAP && !reduced) {
-  try {
-    const gsap = window.gsap;
-    const ease = 'power3.out';
-    const introNav = document.querySelector('.site-nav');
-    const titleLines = [...document.querySelectorAll('.hero-title .line em')];
-    const heroProfile = document.querySelector('.hero-profile');
-    const heroCta = document.querySelector('.hero-cta');
-    const hudElements = [...document.querySelectorAll('.hud-corner, .hud-deg')];
-
-    const introTimeline = gsap.timeline({ defaults: { ease } });
-
-    if (introNav) {
-      introTimeline.to(introNav, {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        onComplete: () => finishHomeElement(introNav)
-      });
-    }
-
-    if (titleLines.length) {
-      introTimeline.to(titleLines, {
-        '--home-title-reveal-y': '0%',
-        duration: 1.4,
-        stagger: .13,
-        ease: 'power4.out',
-        onComplete: () => {
-          titleLines.forEach((line) => {
-            line.classList.add('is-visible');
-            line.style.removeProperty('--home-title-reveal-y');
-            line.style.removeProperty('transform');
-          });
-        }
-      }, '-=.55');
-    }
-
-    if (heroProfile) {
-      introTimeline.to(heroProfile, {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        onComplete: () => finishHomeElement(heroProfile)
-      }, '-=.85');
-    }
-
-    if (heroCta) {
-      introTimeline.to(heroCta, {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        onComplete: () => finishHomeElement(heroCta)
-      }, '-=.8');
-    }
-
-    if (hudElements.length) {
-      introTimeline.to(hudElements, {
-        opacity: 1,
-        duration: 1.2,
-        onComplete: () => hudElements.forEach((element) => finishHomeElement(element, 'opacity'))
-      }, '-=.9');
-    }
-
-    if (hasScrollTrigger) {
-      const rise = (targets, trigger, options = {}) => {
-        gsap.from(targets, {
-          y: 34,
-          opacity: 0,
-          duration: 1.15,
-          ease,
-          stagger: options.stagger ?? 0.1,
-          scrollTrigger: {
-            trigger,
-            start: options.start ?? 'top 78%',
-            once: true
-          }
-        });
-      };
-
-      rise('.about .sec-head', '.about');
-      rise('.about-copy > *', '.about-copy', { stagger: 0.12 });
-      rise('.stack li', '.stack', { stagger: 0.07 });
-      rise('.projects .sec-head', '.projects');
-      rise('.projects-title', '.projects-title');
-
-      gsap.from('.proj', {
-        y: 40,
-        opacity: 0,
-        duration: 1.05,
-        ease,
-        stagger: 0.11,
-        scrollTrigger: { trigger: '.proj-list', start: 'top 80%', once: true },
-        clearProps: 'all'
-      });
-
-      rise('.contact-copy > *', '.contact', { start: 'top 70%', stagger: 0.12 });
-      rise('.contact-side', '.contact-side');
-
-      gsap.to('.hero-title', {
-        yPercent: -10,
-        opacity: 0.2,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true
-        }
-      });
-
-      window.addEventListener('load', () => window.ScrollTrigger.refresh(), { once: true });
-    }
-
-    if (homeMotionFallback) window.clearTimeout(homeMotionFallback);
-  } catch (error) {
-    console.error('Não foi possível iniciar as animações da home:', error);
-    showHomeWithoutAnimation();
-  }
-} else {
-  showHomeWithoutAnimation();
-}
+/* ---------- Animações de interface (assets/js/home-motion.js) ---------- */
+initHomeMotion();
 
 /* ---------- Three.js isolado: falhas não afetam a interface ---------- */
 const stage = document.getElementById('stage');
@@ -282,16 +151,12 @@ if (stage) {
     .then(({ initBlob }) => {
       blobController = initBlob({
         canvas: stage,
-        sections,
-        activeSection,
+        hero: heroSection,
         reducedMotion: reduced
       });
 
       document.documentElement.classList.toggle('no-blob', !blobController);
-      if (activeSection && blobController) {
-        blobController.setTheme(activeSection.dataset.theme);
-        blobController.goTo(activeSection.dataset.blob);
-      }
+      syncBlobExit();
     })
     .catch((error) => {
       console.warn('Efeito 3D indisponível; a home continuará funcionando.', error);

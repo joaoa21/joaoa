@@ -1364,3 +1364,198 @@ footer {
   .mono { font-size: .72rem; }
   .proj-info p { font-size: .68rem; }
 }
+
+/* ============ ANIMAÇÕES DE ROLAGEM (assets/js/home-motion.js) ============ */
+
+/* Hero ganha profundidade ao sair da tela: o GSAP anima só --hero-out (0 → 1)
+   e cada camada se move numa velocidade. Sem JS, a variável fica em 0. */
+.hero-title {
+  opacity: calc(1 - var(--hero-out, 0) * .85);
+}
+
+.hero-title .line:nth-child(1) {
+  translate: 0 calc(var(--hero-out, 0) * -9rem);
+}
+
+.hero-title .line:nth-child(2) {
+  translate: 0 calc(var(--hero-out, 0) * -4.5rem);
+}
+
+.hero-profile.is-visible {
+  translate: 0 calc(var(--hero-out, 0) * -3rem);
+  opacity: calc(1 - var(--hero-out, 0) * 1.6);
+}
+
+.hero-cta.is-visible {
+  translate: 0 calc(var(--hero-out, 0) * -2rem);
+  opacity: calc(1 - var(--hero-out, 0) * 1.8);
+}
+
+/* o ponto final entra com escala própria */
+.hero-title .dot {
+  display: inline-block;
+}
+
+/* linha técnica que se desenha ao lado do rótulo da seção */
+.sec-line {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  transform-origin: 0% 50%;
+  transition: background-color .9s ease;
+}
+
+/* parallax das miniaturas: --py é animado pelo GSAP; "translate" é separado
+   de "transform", então o zoom do hover continua igual */
+.proj-thumb img {
+  translate: 0 var(--py, 0%);
+  transform: scale(1.14);
+}
+
+.proj:hover .proj-thumb img {
+  transform: scale(1.2);
+}
+
+/* ícone do rótulo da seção: mesma caixinha da página de links */
+.sec-ic {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--chip);
+  color: var(--fg);
+  font-size: .72rem;
+  letter-spacing: 0;
+  overflow: hidden;
+  transition: color .9s ease, background-color .9s ease, border-color .9s ease;
+}
+
+/* Sobre → Projetos: sem altura mínima de uma tela e com respiro menor.
+   (No celular vale o ajuste de mobile-home.css.) */
+.about {
+  min-height: auto;
+  padding-bottom: 2rem;
+}
+
+/* ============ HERO · APRESENTAÇÃO ============
+   Foto à esquerda; ao lado, o cargo e a frase do que faço. */
+.hero-profile {
+  align-items: center;
+}
+
+.hero-intro {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  min-width: 0;
+}
+
+.hero-lead {
+  max-width: 29rem;
+  color: var(--soft);
+  font-size: clamp(.98rem, 1.1vw, 1.08rem);
+  line-height: 1.5;
+  text-wrap: balance;
+  transition: color .9s ease;
+}
+
+@media (max-width: 760px) {
+  .hero-profile {
+    flex-direction: column;
+    gap: .85rem;
+    text-align: center;
+  }
+
+  .hero-intro {
+    align-items: center;
+  }
+
+  .hero-lead {
+    max-width: 21rem;
+    font-size: .98rem;
+  }
+}
+
+/* ============ CONTATO · TÍTULO E TEXTO ============ */
+.contact-copy h2 {
+  max-width: none;
+  text-wrap: balance;
+}
+
+.contact-copy h2 .nowrap {
+  white-space: nowrap;
+}
+
+/* o texto nunca passa da largura do título */
+.contact-copy p {
+  max-width: 42ch;
+  text-wrap: balance;
+}
+
+@media (max-width: 760px) {
+  .contact-copy p {
+    max-width: 16rem;
+  }
+}
+
+/* Máscaras do SplitText (home-motion.js): folga em volta de cada palavra/linha
+   para a perna do "j"/"g" e a curva do "S" não serem cortadas durante a subida.
+   A margem negativa devolve o espaço, então o layout não muda. */
+.split-word-mask {
+  padding: .06em .12em .22em;
+  margin: -.06em -.12em -.22em;
+}
+
+.split-line-mask {
+  padding: 0 .1em .15em;
+  margin: 0 -.1em -.15em;
+}
+
+/* ============ SELO "EM CONSTRUÇÃO" ============ */
+.build-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  width: fit-content;
+  padding: .45rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--soft);
+  font-size: .64rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.build-badge i {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e8b04a;
+}
+
+.build-badge i::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid #e8b04a;
+  opacity: 0;
+  animation: build-pulse 2s ease-out infinite;
+}
+
+@keyframes build-pulse {
+  0% { transform: scale(.5); opacity: .8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .build-badge i::after { animation: none; }
+}
+
+.proj-info .build-badge {
+  margin-top: .75rem;
+}

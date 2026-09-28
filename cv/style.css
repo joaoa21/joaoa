@@ -972,3 +972,27 @@ button:focus-visible {
 @media (max-width: 760px) {
   .mono { font-size: .72rem; }
 }
+
+/* ============ PROJETOS: link para o case no portfólio ============ */
+.skill-group .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-top: .8rem;
+  color: var(--ink);
+  font-size: .68rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: .15rem;
+  transition: border-color .25s ease, gap .25s ease;
+}
+
+.skill-group .project-link i {
+  font-size: .62rem;
+}
+
+.skill-group .project-link:hover,
+.skill-group .project-link:focus-visible {
+  border-color: var(--ink);
+  gap: .65rem;
+}

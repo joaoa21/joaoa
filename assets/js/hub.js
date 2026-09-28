@@ -186,6 +186,7 @@ function setupInterfaceAnimations() {
     const introLabel = document.querySelector('.hub-label');
     const introTitle = document.querySelector('.hub-title');
     const introDesc = document.querySelector('.hub-desc');
+    const introBadge = document.querySelector('.hub-head .build-badge');
 
     const introTimeline = gsap.timeline({ defaults: { ease } });
 
@@ -232,6 +233,15 @@ function setupInterfaceAnimations() {
         duration: isMobileMotion ? .68 : .86,
         onComplete: () => finishElement(introDesc)
       }, '-=.72');
+    }
+
+    if (introBadge) {
+      introTimeline.to(introBadge, {
+        y: 0,
+        opacity: 1,
+        duration: .7,
+        onComplete: () => finishElement(introBadge)
+      }, '-=.6');
     }
 
     const cards = [...document.querySelectorAll('.pcard')];
