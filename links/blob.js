@@ -1001,7 +1001,7 @@ function initBlob(targetCanvas) {
       ) / 2.41;
 
     const worldScale =
-      0.36
+      0.27
       * Math.max(
         normalizedScale,
         0.5

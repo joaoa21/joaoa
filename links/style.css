@@ -187,7 +187,7 @@ html.links-motion:not(.reduce-motion):not(.motion-fallback) .hud-fixed:not(.is-v
 }
 
 .hero-space {
-  height: clamp(260px, 34vh, 360px);
+  height: clamp(170px, 24vh, 230px);
 }
 
 /* ============ PERFIL ============ */
@@ -495,7 +495,7 @@ html.light .theme-toggle .knob {
 
 @media (max-width: 760px) {
   .hero-space {
-    height: clamp(150px, 20vh, 200px);
+    height: clamp(120px, 16vh, 155px);
   }
 
   #container {
