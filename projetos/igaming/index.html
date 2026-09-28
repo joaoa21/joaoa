@@ -332,6 +332,12 @@
 <h2 class="s-title">Gamificação<span class="dot">.</span></h2>
 </div>
 </div>
+<article class="club-project" id="clube-de-ouro">
+<div><p class="club-kicker">Interface interativa · Programa de fidelidade</p>
+<h3>Clube de Ouro<span class="dot">.</span></h3>
+<p>Níveis, recompensas e uma jornada de evolução. Explore a experiência criada para a Jogo de Ouro.</p></div>
+<button class="btn club-open" type="button" aria-haspopup="dialog" aria-controls="club-dialog"><span>Explorar Clube de Ouro</span><i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i></button>
+</article>
 <div class="grid-gamif ">
 <div class="gamif-card">
 <span class="gamif-card-num">01</span>
@@ -545,5 +551,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="/assets/js/hub.js" type="module"></script>
 <script src="/assets/js/gallery.js" defer></script>
+<dialog class="club-dialog" id="club-dialog" aria-labelledby="club-dialog-title" data-lenis-prevent>
+<div class="club-dialog-bar"><div><strong id="club-dialog-title">Clube de Ouro</strong><span>Experiência interativa</span></div><button type="button" class="club-close" autofocus aria-label="Fechar Clube de Ouro">Fechar <span aria-hidden="true">×</span></button></div>
+<div class="club-stage"><p class="club-loading" role="status">Carregando experiência…</p><iframe title="Clube de Ouro — apresentação interativa" data-src="./clube-de-ouro/index.html" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe></div>
+</dialog>
+<script src="/assets/js/club-preview.js" defer></script>
 </body>
 </html>

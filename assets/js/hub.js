@@ -427,3 +427,9 @@ if (blobCanvas) {
       blobCanvas.remove();
     });
 }
+
+// Pause page smoothing while an interactive portfolio dialog owns scrolling.
+document.addEventListener('portfolio:preview', event => {
+ if(event.detail.active) lenis?.stop();
+ else if(!navMenu?.classList.contains('open')) lenis?.start();
+});
