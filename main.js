@@ -79,12 +79,19 @@ function setActiveNavLink(section) {
 function syncSection() {
   if (!sections.length) return;
 
+  // Uma seção assume o tema quando o topo dela passa do meio da tela.
   let candidate = sections[0];
   for (const section of sections) {
-    const activationFactor = section.dataset.blob === 'contact' ? 0.3 : 0.5;
-    if (section.offsetTop <= window.scrollY + window.innerHeight * activationFactor) {
+    if (section.offsetTop <= window.scrollY + window.innerHeight * 0.5) {
       candidate = section;
     }
+  }
+
+  // No fim da página a última seção sempre assume, mesmo em telas altas
+  // em que o topo dela nunca chega ao meio da tela.
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  if (maxScroll > 0 && window.scrollY >= maxScroll - 4) {
+    candidate = sections[sections.length - 1];
   }
 
   if (candidate !== activeSection) {
