@@ -240,25 +240,6 @@ body {
   background: var(--paper);
 }
 
-/* ---------- Botão secundário (contorno) ---------- */
-.btn--ghost {
-  background: transparent;
-  border-color: var(--line);
-}
-
-.btn--ghost span {
-  color: var(--fg);
-}
-
-.btn--ghost i {
-  background: var(--chip, rgba(242, 240, 235, .07));
-  color: var(--fg);
-}
-
-.btn--ghost:is(:hover, :focus-visible) {
-  border-color: var(--fg);
-}
-
 /* ---------- Responsividade ---------- */
 @media (max-width: 900px) {
   body {

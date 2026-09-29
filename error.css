@@ -573,8 +573,7 @@ h1 {
 
   transition:
     background-color .3s ease,
-    border-color .3s ease,
-    transform .3s cubic-bezier(.22, 1, .36, 1);
+    border-color .3s ease;
 }
 
 .btn span {
@@ -602,8 +601,7 @@ h1 {
 
   transition:
     background-color .3s ease,
-    color .3s ease,
-    transform .3s cubic-bezier(.22, 1, .36, 1);
+    color .3s ease;
 }
 
 .btn:is(:hover, :focus-visible) {
@@ -617,11 +615,6 @@ h1 {
 .btn:is(:hover, :focus-visible) i {
   background: var(--fg);
   color: var(--bg);
-  transform: translateX(2px);
-}
-
-.btn:active {
-  transform: scale(.97);
 }
 
 /* ---------- Sem JavaScript ---------- */
@@ -696,11 +689,8 @@ h1 {
     font-size: 1.2rem;
   }
 
+  /* no celular a página rola: o HUD fixo passaria por cima dos botões */
   .hud {
-    justify-content: center;
-  }
-
-  .hud span:last-child {
     display: none;
   }
 
@@ -798,3 +788,28 @@ h1 {
 
 /* Allow the error composition to shrink on narrow phones. */
 @media(max-width:560px){.error-shell{width:100%;min-width:0;grid-template-columns:minmax(0,1fr)}.error-copy,.error-visual{min-width:0;max-width:100%}.error-copy h1{font-size:clamp(2.2rem,11vw,3.8rem);overflow-wrap:anywhere}}
+
+/* ============ BOTÃO SECUNDÁRIO E TÍTULOS ANIMADOS ============ */
+.btn--ghost {
+  background: transparent;
+  border-color: var(--line);
+}
+
+.btn--ghost span {
+  color: var(--fg);
+}
+
+.btn--ghost i {
+  background: var(--chip, rgba(242, 240, 235, .07));
+  color: var(--fg);
+}
+
+.btn--ghost:is(:hover, :focus-visible) {
+  border-color: var(--fg);
+}
+
+/* máscara das palavras do título (SplitText): não corta acentos nem descendentes */
+.split-word-mask {
+  padding-bottom: .1em;
+  margin-bottom: -.1em;
+}
