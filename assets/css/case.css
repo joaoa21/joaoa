@@ -21,7 +21,8 @@ html.js:not(.reduce-motion):not(.motion-fallback) .case-reveal:not(.is-visible) 
 
 /* O mockup principal entra sem clip-path no próprio grid item.
    Isso evita artefatos de composição durante a animação inicial. */
-html.js:not(.reduce-motion):not(.motion-fallback) .case-hero-media:not(.is-visible) {
+html.js:not(.reduce-motion):not(.motion-fallback) .case-hero-media:not(.is-visible),
+html.js:not(.reduce-motion):not(.motion-fallback) .site-showcase:not(.is-visible) {
   opacity: 0;
   transform: translateY(26px);
 }

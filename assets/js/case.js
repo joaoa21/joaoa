@@ -113,7 +113,7 @@ function intro(gsap, SplitText, mobile) {
   const title = $('.case-title');
   const lead = $('.case-lead');
   const meta = $('.case-meta');
-  const media = $('.case-hero-media');
+  const media = $('.case-hero-media') || $('.site-showcase');
 
   const timeline = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.15 });
 

@@ -29,3 +29,5 @@
 @media(max-width:760px){.site-intro-grid,.site-next{grid-template-columns:1fr;gap:2rem}.site-intro{padding-top:7rem;padding-bottom:3rem}.site-intro .case-back-link{margin-bottom:2rem}.site-case-title{font-size:clamp(3rem,12vw,5.3rem)}.site-features{grid-template-columns:1fr}.site-features article{padding:1.5rem}.site-features h3{margin-top:1.25rem}.site-showcase figcaption{padding:.8rem 1rem}.site-next{padding-block:3rem}.site-next-link{grid-template-columns:72px minmax(0,1fr) auto;gap:.75rem}}
 /* Leitura no mobile */
 @media(max-width:760px){.site-card-kind{font-size:.68rem}.site-address{font-size:.68rem}}
+/* Ficha técnica no celular: rótulo acima do valor ("Desenvolvimento" não cabe na coluna fixa) */
+@media(max-width:760px){.site-case .case-meta-item{grid-template-columns:1fr;gap:.35rem}.site-case .case-meta{gap:1.1rem}}
