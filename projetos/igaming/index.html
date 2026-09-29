@@ -15,6 +15,11 @@
     window.__hubMotionFallback = window.setTimeout(() => {
       root.classList.add('motion-fallback');
     }, 1800);
+
+    // garantia própria da página: se igaming-motion.js não carregar, as peças aparecem
+    window.__igamingMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 2600);
   })();
 </script>
 <link href="https://joaoa.com.br/projetos/igaming/" rel="canonical"/><meta content="#0f0f0f" name="theme-color"/><meta content="pt_BR" property="og:locale"/><meta content="website" property="og:type"/><meta content="João Alberto" property="og:site_name"/><meta content="Portfólio iGaming: CRM, Gamificação e Design — João Alberto" property="og:title"/><meta content="Projetos de João Alberto para iGaming: CRM, gamificação, email marketing, banners, pop-ups, widgets e campanhas digitais." property="og:description"/><meta content="https://joaoa.com.br/projetos/igaming/" property="og:url"/><meta content="https://joaoa.com.br/assets/img/og-igaming.jpg" property="og:image"/><meta content="720" property="og:image:width"/><meta content="480" property="og:image:height"/><meta content="Portfólio iGaming: CRM, Gamificação e Design — João Alberto — prévia" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="Portfólio iGaming: CRM, Gamificação e Design — João Alberto" name="twitter:title"/><meta content="Projetos de João Alberto para iGaming: CRM, gamificação, email marketing, banners, pop-ups, widgets e campanhas digitais." name="twitter:description"/><meta content="https://joaoa.com.br/assets/img/og-igaming.jpg" name="twitter:image"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -334,10 +339,23 @@
 </div>
 </div>
 <article class="club-project" id="clube-de-ouro">
-<div><p class="club-kicker">Interface interativa · Programa de fidelidade</p>
+<div class="club-info">
+<p class="club-kicker"><span aria-hidden="true" class="club-live"></span>Experiência interativa · Programa de fidelidade</p>
 <h3>Clube de Ouro<span class="dot">.</span></h3>
-<p>Níveis, recompensas e uma jornada de evolução. Explore a experiência criada para a Jogo de Ouro.</p></div>
-<button class="btn club-open" type="button" aria-haspopup="dialog" aria-controls="club-dialog"><span>Explorar Clube de Ouro</span><i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i></button>
+<p class="club-desc">Níveis, recompensas e uma jornada de evolução para os jogadores. Navegue pela experiência completa, do jeito que o jogador vê.</p>
+<ul class="club-features" aria-label="O que tem na experiência">
+<li>10 níveis</li>
+<li>Leaderboard</li>
+<li>Loja de pontos</li>
+<li>Comparativo de benefícios</li>
+</ul>
+<button class="btn club-open" type="button" aria-haspopup="dialog" aria-controls="club-dialog"><span>Explorar o Clube de Ouro</span><i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i></button>
+</div>
+<button class="club-preview club-open" type="button" aria-haspopup="dialog" aria-controls="club-dialog" aria-label="Abrir a experiência interativa do Clube de Ouro">
+<span aria-hidden="true" class="club-browser-bar"><i></i><i></i><i></i><span>clube de ouro · experiência interativa</span></span>
+<span class="club-preview-media"><img alt="Página inicial do Clube de Ouro: boas-vindas, nível atual e progresso do jogador" decoding="async" height="1000" loading="lazy" src="assets/clube-de-ouro.webp" width="1600"/></span>
+<span aria-hidden="true" class="club-preview-cta"><i class="fa-solid fa-hand-pointer"></i>Clique para explorar</span>
+</button>
 </article>
 <div class="grid-gamif ">
 <div class="gamif-card">
@@ -527,6 +545,42 @@
 <a class="email-action" href="./emails/email-04.html" rel="noopener" target="_blank">Ver HTML</a>
 </div>
 </article>
+<article class="email-card">
+<a aria-label="Abrir Email 05 em HTML" class="email-preview" href="./emails/email-05.html" rel="noopener" target="_blank">
+<img alt="Prévia do email do Torneio Liga das Nações, com a premiação do ranking" decoding="async" height="900" loading="lazy" src="./assets/emails/email-05.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 05</span>
+<a class="email-action" href="./emails/email-05.html" rel="noopener" target="_blank">Ver HTML</a>
+</div>
+</article>
+<article class="email-card">
+<a aria-label="Abrir Email 06 em HTML" class="email-preview" href="./emails/email-06.html" rel="noopener" target="_blank">
+<img alt="Prévia do email 'Coelho de Ouro' com 50% de cashback no Fortune Rabbit" decoding="async" height="900" loading="lazy" src="./assets/emails/email-06.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 06</span>
+<a class="email-action" href="./emails/email-06.html" rel="noopener" target="_blank">Ver HTML</a>
+</div>
+</article>
+<article class="email-card">
+<a aria-label="Abrir Email 07 em HTML" class="email-preview" href="./emails/email-07.html" rel="noopener" target="_blank">
+<img alt="Prévia do email da missão Aviator com duas tarefas e recompensas em voos" decoding="async" height="900" loading="lazy" src="./assets/emails/email-07.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 07</span>
+<a class="email-action" href="./emails/email-07.html" rel="noopener" target="_blank">Ver HTML</a>
+</div>
+</article>
+<article class="email-card">
+<a aria-label="Abrir Email 08 em HTML" class="email-preview" href="./emails/email-08.html" rel="noopener" target="_blank">
+<img alt="Prévia do email de giros extras com três ofertas de recarga" decoding="async" height="900" loading="lazy" src="./assets/emails/email-08.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 08</span>
+<a class="email-action" href="./emails/email-08.html" rel="noopener" target="_blank">Ver HTML</a>
+</div>
+</article>
 </div>
 </section>
 <section aria-label="Navegação de retorno" class="hub-back-section"><a class="btn-sweep btn-sweep-back" href="/projetos/"><span>Voltar aos projetos</span><span class="sweep-ic"><i aria-hidden="true" class="fa-solid fa-arrow-left"></i></span></a></section><section id="contato" aria-labelledby="titulo-contato" class="hub-cta">
@@ -555,6 +609,7 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.13/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
 <script src="/assets/js/hub.js" type="module"></script>
 <script src="/assets/js/gallery.js" defer></script>
 <dialog class="club-dialog" id="club-dialog" aria-labelledby="club-dialog-title" data-lenis-prevent>
@@ -562,5 +617,6 @@
 <div class="club-stage"><p class="club-loading" role="status">Carregando experiência…</p><iframe title="Clube de Ouro — apresentação interativa" data-src="./clube-de-ouro/index.html" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe></div>
 </dialog>
 <script src="/assets/js/club-preview.js" defer></script>
+<script src="/assets/js/igaming-motion.js" type="module"></script>
 </body>
 </html>

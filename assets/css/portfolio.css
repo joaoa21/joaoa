@@ -9,6 +9,5 @@
 body:has(.art-viewer[open]) { overflow:hidden; }
 @media(max-width:480px){ .case-title { overflow-wrap:anywhere; } }
 
-.identity-overview{position:relative;z-index:3;max-width:1100px;margin:0 auto 4rem;padding:0 var(--pad)}.identity-overview h2{font-size:clamp(1.6rem,4vw,2.8rem);letter-spacing:-.04em}.identity-overview p{color:var(--soft);line-height:1.6;margin:1rem 0 2rem}.identity-overview figure{border-radius:16px;overflow:hidden}.identity-overview img{width:100%;height:auto;display:block}
-/* Identidade Visual: a prévia alinha com o título e os cards da página */
-.identity-overview{max-width:none;margin:0 0 4rem;padding-inline:max(var(--pad),calc((100vw - var(--container)) / 2))}
+
+

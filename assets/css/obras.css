@@ -1,0 +1,334 @@
+/* ============================================================
+   JOÃO ALBERTO — PÁGINA "EM OBRAS" (Identidade Visual)
+   Usa a base das páginas de erro (error.css) e acrescenta a cena:
+   cavalete de obra com luzes de sinalização, cone e fitas de interdição.
+   ============================================================ */
+
+:root {
+  --caution: #e8b04a;
+  --obra-scale: clamp(.78, 1.15vw, 1);
+}
+
+body {
+  position: relative;
+}
+
+/* ---------- Fitas de interdição ---------- */
+.obras-tapes {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.obras-tape {
+  position: absolute;
+  left: -10vw;
+  width: 120vw;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  border-block: 2px solid var(--ink);
+  background: var(--caution);
+  color: var(--ink);
+  box-shadow: 0 .35rem 0 rgba(0, 0, 0, .35);
+
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  animation: tape-in 1.1s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.obras-tape--a {
+  top: 13vh;
+  transform: rotate(-5deg);
+  animation-delay: .35s;
+}
+
+.obras-tape--b {
+  bottom: 11vh;
+  transform: rotate(3.5deg);
+  animation-delay: .55s;
+}
+
+.obras-tape-track {
+  display: flex;
+  flex: 0 0 auto;
+  animation: tape-scroll 38s linear infinite;
+}
+
+.obras-tape--b .obras-tape-track {
+  animation-direction: reverse;
+  animation-duration: 46s;
+}
+
+.obras-tape-track span {
+  padding-right: 2.5rem;
+}
+
+@keyframes tape-in {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes tape-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* sem palavra ao fundo: o cavalete fica centralizado com o texto */
+.error-visual {
+  align-items: center;
+}
+
+/* ---------- Cena: cavalete + cone ---------- */
+.obra-scene {
+  position: relative;
+  z-index: 1;
+  width: 26rem;
+  height: 18.5rem;
+  transform: scale(var(--obra-scale));
+  transform-origin: top center;
+}
+
+.barricade-post {
+  position: absolute;
+  top: 3.4rem;
+  width: 1.15rem;
+  height: 12.6rem;
+  border: 2px solid var(--ink);
+  border-radius: .3rem;
+  background: var(--paper);
+  box-shadow: .3rem .35rem 0 var(--graphite);
+}
+
+.barricade-post--left { left: 4.4rem; }
+.barricade-post--right { right: 4.4rem; }
+
+.barricade-foot {
+  position: absolute;
+  top: 15.55rem;
+  width: 4.6rem;
+  height: .85rem;
+  border: 2px solid var(--ink);
+  border-radius: .25rem;
+  background: var(--paper);
+  box-shadow: .3rem .3rem 0 var(--graphite);
+}
+
+.barricade-foot--left { left: 2.7rem; }
+.barricade-foot--right { right: 2.7rem; }
+
+.barricade-board {
+  position: absolute;
+  left: 1.4rem;
+  right: 1.4rem;
+  height: 3.3rem;
+  border: .32rem solid var(--paper);
+  border-radius: .45rem;
+  outline: 2px solid var(--ink);
+  outline-offset: -1px;
+  background: repeating-linear-gradient(-45deg, var(--caution) 0 1.15rem, var(--ink) 1.15rem 2.3rem);
+  box-shadow: .4rem .45rem 0 var(--graphite);
+}
+
+.barricade-board--top { top: 5rem; }
+.barricade-board--bottom { top: 10rem; }
+
+.barricade-plate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: .45rem .8rem;
+  border: 2px solid var(--ink);
+  border-radius: .3rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: .7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+
+/* luzes de sinalização em cima dos postes, piscando alternadas */
+.barricade-light {
+  position: absolute;
+  top: 1.35rem;
+  width: 2rem;
+  height: 1.55rem;
+  border: 2px solid var(--ink);
+  border-radius: .55rem .55rem .25rem .25rem;
+  background: var(--paper);
+  box-shadow: .25rem .25rem 0 var(--graphite);
+}
+
+.barricade-light::after {
+  content: "";
+  position: absolute;
+  top: .22rem;
+  left: 50%;
+  width: .95rem;
+  height: .95rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--caution);
+  transform: translateX(-50%);
+  animation: light-blink 1.4s steps(1, end) infinite;
+}
+
+.barricade-light--left { left: 3.95rem; }
+.barricade-light--right { right: 3.95rem; }
+.barricade-light--right::after { animation-delay: .7s; }
+
+@keyframes light-blink {
+  0% { background: var(--caution); box-shadow: 0 0 .9rem .35rem rgba(232, 176, 74, .55); }
+  50% { background: #6b5526; box-shadow: none; }
+}
+
+.barricade-ground {
+  position: absolute;
+  bottom: 1.5rem;
+  left: -1rem;
+  right: -3rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--graphite) 12%, var(--graphite) 88%, transparent);
+}
+
+/* cone de sinalização */
+.obra-cone {
+  position: absolute;
+  right: -2.4rem;
+  bottom: 1.55rem;
+  width: 5.4rem;
+  height: 6.8rem;
+  filter: drop-shadow(.3rem .3rem 0 var(--graphite));
+}
+
+.obra-cone-body {
+  position: absolute;
+  left: 50%;
+  bottom: .7rem;
+  width: 4.2rem;
+  height: 6rem;
+  background: linear-gradient(
+    to bottom,
+    var(--caution) 0 30%,
+    var(--paper) 30% 44%,
+    var(--caution) 44% 62%,
+    var(--paper) 62% 76%,
+    var(--caution) 76% 100%
+  );
+  clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%);
+  transform: translateX(-50%);
+}
+
+.obra-cone-base {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: .8rem;
+  border: 2px solid var(--ink);
+  border-radius: .25rem;
+  background: var(--paper);
+}
+
+/* ---------- Botão secundário (contorno) ---------- */
+.btn--ghost {
+  background: transparent;
+  border-color: var(--line);
+}
+
+.btn--ghost span {
+  color: var(--fg);
+}
+
+.btn--ghost i {
+  background: var(--chip, rgba(242, 240, 235, .07));
+  color: var(--fg);
+}
+
+.btn--ghost:is(:hover, :focus-visible) {
+  border-color: var(--fg);
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 900px) {
+  body {
+    padding-bottom: max(6.5rem, env(safe-area-inset-bottom));
+  }
+
+  /* abaixo de 900px a página rola e a fita fecha a página: o HUD fixo cruzaria com ela e com o texto */
+  .hud {
+    display: none;
+  }
+
+  .error-visual {
+    min-height: 0;
+  }
+
+  /* o scale encolhe o desenho, não o espaço ocupado: a margem negativa devolve a sobra */
+  .obra-scene {
+    margin-top: 1rem;
+    margin-bottom: calc(18.5rem * (var(--obra-scale) - 1) + 1.5rem);
+  }
+
+  /* a fita de baixo fecha a página, abaixo dos botões */
+  .obras-tape--b {
+    bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --obra-scale: .7;
+  }
+
+  .error-visual {
+    min-height: 0;
+  }
+
+  /* o scale encolhe o desenho, não o espaço ocupado: a margem negativa devolve a sobra */
+  .obra-scene {
+    margin-top: 1.5rem;
+    margin-bottom: calc(18.5rem * (var(--obra-scale) - 1) + 1rem);
+  }
+
+  .obras-tape {
+    height: 2.1rem;
+    font-size: .62rem;
+  }
+
+  .obras-tape--a {
+    top: 4.5rem;
+  }
+
+  .obras-tape--b {
+    bottom: 2.5rem;
+  }
+}
+
+@media (max-height: 680px) and (orientation: landscape) {
+  :root {
+    --obra-scale: .66;
+  }
+
+  .obra-scene {
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .obras-tape,
+  .obras-tape-track,
+  .barricade-light::after {
+    animation: none !important;
+  }
+}

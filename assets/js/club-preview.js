@@ -1,7 +1,9 @@
 (() => {
  const dialog=document.querySelector('#club-dialog');
- const trigger=document.querySelector('.club-open');
- if(!dialog || !trigger) return;
+ // o botão e a prévia abrem a experiência; o foco volta para quem foi clicado
+ const triggers=[...document.querySelectorAll('.club-open')];
+ if(!dialog || !triggers.length) return;
+ let trigger=triggers[0];
  const frame=dialog.querySelector('iframe');
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let closing=false;
@@ -12,8 +14,9 @@
   closing=true; dialog.classList.remove('is-visible');
   setTimeout(()=>dialog.close(),reduced.matches?0:220);
  }
- trigger.addEventListener('click',()=>{
+ const open=event=>{
   if(dialog.open) return;
+  trigger=event.currentTarget;
   closing=false;
   savedY=window.scrollY;
   motion(true);
@@ -21,7 +24,8 @@
   dialog.showModal();
   frame.src=frame.dataset.src;
   requestAnimationFrame(()=>requestAnimationFrame(()=>dialog.classList.add('is-visible')));
- });
+ };
+ triggers.forEach(button=>button.addEventListener('click',open));
  frame.addEventListener('load',()=>{if(dialog.open && frame.getAttribute('src')) dialog.classList.add('is-loaded');});
  dialog.querySelector('.club-close').addEventListener('click',close);
  dialog.addEventListener('cancel',event=>{event.preventDefault();close();});

@@ -66,11 +66,6 @@
 @media(max-width:360px){.grid-trafego,.grid-popups,.grid-gamif{grid-template-columns:1fr}.grid-trafego .card,.grid-popups .card,.gamif-card{width:100%;max-width:260px;margin-inline:auto}}
 
 /* Interactive case study; existing galleries retain their original arrangement. */
-.club-project{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:2rem 0 2.5rem;margin-bottom:2rem;border-bottom:1px solid var(--line)}
-.club-kicker{font: .65rem var(--font-mono);color:var(--muted);letter-spacing:.07em;margin-bottom:1rem}
-.club-project h3{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.045em;line-height:1.05;margin-bottom:1rem}
-.club-project p:not(.club-kicker){max-width:38rem;color:var(--soft);line-height:1.65}
-.club-open{flex-shrink:0;cursor:pointer;gap:1.5rem}
 .club-dialog{position:fixed;inset:0;margin:auto;padding:0;width:min(1440px,calc(100% - 48px));height:calc(100dvh - 48px);max-width:none;max-height:none;border:1px solid var(--line);border-radius:18px;background:#020905;color:var(--fg);overflow:hidden;opacity:0;transform:translateY(18px) scale(.985);transition:opacity .22s ease,transform .22s ease}
 .club-dialog.is-visible{opacity:1;transform:translateY(0) scale(1)}
 .club-dialog::backdrop{background:rgb(0 0 0 / .78);backdrop-filter:blur(8px)}
@@ -80,9 +75,303 @@
 .club-close{display:flex;align-items:center;gap:1rem;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:8px;color:inherit;background:transparent;font:inherit;cursor:pointer}.club-close span{font-size:1.5rem}.club-close:hover{background:var(--chip)}
 .club-stage{position:relative;flex:1;min-height:0}.club-stage iframe{display:block;width:100%;height:100%;border:0;opacity:0;transition:opacity .25s}.club-dialog.is-loaded iframe{opacity:1}.club-loading{position:absolute;inset:40% 0 auto;text-align:center;color:var(--soft)}.club-dialog.is-loaded .club-loading{display:none}
 html.club-preview-open,html.club-preview-open body{overflow:hidden!important;overscroll-behavior:none}
-@media(max-width:700px){.club-project{align-items:flex-start;flex-direction:column}.club-dialog{width:100%;height:100dvh;border:0;border-radius:0}.club-dialog-bar{padding:8px 12px}.club-dialog-bar div>span{display:none}}
+@media(max-width:700px){.club-dialog{width:100%;height:100dvh;border:0;border-radius:0}.club-dialog-bar{padding:8px 12px}.club-dialog-bar div>span{display:none}}
 @media(prefers-reduced-motion:reduce){.club-dialog,.club-stage iframe{transition:none;transform:none}}
 
 .club-project{scroll-margin-top:110px}
 
 .club-open{font:inherit}
+
+/* ============ ANIMAÇÕES (assets/js/igaming-motion.js) ============
+   Até a animação assumir, as peças ficam escondidas — assim nenhuma imagem
+   aparece antes da hora. Sem JS, com "reduzir movimento" ou no fallback,
+   tudo aparece normalmente. */
+html.js:not(.reduce-motion):not(.motion-fallback) .igaming-page :is(
+  .gallery-nav a,
+  .s-num,
+  .s-title,
+  .card,
+  .banner,
+  .widget,
+  .gamif-card,
+  .gamif-banner,
+  .email-card,
+  .popup-anim-label,
+  .popup-anim-frame,
+  .club-project > *
+):not(.is-visible) {
+  opacity: 0;
+}
+
+/* a borda de cima do cabeçalho vira uma linha que se desenha */
+.s-head.has-line {
+  position: relative;
+  border-top-color: transparent;
+}
+
+.s-line {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+  transform-origin: 0% 50%;
+}
+
+/* ============ CLUBE DE OURO · CARD DE DESTAQUE ============
+   Na identidade do site (preto, off-white e linhas finas).
+   A identidade da bet aparece só dentro do modal, na própria experiência. */
+.club-project {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 2.5rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    radial-gradient(90% 80% at 100% 0%, rgba(242, 240, 235, .06), transparent 60%),
+    var(--chip);
+}
+
+/* brilho discreto que percorre a borda do card */
+.club-project::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  padding: 1px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--club-angle, 0deg), transparent 0 72%, rgba(242, 240, 235, .55) 82%, transparent 92%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: club-border 7s linear infinite;
+}
+
+@property --club-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes club-border {
+  to { --club-angle: 360deg; }
+}
+
+.club-kicker {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1rem;
+  color: var(--soft);
+  font: .65rem var(--font-mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* ponto "ao vivo": é uma experiência navegável, não uma imagem */
+.club-live {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--fg);
+}
+
+.club-live::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 1px solid var(--fg);
+  border-radius: 50%;
+  animation: club-ping 1.8s ease-out infinite;
+}
+
+@keyframes club-ping {
+  from { transform: scale(.5); opacity: .8; }
+  to { transform: scale(1.9); opacity: 0; }
+}
+
+.club-project h3 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  letter-spacing: -.045em;
+  line-height: 1.02;
+}
+
+.club-desc {
+  max-width: 34rem;
+  color: var(--soft);
+  line-height: 1.65;
+}
+
+.club-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 1.4rem 0 1.8rem;
+  list-style: none;
+}
+
+.club-features li {
+  padding: .45rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(242, 240, 235, .03);
+  color: var(--soft);
+  font: .7rem var(--font-mono);
+  letter-spacing: .04em;
+}
+
+.club-open {
+  cursor: pointer;
+}
+
+.club-info .club-open {
+  gap: 1.5rem;
+}
+
+/* ---------- prévia clicável ---------- */
+.club-preview {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  text-align: left;
+  box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .75);
+  transform: perspective(1400px) rotateY(-5deg) rotateX(2deg);
+  transform-origin: 0% 50%;
+  transition: transform .6s cubic-bezier(.22, 1, .36, 1), box-shadow .6s ease, border-color .3s ease;
+}
+
+.club-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  height: 2.1rem;
+  padding: 0 .9rem;
+  border-bottom: 1px solid var(--line);
+  background: #151515;
+}
+
+.club-browser-bar i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(242, 240, 235, .2);
+}
+
+.club-browser-bar span {
+  margin-left: .6rem;
+  color: var(--muted);
+  font: .6rem var(--font-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.club-preview-media {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.club-preview-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform .8s cubic-bezier(.22, 1, .36, 1), filter .5s ease;
+}
+
+/* selo parado, no estilo dos botões do site */
+.club-preview-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .75rem 1.1rem;
+  border: 1px solid var(--fg);
+  border-radius: 999px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
+  transform: translateX(-50%);
+  transition: background-color .3s ease, color .3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .club-preview:hover {
+    border-color: rgba(242, 240, 235, .45);
+    box-shadow: 0 40px 80px -24px rgba(0, 0, 0, .85);
+    transform: perspective(1400px) rotateY(0deg) rotateX(0deg) translateY(-4px);
+  }
+
+  .club-preview:hover .club-preview-media img {
+    transform: scale(1.04);
+    filter: brightness(1.06);
+  }
+
+  .club-preview:hover .club-preview-cta {
+    background: var(--bg);
+    color: var(--fg);
+  }
+}
+
+.club-preview:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .club-project {
+    grid-template-columns: 1fr;
+  }
+
+  .club-preview {
+    order: -1;
+    transform: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .club-project {
+    padding: 1.1rem;
+    border-radius: 16px;
+  }
+
+  .club-preview-cta {
+    bottom: .9rem;
+    padding: .6rem .9rem;
+    font-size: .72rem;
+  }
+
+  .club-info .club-open {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .club-project::before,
+  .club-live::after {
+    animation: none;
+  }
+}
