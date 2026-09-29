@@ -5,4 +5,7 @@
 /projetos/oab/oab-pe-2024.html  /projetos/oab/  301
 /403  /403.html  403
 /404  /404.html  404
+# Blog (projeto Astro separado, publicado em joaoablog.netlify.app): servido no mesmo domínio
+/blog/*   https://joaoablog.netlify.app/blog/:splat  200
+
 /*    /404.html  404
