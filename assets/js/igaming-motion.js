@@ -124,7 +124,7 @@ function sectionHeads(gsap, SplitText) {
     timeline.from(line, { scaleX: 0, duration: 1.1, ease: 'power3.inOut' }, 0);
 
     if (number && SplitText) {
-      const split = SplitText.create(number, { type: 'chars' });
+      const split = SplitText.create(number, { type: 'chars', aria: 'none' });
       timeline.from(split.chars, {
         autoAlpha: 0, duration: 0.01, stagger: 0.05, onComplete: () => split.revert(),
       }, 0.15);

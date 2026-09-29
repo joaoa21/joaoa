@@ -55,7 +55,7 @@ function animate() {
 
     const backdrop = $('.error-code-backdrop', visual);
     if (backdrop && SplitText) {
-      const split = SplitText.create(backdrop, { type: 'chars', mask: 'chars' });
+      const split = SplitText.create(backdrop, { type: 'chars', mask: 'chars', aria: 'none' });
       timeline.from(split.chars, {
         yPercent: 105,
         duration: 1.1,
@@ -81,7 +81,7 @@ function animate() {
 
   if (label) {
     if (SplitText) {
-      const split = SplitText.create(label, { type: 'chars' });
+      const split = SplitText.create(label, { type: 'chars', aria: 'none' });
       timeline.from(split.chars, { autoAlpha: 0, duration: 0.01, stagger: 0.035, onComplete: () => split.revert() }, 0.35);
     } else {
       timeline.from(label, { opacity: 0, duration: 0.5 }, 0.35);

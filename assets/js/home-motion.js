@@ -17,12 +17,6 @@ function showWithoutAnimation() {
   root.classList.add('motion-fallback');
 }
 
-function finish(element, clearProps = 'opacity,transform') {
-  if (!element) return;
-  element.classList.add('is-visible');
-  window.gsap?.set(element, { clearProps });
-}
-
 /* Gatilho padrão: anima uma vez quando o elemento entra na tela. */
 const onEnter = (trigger, extra = {}) => ({ trigger, start: 'top 82%', once: true, ...extra });
 
@@ -51,7 +45,6 @@ export function initHomeMotion() {
       if (!motion) return;
 
       try {
-        playIntro({ gsap, SplitText });
         heroScrollOut({ gsap });
 
         // As quebras de linha dependem da fonte: espera ela chegar, mas no máximo 0,8 s.
@@ -80,90 +73,10 @@ export function initHomeMotion() {
   );
 }
 
-/* ---------- 1. Chegada: navegação, título, perfil, botões e HUD ---------- */
-function playIntro({ gsap, SplitText }) {
-  const nav = $('.site-nav');
-  const titleLines = $$('.hero-title .line em');
-  const titleDot = $('.hero-title .dot');
-  const profile = $('.hero-profile');
-  const avatar = $('.hero-avatar');
-  const role = $('.hero-profile .mono');
-  const cta = $('.hero-cta');
-  const hud = $$('.hud-corner, .hud-deg');
-
-  const intro = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-  if (nav) {
-    intro.to(nav, { y: 0, opacity: 1, duration: 1, onComplete: () => finish(nav) });
-  }
-
-  if (titleLines.length) {
-    intro.to(titleLines, {
-      '--home-title-reveal-y': '0%',
-      duration: 1.4,
-      stagger: 0.13,
-      ease: 'power4.out',
-      onComplete: () => {
-        titleLines.forEach((line) => {
-          line.classList.add('is-visible');
-          line.style.removeProperty('--home-title-reveal-y');
-          line.style.removeProperty('transform');
-        });
-      },
-    }, '-=.55');
-  }
-
-  // o ponto final "cai" no lugar depois do título
-  if (titleDot) {
-    intro.from(titleDot, {
-      scale: 0,
-      yPercent: -60,
-      duration: 0.7,
-      ease: 'back.out(3)',
-      clearProps: 'transform',
-    }, '-=.55');
-  }
-
-  if (profile) {
-    intro.to(profile, { y: 0, opacity: 1, duration: 1, onComplete: () => finish(profile) }, '-=1.05');
-  }
-
-  // a foto se revela de baixo para cima
-  if (avatar) {
-    intro.from(avatar, {
-      clipPath: 'inset(100% 0% 0% 0% round 16px)',
-      scale: 1.15,
-      duration: 1,
-      ease: 'power4.out',
-      clearProps: 'clipPath,transform',
-    }, '<');
-  }
-
-  // o cargo se digita, letra a letra
-  if (role && SplitText) {
-    const split = SplitText.create(role, { type: 'chars' });
-    intro.from(split.chars, {
-      autoAlpha: 0,
-      duration: 0.01,
-      stagger: 0.035,
-      onComplete: () => split.revert(),
-    }, '<+.35');
-  }
-
-  if (cta) {
-    intro.to(cta, { y: 0, opacity: 1, duration: 1, onComplete: () => finish(cta) }, '-=.9');
-  }
-
-  if (hud.length) {
-    intro.to(hud, {
-      opacity: 1,
-      duration: 1.2,
-      onComplete: () => hud.forEach((element) => finish(element, 'opacity')),
-    }, '-=.9');
-  }
-
-  return intro;
-}
+/* ---------- 1. Chegada ----------
+   A abertura do hero (navegação, título, perfil, botões e HUD) roda em CSS
+   (style.css, "ENTRADA DO HERO"): começa no primeiro quadro, sem esperar
+   os scripts, para o texto principal aparecer rápido. */
 
 /* ---------- 2. Hero: profundidade ao sair da tela ----------
    Anima só a variável --hero-out (0 → 1). O CSS distribui em velocidades
@@ -201,7 +114,7 @@ function sectionHeads({ gsap, SplitText }) {
     }
 
     if (label && SplitText) {
-      const split = SplitText.create(label, { type: 'chars' });
+      const split = SplitText.create(label, { type: 'chars', aria: 'none' });
       timeline.from(split.chars, {
         autoAlpha: 0,
         duration: 0.01,
@@ -252,7 +165,7 @@ function aboutSection({ gsap, SplitText }) {
       return;
     }
 
-    const split = SplitText.create(paragraph, { type: 'lines', mask: 'lines', linesClass: 'split-line' });
+    const split = SplitText.create(paragraph, { type: 'lines', mask: 'lines', linesClass: 'split-line', aria: 'none' });
     gsap.from(split.lines, {
       yPercent: 105,
       duration: 0.9,
@@ -382,7 +295,7 @@ function contactSection({ gsap, SplitText }) {
   const lead = $('.contact-copy p');
   if (lead) {
     if (SplitText) {
-      const split = SplitText.create(lead, { type: 'lines', mask: 'lines', linesClass: 'split-line' });
+      const split = SplitText.create(lead, { type: 'lines', mask: 'lines', linesClass: 'split-line', aria: 'none' });
       gsap.from(split.lines, {
         yPercent: 105, duration: 0.9, stagger: 0.08, delay: 0.35, ease: 'power3.out', scrollTrigger: onEnter(lead),
         onComplete: () => split.revert(),

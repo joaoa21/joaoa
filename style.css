@@ -122,37 +122,58 @@ a:focus-visible, button:focus-visible {
 }
 
 
-/* ============ ESTADOS INICIAIS DA HOME ============
-   Aplicados antes da primeira pintura para evitar o flash
-   do conteúdo pronto antes da animação de entrada. */
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .site-nav:not(.is-visible) {
-  opacity: 0;
-  transform: translateY(-20px);
+/* ============ ENTRADA DO HERO (CSS puro) ============
+   A abertura roda em CSS e começa no primeiro quadro, sem esperar o
+   GSAP e os scripts baixarem: no celular o texto principal aparece em
+   ~1 s em vez de ~6 s (é ele que o Google mede como LCP).
+   "backwards" só segura o estado inicial até cada peça começar; depois
+   o elemento volta às regras normais, e a saída do hero ao rolar
+   (--hero-out) segue funcionando. */
+@keyframes home-nav-in { from { opacity: 0; transform: translateY(-20px); } }
+@keyframes home-line-in { from { transform: translate3d(0, 112%, 0); } }
+@keyframes home-dot-in { from { transform: translateY(-60%) scale(0); } }
+@keyframes home-rise-in { from { opacity: 0; transform: translateY(18px); } }
+@keyframes home-avatar-in { from { clip-path: inset(100% 0% 0% 0% round 16px); transform: scale(1.15); } }
+@keyframes home-type-in { from { clip-path: inset(0 100% 0 0); } }
+@keyframes home-fade-in { from { opacity: 0; } }
+
+html.home-motion:not(.reduce-motion) .site-nav {
+  animation: home-nav-in 1s cubic-bezier(.215, .61, .355, 1) .1s backwards;
 }
 
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .hero-title .line em:not(.is-visible) {
-  --home-title-reveal-y: 112%;
-  transform: translate3d(0, var(--home-title-reveal-y), 0);
+html.home-motion:not(.reduce-motion) .hero-title .line em {
+  animation: home-line-in 1.4s cubic-bezier(.165, .84, .44, 1) .5s backwards;
 }
 
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .hero-profile:not(.is-visible),
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .hero-cta:not(.is-visible) {
-  opacity: 0;
-  transform: translateY(18px);
+html.home-motion:not(.reduce-motion) .hero-title .line:nth-child(2) em { animation-delay: .63s; }
+html.home-motion:not(.reduce-motion) .hero-title .line:nth-child(3) em { animation-delay: .76s; }
+
+/* o ponto final "cai" no lugar depois do título */
+html.home-motion:not(.reduce-motion) .hero-title .dot {
+  animation: home-dot-in .7s cubic-bezier(.34, 1.56, .64, 1) 1.45s backwards;
 }
 
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .hud-corner:not(.is-visible),
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .hud-deg:not(.is-visible) {
-  opacity: 0;
+html.home-motion:not(.reduce-motion) .hero-profile {
+  animation: home-rise-in 1s cubic-bezier(.215, .61, .355, 1) .95s backwards;
 }
 
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .site-nav:not(.is-visible),
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .hero-title .line em:not(.is-visible),
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .hero-profile:not(.is-visible),
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .hero-cta:not(.is-visible),
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .hud-corner:not(.is-visible),
-html.home-motion:not(.reduce-motion):not(.motion-fallback) .hud-deg:not(.is-visible) {
-  will-change: opacity, transform;
+/* a foto se revela de baixo para cima */
+html.home-motion:not(.reduce-motion) .hero-avatar {
+  animation: home-avatar-in 1s cubic-bezier(.165, .84, .44, 1) .95s backwards;
+}
+
+/* o cargo se "digita", letra a letra */
+html.home-motion:not(.reduce-motion) .hero-intro .mono {
+  animation: home-type-in .65s steps(18, end) 1.3s backwards;
+}
+
+html.home-motion:not(.reduce-motion) .hero-cta {
+  animation: home-rise-in 1s cubic-bezier(.215, .61, .355, 1) 1.1s backwards;
+}
+
+html.home-motion:not(.reduce-motion) .hud-corner,
+html.home-motion:not(.reduce-motion) .hud-deg {
+  animation: home-fade-in 1.2s ease 1.3s backwards;
 }
 
 /* ============ 3D STAGE ============ */
@@ -1381,12 +1402,12 @@ footer {
   translate: 0 calc(var(--hero-out, 0) * -4.5rem);
 }
 
-.hero-profile.is-visible {
+.hero-profile {
   translate: 0 calc(var(--hero-out, 0) * -3rem);
   opacity: calc(1 - var(--hero-out, 0) * 1.6);
 }
 
-.hero-cta.is-visible {
+.hero-cta {
   translate: 0 calc(var(--hero-out, 0) * -2rem);
   opacity: calc(1 - var(--hero-out, 0) * 1.8);
 }
