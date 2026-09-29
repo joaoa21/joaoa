@@ -26,10 +26,10 @@ html.js:not(.reduce-motion):not(.motion-fallback) .case-hero-media:not(.is-visib
   transform: translateY(26px);
 }
 
-html.js:not(.reduce-motion):not(.motion-fallback) .case-hero-media:not(.is-visible) img {
-  transform: scale(1.035);
+/* Peças das galerias: escondidas até a imagem carregar e a animação começar */
+html.js:not(.reduce-motion):not(.motion-fallback) .gallery-item:not(.is-visible) {
+  opacity: 0;
 }
-
 
 html.js:not(.reduce-motion):not(.motion-fallback) .case-back-link:not(.is-visible),
 html.js:not(.reduce-motion):not(.motion-fallback) .case-kicker:not(.is-visible),
@@ -37,7 +37,6 @@ html.js:not(.reduce-motion):not(.motion-fallback) .case-title:not(.is-visible),
 html.js:not(.reduce-motion):not(.motion-fallback) .case-lead:not(.is-visible),
 html.js:not(.reduce-motion):not(.motion-fallback) .case-meta:not(.is-visible),
 html.js:not(.reduce-motion):not(.motion-fallback) .case-hero-media:not(.is-visible),
-html.js:not(.reduce-motion):not(.motion-fallback) .case-hero-media:not(.is-visible) img,
 html.js:not(.reduce-motion):not(.motion-fallback) .case-reveal:not(.is-visible) {
   will-change: opacity, transform, clip-path;
 }
@@ -292,7 +291,7 @@ html.js:not(.reduce-motion):not(.motion-fallback) .case-reveal:not(.is-visible) 
 }
 
 .gallery-grid--stickers {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .gallery-item {
@@ -327,17 +326,40 @@ html.js:not(.reduce-motion):not(.motion-fallback) .case-reveal:not(.is-visible) 
   aspect-ratio: 1 / 1;
 }
 
-.gallery-grid--applications .gallery-item--feature {
+/* Peça em destaque: ocupa 2 colunas x 2 linhas e acompanha a altura das vizinhas */
+.gallery-grid .gallery-item--feature {
   grid-column: span 2;
-  aspect-ratio: 2 / 1;
+  grid-row: span 2;
+  aspect-ratio: auto;
 }
 
-.gallery-grid--applications .gallery-item--feature img {
-  padding: clamp(.35rem, 1vw, .7rem);
+/* Faixa larga: peça horizontal que abre a galeria ocupando a linha inteira */
+.gallery-grid .gallery-item--banner {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 9;
+}
+
+/* Peça larga: ocupa 2 colunas e acompanha a altura da vizinha */
+.gallery-grid .gallery-item--wide {
+  grid-column: span 2;
+  aspect-ratio: auto;
+}
+
+.gallery-item--feature > .gallery-open,
+.gallery-item--feature > img,
+.gallery-item--wide > .gallery-open,
+.gallery-item--wide > img {
+  position: absolute;
+  inset: 0;
 }
 
 .gallery-grid--stickers .gallery-item {
   aspect-ratio: 1;
+}
+
+/* adesivos recortados rente ao círculo: a margem fica por conta do quadro */
+.gallery-grid--stickers .gallery-item img {
+  padding: clamp(1.1rem, 4.5vw, 3.25rem);
 }
 
 .gallery-item img {
@@ -431,8 +453,9 @@ html.js:not(.reduce-motion):not(.motion-fallback) .case-reveal:not(.is-visible) 
     margin-top: 1rem;
   }
 
+  /* retratos seguem em 4 colunas até o celular: destaque 2x2 + 12 peças fecham sem vãos */
   .gallery-grid--portrait {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .8rem;
   }
 
   .gallery-grid--stickers {
@@ -487,8 +510,21 @@ html.js:not(.reduce-motion):not(.motion-fallback) .case-reveal:not(.is-visible) 
     grid-template-columns: 1fr;
   }
 
+  /* com 2 colunas o destaque ocupa a linha sozinho: a altura vem da proporção */
+  .gallery-grid .gallery-item--feature {
+    grid-row: auto;
+  }
+
+  .gallery-grid--portrait .gallery-item--feature {
+    aspect-ratio: 4 / 5;
+  }
+
   .gallery-grid--applications .gallery-item--feature {
-    grid-column: span 2;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* sozinha na linha, a peça larga ganha a própria proporção */
+  .gallery-grid .gallery-item--wide {
     aspect-ratio: 2 / 1;
   }
 }
@@ -506,10 +542,6 @@ html.js:not(.reduce-motion):not(.motion-fallback) .case-reveal:not(.is-visible) 
   .gallery-grid--portrait,
   .gallery-grid--applications {
     gap: .7rem;
-  }
-
-  .gallery-grid--applications .gallery-item--feature {
-    grid-column: span 2;
   }
 
   .gallery-grid--stickers {
