@@ -150,10 +150,18 @@ if (reduced) {
 /* ---------- Animações de interface (assets/js/home-motion.js) ---------- */
 initHomeMotion();
 
-/* ---------- Three.js isolado: falhas não afetam a interface ---------- */
+/* ---------- Three.js isolado: falhas não afetam a interface ----------
+   O blob é decorativo: só começa a baixar depois que a página carregou,
+   para não disputar rede e processador com o texto da abertura. */
 const stage = document.getElementById('stage');
 
-if (stage) {
+const afterLoad = (task) => {
+  const run = () => ('requestIdleCallback' in window ? window.requestIdleCallback(task, { timeout: 800 }) : window.setTimeout(task, 200));
+  if (document.readyState === 'complete') run();
+  else window.addEventListener('load', run, { once: true });
+};
+
+if (stage) afterLoad(() => {
   import('./blob.js')
     .then(({ initBlob }) => {
       blobController = initBlob({
@@ -170,5 +178,5 @@ if (stage) {
       stage.remove();
       document.documentElement.classList.add('no-blob');
     });
-}
+});
 

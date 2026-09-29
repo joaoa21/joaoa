@@ -129,51 +129,55 @@ a:focus-visible, button:focus-visible {
    "backwards" só segura o estado inicial até cada peça começar; depois
    o elemento volta às regras normais, e a saída do hero ao rolar
    (--hero-out) segue funcionando. */
-@keyframes home-nav-in { from { opacity: 0; transform: translateY(-20px); } }
+/* Regra de desempenho: nada começa em opacidade 0 exata nem espera muito.
+   O Chrome só registra a primeira pintura (FCP) e o maior elemento (LCP)
+   quando o conteúdo aparece de fato: a navegação entra só deslizando, e o
+   perfil sai de uma opacidade imperceptível (0.01) em vez de 0. */
+@keyframes home-nav-in { from { transform: translateY(-20px); } }
 @keyframes home-line-in { from { transform: translate3d(0, 112%, 0); } }
 @keyframes home-dot-in { from { transform: translateY(-60%) scale(0); } }
-@keyframes home-rise-in { from { opacity: 0; transform: translateY(18px); } }
-@keyframes home-avatar-in { from { clip-path: inset(100% 0% 0% 0% round 16px); transform: scale(1.15); } }
+@keyframes home-rise-in { from { opacity: .01; transform: translateY(18px); } }
+@keyframes home-avatar-in { from { clip-path: inset(88% 0% 0% 0% round 16px); transform: scale(1.15); } }
 @keyframes home-type-in { from { clip-path: inset(0 100% 0 0); } }
 @keyframes home-fade-in { from { opacity: 0; } }
 
 html.home-motion:not(.reduce-motion) .site-nav {
-  animation: home-nav-in 1s cubic-bezier(.215, .61, .355, 1) .1s backwards;
+  animation: home-nav-in .9s cubic-bezier(.215, .61, .355, 1) backwards;
 }
 
 html.home-motion:not(.reduce-motion) .hero-title .line em {
-  animation: home-line-in 1.4s cubic-bezier(.165, .84, .44, 1) .5s backwards;
+  animation: home-line-in 1.3s cubic-bezier(.165, .84, .44, 1) .1s backwards;
 }
 
-html.home-motion:not(.reduce-motion) .hero-title .line:nth-child(2) em { animation-delay: .63s; }
-html.home-motion:not(.reduce-motion) .hero-title .line:nth-child(3) em { animation-delay: .76s; }
+html.home-motion:not(.reduce-motion) .hero-title .line:nth-child(2) em { animation-delay: .22s; }
+html.home-motion:not(.reduce-motion) .hero-title .line:nth-child(3) em { animation-delay: .34s; }
 
 /* o ponto final "cai" no lugar depois do título */
 html.home-motion:not(.reduce-motion) .hero-title .dot {
-  animation: home-dot-in .7s cubic-bezier(.34, 1.56, .64, 1) 1.45s backwards;
+  animation: home-dot-in .7s cubic-bezier(.34, 1.56, .64, 1) .95s backwards;
 }
 
 html.home-motion:not(.reduce-motion) .hero-profile {
-  animation: home-rise-in 1s cubic-bezier(.215, .61, .355, 1) .95s backwards;
+  animation: home-rise-in .9s cubic-bezier(.215, .61, .355, 1) .35s backwards;
 }
 
 /* a foto se revela de baixo para cima */
 html.home-motion:not(.reduce-motion) .hero-avatar {
-  animation: home-avatar-in 1s cubic-bezier(.165, .84, .44, 1) .95s backwards;
+  animation: home-avatar-in .9s cubic-bezier(.165, .84, .44, 1) .35s backwards;
 }
 
 /* o cargo se "digita", letra a letra */
 html.home-motion:not(.reduce-motion) .hero-intro .mono {
-  animation: home-type-in .65s steps(18, end) 1.3s backwards;
+  animation: home-type-in .6s steps(18, end) .65s backwards;
 }
 
 html.home-motion:not(.reduce-motion) .hero-cta {
-  animation: home-rise-in 1s cubic-bezier(.215, .61, .355, 1) 1.1s backwards;
+  animation: home-rise-in .9s cubic-bezier(.215, .61, .355, 1) .5s backwards;
 }
 
 html.home-motion:not(.reduce-motion) .hud-corner,
 html.home-motion:not(.reduce-motion) .hud-deg {
-  animation: home-fade-in 1.2s ease 1.3s backwards;
+  animation: home-fade-in 1.2s ease .8s backwards;
 }
 
 /* ============ 3D STAGE ============ */
