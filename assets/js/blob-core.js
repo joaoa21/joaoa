@@ -164,6 +164,7 @@ export function createBlobStage({
   opacity = 0,
   scatter = 0,
   pointer = true,
+  maxPixelRatio = null,
 } = {}) {
   const initialMobile = isMobileViewport();
   const finePointer = window.matchMedia('(pointer: fine)').matches;
@@ -181,7 +182,7 @@ export function createBlobStage({
     powerPreference: 'high-performance',
   });
 
-  const pixelRatio = () => Math.min(window.devicePixelRatio || 1, lowPowerDevice ? 1.5 : 2);
+  const pixelRatio = () => Math.min(window.devicePixelRatio || 1, maxPixelRatio ?? (lowPowerDevice ? 1.5 : 2));
   const baseSize = () => (isMobileViewport() ? pointSize.mobile : pointSize.desktop) * pixelRatio();
 
   renderer.setClearColor(0x000000, 0);

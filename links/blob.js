@@ -11,7 +11,9 @@ const COLORS = {
   light: new THREE.Color(0xd8d5cb),
 };
 
-const OPACITY = { dark: 0.45, light: 0.25 };
+/* no celular há menos partículas (e menos sobreposição): um pouco mais de opacidade compensa */
+const MOBILE_BOOST = window.innerWidth <= 760 ? 1.3 : 1;
+const OPACITY = { dark: 0.45 * MOBILE_BOOST, light: 0.25 * MOBILE_BOOST };
 
 const canvas = document.getElementById('stage');
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -33,7 +35,9 @@ function createLinksBlob() {
   const stage = createBlobStage({
     canvas,
     reduced,
-    counts: { mobile: 9000, lowPower: 16000, full: 24000 },
+    counts: { mobile: 5000, lowPower: 16000, full: 24000 },
+    pointSize: { mobile: 1.7, desktop: 2 },
+    maxPixelRatio: 2,
     color: COLORS[initialTheme],
   });
 
