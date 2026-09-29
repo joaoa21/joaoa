@@ -7,6 +7,8 @@ const walk=async dir=>{const out=[];for(const e of await fs.readdir(dir,{withFil
 const relative=p=>path.relative(root,p).replaceAll('\\','/');
 const files=await walk(root), names=new Set(files.map(relative));
 const errors=[];let references=0,scripts=0,pages=0;
+// Rotas servidas por proxy no _redirects (ex.: /blog/* → site do blog): existem em outro projeto
+const proxied=(await fs.readFile(path.join(root,'_redirects'),'utf8').catch(()=>'')).split(/\r?\n/).map(l=>l.trim().split(/\s+/)).filter(([from,to,status])=>from?.endsWith('/*')&&/^https?:/.test(to||'')&&status==='200').map(([from])=>from.slice(0,-1));
 for(const file of files.filter(p=>/\.(html|css|js)$/.test(p))){
  const source=await fs.readFile(file,'utf8');
  if(file.endsWith('.js')){scripts++;try{execFileSync(process.execPath,['--check',file],{stdio:'pipe'});}catch(e){errors.push(relative(file)+': '+e.stderr);}}
@@ -16,6 +18,7 @@ for(const file of files.filter(p=>/\.(html|css|js)$/.test(p))){
   let value=match[1];
   if(/^(data:|[a-z]+:|\/\/|\$|%23)/i.test(value))continue;
   const clean=decodeURIComponent(value.split(/[?#]/)[0]);
+  if(proxied.some(prefix=>clean.startsWith(prefix)))continue;
   const target=clean?path.resolve(clean.startsWith('/')?root:path.dirname(file),clean.startsWith('/')?'.'+clean:clean):file;
   let name=relative(target);
   if(!name||!path.extname(name))name=(name?name.replace(/\/$/,'')+'/':'')+'index.html';
