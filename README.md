@@ -1,6 +1,26 @@
 # João Alberto — portfólio
 
-Site pessoal em HTML, CSS e JavaScript, sem etapa de build. Publicado em [joaoa.com.br](https://joaoa.com.br) pelo Netlify a partir da branch `main`.
+Meu site pessoal: portfólio, cases, currículo e página de links, desenhado e desenvolvido por mim, **sem framework e sem etapa de build**.
+
+**[joaoa.com.br](https://joaoa.com.br)** · [Blog](https://joaoa.com.br/blog/) · [LinkedIn](https://www.linkedin.com/in/joaoa210/)
+
+![joaoa.com.br](https://joaoa.com.br/assets/img/og-cover.jpg)
+
+## Destaques
+
+- **Blob 3D interativo** em Three.js com shader próprio, reaproveitado em várias páginas por um núcleo único (`blob-core.js`), com limite de *pixel ratio* e menos partículas no celular.
+- **Animações com GSAP** (ScrollTrigger e SplitText) e rolagem suave com Lenis, respeitando "reduzir movimento" do sistema e com *fallback* caso o script não carregue.
+- **Performance:** Lighthouse **100 no desktop**. A entrada da home é feita em CSS (não espera o JavaScript), o 3D só carrega depois da página, as fontes são hospedadas no próprio site, os ícones são SVG no lugar de uma fonte de ícones e as galerias carregam miniaturas, baixando o original só ao ampliar.
+- **Acessibilidade:** Lighthouse **100**. Link para pular ao conteúdo, galeria em `<dialog>` acessível, textos animados que continuam legíveis para leitores de tela e navegação por teclado.
+- **SEO e compartilhamento:** títulos e descrições por página, Open Graph e X/Twitter com imagens próprias, dados estruturados (`Person`, `WebSite`), sitemap e Search Console.
+- **Blog no mesmo domínio:** o blog é um projeto Astro separado ([joaoa-blog](https://github.com/joaoa21/joaoa-blog)), servido em `/blog` por proxy do Netlify, sem mudar a stack do portfólio.
+- **Currículo** com versão para impressão/PDF otimizada para sistemas de recrutamento (ATS), em uma página.
+
+## Stack
+
+HTML · CSS · JavaScript (ES modules) · Three.js · GSAP · Lenis · Netlify
+
+---
 
 ## Páginas
 
