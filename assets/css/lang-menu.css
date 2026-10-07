@@ -19,6 +19,21 @@
   position: relative;
 }
 
+/* no menu: usa as mesmas cores dos outros itens, então acompanha a troca de tema
+   da home ao rolar (body.light) */
+.nav-lang .lang-menu {
+  --lm-bg: var(--bg, #0f0f0f);
+  --lm-fg: var(--fg, #f2f0eb);
+  --lm-soft: var(--soft, rgba(242, 240, 235, .72));
+  --lm-line: var(--line, rgba(242, 240, 235, .14));
+  --lm-chip: var(--chip, rgba(242, 240, 235, .07));
+  --lm-hover: var(--line, rgba(242, 240, 235, .1));
+}
+
+body.light .nav-lang .lang-menu {
+  --lm-shadow: 0 18px 40px rgba(0, 0, 0, .14);
+}
+
 /* temas claros: barra do currículo e tema claro da página de links */
 .cv-toolbar .lang-menu,
 html.light .lang-menu {

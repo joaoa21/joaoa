@@ -1610,3 +1610,14 @@ footer {
   align-items: flex-start;
   padding-top: 9rem;
 }
+
+/* ============ MENU MOBILE ABERTO DEPOIS DE ROLAR ============
+   A barra rolada usa backdrop-filter, que prende elementos "fixed" dentro
+   dela: o menu de tela cheia abria espremido dentro da barra. Enquanto o
+   menu está aberto (body.no-scroll), a barra fica sem o desfoque. */
+@media (max-width: 860px) {
+  body.no-scroll .site-nav {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
