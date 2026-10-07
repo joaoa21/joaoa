@@ -1,3 +1,8 @@
+# Widget Super Múltipla: removido do portfólio; endereços antigos vão para a página de iGaming
+/portfolio/widget-supermultipla/*  /projetos/igaming/ 301
+/portfolio/widget-supermultipla    /projetos/igaming/ 301
+/projetos/igaming/widget-supermultipla/*  /projetos/igaming/ 301
+/projetos/igaming/widget-supermultipla    /projetos/igaming/ 301
 /portfolio /projetos/igaming/ 301
 /portfolio/ /projetos/igaming/ 301
 /portfolio/index.html /projetos/igaming/ 301
