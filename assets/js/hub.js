@@ -173,8 +173,11 @@ function animateCard(card, delay = 0) {
   }
 }
 
+/* Robôs de busca (Google, Bing…) recebem a página completa, sem animação de entrada. */
+const isCrawler = /bot|crawl|spider|slurp|facebookexternalhit/i.test(navigator.userAgent);
+
 function setupInterfaceAnimations() {
-  if (!hasGSAP || reduced) {
+  if (isCrawler || !hasGSAP || reduced) {
     revealWithoutAnimation();
     return;
   }

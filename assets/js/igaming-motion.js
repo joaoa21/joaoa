@@ -11,6 +11,10 @@ const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) => [...context.querySelectorAll(selector)];
 
 const root = document.documentElement;
+
+/* Robôs de busca (Google, Bing…) leem o texto inteiro, sem animação: o SplitText
+   quebra títulos e parágrafos em pedaços, e o Google mostrava "Do. layout. ao. código.". */
+const isCrawler = /bot|crawl|spider|slurp|facebookexternalhit/i.test(navigator.userAgent);
 const page = $('.igaming-page');
 
 const ITEM_SELECTOR = '.card, .banner, .widget, .gamif-card, .gamif-banner, .email-card';
@@ -56,7 +60,7 @@ function preloadNearViewport(items) {
 
 (() => {
   const { gsap, ScrollTrigger, SplitText } = window;
-  if (!page || !gsap || !ScrollTrigger) {
+  if (isCrawler || !page || !gsap || !ScrollTrigger) {
     showAll();
     return;
   }

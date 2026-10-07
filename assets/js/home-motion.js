@@ -10,6 +10,10 @@ const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) => [...context.querySelectorAll(selector)];
 
 const root = document.documentElement;
+
+/* Robôs de busca (Google, Bing…) leem o texto inteiro, sem animação: o SplitText
+   quebra títulos e parágrafos em pedaços, e o Google mostrava "Do. layout. ao. código.". */
+const isCrawler = /bot|crawl|spider|slurp|facebookexternalhit/i.test(navigator.userAgent);
 const fallbackTimer = window.__homeMotionFallback;
 
 function showWithoutAnimation() {
@@ -28,7 +32,7 @@ const onEnter = (trigger, extra = {}) => ({ trigger, start: 'top 82%', once: tru
 export function initHomeMotion() {
   const { gsap, ScrollTrigger, SplitText } = window;
 
-  if (!gsap || !ScrollTrigger) {
+  if (isCrawler || !gsap || !ScrollTrigger) {
     showWithoutAnimation();
     return;
   }

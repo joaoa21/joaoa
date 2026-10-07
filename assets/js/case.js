@@ -14,6 +14,10 @@ const $$ = (selector, context = document) => [...context.querySelectorAll(select
 
 const root = document.documentElement;
 
+/* Robôs de busca (Google, Bing…) leem o texto inteiro, sem animação: o SplitText
+   quebra títulos e parágrafos em pedaços, e o Google mostrava "Do. layout. ao. código.". */
+const isCrawler = /bot|crawl|spider|slurp|facebookexternalhit/i.test(navigator.userAgent);
+
 function showAll() {
   root.classList.add('motion-fallback');
   window.clearTimeout(window.__caseMotionFallback);
@@ -73,7 +77,7 @@ function splitWords(gsap, SplitText, element, vars = {}) {
 
 (() => {
   const { gsap, ScrollTrigger, SplitText } = window;
-  if (!gsap || !ScrollTrigger || !$('.case-shell')) {
+  if (isCrawler || !gsap || !ScrollTrigger || !$('.case-shell')) {
     showAll();
     return;
   }
