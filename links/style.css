@@ -612,3 +612,24 @@ html.light .theme-toggle .knob {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============ IDIOMA (PT / EN) ============ */
+.lang-switch {
+  display: block;
+  width: fit-content;
+  margin: .8rem auto 0;
+  padding: .5rem .85rem;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--muted);
+  font-size: .66rem;
+  letter-spacing: .14em;
+  text-decoration: none;
+  transition: color .25s ease, border-color .25s ease;
+}
+
+.lang-switch:hover,
+.lang-switch:focus-visible {
+  border-color: var(--muted);
+  color: var(--fg);
+}

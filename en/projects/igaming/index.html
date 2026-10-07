@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<script>
+  (() => {
+    const root = document.documentElement;
+    root.classList.add('js');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      root.classList.add('reduce-motion');
+    }
+
+    window.__hubMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 1800);
+
+    // garantia própria da página: se igaming-motion.js não carregar, as peças aparecem
+    window.__igamingMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 2600);
+  })();
+</script>
+<link href="https://joaoa.com.br/en/projects/igaming/" rel="canonical"/><link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/igaming/"/><link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/igaming/"/><link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/igaming/"/><meta content="#0f0f0f" name="theme-color"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>iGaming Portfolio: CRM, Gamification and Design — João Alberto</title>
+<meta property="og:locale" content="en_US"/><meta property="og:locale:alternate" content="pt_BR"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="João Alberto"/>
+<meta property="og:title" content="iGaming Portfolio: CRM, Gamification and Design — João Alberto"/>
+<meta property="og:description" content="João Alberto's iGaming projects: CRM, gamification, email marketing, banners, pop-ups, widgets and digital campaigns."/>
+<meta property="og:url" content="https://joaoa.com.br/en/projects/igaming/"/>
+<meta property="og:image" content="https://joaoa.com.br/assets/img/og-igaming-en.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="iGaming banners created by João Alberto"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="iGaming Portfolio: CRM, Gamification and Design — João Alberto"/>
+<meta name="twitter:description" content="João Alberto's iGaming projects: CRM, gamification, email marketing, banners, pop-ups, widgets and digital campaigns."/>
+<meta name="twitter:image" content="https://joaoa.com.br/assets/img/og-igaming-en.jpg"/>
+<meta name="twitter:image:alt" content="iGaming banners created by João Alberto"/>
+<meta content="João Alberto's iGaming projects: CRM, gamification, email marketing, banners, pop-ups, widgets and digital campaigns." name="description"/>
+<link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin=""/><link href="/assets/css/fonts.css" rel="stylesheet"/>
+<link href="/assets/css/icons.css" rel="stylesheet"/>
+<link href="/assets/css/hub.css" rel="stylesheet"/>
+<link href="/assets/css/igaming.css" rel="stylesheet"/>
+<link href="/favicon.ico" rel="icon" sizes="48x48"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "iGaming Portfolio — João Alberto",
+  "url": "https://joaoa.com.br/en/projects/igaming/",
+  "creator": {
+    "@id": "https://joaoa.com.br/#person"
+  },
+  "image": "https://joaoa.com.br/assets/projetos/1.webp",
+  "description": "A selection of design projects for iGaming, CRM, gamification, email marketing, banners, pop-ups and widgets.",
+  "inLanguage": "en"
+}</script><link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><link rel="stylesheet" href="/assets/css/portfolio.css"/><script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"
+    }
+  }
+  </script>
+<link rel="stylesheet" href="/assets/css/contact-socials.css"/>
+<script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script></head>
+<body>
+<a class="skip-link" href="#conteudo">Skip to content</a>
+<!-- ============ 3D STAGE ============ -->
+<canvas aria-hidden="true" id="stage"></canvas>
+<!-- ============ HUD ============ -->
+<div aria-hidden="true" class="hud">
+<div class="hud-corner hud-bl mono">
+<span>REC — PE / BR</span>
+<span>8.05°S · 34.88°W</span>
+</div>
+<div class="hud-corner hud-br mono">
+<span>©2026</span>
+<span id="hudClock">00:00:00</span>
+</div>
+</div>
+<!-- ============ NAVBAR ============ -->
+<header class="site-nav" id="nav">
+<a aria-label="João Alberto — home page" class="nav-logo" href="/en/">João Alberto</a>
+<nav aria-label="Main navigation" class="nav-menu" id="navMenu">
+<ul class="nav-links">
+<li><a href="/en/#topo">Home</a></li>
+<li><a href="/en/#sobre">About</a></li>
+<li><a aria-current="page" href="/en/projects/">Projects</a></li>
+<li><a href="/en/web-design/">Services</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li class="nav-lang"><a href="/projetos/igaming/" hreflang="pt-BR" lang="pt-BR" aria-label="Versão em português">PT</a></li></ul>
+<a class="nav-cta" href="/en/#contato">
+        Let's talk
+        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</a>
+</nav>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="Open menu" class="nav-mobile-toggle" id="navToggle" type="button">
+<span></span>
+<span></span>
+</button>
+</header>
+<main class="igaming-page" id="conteudo">
+<header class="hub-head">
+<a class="hub-back-link mono" href="/en/projects/"><i aria-hidden="true" class="fa-solid fa-arrow-left"></i><span>Back to projects</span></a>
+<div class="hub-label mono"><span></span>PORTFOLIO</div>
+<h1 class="hub-title">iGaming<span class="dot">.</span></h1>
+<p class="hub-desc">Design for campaigns, CRM and gamification. A selection of assets and interfaces for the iGaming world.</p>
+</header>
+<nav class="gallery-nav" aria-label="iGaming categories"><a href="#trafego">Paid ads</a>
+<a href="#popups">Pop-ups</a>
+<a href="#banners">Banners</a>
+<a href="#widgets">Widgets</a>
+<a href="#gamificacao">Gamification</a>
+<a href="#emails">Emails</a></nav>
+<!-- ============== TRÁFEGO PAGO ============== -->
+<section class="work-section" id="trafego">
+<div class="s-head">
+<div class="s-head-left ">
+<span class="s-num">// 01</span>
+<h2 class="s-title">Paid Ads<span class="dot">.</span></h2>
+</div>
+</div>
+<div class="grid-trafego ">
+<div class="card">
+<img alt="Square ad 'Descubra nossos principais jogos' (Discover our top games) with the Fortune series characters" decoding="async" height="720" loading="lazy" src="/projetos/igaming/assets/trafego/1.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Square ad 'Ligue os motores, decole e voe alto com o Aviator' (Start your engines and fly high with Aviator) with a red plane" decoding="async" height="720" loading="lazy" src="/projetos/igaming/assets/trafego/2.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Square ad 'Diversão a partir de R$ 1,00' (Fun from R$ 1.00) with the Fortune Dragon dragon" decoding="async" height="720" loading="lazy" src="/projetos/igaming/assets/trafego/3.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Square ad 'Voe alto com Aviator' (Fly high with Aviator) with an illustrated pilot in a red plane" decoding="async" height="720" loading="lazy" src="/projetos/igaming/assets/trafego/4.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Square ad 'Venha se divertir com a família Fortune' (Have fun with the Fortune family) with the series characters" decoding="async" height="720" loading="lazy" src="/projetos/igaming/assets/trafego/5.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Square ad 'Venha se divertir com a Mega Roleta a partir de R$ 1,00' (Have fun with Mega Roulette from R$ 1.00)" decoding="async" height="720" loading="lazy" src="/projetos/igaming/assets/trafego/6.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Square ad 'Libere +35 giros no Tigre Sortudo' (Unlock 35+ spins on Lucky Tiger) with the tiger in front of a temple" decoding="async" height="720" loading="lazy" src="/projetos/igaming/assets/trafego/7.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Square ad for Piñata Wins: 150 spins of R$ 0.80 for R$ 120" decoding="async" height="720" loading="lazy" src="/projetos/igaming/assets/trafego/8.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Square ad for Wild Bandito: 100 spins of R$ 0.40 for R$ 40" decoding="async" height="720" loading="lazy" src="/projetos/igaming/assets/trafego/9.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Square ad 'Você ganhou 05 giros grátis no Tigre Sortudo' (You won 5 free spins on Lucky Tiger) with the spokesperson in a green jacket" decoding="async" height="720" loading="lazy" src="/projetos/igaming/assets/trafego/10.webp" width="720"/>
+</div>
+<div class="card tall">
+<img alt="Vertical ad 'Quem vence essa disputa?' (Who wins this one?) with the Aviator plane against the Spaceman astronaut" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/trafego/11.webp" width="720"/>
+</div>
+<div class="card tall">
+<img alt="Vertical ad 'Qual você escolheria com R$ 20 na banca?' (Which would you pick with R$ 20?) with Fortune Dragon, Tiger and Ox" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/trafego/12.webp" width="720"/>
+</div>
+<div class="card tall">
+<img alt="Vertical ad 'Descubra nossos principais jogos' (Discover our top games) with the Fortune series characters" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/trafego/13.webp" width="720"/>
+</div>
+<div class="card tall">
+<img alt="Vertical ad 'O melhor do futebol' (The best of football) with European championship trophies" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/trafego/14.webp" width="720"/>
+</div>
+<div class="card tall">
+<img alt="Vertical ad 'Decole e voe alto com o Aviator' (Take off and fly high with Aviator) with a yellow plane" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/trafego/15.webp" width="720"/>
+</div>
+</div>
+</section>
+<!-- ============== POP-UPS ============== -->
+<section class="work-section" id="popups">
+<div class="s-head">
+<div class="s-head-left ">
+<span class="s-num">// 02</span>
+<h2 class="s-title">Pop-ups<span class="dot">.</span></h2>
+</div>
+</div>
+<div class="grid-popups ">
+<div class="card">
+<img alt="Pop-up 'Menino de Ouro' (Golden Boy) with illustrations of a tennis player" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/1.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Mission pop-up for Brazil vs France: bet and get a R$ 50 free bet" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/2.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Gates of Olympus pop-up: play R$ 50 and get 100 spins" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/3.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Pop-up 'Aposta risco zero' (Zero-risk bet) for Lakers vs Rockets in the NBA" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/4.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Copa do Brasil pop-up: Vasco vs Corinthians" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/5.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Pop-up 'Cashback turbinado' (Boosted cashback) for Starlight Princess 1000: up to 50% cashback" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/6.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Boosted odds pop-up for Indiana Pacers vs Oklahoma City Thunder" decoding="async" height="898" loading="lazy" src="/projetos/igaming/assets/pop-up/7.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Mission pop-up 'A noite dourada chegou!' (The golden night is here!) with a king lying on coins" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/8.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Pop-up 'Solicite seu bônus exclusivo' (Claim your exclusive bonus) with the tiger and the golden ball mascot" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/9.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Mission pop-up with national team players: bet and get a R$ 50 free bet" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/10.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Mission pop-up with European league trophies: bet and get a free bet" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/11.webp" width="720"/>
+</div>
+<div class="card">
+<img alt="Pop-up 'Rifa de Ouro: Natal premiado' (Gold Raffle: a rewarding Christmas) with an elf holding the ticket" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/pop-up/12.webp" width="720"/>
+</div>
+</div>
+</section>
+<!-- ============== POP-UP ANIMADO (destaque ao final dos pop-ups) ============== -->
+<section class="work-section popup-anim-section ">
+<div class="popup-anim-wrap">
+<span class="popup-anim-label">// Animated pop-up</span>
+<div class="popup-anim-frame">
+<iframe loading="lazy" src="/projetos/igaming/pop-up-animado/index.html" title="Animated pop-up" tabindex="-1" aria-hidden="true"></iframe>
+</div>
+</div>
+</section>
+<!-- ============== BANNERS ============== -->
+<section class="work-section" id="banners">
+<div class="s-head ">
+<div class="s-head-left">
+<span class="s-num">// 03</span>
+<h2 class="s-title">Banners<span class="dot">.</span></h2>
+</div>
+</div>
+<div class="grid-banners ">
+<!--
+        DISTRIBUIÇÃO MASONRY (grid de 6 colunas):
+        - <div class="banner short"> ocupa 2 colunas → 1266×600
+        - <div class="banner wide">  ocupa 3 colunas → 1600×375
+
+        Sugestão de layout pra padrão "tijolo":
+        Linha 1: short + short + short (3 banners 1266×600)
+        Linha 2: wide + wide          (2 banners 1600×375)
+        Linha 3: short + wide → ajusta conforme tem
+      -->
+<div class="banner short">
+<img alt="Banner 'Apostador: bem-vindo ao time' (Bettor: welcome to the team) with two hosts in red suits" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/1.webp" width="1266"/>
+</div>
+<div class="banner short">
+<img alt="Banner 'Aposta risco zero' (Zero-risk bet) for Flamengo vs Corinthians in the Supercopa do Brasil, with the club mascots" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/2.webp" width="1266"/>
+</div>
+<div class="banner short">
+<img alt="Banner 'Menino de Ouro' (Golden Boy): a R$ 5 free bet for every game won by João Fonseca" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/3.webp" width="1266"/>
+</div>
+<div class="banner wide">
+<img alt="Banner 'O Brasileirão voltou!' (The Brazilian league is back!) with players from every club in front of the stadium" decoding="async" height="375" loading="lazy" src="/projetos/igaming/assets/banners/4.webp" width="1600"/>
+</div>
+<div class="banner wide">
+<img alt="Banner 'O Apelão chegou na Jogo de Ouro': Nobru, official ambassador" decoding="async" height="375" loading="lazy" src="/projetos/igaming/assets/banners/5.webp" width="1600"/>
+</div>
+<div class="banner short">
+<img alt="Banner 'Aposta risco zero' (Zero-risk bet) for Lakers vs Rockets in the NBA" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/6.webp" width="1266"/>
+</div>
+<div class="banner short">
+<img alt="Banner 'Futebol europeu' (European football) with players from the top leagues" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/7.webp" width="1266"/>
+</div>
+<div class="banner short">
+<img alt="Banner for the Brazil vs Croatia international friendly" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/8.webp" width="1266"/>
+</div>
+<div class="banner wide">
+<img alt="Banner 'Cashback turbinado' (Boosted cashback) for Fortune Tiger: up to 50% cashback" decoding="async" height="375" loading="lazy" src="/projetos/igaming/assets/banners/9.webp" width="1600"/>
+</div>
+<div class="banner wide">
+<img alt="Banner 'Cassino ao vivo' (Live casino) with Nobru, official ambassador, at a casino table" decoding="async" height="375" loading="lazy" src="/projetos/igaming/assets/banners/10.webp" width="1600"/>
+</div>
+<div class="banner short">
+<img alt="Banner for 25% cashback on slots, with casino characters in a treasure cave" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/11.webp" width="1266"/>
+</div>
+<div class="banner short">
+<img alt="Banner 'Roleta de Ouro' (Gold Wheel) with the prize wheel and the golden ball mascot" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/12.webp" width="1266"/>
+</div>
+<div class="banner short">
+<img alt="Banner 'Última rodada na NFL' (Last round in the NFL) with American football players" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/13.webp" width="1266"/>
+</div>
+<div class="banner wide">
+<img alt="Banner 'A noite dourada chegou!' (The golden night is here!) with a king lying on coins" decoding="async" height="375" loading="lazy" src="/projetos/igaming/assets/banners/14.webp" width="1600"/>
+</div>
+<div class="banner wide">
+<img alt="Banner for the weekly Aviator tournament with a red plane" decoding="async" height="375" loading="lazy" src="/projetos/igaming/assets/banners/15.webp" width="1600"/>
+</div>
+<div class="banner short">
+<img alt="Banner 'O Pofexô da Jogo de Ouro é o Luxa' with the spokesperson in a green jacket" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/16.webp" width="1266"/>
+</div>
+<div class="banner short">
+<img alt="Halloween tournament banner with an illustrated pumpkin, mummy and Frankenstein" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/17.webp" width="1266"/>
+</div>
+<div class="banner short">
+<img alt="Banner for 5% cashback on slots with the spokesperson holding a gift" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/banners/18.webp" width="1266"/>
+</div>
+<div class="banner wide">
+<img alt="Fortune Family tournament banner with the characters in a Christmas mood" decoding="async" height="375" loading="lazy" src="/projetos/igaming/assets/banners/19.webp" width="1600"/>
+</div>
+<div class="banner wide">
+<img alt="Banner 'A Roleta de Ouro foi ativada' (The Gold Wheel is on) with the spokesperson in a Santa hat" decoding="async" height="375" loading="lazy" src="/projetos/igaming/assets/banners/20.webp" width="1600"/>
+</div>
+</div>
+</section>
+<!-- ============== WIDGETS ============== -->
+<section class="work-section" id="widgets">
+<div class="s-head ">
+<div class="s-head-left">
+<span class="s-num">// 04</span>
+<h2 class="s-title">Widgets<span class="dot">.</span></h2>
+</div>
+</div>
+<div class="grid-widgets ">
+<div class="widget">
+<img alt="Widget 'Você ganhou 50 giros grátis' (You won 50 free spins) with the Nobru coupon" decoding="async" height="873" loading="lazy" src="/projetos/igaming/assets/widgets/1.webp" width="1552"/>
+</div>
+<div class="widget">
+<img alt="Golden Night mission widget with a king sitting on coins" decoding="async" height="873" loading="lazy" src="/projetos/igaming/assets/widgets/2.webp" width="1552"/>
+</div>
+<div class="widget">
+<img alt="Widget 'Roleta de Ouro: gire agora' (Gold Wheel: spin now) with the golden ball mascot" decoding="async" height="611" loading="lazy" src="/projetos/igaming/assets/widgets/3.webp" width="1087"/>
+</div>
+<div class="widget">
+<img alt="Widget 'Aposta risco zero' (Zero-risk bet) with basketball players" decoding="async" height="611" loading="lazy" src="/projetos/igaming/assets/widgets/4.webp" width="1087"/>
+</div>
+<div class="widget">
+<img alt="Le Bunny Easter tournament widget with a raccoon dressed as a bunny" decoding="async" height="873" loading="lazy" src="/projetos/igaming/assets/widgets/5.webp" width="1552"/>
+</div>
+<div class="widget">
+<img alt="Widget 'Aposte e ganhe: ative a missão' (Bet and win: activate the mission) with the golden ball mascot" decoding="async" height="873" loading="lazy" src="/projetos/igaming/assets/widgets/6.webp" width="1552"/>
+</div>
+<div class="widget">
+<img alt="Widget 'Rifa de Ouro: Natal premiado' (Gold Raffle: a rewarding Christmas) with an elf holding the ticket" decoding="async" height="611" loading="lazy" src="/projetos/igaming/assets/widgets/7.webp" width="1087"/>
+</div>
+<div class="widget">
+<img alt="Widget 'Cada giro vale mais: Cashback de Ouro' (Every spin is worth more: Gold Cashback) with the golden ball mascot" decoding="async" height="611" loading="lazy" src="/projetos/igaming/assets/widgets/8.webp" width="1087"/>
+</div>
+<div class="widget">
+<img alt="Widget 'Aposta risco zero' (Zero-risk bet) with a top-hatted character holding the ticket" decoding="async" height="873" loading="lazy" src="/projetos/igaming/assets/widgets/9.webp" width="1552"/>
+</div>
+</div>
+</section>
+<!-- ============== GAMIFICAÇÃO (3D) ============== -->
+<section class="work-section" id="gamificacao">
+<div class="s-head ">
+<div class="s-head-left">
+<span class="s-num">// 05</span>
+<h2 class="s-title">Gamification<span class="dot">.</span></h2>
+</div>
+</div>
+<article class="club-project" id="clube-de-ouro">
+<div class="club-info">
+<p class="club-kicker"><span aria-hidden="true" class="club-live"></span>Interactive experience · Loyalty program</p>
+<h3>Clube de Ouro (Gold Club)<span class="dot">.</span></h3>
+<p class="club-desc">Levels, rewards and a progression journey for players. Browse the full experience, just as the player sees it.</p>
+<ul class="club-features" aria-label="What's in the experience">
+<li>10 levels</li>
+<li>Leaderboard</li>
+<li>Points store</li>
+<li>Benefits comparison</li>
+</ul>
+<button class="btn club-open" type="button" aria-haspopup="dialog" aria-controls="club-dialog"><span>Explore Clube de Ouro</span><i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i></button>
+</div>
+<button class="club-preview club-open" type="button" aria-haspopup="dialog" aria-controls="club-dialog" aria-label="Open the Clube de Ouro interactive experience">
+<span aria-hidden="true" class="club-browser-bar"><i></i><i></i><i></i><span>clube de ouro · interactive experience</span></span>
+<span class="club-preview-media"><img alt="Clube de Ouro home page: welcome, current level and the player's progress" decoding="async" height="1000" loading="lazy" src="/projetos/igaming/assets/clube-de-ouro.webp" width="1600"/></span>
+<span aria-hidden="true" class="club-preview-cta"><i class="fa-solid fa-hand-pointer"></i>Click to explore</span>
+</button>
+</article>
+<div class="grid-gamif ">
+<div class="gamif-card">
+<span class="gamif-card-num">01</span>
+<img alt="Aviator mission badge, level 1: rusty plane on a gray glass shield" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/1.webp" width="512"/>
+<span class="gamif-card-label">Mission · Aviator</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">02</span>
+<img alt="Aviator mission badge, level 2: red plane on a green glass shield" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/2.webp" width="512"/>
+<span class="gamif-card-label">Mission · Aviator</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">03</span>
+<img alt="Aviator mission badge, level 3: silver plane on a blue glass shield" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/3.webp" width="512"/>
+<span class="gamif-card-label">Mission · Aviator</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">04</span>
+<img alt="Aviator mission badge, level 4: golden plane on a purple glass shield" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/4.webp" width="512"/>
+<span class="gamif-card-label">Mission · Aviator</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">05</span>
+<img alt="Aviator mission badge, level 5: crystal plane on a golden shield" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/5.webp" width="512"/>
+<span class="gamif-card-label">Mission · Aviator</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">06</span>
+<img alt="Roulette mission badge, level 1: rusty roulette wheel on a gray glass shield" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/6.webp" width="512"/>
+<span class="gamif-card-label">Mission · Roulette</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">07</span>
+<img alt="Roulette mission badge, level 2: wooden roulette wheel on a green glass shield" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/7.webp" width="512"/>
+<span class="gamif-card-label">Mission · Roulette</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">08</span>
+<img alt="Roulette mission badge, level 3: silver roulette wheel on a blue glass shield" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/8.webp" width="512"/>
+<span class="gamif-card-label">Mission · Roulette</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">09</span>
+<img alt="Roulette mission badge, level 4: golden roulette wheel on a purple glass shield" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/9.webp" width="512"/>
+<span class="gamif-card-label">Mission · Roulette</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">10</span>
+<img alt="Roulette mission badge, level 5: crystal roulette wheel on a golden shield" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/10.webp" width="512"/>
+<span class="gamif-card-label">Mission · Roulette</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">11</span>
+<img alt="Hacksaw mission badge, level 1: cowboy raccoon holding a gold nugget" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/11.webp" width="512"/>
+<span class="gamif-card-label">Mission · Hacksaw</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">12</span>
+<img alt="Hacksaw mission badge, level 2: raccoon with a pompadour and star glasses tossing coins" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/12.webp" width="512"/>
+<span class="gamif-card-label">Mission · Hacksaw</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">13</span>
+<img alt="Hacksaw mission badge, level 3: raccoon dressed as a bunny with a bag of coins" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/13.webp" width="512"/>
+<span class="gamif-card-label">Mission · Hacksaw</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">14</span>
+<img alt="Hacksaw mission badge, level 4: viking raccoon carrying bags of coins" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/14.webp" width="512"/>
+<span class="gamif-card-label">Mission · Hacksaw</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">15</span>
+<img alt="Hacksaw mission badge, level 5: pharaoh raccoon with a treasure chest" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/15.webp" width="512"/>
+<span class="gamif-card-label">Mission · Hacksaw</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">16</span>
+<img alt="Casino mission card: a king sitting on a mountain of gold coins" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/16.webp" width="512"/>
+<span class="gamif-card-label">Mission · Casino</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">17</span>
+<img alt="NBA mission card: two players fighting for the ball mid-air at sunset" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/17.webp" width="512"/>
+<span class="gamif-card-label">Mission · NBA</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">18</span>
+<img alt="Casino mission card: a king lifting a golden trophy" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/18.webp" width="512"/>
+<span class="gamif-card-label">Mission · Casino</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">19</span>
+<img alt="Natal Fortunes mission card: Fortune series characters in Christmas outfits" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/19.webp" width="512"/>
+<span class="gamif-card-label">Mission · Natal Fortunes</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">20</span>
+<img alt="Spaceman mission card: an astronaut flying through space" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/20.webp" width="512"/>
+<span class="gamif-card-label">Mission · Spaceman</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">21</span>
+<img alt="Store spin bundle: Fortune Dragon, 50 spins" class="small" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/21.webp" width="512"/>
+<span class="gamif-card-label">Store · Spin bundle</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">22</span>
+<img alt="Store spin bundle: Fortune Tiger, 10 spins" class="small" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/22.webp" width="512"/>
+<span class="gamif-card-label">Store · Spin bundle</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">23</span>
+<img alt="Store spin bundle: Fortune Rabbit, 100 spins" class="small" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/23.webp" width="512"/>
+<span class="gamif-card-label">Store · Spin bundle</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">24</span>
+<img alt="Store spin bundle: Fortune Ox, 5 spins" class="small" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/24.webp" width="512"/>
+<span class="gamif-card-label">Store · Spin bundle</span>
+</div>
+<div class="gamif-card">
+<span class="gamif-card-num">25</span>
+<img alt="Store spin bundle: Cash Mania, 80 spins" class="small" decoding="async" height="512" loading="lazy" src="/projetos/igaming/assets/game/25.webp" width="512"/>
+<span class="gamif-card-label">Store · Spin bundle</span>
+</div>
+</div>
+<!-- ===== Banners promocionais (extras) ===== -->
+<div class="grid-gamif-banners">
+<div class="gamif-banner">
+<img alt="Fortune Snake Tournament banner worth R$ 5,000.00, with the snake in front of a temple" decoding="async" height="432" loading="lazy" src="/projetos/igaming/assets/game/26.webp" width="1088"/>
+</div>
+<div class="gamif-banner">
+<img alt="Gold Prediction Pool banner with the golden ball mascot holding the Brazilian league trophy" decoding="async" height="352" loading="lazy" src="/projetos/igaming/assets/game/27.webp" width="792"/>
+</div>
+<div class="gamif-banner">
+<img alt="Gold Quiz banner with the golden ball mascot taking the test in the locker room" decoding="async" height="256" loading="lazy" src="/projetos/igaming/assets/game/28.webp" width="644"/>
+</div>
+<div class="gamif-banner">
+<img alt="Banner 'Você tem uma nova missão disponível' (You have a new mission available) with an explorer finding a treasure chest" decoding="async" height="600" loading="lazy" src="/projetos/igaming/assets/game/29.webp" width="1200"/>
+</div>
+</div>
+</section>
+<!-- ============== EMAIL MARKETING ============== -->
+<section class="work-section" id="emails">
+<div class="s-head ">
+<div class="s-head-left">
+<span class="s-num">// 06</span>
+<h2 class="s-title">Email Marketing<span class="dot">.</span></h2>
+</div>
+</div>
+<div class="grid-emails ">
+<article class="email-card">
+<a aria-label="Open Email 01 as HTML" class="email-preview" href="/projetos/igaming/emails/email-01.html" rel="noopener" target="_blank">
+<img alt="Preview of the 'Menino de Ouro' (Golden Boy) email with boosted odds for a tennis match" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/emails/email-01.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 01</span>
+<a class="email-action" href="/projetos/igaming/emails/email-01.html" rel="noopener" target="_blank">View HTML</a>
+</div>
+</article>
+<article class="email-card">
+<a aria-label="Open Email 02 as HTML" class="email-preview" href="/projetos/igaming/emails/email-02.html" rel="noopener" target="_blank">
+<img alt="Preview of the 'Le Bunny chegou!' (Le Bunny is here!) email with 10 free spins" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/emails/email-02.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 02</span>
+<a class="email-action" href="/projetos/igaming/emails/email-02.html" rel="noopener" target="_blank">View HTML</a>
+</div>
+</article>
+<article class="email-card">
+<a aria-label="Open Email 03 as HTML" class="email-preview" href="/projetos/igaming/emails/email-03.html" rel="noopener" target="_blank">
+<img alt="Preview of the Aviator flash promotion email" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/emails/email-03.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 03</span>
+<a class="email-action" href="/projetos/igaming/emails/email-03.html" rel="noopener" target="_blank">View HTML</a>
+</div>
+</article>
+<article class="email-card">
+<a aria-label="Open Email 04 as HTML" class="email-preview" href="/projetos/igaming/emails/email-04.html" rel="noopener" target="_blank">
+<img alt="Preview of the 'Hoje é dia de bola rolando' (Game day) email with the day's matches" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/emails/email-04.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 04</span>
+<a class="email-action" href="/projetos/igaming/emails/email-04.html" rel="noopener" target="_blank">View HTML</a>
+</div>
+</article>
+<article class="email-card">
+<a aria-label="Open Email 05 as HTML" class="email-preview" href="/projetos/igaming/emails/email-05.html" rel="noopener" target="_blank">
+<img alt="Preview of the Nations League Tournament email, with the leaderboard prizes" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/emails/email-05.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 05</span>
+<a class="email-action" href="/projetos/igaming/emails/email-05.html" rel="noopener" target="_blank">View HTML</a>
+</div>
+</article>
+<article class="email-card">
+<a aria-label="Open Email 06 as HTML" class="email-preview" href="/projetos/igaming/emails/email-06.html" rel="noopener" target="_blank">
+<img alt="Preview of the 'Coelho de Ouro' (Golden Rabbit) email with 50% cashback on Fortune Rabbit" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/emails/email-06.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 06</span>
+<a class="email-action" href="/projetos/igaming/emails/email-06.html" rel="noopener" target="_blank">View HTML</a>
+</div>
+</article>
+<article class="email-card">
+<a aria-label="Open Email 07 as HTML" class="email-preview" href="/projetos/igaming/emails/email-07.html" rel="noopener" target="_blank">
+<img alt="Preview of the Aviator mission email with two tasks and flight rewards" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/emails/email-07.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 07</span>
+<a class="email-action" href="/projetos/igaming/emails/email-07.html" rel="noopener" target="_blank">View HTML</a>
+</div>
+</article>
+<article class="email-card">
+<a aria-label="Open Email 08 as HTML" class="email-preview" href="/projetos/igaming/emails/email-08.html" rel="noopener" target="_blank">
+<img alt="Preview of the extra spins email with three top-up offers" decoding="async" height="900" loading="lazy" src="/projetos/igaming/assets/emails/email-08.webp" width="600"/>
+</a>
+<div class="email-meta">
+<span class="email-name">Email 08</span>
+<a class="email-action" href="/projetos/igaming/emails/email-08.html" rel="noopener" target="_blank">View HTML</a>
+</div>
+</article>
+</div>
+</section>
+<section aria-label="Back navigation" class="hub-back-section"><a class="btn-sweep btn-sweep-back" href="/en/projects/"><span>Back to projects</span><span class="sweep-ic"><i aria-hidden="true" class="fa-solid fa-arrow-left"></i></span></a></section><section id="contato" aria-labelledby="titulo-contato" class="hub-cta">
+<h2 id="titulo-contato">Let's work together<span class="dot">?</span></h2>
+<a class="btn" href="https://wa.me/5581988780144?text=Hi%20Jo%C3%A3o!" rel="noopener" target="_blank">
+<span>Get in touch</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</a>
+<nav aria-label="Social networks" class="contact-networks">
+  <div class="contact-social-item"><a aria-label="GitHub" href="https://github.com/joaoa21" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-github"></i></a><span aria-hidden="true" class="contact-social-tooltip">GitHub</span></div>
+  <div class="contact-social-item"><a aria-label="Instagram" href="https://www.instagram.com/joaoalbertoms2/" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-instagram"></i></a><span aria-hidden="true" class="contact-social-tooltip">Instagram</span></div>
+  <div class="contact-social-item"><a aria-label="LinkedIn" href="https://www.linkedin.com/in/joaoa210/" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i></a><span aria-hidden="true" class="contact-social-tooltip">LinkedIn</span></div>
+</nav>
+</section>
+</main>
+<!-- ============ FOOTER ============ -->
+<footer>
+<div class="footer-info">
+<p>João Alberto © 2026 — Digital design &amp; web</p>
+<p class="mono">RECIFE — PE / BRAZIL</p>
+</div>
+<a aria-label="Back to top" class="to-top" href="#conteudo">
+<i aria-hidden="true" class="fa-solid fa-arrow-up"></i>
+</a>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+<script src="/assets/js/hub.js" type="module"></script>
+<script src="/assets/js/gallery.js" defer></script>
+<dialog class="club-dialog" id="club-dialog" aria-labelledby="club-dialog-title" data-lenis-prevent>
+<div class="club-dialog-bar"><div><strong id="club-dialog-title">Clube de Ouro (Gold Club)</strong><span>Interactive experience</span></div><button type="button" class="club-close" autofocus aria-label="Close Clube de Ouro">Close <span aria-hidden="true">×</span></button></div>
+<div class="club-stage"><p class="club-loading" role="status">Loading experience…</p><iframe title="Clube de Ouro — interactive presentation" data-src="/projetos/igaming/clube-de-ouro/index.html" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe></div>
+</dialog>
+<script src="/assets/js/club-preview.js" defer></script>
+<script src="/assets/js/igaming-motion.js" type="module"></script>
+</body>
+</html>

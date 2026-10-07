@@ -39,7 +39,9 @@ function updateThemeControl(theme) {
   }
 
   toggleBtn.setAttribute('aria-checked', String(light));
-  toggleBtn.setAttribute('aria-label', light ? 'Ativar tema escuro' : 'Ativar tema claro');
+  toggleBtn.setAttribute('aria-label', document.documentElement.lang.startsWith('en')
+    ? (light ? 'Switch to dark theme' : 'Switch to light theme')
+    : (light ? 'Ativar tema escuro' : 'Ativar tema claro'));
 }
 
 function applyTheme(theme, save = true) {

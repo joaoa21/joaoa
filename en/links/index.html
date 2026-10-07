@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<script>
+  (() => {
+    const root = document.documentElement;
+    root.classList.add('js', 'links-motion');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      root.classList.add('reduce-motion');
+    }
+
+    window.__linksMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 1800);
+  })();
+</script>
+<link href="https://joaoa.com.br/en/links/" rel="canonical"/><link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/links/"/><link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/links/"/><link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/links/"/><meta content="#0f0f0f" name="theme-color"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
+<title>Links — João Alberto</title>
+<meta property="og:locale" content="en_US"/><meta property="og:locale:alternate" content="pt_BR"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="João Alberto"/>
+<meta property="og:title" content="Links — João Alberto"/>
+<meta property="og:description" content="Visit João Alberto's portfolio, projects and professional profiles. Front-end developer and UI/web designer."/>
+<meta property="og:url" content="https://joaoa.com.br/en/links/"/>
+<meta property="og:image" content="https://joaoa.com.br/assets/img/og-cover-en.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="João Alberto — digital design and web: interfaces, websites, brands and campaigns"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Links — João Alberto"/>
+<meta name="twitter:description" content="Visit João Alberto's portfolio, projects and professional profiles. Front-end developer and UI/web designer."/>
+<meta name="twitter:image" content="https://joaoa.com.br/assets/img/og-cover-en.jpg"/>
+<meta name="twitter:image:alt" content="João Alberto — digital design and web: interfaces, websites, brands and campaigns"/>
+<meta content="Visit João Alberto's portfolio, projects and professional profiles. Front-end developer and UI/web designer." name="description"/>
+<script>
+    /* Aplica o tema salvo antes da primeira pintura, evitando flash de tema. */
+    try {
+      if (localStorage.getItem('joaoa-theme') === 'light') {
+        document.documentElement.classList.add('light');
+        document.getElementById('themeColor')?.setAttribute('content', '#f2f0eb');
+      }
+    } catch {}
+  </script>
+<link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin=""/><link href="/assets/css/fonts.css" rel="stylesheet"/>
+<link href="/assets/css/icons.css" rel="stylesheet"/>
+<link href="/links/style.css" rel="stylesheet"/>
+<link href="/favicon.ico" rel="icon" sizes="48x48"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"
+    }
+  }
+  </script>
+<meta content="noindex, follow" name="robots"/><link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script></head>
+<body>
+<a class="skip-link" href="#links-title">Skip to links</a>
+<!-- ============ 3D STAGE ============ -->
+<canvas aria-hidden="true" id="stage"></canvas>
+<div aria-hidden="true" class="hud hud-fixed mono">
+<span>REC — PE / BR</span>
+<span>© João Alberto — 2026</span>
+</div>
+<main id="container">
+<div aria-hidden="true" class="hero-space"></div>
+<header class="profile">
+<img alt="Photo of João Alberto" class="avatar" decoding="async" height="300" src="/assets/img/joao-192.webp" width="300"/>
+<div class="who">
+<h1>João Alberto</h1>
+<p class="mono">Front-end · UI Designer</p>
+</div>
+</header>
+<p class="bio">I turn ideas into interfaces<br/>Web Designer &amp; Front-end.</p>
+<button aria-checked="false" aria-label="Switch to light theme" class="theme-toggle" id="themeToggle" role="switch" type="button">
+<span aria-hidden="true" class="knob"><i class="fa-solid fa-moon"></i></span>
+</button>
+<a class="lang-switch mono" href="/links/" hreflang="pt-BR" lang="pt-BR" aria-label="Versão em português">PT</a>
+<section aria-labelledby="links-title" class="link-section">
+<h2 class="sec mono" id="links-title">
+<span aria-hidden="true" class="sec-ic"><i class="fa-solid fa-link"></i></span><span>LINKS</span><i aria-hidden="true"></i>
+</h2>
+<ul class="links">
+<li>
+<a href="/en/">
+<span aria-hidden="true" class="link-ic"><i class="fa-solid fa-house"></i></span>
+<span class="link-text">Visit my website</span>
+<b aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></b>
+</a>
+</li>
+<li>
+<a href="/en/projects/">
+<span aria-hidden="true" class="link-ic"><i class="fa-solid fa-layer-group"></i></span>
+<span class="link-text">My projects</span>
+<b aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></b>
+</a>
+</li>
+<li>
+<a href="https://wa.me/5581988780144" rel="noopener" target="_blank">
+<span aria-hidden="true" class="link-ic"><i class="fa-brands fa-whatsapp"></i></span>
+<span class="link-text">Let's talk</span>
+<b aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></b>
+</a>
+</li>
+</ul>
+</section>
+<section aria-labelledby="tools-title" class="link-section">
+<h2 class="sec mono" id="tools-title">
+<span aria-hidden="true" class="sec-ic"><i class="fa-solid fa-globe"></i></span><span>WEBSITES</span><i aria-hidden="true"></i>
+</h2>
+<ul class="links">
+<li>
+<a class="tool" href="https://kompres.com.br/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="link-ic"><i class="fa-solid fa-images"></i></span>
+<span class="link-text">Kompres<small>Images and PDFs right in the browser</small></span>
+<b aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></b>
+</a>
+</li>
+<li>
+<a class="tool" href="https://emailgenerator.com.br/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="link-ic"><i class="fa-solid fa-envelope-open-text"></i></span>
+<span class="link-text">Email Generator<small>HTML emails and WhatsApp links</small></span>
+<b aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></b>
+</a>
+</li>
+</ul>
+</section>
+<nav aria-label="Social networks" class="socials">
+<div class="social-item">
+<a aria-label="GitHub" href="https://github.com/joaoa21" rel="noopener" target="_blank">
+<span aria-hidden="true" class="social-fill"></span>
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+</a>
+<span aria-hidden="true" class="social-tooltip">
+        GitHub
+      </span>
+</div>
+<div class="social-item">
+<a aria-label="Instagram" href="https://www.instagram.com/joaoalbertoms2/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="social-fill"></span>
+<i aria-hidden="true" class="fa-brands fa-instagram"></i>
+</a>
+<span aria-hidden="true" class="social-tooltip">
+        Instagram
+      </span>
+</div>
+<div class="social-item">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/joaoa210/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="social-fill"></span>
+<i aria-hidden="true" class="fa-brands fa-linkedin-in"></i>
+</a>
+<span aria-hidden="true" class="social-tooltip">
+        LinkedIn
+      </span>
+</div>
+</nav>
+<div aria-hidden="true" class="hud hud-flow mono">
+<span>REC — PE / BR</span>
+<span>© João Alberto — 2026</span>
+</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script defer="" src="/links/script.js"></script>
+<script src="/links/blob.js" type="module"></script>
+</body>
+</html>

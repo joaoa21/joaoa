@@ -11,6 +11,9 @@ http.createServer(async(req,res)=>{
   if(name.split('/').some(part=>part.startsWith('.'))){res.writeHead(403).end();return;}
   // Como a Netlify: pasta sem barra final (/links) redireciona para /links/, mantendo os caminhos relativos corretos.
   if(!name.endsWith('/')){const stat=await fs.stat(path.resolve(root,'.'+name)).catch(()=>null);if(stat?.isDirectory()){res.writeHead(301,{Location:url.pathname+'/'+url.search});res.end();return;}}
+  // Como a Netlify ("shadowing"): se o arquivo existe, ele é servido e as regras do _redirects não se aplicam.
+  const existing=await fs.stat(path.resolve(root,'.'+name)).then(s=>s.isDirectory()?fs.stat(path.resolve(root,'.'+name,'index.html')):s).catch(()=>null);
+  if(existing?.isFile()){await send(res,name);return;}
   const rules=(await fs.readFile(path.join(root,'_redirects'),'utf8')).split(/\r?\n/).map(line=>line.trim().split(/\s+/));
   for(const [source,target,status] of rules){
    if(!source||source==='/*')continue;

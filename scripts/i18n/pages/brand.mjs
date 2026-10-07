@@ -1,0 +1,21 @@
+export default {
+  pt: 'projetos/identidade-visual/index.html',
+  en: 'en/projects/brand-identity/index.html',
+  ptUrl: '/projetos/identidade-visual/',
+  enUrl: '/en/projects/brand-identity/',
+  dict: {
+    'Identidade Visual · Em obras — João Alberto': 'Brand Identity · Under construction — João Alberto',
+    'Em obras — Não ultrapasse — Identidade visual — Área em reforma — Em obras — Não ultrapasse — Identidade visual — Área em reforma — Em obras — Não ultrapasse — Identidade visual — Área em reforma —': 'Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress —',
+    'Previsão de entrega: em breve': 'Expected delivery: soon',
+    'EM OBRAS': 'UNDER CONSTRUCTION',
+    '// Identidade visual': '// Brand identity',
+    'Em': 'Under',
+    'obras': 'construction',
+    'Esta área está sendo reformada para apresentar cada marca com o processo completo, do conceito às aplicações. Enquanto a obra não termina, a campanha da OAB/PE já está pronta para visita.': 'This area is being rebuilt to present each brand with its full process, from concept to applications. While the work is in progress, the OAB/PE campaign is ready to visit.',
+    'Ver campanha OAB/PE': 'View the OAB/PE campaign',
+    'Todos os projetos': 'All projects',
+    'O JavaScript está desativado, mas os botões continuam funcionando.': 'JavaScript is disabled, but the buttons still work.',
+    'Esta área do portfólio está em obras. Enquanto isso, veja a campanha da OAB/PE.': 'This area of the portfolio is under construction. Meanwhile, check out the OAB/PE campaign.',
+    'A área de identidade visual do portfólio de João Alberto está em obras. Enquanto isso, veja a campanha da OAB/PE.': "The brand identity area of João Alberto's portfolio is under construction. Meanwhile, check out the OAB/PE campaign.",
+  },
+};

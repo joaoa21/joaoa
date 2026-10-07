@@ -1,0 +1,28 @@
+export default {
+  pt: 'projetos/sites/index.html',
+  en: 'en/projects/websites/index.html',
+  ptUrl: '/projetos/sites/',
+  enUrl: '/en/projects/websites/',
+  dict: {
+    'Sites e Experiências Web — João Alberto': 'Websites and Web Experiences — João Alberto',
+    'Sites': 'Websites',
+    'Sites que resolvem tarefas do dia a dia. Conheça cada projeto, explore a interface e acesse a experiência completa.': 'Websites that solve everyday tasks. Get to know each project, explore the interface and try the full experience.',
+    'IMAGENS &amp; PDF': 'IMAGES &amp; PDF',
+    'Um site para comprimir, converter e redimensionar imagens em lote, remover fundos e organizar PDFs.': 'A website to compress, convert and resize images in bulk, remove backgrounds and organize PDFs.',
+    'Imagens em lote': 'Bulk images',
+    'Ferramentas de PDF': 'PDF tools',
+    'Conhecer o projeto': 'Explore the project',
+    'Ferramentas para montar emails HTML compatíveis com Outlook e gerar links de WhatsApp com a mensagem pronta.': 'Tools to build HTML emails that work in Outlook and to generate WhatsApp links with a ready message.',
+    'Prévia desktop e mobile': 'Desktop and mobile preview',
+    'Links de WhatsApp': 'WhatsApp links',
+    'Uma seleção de sites e experiências digitais desenvolvidos por João Alberto, do conceito e design à implementação.': 'A selection of websites and digital experiences built by João Alberto, from concept and design to implementation.',
+    'Kompres e Email Generator, sites desenvolvidos por João Alberto': 'Kompres and Email Generator, websites built by João Alberto',
+    'Sites desenvolvidos por João Alberto': 'Websites built by João Alberto',
+    'Página inicial do Kompres': 'Kompres home page',
+    'Destaques': 'Highlights',
+    'Página inicial do Email Generator': 'Email Generator home page',
+  },
+  jsonDict: {
+    'Sites — João Alberto': 'Websites — João Alberto',
+  },
+};

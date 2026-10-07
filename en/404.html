@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<script>
+  (() => {
+    const root = document.documentElement;
+    root.classList.add('js', 'error-motion');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      root.classList.add('reduce-motion');
+    }
+
+    window.__errorMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 1800);
+  })();
+</script>
+<meta content="#0f0f0f" name="theme-color"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Page not found — João Alberto</title>
+<meta property="og:locale" content="en_US"/><meta property="og:locale:alternate" content="pt_BR"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="João Alberto"/>
+<meta property="og:title" content="Page not found — João Alberto"/>
+<meta property="og:description" content="This address doesn't exist or has moved. Head back to João Alberto's portfolio."/>
+<meta property="og:image" content="https://joaoa.com.br/assets/img/og-cover-en.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="João Alberto — digital design and web: interfaces, websites, brands and campaigns"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Page not found — João Alberto"/>
+<meta name="twitter:description" content="This address doesn't exist or has moved. Head back to João Alberto's portfolio."/>
+<meta name="twitter:image" content="https://joaoa.com.br/assets/img/og-cover-en.jpg"/>
+<meta name="twitter:image:alt" content="João Alberto — digital design and web: interfaces, websites, brands and campaigns"/>
+<meta content="This address doesn't exist or has moved. Head back to João Alberto's portfolio." name="description"/>
+<meta content="noindex, nofollow" name="robots"/>
+<link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin=""/><link href="/assets/css/fonts.css" rel="stylesheet"/>
+<link href="/assets/css/icons.css" rel="stylesheet"/>
+<link href="/error.css" rel="stylesheet"/>
+<link href="/favicon.ico" rel="icon" sizes="48x48"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"
+    }
+  }
+  </script>
+<link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script></head>
+<body data-error="404">
+<canvas aria-hidden="true" id="stage"></canvas>
+<a aria-label="João Alberto — home page" class="brand" href="/en/">
+    João Alberto
+  </a>
+<div aria-hidden="true" class="hud mono">
+<span>REC — PE / BR</span>
+<span>ERROR 404</span>
+</div>
+<main class="error-shell">
+<div aria-hidden="true" class="error-visual">
+<span class="error-code-backdrop">404</span>
+<div class="retro-tv">
+<div class="tv-antenna">
+<span class="antenna-rod antenna-rod-left"></span>
+<span class="antenna-rod antenna-rod-right"></span>
+<span class="antenna-tip antenna-tip-left"></span>
+<span class="antenna-tip antenna-tip-right"></span>
+<span class="antenna-base"></span>
+</div>
+<div class="tv-body">
+<div class="tv-screen-frame">
+<div class="tv-screen">
+<span class="tv-screen-label">SIGNAL LOST</span>
+</div>
+</div>
+<div class="tv-controls">
+<span class="tv-dial tv-dial-one"></span>
+<span class="tv-dial tv-dial-two"></span>
+<div class="tv-speaker-dots">
+<span class="tv-speaker-dot"></span>
+<span class="tv-speaker-dot"></span>
+<span class="tv-speaker-dot"></span>
+</div>
+<div class="tv-speaker-lines">
+<i></i><i></i><i></i>
+</div>
+</div>
+</div>
+<div class="tv-feet">
+<span></span>
+<span></span>
+</div>
+<span class="tv-ground"></span>
+</div>
+</div>
+<div class="error-copy">
+<span class="error-label mono">// ERROR 404</span>
+<h1>
+        Page not<br/>
+        found<span class="dot">.</span>
+</h1>
+<p class="error-description">
+        The address you tried to visit doesn't exist or has moved. Take one of the paths below.
+      </p>
+<div class="actions">
+<a class="btn" href="/en/">
+<span>Back to home</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</a>
+<a class="btn btn--ghost" href="/en/projects/">
+<span>View projects</span>
+<i aria-hidden="true" class="fa-solid fa-layer-group"></i>
+</a>
+</div>
+</div>
+</main>
+<noscript>
+<p class="noscript-message">
+      JavaScript is disabled, but you can still use the button to go back home.
+    </p>
+</noscript>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+<script src="/error.js" type="module"></script>
+</body>
+</html>

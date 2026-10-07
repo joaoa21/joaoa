@@ -1004,3 +1004,11 @@ footer {
   padding: .06em .12em .22em;
   margin: -.06em -.12em -.22em;
 }
+
+/* ============ IDIOMA (PT / EN) ============
+   Último item do menu: leva à mesma página no outro idioma. */
+.nav-links .nav-lang a {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .12em;
+}

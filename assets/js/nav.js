@@ -3,6 +3,11 @@
    Compartilhado pela home (main.js) e pelas páginas de projeto (hub.js).
    ============================================================ */
 
+/* Rótulos do botão do menu no idioma da página (português ou inglês). */
+const menuLabels = document.documentElement.lang.startsWith('en')
+  ? { open: 'Open menu', close: 'Close menu' }
+  : { open: 'Abrir menu', close: 'Fechar menu' };
+
 const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 export function initMobileMenu({ lenis = null, query = '(max-width: 860px)' } = {}) {
@@ -20,7 +25,7 @@ export function initMobileMenu({ lenis = null, query = '(max-width: 860px)' } = 
     navToggle.classList.add('open');
     navMenu.classList.add('open');
     navToggle.setAttribute('aria-expanded', 'true');
-    navToggle.setAttribute('aria-label', 'Fechar menu');
+    navToggle.setAttribute('aria-label', menuLabels.close);
     navMenu.inert = false;
     document.body.classList.add('no-scroll');
     lenis?.stop();
@@ -36,7 +41,7 @@ export function initMobileMenu({ lenis = null, query = '(max-width: 860px)' } = 
     navToggle.classList.remove('open');
     navMenu.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.setAttribute('aria-label', 'Abrir menu');
+    navToggle.setAttribute('aria-label', menuLabels.open);
     document.body.classList.remove('no-scroll');
     lenis?.start();
 

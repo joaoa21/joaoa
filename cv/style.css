@@ -1015,3 +1015,24 @@ html.js:not(.reduce-motion):not(.motion-fallback) [data-reveal]:not(.is-visible)
   padding-bottom: .08em;
   margin-bottom: -.08em;
 }
+
+/* ============ IDIOMA (PT / EN) ============ */
+.toolbar-lang {
+  min-height: 42px;
+  padding: 0 .8rem;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 9px;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-decoration: none;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+.toolbar-lang:hover {
+  background: var(--ink);
+  color: var(--paper);
+}

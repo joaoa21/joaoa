@@ -1,0 +1,21 @@
+export default {
+  pt: 'links/index.html',
+  en: 'en/links/index.html',
+  ptUrl: '/links/',
+  enUrl: '/en/links/',
+  dict: {
+    'Links — João Alberto': 'Links — João Alberto',
+    'Pular para os links': 'Skip to links',
+    'Web Designer': 'Front-end · UI Designer',
+    'Transformo ideias em interfaces': 'I turn ideas into interfaces',
+    'Web Designer &amp; Front-end.': 'Web Designer &amp; Front-end.',
+    'Acesse meu site': 'Visit my website',
+    'Meus projetos': 'My projects',
+    'Vamos conversar?': "Let's talk",
+    'SITES': 'WEBSITES',
+    'Imagens e PDFs direto no navegador': 'Images and PDFs right in the browser',
+    'Emails HTML e links de WhatsApp': 'HTML emails and WhatsApp links',
+    'Acesse o portfólio, os projetos e as redes profissionais de João Alberto, Web Designer.': "Visit João Alberto's portfolio, projects and professional profiles. Front-end developer and UI/web designer.",
+    'Ativar tema claro': 'Switch to light theme',
+  },
+};

@@ -57,6 +57,16 @@ HTML · CSS · JavaScript (ES modules) · Three.js · GSAP · Lenis · Netlify
 - **Imagens**: cada projeto guarda os originais em `assets/` e as miniaturas em `assets/thumbs/`. As galerias carregam as miniaturas, e o original só baixa quando a peça é ampliada.
 - **Rotas antigas** ficam em `_redirects`: `/portfolio/*` vai para `/projetos/igaming/*`, e o HTML antigo da OAB, para o case novo.
 
+## Versão em inglês (`/en/`)
+
+Todas as páginas têm versão em inglês em `/en/`, com endereços próprios (`/en/projects/`, `/en/projects/websites/`, `/en/web-design/`, `/en/cv/`…). As peças do portfólio em si (emails de campanha, demo do Clube de Ouro, pop-up) continuam em português, porque são o trabalho real.
+
+- **Não edite os arquivos de `/en/` à mão.** Eles são gerados a partir das páginas em português por `scripts/i18n/make.mjs`, com as traduções em `scripts/i18n/pages/<página>.mjs` (textos repetidos, como menu e rodapé, em `common.mjs`).
+- **Mudou um texto em português?** Acrescente a tradução no dicionário da página e rode `node scripts/i18n/make.mjs <página>` (sem argumentos, gera todas). O script avisa o que ficou sem tradução; `node scripts/i18n/scan.mjs` faz uma varredura extra.
+- O gerador também mantém nas páginas em português o seletor **EN** do menu e as marcações `hreflang`; nas em inglês, o seletor **PT**, links internos para `/en/`, `og:locale` e imagens de compartilhamento `og-*-en.jpg`.
+- Textos dentro dos scripts (menu, galeria, tema) escolhem o idioma pelo `lang` da página.
+- `_redirects` serve `en/404.html` para endereços inexistentes dentro de `/en/`. O `sitemap.xml` lista as duas versões de cada página com `xhtml:link`.
+
 ## Animações
 
 Todas as páginas usam GSAP 3 (ScrollTrigger e SplitText) e Lenis, carregados do jsDelivr.

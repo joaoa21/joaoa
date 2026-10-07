@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<script>
+  (() => {
+    const root = document.documentElement;
+    root.classList.add('js');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      root.classList.add('reduce-motion');
+    }
+
+    window.__hubMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 1800);
+  })();
+</script>
+<link href="https://joaoa.com.br/en/projects/" rel="canonical"/><link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/"/><link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/"/><link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/"/><meta content="#0f0f0f" name="theme-color"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Design, Web and iGaming Projects — João Alberto</title>
+<meta property="og:locale" content="en_US"/><meta property="og:locale:alternate" content="pt_BR"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="João Alberto"/>
+<meta property="og:title" content="Design, Web and iGaming Projects — João Alberto"/>
+<meta property="og:description" content="Selected projects by João Alberto in digital design, websites, brand identity, campaigns, CRM, gamification and iGaming."/>
+<meta property="og:url" content="https://joaoa.com.br/en/projects/"/>
+<meta property="og:image" content="https://joaoa.com.br/assets/img/og-projetos-en.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Projects by João Alberto: iGaming, websites, campaigns and brand identity"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Design, Web and iGaming Projects — João Alberto"/>
+<meta name="twitter:description" content="Selected projects by João Alberto in digital design, websites, brand identity, campaigns, CRM, gamification and iGaming."/>
+<meta name="twitter:image" content="https://joaoa.com.br/assets/img/og-projetos-en.jpg"/>
+<meta name="twitter:image:alt" content="Projects by João Alberto: iGaming, websites, campaigns and brand identity"/>
+<meta content="Selected projects by João Alberto in digital design, websites, brand identity, campaigns, CRM, gamification and iGaming." name="description"/>
+<link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin=""/><link href="/assets/css/fonts.css" rel="stylesheet"/>
+<link href="/assets/css/icons.css" rel="stylesheet"/>
+<link href="/assets/css/hub.css" rel="stylesheet"/>
+<link href="/favicon.ico" rel="icon" sizes="48x48"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"
+    }
+  }
+  </script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Projects — João Alberto",
+  "url": "https://joaoa.com.br/en/projects/",
+  "isPartOf": {
+    "@id": "https://joaoa.com.br/#website"
+  },
+  "author": {
+    "@id": "https://joaoa.com.br/#person"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "iGaming",
+        "url": "https://joaoa.com.br/en/projects/igaming/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Brand Identity",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Websites",
+        "url": "https://joaoa.com.br/en/projects/websites/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "OAB/PE Campaign",
+        "url": "https://joaoa.com.br/en/projects/oab/"
+      }
+    ]
+  }
+}</script><link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><link rel="stylesheet" href="/assets/css/contact-socials.css"/>
+<script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script></head>
+<body>
+<a class="skip-link" href="#conteudo">Skip to content</a>
+<!-- ============ 3D STAGE ============ -->
+<canvas aria-hidden="true" id="stage"></canvas>
+<!-- ============ HUD ============ -->
+<div aria-hidden="true" class="hud">
+<div class="hud-corner hud-bl mono">
+<span>REC — PE / BR</span>
+<span>8.05°S · 34.88°W</span>
+</div>
+<div class="hud-corner hud-br mono">
+<span>©2026</span>
+<span id="hudClock">00:00:00</span>
+</div>
+</div>
+<!-- ============ NAVBAR ============ -->
+<header class="site-nav" id="nav">
+<a aria-label="João Alberto — home page" class="nav-logo" href="/en/">João Alberto</a>
+<nav aria-label="Main navigation" class="nav-menu" id="navMenu">
+<ul class="nav-links">
+<li><a href="/en/#topo">Home</a></li>
+<li><a href="/en/#sobre">About</a></li>
+<li><a aria-current="page" href="/en/projects/">Projects</a></li>
+<li><a href="/en/web-design/">Services</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li class="nav-lang"><a href="/projetos/" hreflang="pt-BR" lang="pt-BR" aria-label="Versão em português">PT</a></li></ul>
+<a class="nav-cta" href="/en/#contato">
+        Let's talk
+        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</a>
+</nav>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="Open menu" class="nav-mobile-toggle" id="navToggle" type="button">
+<span></span>
+<span></span>
+</button>
+</header>
+<main id="conteudo">
+<!-- ============ CABEÇALHO ============ -->
+<header class="hub-head">
+<div class="hub-label mono"><span></span>PORTFOLIO</div>
+<h1 class="hub-title">Projects<span class="dot">.</span></h1>
+<p class="hub-desc">Selected work in design and web.</p>
+</header>
+<!-- ============ GRID DE CARDS ============ -->
+<section aria-label="Categories and selected projects" class="hub-grid hub-grid--compact">
+<a class="pcard" href="/en/projects/igaming/">
+<div class="pcard-preview">
+<img alt="Preview of the iGaming project" decoding="async" height="480" loading="lazy" src="/assets/projetos/1.webp" width="720"/>
+</div>
+<div class="pcard-body">
+<h2 class="pcard-title">iGaming</h2>
+<p class="pcard-desc">Banners, pop-ups, widgets, emails and gamification for CRM.</p>
+<span class="pcard-link">View project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span>
+</div>
+</a>
+<a class="pcard" href="/en/projects/brand-identity/">
+<div class="pcard-preview">
+<img alt="Brand identity preview" decoding="async" height="480" loading="lazy" src="/assets/projetos/2.webp" width="720"/>
+</div>
+<div class="pcard-body">
+<h2 class="pcard-title">Brand Identity</h2>
+<span class="build-badge mono"><i aria-hidden="true"></i>Coming soon</span>
+<p class="pcard-desc">Branding and brand systems for different industries.</p>
+<span class="pcard-link">View category <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span>
+</div>
+</a>
+<a class="pcard" href="/en/projects/websites/">
+<div class="pcard-preview">
+<img alt="Websites preview" decoding="async" height="480" loading="lazy" src="/assets/projetos/3.webp" width="720"/>
+</div>
+<div class="pcard-body">
+<h2 class="pcard-title">Websites</h2>
+<p class="pcard-desc">Web tools from layout to code: images and HTML emails.</p>
+<span class="pcard-link">View category <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span>
+</div>
+</a>
+<a class="pcard" href="/en/projects/oab/">
+<div class="pcard-preview">
+<img alt="Preview of the OAB Pernambuco campaign" decoding="async" height="480" loading="lazy" src="/assets/projetos/4.webp" width="720"/>
+</div>
+<div class="pcard-body">
+<h2 class="pcard-title">OAB/PE Campaign</h2>
+<p class="pcard-desc">360º campaign: identity, digital, print and outdoor pieces.</p>
+<span class="pcard-link">View project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span>
+</div>
+</a>
+</section>
+<!-- ============ CTA ============ -->
+<section aria-labelledby="titulo-contato" class="hub-cta">
+<h2 id="titulo-contato">Let's work together<span class="dot">?</span></h2>
+<a class="btn" href="https://wa.me/5581988780144?text=Hi%20Jo%C3%A3o!" rel="noopener" target="_blank">
+<span>Get in touch</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</a>
+<nav aria-label="Social networks" class="contact-networks">
+  <div class="contact-social-item"><a aria-label="GitHub" href="https://github.com/joaoa21" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-github"></i></a><span aria-hidden="true" class="contact-social-tooltip">GitHub</span></div>
+  <div class="contact-social-item"><a aria-label="Instagram" href="https://www.instagram.com/joaoalbertoms2/" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-instagram"></i></a><span aria-hidden="true" class="contact-social-tooltip">Instagram</span></div>
+  <div class="contact-social-item"><a aria-label="LinkedIn" href="https://www.linkedin.com/in/joaoa210/" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i></a><span aria-hidden="true" class="contact-social-tooltip">LinkedIn</span></div>
+</nav>
+</section>
+</main>
+<!-- ============ FOOTER ============ -->
+<footer>
+<div class="footer-info">
+<p>João Alberto © 2026 — Digital design &amp; web</p>
+<p class="mono">RECIFE — PE / BRAZIL</p>
+</div>
+<a aria-label="Back to top" class="to-top" href="#conteudo">
+<i aria-hidden="true" class="fa-solid fa-arrow-up"></i>
+</a>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="/assets/js/hub.js" type="module"></script>
+</body>
+</html>

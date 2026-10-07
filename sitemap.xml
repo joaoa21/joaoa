@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://joaoa.com.br/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://joaoa.com.br/criacao-de-sites/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://joaoa.com.br/projetos/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://joaoa.com.br/projetos/sites/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://joaoa.com.br/projetos/igaming/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://joaoa.com.br/projetos/oab/</loc><lastmod>2026-09-29</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://joaoa.com.br/projetos/sites/kompres/</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://joaoa.com.br/projetos/sites/email-generator/</loc><lastmod>2026-09-29</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://joaoa.com.br/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/"/></url>
+  <url><loc>https://joaoa.com.br/en/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/"/></url>
+  <url><loc>https://joaoa.com.br/criacao-de-sites/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/criacao-de-sites/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/web-design/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/criacao-de-sites/"/></url>
+  <url><loc>https://joaoa.com.br/en/web-design/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/criacao-de-sites/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/web-design/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/criacao-de-sites/"/></url>
+  <url><loc>https://joaoa.com.br/projetos/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/"/></url>
+  <url><loc>https://joaoa.com.br/en/projects/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/"/></url>
+  <url><loc>https://joaoa.com.br/projetos/sites/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/sites/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/websites/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/sites/"/></url>
+  <url><loc>https://joaoa.com.br/en/projects/websites/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/sites/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/websites/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/sites/"/></url>
+  <url><loc>https://joaoa.com.br/projetos/igaming/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/igaming/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/igaming/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/igaming/"/></url>
+  <url><loc>https://joaoa.com.br/en/projects/igaming/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/igaming/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/igaming/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/igaming/"/></url>
+  <url><loc>https://joaoa.com.br/projetos/oab/</loc><lastmod>2026-10-07</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/oab/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/oab/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/oab/"/></url>
+  <url><loc>https://joaoa.com.br/en/projects/oab/</loc><lastmod>2026-10-07</lastmod><changefreq>yearly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/oab/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/oab/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/oab/"/></url>
+  <url><loc>https://joaoa.com.br/projetos/sites/kompres/</loc><lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/sites/kompres/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/websites/kompres/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/sites/kompres/"/></url>
+  <url><loc>https://joaoa.com.br/en/projects/websites/kompres/</loc><lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/sites/kompres/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/websites/kompres/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/sites/kompres/"/></url>
+  <url><loc>https://joaoa.com.br/projetos/sites/email-generator/</loc><lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/sites/email-generator/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/websites/email-generator/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/sites/email-generator/"/></url>
+  <url><loc>https://joaoa.com.br/en/projects/websites/email-generator/</loc><lastmod>2026-10-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/sites/email-generator/"/><xhtml:link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/websites/email-generator/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/sites/email-generator/"/></url>
 </urlset>
