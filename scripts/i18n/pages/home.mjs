@@ -7,6 +7,8 @@ export default {
     // páginas na pasta /en/: scripts e estilos com caminho absoluto
     ['<link href="./style.css" rel="stylesheet" />', '<link href="/style.css" rel="stylesheet" />'],
     ['<script src="./main.js" type="module"></script>', '<script src="/main.js" type="module"></script>'],
+    // telefone do contato no formato internacional
+    ['class="fa-brands fa-whatsapp"></i> (81)\n                98878-0144</a', 'class="fa-brands fa-whatsapp"></i> +55 81\n                98878-0144</a'],
   ],
   dict: {
     'João Alberto — Web Designer e Criação de Sites': 'João Alberto — Front-end Developer & UI/Web Designer',

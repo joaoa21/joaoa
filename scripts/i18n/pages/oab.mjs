@@ -7,7 +7,7 @@ export default {
     'Campanha OAB Pernambuco 2024 — João Alberto': 'OAB Pernambuco 2024 Campaign — João Alberto',
     'Case — Campanha 360º': 'Case study — 360º campaign',
     'Campanha OAB/PE 2024': 'OAB/PE 2024 Campaign',
-    'Identidade visual e sistema de comunicação para uma campanha à presidência da OAB Pernambuco, com desdobramentos digitais, impressos e presenciais.': 'Visual identity and communication system for a campaign for the presidency of OAB Pernambuco (the Brazilian Bar Association, Pernambuco chapter), rolled out across digital, print and in-person touchpoints.',
+    'Identidade visual e sistema de comunicação para uma campanha à presidência da OAB Pernambuco, com desdobramentos digitais, impressos e presenciais.': 'Visual identity and communication system for a presidential campaign at OAB Pernambuco, the state Bar Association, across digital, print and in-person.',
     'Atuação': 'Role',
     'Direção de arte e design': 'Art direction and design',
     'Escopo': 'Scope',

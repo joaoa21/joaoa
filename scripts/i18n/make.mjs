@@ -27,16 +27,26 @@ function addHreflang(html, ptUrl, enUrl) {
   return html.replace('</title>', '</title>' + tags);
 }
 
-/* Seletor de idioma: último item do menu, ou um link na barra do currículo. */
+/* Tira o seletor de idioma que já existe (para regravar com a versão atual). */
+function removeSwitch(html) {
+  return html
+    .replace(/<li class="nav-lang">[\s\S]*?<\/li>/, '')
+    .replace(/<a class="toolbar-lang"[\s\S]*?<\/a>\n?/, '')
+    .replace(/<a class="lang-switch[^"]*"[\s\S]*?<\/a>/, '<!--LANG-SWITCH-->');
+}
+
+/* Seletor de idioma com a bandeira do idioma de destino: último item do menu,
+   um botão na barra do currículo ou o espaço <!--LANG-SWITCH--> (página de links). */
 function addSwitch(html, href, label, lang, name) {
-  if (/class="(nav-lang|toolbar-lang|lang-switch)"/.test(html)) return html;
-  const link = `<a href="${href}" hreflang="${lang}" lang="${lang}" aria-label="${name}">${label}</a>`;
+  html = removeSwitch(html);
+  const flag = `<span aria-hidden="true" class="flag flag-${lang === 'en' ? 'us' : 'br'}"></span>`;
+  const attrs = `href="${href}" hreflang="${lang}" lang="${lang}" aria-label="${name}"`;
   const ul = html.match(/<ul class="nav-links">[\s\S]*?<\/ul>/);
-  if (ul) return html.replace(ul[0], ul[0].replace(/<\/ul>$/, `<li class="nav-lang">${link}</li></ul>`));
+  if (ul) return html.replace(ul[0], ul[0].replace(/<\/ul>$/, `<li class="nav-lang"><a ${attrs}>${flag}${label}</a></li></ul>`));
   if (html.includes('<div class="toolbar-actions">')) {
-    return html.replace('<div class="toolbar-actions">', `<div class="toolbar-actions">\n<a class="toolbar-lang" href="${href}" hreflang="${lang}" lang="${lang}" aria-label="${name}">${label}</a>`);
+    return html.replace('<div class="toolbar-actions">', `<div class="toolbar-actions">\n<a class="toolbar-lang" ${attrs}>${flag}${label}</a>`);
   }
-  if (html.includes('<!--LANG-SWITCH-->')) return html.replace('<!--LANG-SWITCH-->', `<a class="lang-switch mono" href="${href}" hreflang="${lang}" lang="${lang}" aria-label="${name}">${label}</a>`);
+  if (html.includes('<!--LANG-SWITCH-->')) return html.replace('<!--LANG-SWITCH-->', `<a class="lang-switch" ${attrs}>${flag}${label}</a>`);
   return html;
 }
 
@@ -69,7 +79,7 @@ export function build(cfg) {
   en = en.replace(/\/assets\/img\/(og-[a-z0-9-]+?)\.jpg/g, (m, n) => (!n.endsWith('-en') && fs.existsSync(path.join(ROOT, 'assets/img', n + '-en.jpg')) ? '/assets/img/' + n + '-en.jpg' : m));
   // mensagem pronta do WhatsApp
   en = en.split('?text=Oi%20Jo%C3%A3o!').join('?text=Hi%20Jo%C3%A3o!');
-  en = en.replace(/<li class="nav-lang">[\s\S]*?<\/li>/, '').replace(/<a class="toolbar-lang"[^>]*>EN<\/a>\n?/, '').replace(/<a class="lang-switch mono"[^>]*>EN<\/a>/, '<!--LANG-SWITCH-->');
+  en = removeSwitch(en);
   en = absolutize(en, cfg.ptUrl);
   en = relink(en, URLS);
   // o relink também troca os endereços das marcações hreflang: regrava o bloco certo

@@ -4,6 +4,8 @@ export default {
   ptUrl: '/cv/',
   enUrl: '/en/cv/',
   raw: [
+    // telefone no formato internacional (o tradutor ignora trechos só com números)
+    ['<span>(81) 98878-0144</span>', '<span>+55 81 98878-0144</span>'],
     ['<a class="toolbar-portfolio" href="/projetos/"', '<a class="toolbar-portfolio" href="/en/projects/"'],
   ],
   dict: {
@@ -17,7 +19,6 @@ export default {
     'Designer e desenvolvedor front-end — do conceito visual ao site no ar.': 'Designer and front-end developer — from visual concept to a live website.',
     'E-mail': 'Email',
     'Telefone': 'Phone',
-    '(81) 98878-0144': '+55 81 98878-0144',
     'Site': 'Website',
     'Resumo profissional': 'Professional summary',
     'Sou': "I'm a",

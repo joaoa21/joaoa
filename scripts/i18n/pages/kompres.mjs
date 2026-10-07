@@ -21,7 +21,7 @@ export default {
     'Uso': 'Use',
     'Time de CRM e uso aberto': 'CRM team and open to the public',
     '02 — A EXPERIÊNCIA': '02 — THE EXPERIENCE',
-    'Da pasta ao ZIP em três passos.': 'From folder to ZIP in three steps.',
+    'Da pasta ao ZIP em três passos.': 'Folder to ZIP in three steps.',
     'Adicionar': 'Add',
     'Arraste imagens PNG, JPEG ou WebP para converter tudo de uma vez.': 'Drag in PNG, JPEG or WebP images to convert them all at once.',
     'Ajustar': 'Adjust',
