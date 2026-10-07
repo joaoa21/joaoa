@@ -1517,6 +1517,19 @@ footer {
   text-wrap: balance;
 }
 
+/* link para a página de serviços dentro do texto de contato */
+.contact-copy p a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: opacity .25s ease;
+}
+
+.contact-copy p a:hover {
+  opacity: .7;
+}
+
 @media (max-width: 760px) {
   .contact-copy p {
     max-width: 16rem;

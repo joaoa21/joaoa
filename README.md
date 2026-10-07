@@ -27,6 +27,7 @@ HTML · CSS · JavaScript (ES modules) · Three.js · GSAP · Lenis · Netlify
 | Rota | Arquivos | O que é |
 | --- | --- | --- |
 | `/` | `index.html`, `style.css`, `main.js`, `blob.js` | Home, com o blob 3D e as animações de entrada (`assets/js/home-motion.js`) |
+| `/criacao-de-sites/` | `criacao-de-sites/`, `assets/css/servicos.css`, `assets/js/servicos-motion.js` | Página de serviço (SEO): tipos de projeto, processo animado na rolagem, o que todo site inclui, projetos e perguntas frequentes |
 | `/projetos/` | `projetos/index.html` | Hub com todas as categorias |
 | `/projetos/igaming/` | `projetos/igaming/` | Peças de CRM e gamificação, emails em HTML e o Clube de Ouro |
 | `/projetos/oab/` | `projetos/oab/` | Case da campanha OAB/PE 2024 |

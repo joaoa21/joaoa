@@ -1,0 +1,482 @@
+/* ============================================================
+   JOÃO ALBERTO — CRIAÇÃO DE SITES (página de serviço)
+   Usa a base das páginas internas (hub.css + sites.css) e acrescenta
+   as seções: serviços, processo em passos, lista do que todo site
+   inclui, projetos e perguntas frequentes.
+   ============================================================ */
+
+.svc-section {
+  position: relative;
+  z-index: 3;
+  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-inline: max(var(--pad), calc((100vw - var(--container)) / 2));
+}
+
+/* ---------- Abertura em CSS ----------
+   Nas outras páginas internas o topo espera o hub.js para aparecer. Aqui
+   ele entra direto em CSS, no primeiro quadro: o texto principal (LCP)
+   aparece sem esperar os scripts. Nada começa em opacidade 0 exata. */
+@keyframes svc-rise { from { opacity: .01; transform: translateY(24px); } }
+
+html.js:not(.reduce-motion):not(.motion-fallback) .svc-page .hub-label:not(.is-visible),
+html.js:not(.reduce-motion):not(.motion-fallback) .svc-page .hub-title:not(.is-visible),
+html.js:not(.reduce-motion):not(.motion-fallback) .svc-page .hub-desc:not(.is-visible) {
+  opacity: 1;
+  transform: none;
+}
+
+html.js:not(.reduce-motion) .svc-page .hub-label { animation: svc-rise .8s var(--ease-out) .05s backwards; }
+html.js:not(.reduce-motion) .svc-page .hub-title { animation: svc-rise 1s var(--ease-out) .12s backwards; }
+html.js:not(.reduce-motion) .svc-page .hub-desc { animation: svc-rise .9s var(--ease-out) .28s backwards; }
+html.js:not(.reduce-motion) .svc-page .svc-actions { animation: svc-rise .9s var(--ease-out) .42s backwards; }
+
+/* ---------- Abertura: botões abaixo do texto ---------- */
+
+.hub-head .hub-title {
+  max-width: 11ch;
+}
+
+.svc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+  margin-top: 2.2rem;
+}
+
+.svc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--fg);
+  text-decoration: none;
+  transition: color .25s ease;
+}
+
+.svc-link i {
+  transition: transform .35s var(--ease-out);
+}
+
+.svc-link--down i {
+  transform: rotate(90deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .svc-link:hover {
+    color: var(--soft);
+  }
+
+  .svc-link:hover i {
+    transform: translateX(4px);
+  }
+
+  .svc-link--down:hover i {
+    transform: rotate(90deg) translateX(4px);
+  }
+}
+
+/* ---------- Cabeçalho das seções ---------- */
+.svc-head {
+  max-width: 46rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.svc-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+  color: var(--muted);
+}
+
+.svc-label span {
+  width: 42px;
+  height: 1px;
+  background: var(--line);
+}
+
+.svc-title {
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -.035em;
+  line-height: 1.02;
+}
+
+.svc-lead {
+  max-width: 52ch;
+  margin-top: 1.2rem;
+  color: var(--soft);
+  font-size: clamp(1rem, 1.3vw, 1.08rem);
+  line-height: 1.6;
+}
+
+/* ---------- O que eu faço ---------- */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.svc-card {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  min-width: 0;
+  padding: 1.8rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--chip);
+  transition: border-color .3s ease, transform .4s var(--ease-out);
+}
+
+.svc-card-i {
+  color: var(--muted);
+}
+
+.svc-card h3 {
+  margin-top: 1.6rem;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+
+.svc-card p:not(.svc-card-i) {
+  color: var(--soft);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+.svc-card a {
+  color: var(--fg);
+  text-underline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .svc-card:hover {
+    border-color: var(--muted);
+    transform: translateY(-4px);
+  }
+}
+
+/* ---------- Como funciona: passos ---------- */
+.svc-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+  list-style: none;
+}
+
+/* linha técnica que liga os números dos passos */
+.svc-steps::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--steps-line, 1));
+}
+
+.svc-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.svc-step-n {
+  position: relative;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  margin-bottom: 1.8rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: .78rem;
+}
+
+.svc-step h3 {
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+
+.svc-step p {
+  margin-top: .7rem;
+  color: var(--soft);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+.svc-step-visual {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+  margin-top: auto;
+  padding-top: 1.6rem;
+}
+
+.svc-chips {
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.svc-chips span {
+  padding: .4rem .7rem;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  color: var(--soft);
+  font-size: .76rem;
+}
+
+.svc-chips .is-on {
+  border-color: var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.svc-pill {
+  padding: .55rem .8rem;
+  border: 1px dashed var(--muted);
+  border-radius: 8px;
+  color: var(--soft);
+  font-size: .62rem;
+  white-space: nowrap;
+}
+
+/* esqueleto de layout: cabeçalho, imagem e duas colunas */
+.svc-wire {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 8px 26px 10px;
+  gap: 5px;
+  width: 112px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.svc-wire i {
+  border-radius: 3px;
+  background: rgba(242, 240, 235, .16);
+}
+
+.svc-wire i:nth-child(1),
+.svc-wire i:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+.svc-wire i:nth-child(2) {
+  background: rgba(242, 240, 235, .28);
+}
+
+.svc-status {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .55rem .9rem;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  color: var(--fg);
+  font-size: .64rem;
+}
+
+.svc-status b {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--fg);
+  box-shadow: 0 0 0 0 rgba(242, 240, 235, .45);
+  animation: svc-pulse 2.2s ease-out infinite;
+}
+
+@keyframes svc-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(242, 240, 235, .45); }
+  70%, 100% { box-shadow: 0 0 0 9px rgba(242, 240, 235, 0); }
+}
+
+/* ---------- O que todo site inclui ---------- */
+.svc-list {
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.svc-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding-left .3s ease;
+}
+
+.svc-list strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+.svc-list span {
+  color: var(--soft);
+  font-size: .98rem;
+  line-height: 1.55;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .svc-list li:hover {
+    padding-left: .4rem;
+  }
+}
+
+/* ---------- Projetos ---------- */
+.svc-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.svc-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+/* ---------- Perguntas frequentes ---------- */
+.svc-faq-list {
+  max-width: 52rem;
+  border-top: 1px solid var(--line);
+}
+
+.svc-faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+
+.svc-faq-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.svc-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.svc-faq-list h3 {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: -.01em;
+  line-height: 1.35;
+}
+
+/* sinal de "+" que vira "−" ao abrir */
+.svc-faq-list summary i {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+}
+
+.svc-faq-list summary i::before,
+.svc-faq-list summary i::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform .35s var(--ease-out);
+}
+
+.svc-faq-list summary i::after {
+  transform: rotate(90deg);
+}
+
+.svc-faq-list details[open] summary i::after {
+  transform: rotate(0deg);
+}
+
+.svc-faq-list details p {
+  max-width: 62ch;
+  padding-bottom: 1.5rem;
+  color: var(--soft);
+  line-height: 1.7;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .svc-faq-list summary:hover h3 {
+    color: var(--soft);
+  }
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1000px) {
+  .svc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .svc-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 3rem;
+  }
+
+  .svc-steps::before {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .svc-grid,
+  .svc-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-card {
+    padding: 1.5rem;
+  }
+
+  .svc-card h3 {
+    margin-top: 1rem;
+  }
+
+  .svc-steps {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .svc-step-n {
+    margin-bottom: 1.2rem;
+  }
+
+  .svc-step-visual {
+    min-height: 0;
+    padding-top: 1.2rem;
+  }
+
+  .svc-list li {
+    grid-template-columns: 1fr;
+    gap: .35rem;
+  }
+
+  .svc-actions {
+    gap: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svc-status b {
+    animation: none;
+  }
+}
