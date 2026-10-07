@@ -17,6 +17,11 @@ function showWithoutAnimation() {
   root.classList.add('motion-fallback');
 }
 
+/* Pausa curta para o navegador pintar e responder ao toque antes de continuar. */
+const yieldToBrowser = () => (window.scheduler?.yield
+  ? window.scheduler.yield()
+  : new Promise((resolve) => window.setTimeout(resolve, 0)));
+
 /* Gatilho padrão: anima uma vez quando o elemento entra na tela. */
 const onEnter = (trigger, extra = {}) => ({ trigger, start: 'top 82%', once: true, ...extra });
 
@@ -53,13 +58,21 @@ export function initHomeMotion() {
           new Promise((resolve) => window.setTimeout(resolve, 800)),
         ]);
 
-        fontsOrTimeout.then(() => {
-          sectionHeads({ gsap, SplitText });
-          headings({ gsap, SplitText });
-          aboutSection({ gsap, SplitText });
-          projectsSection({ gsap, SplitText, desktop });
-          contactSection({ gsap, SplitText });
-          footerSection({ gsap });
+        // Uma seção por vez, devolvendo o controle ao navegador entre elas:
+        // o resultado é o mesmo, mas sem uma tarefa longa travando o celular.
+        fontsOrTimeout.then(async () => {
+          const steps = [
+            () => sectionHeads({ gsap, SplitText }),
+            () => headings({ gsap, SplitText }),
+            () => aboutSection({ gsap, SplitText }),
+            () => projectsSection({ gsap, SplitText, desktop }),
+            () => contactSection({ gsap, SplitText }),
+            () => footerSection({ gsap }),
+          ];
+          for (const step of steps) {
+            step();
+            await yieldToBrowser();
+          }
           ScrollTrigger.refresh();
         });
 
