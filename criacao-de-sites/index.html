@@ -93,7 +93,8 @@
     }
   ]
 }</script><link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><link rel="stylesheet" href="/assets/css/contact-socials.css"/>
-<script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script></head>
+<script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script><link href="/assets/css/lang-menu.css" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="/assets/css/lang-menu.css" rel="stylesheet"/></noscript>
+</head>
 <body class="svc-page">
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 <!-- ============ 3D STAGE ============ -->
@@ -119,7 +120,7 @@
 <li><a href="/projetos/">Projetos</a></li>
 <li><a aria-current="page" href="/criacao-de-sites/">Serviços</a></li>
 <li><a href="/blog/">Blog</a></li>
-<li class="nav-lang"><a href="/en/web-design/" hreflang="en" lang="en" aria-label="English version"><span aria-hidden="true" class="flag flag-us"></span>EN</a></li></ul>
+<!--lang--><li class="nav-lang"><details class="lang-menu"><summary aria-label="Idioma: Português"><span aria-hidden="true" class="flag flag-br"></span>PT</summary><ul class="lang-list"><li><a href="/criacao-de-sites/" hreflang="pt-BR" lang="pt-BR" aria-current="true"><span aria-hidden="true" class="flag flag-br"></span>Português</a></li><li><a href="/en/web-design/" hreflang="en" lang="en"><span aria-hidden="true" class="flag flag-us"></span>English</a></li></ul></details></li><!--/lang--></ul>
 <a class="nav-cta" href="#contato">
         Fale comigo
         <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
@@ -320,5 +321,6 @@
 <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
 <script src="/assets/js/hub.js" type="module"></script>
 <script src="/assets/js/servicos-motion.js" type="module"></script>
+<script src="/assets/js/lang-menu.js" defer></script>
 </body>
 </html>

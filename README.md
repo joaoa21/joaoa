@@ -63,7 +63,7 @@ Todas as páginas têm versão em inglês em `/en/`, com endereços próprios (`
 
 - **Não edite os arquivos de `/en/` à mão.** Eles são gerados a partir das páginas em português por `scripts/i18n/make.mjs`, com as traduções em `scripts/i18n/pages/<página>.mjs` (textos repetidos, como menu e rodapé, em `common.mjs`).
 - **Mudou um texto em português?** Acrescente a tradução no dicionário da página e rode `node scripts/i18n/make.mjs <página>` (sem argumentos, gera todas). O script avisa o que ficou sem tradução; `node scripts/i18n/scan.mjs` faz uma varredura extra.
-- O gerador também mantém nas páginas em português o seletor **EN** do menu e as marcações `hreflang`; nas em inglês, o seletor **PT**, links internos para `/en/`, `og:locale` e imagens de compartilhamento `og-*-en.jpg`.
+- O gerador também mantém em todas as páginas o **seletor de idioma** (bandeira + sigla do idioma atual, que abre a lista com Português e English; `assets/css/lang-menu.css` e `assets/js/lang-menu.js`) e as marcações `hreflang`; nas páginas em inglês, links internos para `/en/`, `og:locale` e imagens de compartilhamento `og-*-en.jpg`.
 - Textos dentro dos scripts (menu, galeria, tema) escolhem o idioma pelo `lang` da página.
 - `_redirects` serve `en/404.html` para endereços inexistentes dentro de `/en/`. O `sitemap.xml` lista as duas versões de cada página com `xhtml:link`.
 

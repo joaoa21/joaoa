@@ -1,0 +1,245 @@
+/* ============================================================
+   JOÃO ALBERTO — SELETOR DE IDIOMA (PT / EN)
+   Mostra o idioma atual (bandeira + sigla); ao clicar, abre a lista
+   com os dois idiomas. Feito com <details>: abre e fecha mesmo sem
+   JavaScript; assets/js/lang-menu.js só fecha ao clicar fora / Esc.
+   Usado no menu (home e páginas internas), no currículo, na página
+   de links e na página em obras.
+   ============================================================ */
+
+.lang-menu {
+  --lm-bg: rgba(22, 22, 21, .97);
+  --lm-fg: #f2f0eb;
+  --lm-soft: rgba(242, 240, 235, .72);
+  --lm-line: rgba(242, 240, 235, .14);
+  --lm-chip: rgba(242, 240, 235, .07);
+  --lm-hover: rgba(242, 240, 235, .1);
+  --lm-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+
+  position: relative;
+}
+
+/* temas claros: barra do currículo e tema claro da página de links */
+.cv-toolbar .lang-menu,
+html.light .lang-menu {
+  --lm-bg: rgba(250, 248, 244, .98);
+  --lm-fg: #0f0f0f;
+  --lm-soft: rgba(15, 15, 15, .7);
+  --lm-line: rgba(15, 15, 15, .14);
+  --lm-chip: rgba(15, 15, 15, .05);
+  --lm-hover: rgba(15, 15, 15, .07);
+  --lm-shadow: 0 18px 40px rgba(0, 0, 0, .16);
+}
+
+/* ---------- botão (idioma atual) ---------- */
+.lang-menu > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem .9rem;
+  border-radius: 10px;
+  background: var(--lm-chip);
+  color: var(--lm-soft);
+  font-size: .9rem;
+  line-height: 1.2;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: color .25s ease, background-color .25s ease;
+}
+
+.lang-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* setinha que vira para cima quando a lista está aberta */
+.lang-menu > summary::after {
+  content: "";
+  width: .36rem;
+  height: .36rem;
+  margin-left: .1rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform .3s cubic-bezier(.22, 1, .36, 1);
+}
+
+.lang-menu[open] > summary::after {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+.lang-menu > summary:hover,
+.lang-menu[open] > summary {
+  background: var(--lm-line);
+  color: var(--lm-fg);
+}
+
+.lang-menu > summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* ---------- lista ---------- */
+.lang-list {
+  position: absolute;
+  top: calc(100% + .5rem);
+  right: 0;
+  z-index: 60;
+  min-width: 11.5rem;
+  margin: 0;
+  padding: .35rem;
+  list-style: none;
+  border: 1px solid var(--lm-line);
+  border-radius: 12px;
+  background: var(--lm-bg);
+  box-shadow: var(--lm-shadow);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  animation: lang-list-in .22s cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes lang-list-in {
+  from { opacity: 0; transform: translateY(-6px); }
+}
+
+.lang-list li {
+  display: block;
+}
+
+.lang-list a,
+.nav-links .lang-list a {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .6rem .7rem;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--lm-soft);
+  font-family: inherit;
+  font-size: .88rem;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .2s ease, background-color .2s ease;
+}
+
+.lang-list a:hover,
+.lang-list a:focus-visible,
+.nav-links .lang-list a:hover {
+  background: var(--lm-hover);
+  color: var(--lm-fg);
+}
+
+/* idioma atual: em destaque e com um ✓ */
+.lang-list a[aria-current="true"],
+.nav-links .lang-list a[aria-current="true"] {
+  color: var(--lm-fg);
+}
+
+.lang-list a[aria-current="true"]::after {
+  content: "";
+  width: .3rem;
+  height: .58rem;
+  margin: -.15rem .15rem 0 auto;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+}
+
+/* ---------- bandeiras ---------- */
+.flag {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  background: center / cover no-repeat;
+  box-shadow: 0 0 0 1px var(--lm-line, rgba(255, 255, 255, .18));
+}
+
+.flag-us { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'%3E%3Crect width='24' height='16' fill='%23fff'/%3E%3Cg fill='%23b22234'%3E%3Crect y='0.00' width='24' height='1.23'/%3E%3Crect y='2.46' width='24' height='1.23'/%3E%3Crect y='4.92' width='24' height='1.23'/%3E%3Crect y='7.38' width='24' height='1.23'/%3E%3Crect y='9.85' width='24' height='1.23'/%3E%3Crect y='12.31' width='24' height='1.23'/%3E%3Crect y='14.77' width='24' height='1.23'/%3E%3C/g%3E%3Crect width='10' height='8.62' fill='%233c3b6e'/%3E%3Cg fill='%23fff'%3E%3Ccircle cx='1.6' cy='1.5' r='.5'/%3E%3Ccircle cx='4.2' cy='1.5' r='.5'/%3E%3Ccircle cx='6.8' cy='1.5' r='.5'/%3E%3Ccircle cx='2.9' cy='3.4' r='.5'/%3E%3Ccircle cx='5.5' cy='3.4' r='.5'/%3E%3Ccircle cx='8.1' cy='3.4' r='.5'/%3E%3Ccircle cx='1.6' cy='5.3' r='.5'/%3E%3Ccircle cx='4.2' cy='5.3' r='.5'/%3E%3Ccircle cx='6.8' cy='5.3' r='.5'/%3E%3Ccircle cx='2.9' cy='7.1' r='.5'/%3E%3Ccircle cx='5.5' cy='7.1' r='.5'/%3E%3Ccircle cx='8.1' cy='7.1' r='.5'/%3E%3C/g%3E%3C/svg%3E"); }
+.flag-br { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'%3E%3Crect width='24' height='16' fill='%23009c3b'/%3E%3Cpath d='M12 1.8 22 8 12 14.2 2 8z' fill='%23ffdf00'/%3E%3Ccircle cx='12' cy='8' r='3.7' fill='%23002776'/%3E%3Cpath d='M8.5 7.1c2.3-.5 4.9-.2 7 .9' fill='none' stroke='%23fff' stroke-width='.7'/%3E%3C/svg%3E"); }
+
+/* ============ CONTEXTOS ============ */
+
+/* menu no celular (tela cheia, itens centralizados): a lista abre embaixo, no fluxo */
+@media (max-width: 860px) {
+  .nav-lang .lang-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-lang .lang-list {
+    position: static;
+    margin-top: .5rem;
+    animation: none;
+  }
+}
+
+/* barra do currículo: mesmo formato dos botões "Portfólio" e "Imprimir" */
+.cv-toolbar .lang-menu > summary {
+  min-height: 42px;
+  padding: 0 .85rem;
+  border: 1px solid var(--lm-fg);
+  border-radius: 9px;
+  background: transparent;
+  color: var(--lm-fg);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+.cv-toolbar .lang-menu > summary:hover,
+.cv-toolbar .lang-menu[open] > summary {
+  background: var(--lm-fg);
+  color: #f2f0eb;
+}
+
+/* é o primeiro botão da barra: a lista abre para a direita, sem sair da tela no celular */
+.cv-toolbar .lang-list {
+  right: auto;
+  left: 0;
+}
+
+/* página de links: centralizado, abaixo do botão de tema */
+.lang-menu.lang-switch {
+  display: block;
+  width: fit-content;
+  margin: .8rem auto 0;
+}
+
+.lang-menu.lang-switch > summary {
+  border: 1px solid var(--lm-line);
+  border-radius: 11px;
+  font-size: .82rem;
+}
+
+.lang-menu.lang-switch .lang-list {
+  right: 50%;
+  transform: translateX(50%);
+  animation-name: lang-list-in-center;
+}
+
+@keyframes lang-list-in-center {
+  from { opacity: 0; transform: translate(50%, -6px); }
+}
+
+/* página em obras: canto superior direito */
+.lang-menu.lang-corner {
+  position: fixed;
+  top: max(1.6rem, env(safe-area-inset-top));
+  right: max(1.25rem, env(safe-area-inset-right));
+  z-index: 6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-list { animation: none; }
+  .lang-menu > summary::after { transition: none; }
+}
+
+@media print {
+  .lang-menu { display: none !important; }
+}

@@ -27,26 +27,56 @@ function addHreflang(html, ptUrl, enUrl) {
   return html.replace('</title>', '</title>' + tags);
 }
 
-/* Tira o seletor de idioma que já existe (para regravar com a versão atual). */
+/* ---------- Seletor de idioma ----------
+   Botão com o idioma atual (bandeira + sigla) que abre a lista com os dois idiomas
+   (<details>, estilos em assets/css/lang-menu.css, fechar fora/Esc em assets/js/lang-menu.js).
+   O seletor fica entre <!--lang--> e <!--/lang--> para poder ser regravado. */
+const LANG_CSS = '<link href="/assets/css/lang-menu.css" rel="stylesheet" media="print" onload="this.media=\'all\'"/><noscript><link href="/assets/css/lang-menu.css" rel="stylesheet"/></noscript>';
+const LANG_JS = '<script src="/assets/js/lang-menu.js" defer></script>';
+
+/* Tira o seletor que já existe e deixa o marcador <!--LANG-SWITCH--> no lugar. */
 function removeSwitch(html) {
   return html
-    .replace(/<li class="nav-lang">[\s\S]*?<\/li>/, '')
-    .replace(/<a class="toolbar-lang"[\s\S]*?<\/a>\n?/, '')
+    .replace(/<!--lang-->[\s\S]*?<!--\/lang-->/, '<!--LANG-SWITCH-->')
+    // formatos antigos (link simples com a bandeira do outro idioma)
+    .replace(/<li class="nav-lang">[\s\S]*?<\/li>/, '<!--LANG-SWITCH-->')
+    .replace(/<a class="toolbar-lang"[\s\S]*?<\/a>\n?/, '<!--LANG-SWITCH-->')
     .replace(/<a class="lang-switch[^"]*"[\s\S]*?<\/a>/, '<!--LANG-SWITCH-->');
 }
 
-/* Seletor de idioma com a bandeira do idioma de destino: último item do menu,
-   um botão na barra do currículo ou o espaço <!--LANG-SWITCH--> (página de links). */
-function addSwitch(html, href, label, lang, name) {
+function switchMarkup(current, ptUrl, enUrl, extraClass) {
+  const langs = {
+    pt: { code: 'PT', name: 'Português', flag: 'br', href: ptUrl, hreflang: 'pt-BR' },
+    en: { code: 'EN', name: 'English', flag: 'us', href: enUrl, hreflang: 'en' },
+  };
+  const cur = langs[current];
+  const label = current === 'pt' ? 'Idioma: Português' : 'Language: English';
+  const items = ['pt', 'en'].map((key) => {
+    const l = langs[key];
+    const currentAttr = key === current ? ' aria-current="true"' : '';
+    return `<li><a href="${l.href}" hreflang="${l.hreflang}" lang="${l.hreflang}"${currentAttr}><span aria-hidden="true" class="flag flag-${l.flag}"></span>${l.name}</a></li>`;
+  }).join('');
+  return `<details class="lang-menu${extraClass}"><summary aria-label="${label}"><span aria-hidden="true" class="flag flag-${cur.flag}"></span>${cur.code}</summary><ul class="lang-list">${items}</ul></details>`;
+}
+
+/* Coloca o seletor: último item do menu, primeiro botão da barra do currículo
+   ou no marcador <!--LANG-SWITCH--> (página de links e página em obras). */
+function addSwitch(html, current, ptUrl, enUrl) {
   html = removeSwitch(html);
-  const flag = `<span aria-hidden="true" class="flag flag-${lang === 'en' ? 'us' : 'br'}"></span>`;
-  const attrs = `href="${href}" hreflang="${lang}" lang="${lang}" aria-label="${name}"`;
-  const ul = html.match(/<ul class="nav-links">[\s\S]*?<\/ul>/);
-  if (ul) return html.replace(ul[0], ul[0].replace(/<\/ul>$/, `<li class="nav-lang"><a ${attrs}>${flag}${label}</a></li></ul>`));
-  if (html.includes('<div class="toolbar-actions">')) {
-    return html.replace('<div class="toolbar-actions">', `<div class="toolbar-actions">\n<a class="toolbar-lang" ${attrs}>${flag}${label}</a>`);
+  const inNav = /<ul class="nav-links">[\s\S]*?<!--LANG-SWITCH-->[\s\S]*?<\/ul>/.test(html) || (!html.includes('<!--LANG-SWITCH-->') && /<ul class="nav-links">/.test(html));
+  const inToolbar = !inNav && html.includes('<div class="toolbar-actions">');
+  if (!html.includes('<!--LANG-SWITCH-->')) {
+    if (inNav) html = html.replace(/(<ul class="nav-links">[\s\S]*?)<\/ul>/, '$1<!--LANG-SWITCH--></ul>');
+    else if (inToolbar) html = html.replace('<div class="toolbar-actions">', '<div class="toolbar-actions">\n<!--LANG-SWITCH-->');
+    else return html;
   }
-  if (html.includes('<!--LANG-SWITCH-->')) return html.replace('<!--LANG-SWITCH-->', `<a class="lang-switch" ${attrs}>${flag}${label}</a>`);
+  let markup;
+  if (inNav) markup = `<li class="nav-lang">${switchMarkup(current, ptUrl, enUrl, '')}</li>`;
+  else if (inToolbar) markup = switchMarkup(current, ptUrl, enUrl, '');
+  else markup = switchMarkup(current, ptUrl, enUrl, html.includes('obras-tapes') ? ' lang-corner' : ' lang-switch');
+  html = html.replace('<!--LANG-SWITCH-->', `<!--lang-->${markup}<!--/lang-->`);
+  if (!html.includes('/assets/css/lang-menu.css')) html = html.replace('</head>', `${LANG_CSS}\n</head>`);
+  if (!html.includes('/assets/js/lang-menu.js')) html = html.replace('</body>', `${LANG_JS}\n</body>`);
   return html;
 }
 
@@ -66,7 +96,7 @@ export function build(cfg) {
   let pt = fs.readFileSync(ptFile, 'utf8');
 
   // português: marcações de idioma e seletor "EN"
-  const ptNext = cfg.noHreflang ? pt : addSwitch(addHreflang(pt, cfg.ptUrl, cfg.enUrl), cfg.enUrl, 'EN', 'en', 'English version');
+  const ptNext = cfg.noHreflang ? pt : addSwitch(addHreflang(pt, cfg.ptUrl, cfg.enUrl), 'pt', cfg.ptUrl, cfg.enUrl);
   if (ptNext !== pt) { fs.writeFileSync(ptFile, ptNext); pt = ptNext; }
 
   // inglês
@@ -88,7 +118,7 @@ export function build(cfg) {
   en = en.replace('<meta property="og:locale" content="pt_BR"/>', '<meta property="og:locale" content="en_US"/><meta property="og:locale:alternate" content="pt_BR"/>');
   en = jsonLd(en, { ...(cfg.jsonDict || {}) });
   const { html, missing } = translate(en, { ...COMMON, ...cfg.dict });
-  en = addSwitch(html, cfg.ptUrl, 'PT', 'pt-BR', 'Versão em português');
+  en = addSwitch(html, 'en', cfg.ptUrl, cfg.enUrl);
 
   fs.mkdirSync(path.dirname(enFile), { recursive: true });
   fs.writeFileSync(enFile, en);

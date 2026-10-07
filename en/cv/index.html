@@ -27,14 +27,14 @@
 <link href="/assets/css/icons.css" rel="stylesheet"/>
 <link href="/cv/style.css" rel="stylesheet"/>
 <link href="/favicon.ico" rel="icon" sizes="48x48"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script></head>
+<link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script><link href="/assets/css/lang-menu.css" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="/assets/css/lang-menu.css" rel="stylesheet"/></noscript>
+</head>
 <body>
 <a class="skip-link" href="#curriculo">Skip to résumé</a>
 <nav aria-label="Résumé actions" class="cv-toolbar">
 <a aria-label="João Alberto — home page" class="toolbar-brand" href="/en/">João Alberto</a>
 <div class="toolbar-actions">
-<a class="toolbar-lang" href="/cv/" hreflang="pt-BR" lang="pt-BR" aria-label="Versão em português"><span aria-hidden="true" class="flag flag-br"></span>PT</a>
-
+<!--lang--><details class="lang-menu"><summary aria-label="Language: English"><span aria-hidden="true" class="flag flag-us"></span>EN</summary><ul class="lang-list"><li><a href="/cv/" hreflang="pt-BR" lang="pt-BR"><span aria-hidden="true" class="flag flag-br"></span>Português</a></li><li><a href="/en/cv/" hreflang="en" lang="en" aria-current="true"><span aria-hidden="true" class="flag flag-us"></span>English</a></li></ul></details><!--/lang-->
 <a class="toolbar-portfolio" href="/en/projects/" rel="noopener" target="_blank">
 <span class="toolbar-portfolio-text">Portfolio</span>
 <span aria-hidden="true" class="toolbar-portfolio-icon">
@@ -321,5 +321,6 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
 <script src="/cv/script.js"></script>
+<script src="/assets/js/lang-menu.js" defer></script>
 </body>
 </html>
