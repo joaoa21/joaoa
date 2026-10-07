@@ -152,11 +152,36 @@ initHomeMotion();
 
 /* ---------- Three.js isolado: falhas não afetam a interface ----------
    O blob é decorativo: só começa a baixar depois que a página carregou,
-   para não disputar rede e processador com o texto da abertura. */
+   para não disputar rede e processador com o texto da abertura.
+   Também espera a primeira pintura com conteúdo chegar à tela: em aparelhos
+   sem placa de vídeo (como o teste do PageSpeed), montar o 3D antes disso
+   segura a exibição do texto por mais de 1 s. Em celulares comuns essa
+   pintura acontece bem antes do carregamento, então nada muda na tela. */
 const stage = document.getElementById('stage');
 
+const firstContentfulPaint = new Promise((resolve) => {
+  if (!('PerformanceObserver' in window) || performance.getEntriesByName('first-contentful-paint').length) {
+    resolve();
+    return;
+  }
+  try {
+    const observer = new PerformanceObserver((list) => {
+      if (list.getEntriesByName('first-contentful-paint').length) {
+        observer.disconnect();
+        resolve();
+      }
+    });
+    observer.observe({ type: 'paint', buffered: true });
+  } catch {
+    resolve();
+  }
+  window.setTimeout(resolve, 4000); // navegadores sem a métrica: não espera para sempre
+});
+
 const afterLoad = (task) => {
-  const run = () => ('requestIdleCallback' in window ? window.requestIdleCallback(task, { timeout: 800 }) : window.setTimeout(task, 200));
+  const run = () => firstContentfulPaint.then(() => (
+    'requestIdleCallback' in window ? window.requestIdleCallback(task, { timeout: 800 }) : window.setTimeout(task, 200)
+  ));
   if (document.readyState === 'complete') run();
   else window.addEventListener('load', run, { once: true });
 };
