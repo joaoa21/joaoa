@@ -5,7 +5,7 @@ export default {
   enUrl: '/en/404.html',
   noHreflang: true,
   dict: {
-    'Página não encontrada — João Alberto': 'Page not found — João Alberto',
+    'Página não encontrada | João Alberto': 'Page not found | João Alberto',
     'ERRO 404': 'ERROR 404',
     '// ERRO 404': '// ERROR 404',
     'Página não': 'Page not',

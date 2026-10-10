@@ -4,7 +4,7 @@ export default {
   ptUrl: '/links/',
   enUrl: '/en/links/',
   dict: {
-    'Links — João Alberto': 'Links — João Alberto',
+    'Links | João Alberto': 'Links | João Alberto',
     'Pular para os links': 'Skip to links',
     'Web Designer': 'Front-end · UI Designer',
     'Transformo ideias em interfaces': 'I turn ideas into interfaces',

@@ -5,7 +5,7 @@ export default {
   enUrl: '/en/403.html',
   noHreflang: true,
   dict: {
-    'Acesso restrito — João Alberto': 'Restricted access — João Alberto',
+    'Acesso restrito | João Alberto': 'Restricted access | João Alberto',
     'ERRO 403': 'ERROR 403',
     '// ERRO 403': '// ERROR 403',
     'Acesso': 'Restricted',

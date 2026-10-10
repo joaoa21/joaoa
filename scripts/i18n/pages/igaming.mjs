@@ -5,7 +5,7 @@ export default {
   enUrl: '/en/projects/igaming/',
   keep: ['ocupa 2 colunas → 1266×600 -'],
   dict: {
-    'Portfólio iGaming: CRM, Gamificação e Design — João Alberto': 'iGaming Portfolio: CRM, Gamification and Design — João Alberto',
+    'Portfólio iGaming: CRM, Gamificação e Design | João Alberto': 'iGaming Portfolio: CRM, Gamification and Design | João Alberto',
     'Design para campanhas, CRM e gamificação. Uma seleção de peças e interfaces para o universo de iGaming.': 'Design for campaigns, CRM and gamification. A selection of assets and interfaces for the iGaming world.',
     'Tráfego pago': 'Paid ads',
     'Tráfego Pago': 'Paid Ads',
@@ -150,7 +150,7 @@ export default {
     'Clube de Ouro — apresentação interativa': 'Clube de Ouro — interactive presentation',
   },
   jsonDict: {
-    'Portfólio iGaming — João Alberto': 'iGaming Portfolio — João Alberto',
+    'Portfólio iGaming | João Alberto': 'iGaming Portfolio | João Alberto',
     'Seleção de projetos de design para iGaming, CRM, gamificação, email marketing, banners, pop-ups e widgets.': 'A selection of design projects for iGaming, CRM, gamification, email marketing, banners, pop-ups and widgets.',
   },
 };

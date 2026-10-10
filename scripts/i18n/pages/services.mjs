@@ -23,7 +23,7 @@ export default {
     ['/assets/img/og-servicos.jpg', '/assets/img/og-servicos-en.jpg'],
   ],
   dict: {
-    'Criação de Sites Profissionais e Landing Pages — João Alberto, Web Designer': 'Website Design & Development, Landing Pages — João Alberto, Web Designer',
+    'Criação de Sites Profissionais e Landing Pages | João Alberto, Web Designer': 'Website Design & Development, Landing Pages | João Alberto, Web Designer',
     'SERVIÇOS': 'SERVICES',
     'Criação de sites': 'Website design',
     'Sites profissionais, landing pages e lojas virtuais sob medida, do design ao código: bonitos, rápidos e feitos para trazer clientes. Trabalho de Recife para empresas de todo o Brasil.': 'Custom websites, landing pages and online stores, from design to code: beautiful, fast and built to bring in clients. Based in Recife, Brazil, working with clients anywhere.',
@@ -88,7 +88,7 @@ export default {
     ...FAQ,
     'Vamos criar o seu site': "Let's build your website",
     'Criação de sites profissionais, landing pages, portfólios e lojas virtuais sob medida, do design ao código. Web designer atendendo empresas de todo o Brasil.': 'Custom website design and development: business websites, landing pages, portfolios and online stores, from design to code. Web designer based in Brazil, working with clients worldwide.',
-    'Criação de Sites Profissionais — João Alberto, Web Designer': 'Website Design & Development — João Alberto, Web Designer',
+    'Criação de Sites Profissionais | João Alberto, Web Designer': 'Website Design & Development | João Alberto, Web Designer',
     'Sites, landing pages e lojas virtuais sob medida, do design ao código. Atendo empresas de todo o Brasil.': 'Custom websites, landing pages and online stores, from design to code. Working with clients worldwide.',
     'Criação de sites — João Alberto, web designer': 'Website design — João Alberto, web designer',
     'Página inicial do Kompres': 'Kompres home page',

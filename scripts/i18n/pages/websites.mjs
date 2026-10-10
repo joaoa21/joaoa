@@ -4,7 +4,7 @@ export default {
   ptUrl: '/projetos/sites/',
   enUrl: '/en/projects/websites/',
   dict: {
-    'Sites e Experiências Web — João Alberto': 'Websites and Web Experiences — João Alberto',
+    'Sites e Experiências Web | João Alberto': 'Websites and Web Experiences | João Alberto',
     'Sites': 'Websites',
     'Sites que resolvem tarefas do dia a dia. Conheça cada projeto, explore a interface e acesse a experiência completa.': 'Websites that solve everyday tasks. Get to know each project, explore the interface and try the full experience.',
     'IMAGENS &amp; PDF': 'IMAGES &amp; PDF',
@@ -23,6 +23,6 @@ export default {
     'Página inicial do Email Generator': 'Email Generator home page',
   },
   jsonDict: {
-    'Sites — João Alberto': 'Websites — João Alberto',
+    'Sites | João Alberto': 'Websites | João Alberto',
   },
 };

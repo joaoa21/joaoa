@@ -4,7 +4,7 @@ export default {
   ptUrl: '/projetos/',
   enUrl: '/en/projects/',
   dict: {
-    'Projetos de Design, Web e iGaming — João Alberto': 'Design, Web and iGaming Projects — João Alberto',
+    'Projetos de Design, Web e iGaming | João Alberto': 'Design, Web and iGaming Projects | João Alberto',
     'Trabalhos selecionados em design e web.': 'Selected work in design and web.',
     'Banners, pop-ups, widgets, emails e gamificação para CRM.': 'Banners, pop-ups, widgets, emails and gamification for CRM.',
     'Identidade Visual': 'Brand Identity',
@@ -24,7 +24,7 @@ export default {
     'Prévia da campanha OAB Pernambuco': 'Preview of the OAB Pernambuco campaign',
   },
   jsonDict: {
-    'Projetos — João Alberto': 'Projects — João Alberto',
+    'Projetos | João Alberto': 'Projects | João Alberto',
     'Identidade Visual': 'Brand Identity',
     'Sites': 'Websites',
     'Campanha OAB/PE': 'OAB/PE Campaign',

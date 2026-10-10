@@ -9,7 +9,7 @@ export default {
     ['<a class="toolbar-portfolio" href="/projetos/"', '<a class="toolbar-portfolio" href="/en/projects/"'],
   ],
   dict: {
-    'Currículo — João Alberto, Front-end, UI e Web Designer': 'Résumé — João Alberto, Front-end Developer & UI/Web Designer',
+    'Currículo | João Alberto, Front-end, UI e Web Designer': 'Résumé | João Alberto, Front-end Developer & UI/Web Designer',
     'Pular para o currículo': 'Skip to résumé',
     'Portfólio': 'Portfolio',
     'Imprimir / PDF': 'Print / PDF',

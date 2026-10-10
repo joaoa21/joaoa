@@ -4,7 +4,7 @@ export default {
   ptUrl: '/projetos/sites/kompres/',
   enUrl: '/en/projects/websites/kompres/',
   dict: {
-    'Kompres: imagens e PDFs no navegador — João Alberto': 'Kompres: images and PDFs in the browser — João Alberto',
+    'Kompres: imagens e PDFs no navegador | João Alberto': 'Kompres: images and PDFs in the browser | João Alberto',
     'Voltar para sites': 'Back to websites',
     'SITES / IMAGENS &amp; PDF': 'WEBSITES / IMAGES &amp; PDF',
     'Imagens e PDFs prontos para usar.': 'Images and PDFs ready to use.',

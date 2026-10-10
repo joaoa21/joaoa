@@ -4,7 +4,7 @@ export default {
   ptUrl: '/projetos/sites/email-generator/',
   enUrl: '/en/projects/websites/email-generator/',
   dict: {
-    'Email Generator: emails HTML e WhatsApp — João Alberto': 'Email Generator: HTML emails and WhatsApp — João Alberto',
+    'Email Generator: emails HTML e WhatsApp | João Alberto': 'Email Generator: HTML emails and WhatsApp | João Alberto',
     'Voltar para sites': 'Back to websites',
     'SITES / EMAIL &amp; WHATSAPP': 'WEBSITES / EMAIL &amp; WHATSAPP',
     'Do conteúdo ao email HTML.': 'From content to HTML email.',

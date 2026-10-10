@@ -4,7 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/',
   enUrl: '/en/projects/brand-identity/',
   dict: {
-    'Identidade Visual · Em obras — João Alberto': 'Brand Identity · Under construction — João Alberto',
+    'Identidade Visual · Em obras | João Alberto': 'Brand Identity · Under construction | João Alberto',
     'Em obras — Não ultrapasse — Identidade visual — Área em reforma — Em obras — Não ultrapasse — Identidade visual — Área em reforma — Em obras — Não ultrapasse — Identidade visual — Área em reforma —': 'Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress —',
     'Previsão de entrega: em breve': 'Expected delivery: soon',
     'EM OBRAS': 'UNDER CONSTRUCTION',
