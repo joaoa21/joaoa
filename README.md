@@ -31,7 +31,7 @@ HTML · CSS · JavaScript (ES modules) · Three.js · GSAP · Lenis · Netlify
 | `/projetos/` | `projetos/index.html` | Hub com todas as categorias |
 | `/projetos/igaming/` | `projetos/igaming/` | Peças de CRM e gamificação, emails em HTML e o Clube de Ouro |
 | `/projetos/oab/` | `projetos/oab/` | Case da campanha OAB/PE 2024 |
-| `/projetos/sites/` | `projetos/sites/` | Índice e cases da MS Corretora, do Kompres e do Email Generator |
+| `/projetos/sites/` | `projetos/sites/` | Índice e cases da MS Corretora, da Propostaria, do Kompres e do Email Generator; as telas de cada site ficam em `assets/projetos/sites/<site>/` (`cover.webp` é a capa composta, `hero.webp` a tela inicial) |
 | `/projetos/identidade-visual/` | `projetos/identidade-visual/` | Página "em obras" (`noindex`) até os cases ficarem prontos |
 | `/links/` | `links/` | Página de links para a bio (`noindex`) |
 | `/cv/` | `cv/` | Currículo, com versão ATS para impressão/PDF em uma página (`noindex, nofollow`) |

@@ -35,7 +35,7 @@ export default {
     'BRANDING · MARCAS': 'BRANDING · BRANDS',
     'Em construção': 'Coming soon',
     'Sites': 'Websites',
-    'INSTITUCIONAL · FERRAMENTAS WEB · HTML · CSS · JS': 'CORPORATE · WEB TOOLS · HTML · CSS · JS',
+    'INSTITUCIONAL · LANDING PAGE · FERRAMENTAS WEB': 'CORPORATE · LANDING PAGE · WEB TOOLS',
     'Campanha OAB/PE': 'OAB/PE Campaign',
     'CAMPANHA 360º · 2024': '360º CAMPAIGN · 2024',
     'Ver todos os projetos': 'View all projects',

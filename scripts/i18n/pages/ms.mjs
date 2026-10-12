@@ -42,5 +42,79 @@ export default {
     'Página inicial do site da MS Corretora de Seguros': 'MS Corretora de Seguros website home page',
     'Página inicial do site da MS Corretora de Seguros: título, chamada para cotação e fotos de clientes': 'MS Corretora de Seguros home page: headline, quote call to action and customer photos',
     'Navegação para a página anterior': 'Navigation to the previous page',
+    // seção "O site em telas"
+    '03 — O SITE EM TELAS': '03 — THE SITE IN SCREENS',
+    'Cada tela, na ordem em que o visitante vê.': 'Every screen, in the order visitors see it.',
+    'Coberturas: oito tipos de seguro em cartões': 'Coverage: eight insurance types as cards',
+    'Seguradoras parceiras': 'Partner insurers',
+    'Sobre: diferenciais e números da corretora': 'About: the brokerage’s strengths and numbers',
+    'Cotação: o formulário abre o WhatsApp com os dados preenchidos': 'Quote: the form opens WhatsApp with the details filled in',
+    'Perguntas frequentes': 'Frequently asked questions',
+    'Página de produtos': 'Products page',
+    'Produtos: principais coberturas, para quem é e cotação por seguro': 'Products: main coverage, who it is for and a quote per insurance',
+    'Rodapé': 'Footer',
+    'Início': 'Home',
+    'Coberturas': 'Coverage',
+    'Cotação': 'Quote',
+    'Versão para celular': 'Mobile version',
+    'Propostaria': 'Propostaria',
+    // style guide e design final
+    'A identidade em código.': 'The identity, in code.',
+    '04 — DESIGN FINAL': '04 — FINAL DESIGN',
+    'Design final.': 'Final design.',
+    'Tipografia': 'Typography',
+    'Cores': 'Colors',
+    'Componentes': 'Components',
+    'Título': 'Heading',
+    'Corpo': 'Body',
+    'Fonte': 'Font',
+    'Peso': 'Weight',
+    'Tamanho': 'Size',
+    'Em foco': 'Focused',
+    'Proteja o que mais importa': 'Protect what matters most',
+    'Seguros de vida, auto, residencial, moto e muito mais. Cotação online em minutos.': 'Life, auto, home, motorcycle insurance and more. Online quotes in minutes.',
+    'Laranja': 'Orange',
+    'Azul-marinho': 'Navy',
+    'Neutras': 'Neutrals',
+    'Solicitar cotação': 'Request a quote',
+    'Ver coberturas': 'See coverage',
+    'Saiba mais →': 'Learn more →',
+    'Nome': 'Name',
+    'Seu nome': 'Your name',
+    'Vida': 'Life',
+    'Residencial': 'Home',
+    'Aceito o contato': 'I accept contact',
+    'Cotação gratuita': 'Free quote',
+    'Seguro de Vida': 'Life insurance',
+    'Proteção financeira para a sua família.': 'Financial protection for your family.',
+    'Cotação pelo WhatsApp, no computador e no celular': 'WhatsApp quote, on desktop and mobile',
+    'Sobre a corretora': 'About the brokerage',
+    // style guide e design final
+    '04 — DESIGN FINAL · LANDING PAGE': '04 — FINAL DESIGN · LANDING PAGE',
+    'A landing page.': 'The landing page.',
+    '05 — DESIGN FINAL · APLICAÇÃO': '05 — FINAL DESIGN · THE APP',
+    'A aplicação.': 'The app.',
+    // style guide e design final
+
+    // style guide e design final
+
+    // style guide e design final
+    'Altura da linha': 'Line height',
+    'Uso': 'Use',
+    'Marca': 'Brand',
+    'Lista': 'Select',
+    'Com erro': 'With error',
+    'Campo obrigatório': 'Required field',
+    'Concluído': 'Done',
+    'Atenção': 'Warning',
+    'Novo': 'New',
+    // style guide e design final
+
+    // style guide e design final
+
+    // style guide e design final
+
+    // style guide e design final
+
   },
 };

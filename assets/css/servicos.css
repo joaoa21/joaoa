@@ -339,9 +339,26 @@ html.js:not(.reduce-motion) .svc-page .svc-actions { animation: svc-rise .9s var
 /* ---------- Projetos ---------- */
 .svc-cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
 }
+
+/* três por linha: cards mais compactos que os do hub */
+.svc-cards .pcard-body {
+  gap: .55rem;
+  padding: 1.25rem 1.25rem 1.35rem;
+}
+
+.svc-cards .pcard-title {
+  font-size: clamp(1.25rem, 1.55vw, 1.5rem);
+  letter-spacing: -.025em;
+}
+
+.svc-cards .pcard-desc {
+  font-size: .88rem;
+  line-height: 1.5;
+}
+
 
 .svc-more {
   display: flex;
@@ -434,6 +451,12 @@ html.js:not(.reduce-motion) .svc-page .svc-actions { animation: svc-rise .9s var
 
   .svc-steps::before {
     display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .svc-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

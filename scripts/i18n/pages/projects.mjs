@@ -12,7 +12,7 @@ export default {
     'Branding e sistemas de marca para diferentes segmentos.': 'Branding and brand systems for different industries.',
     'Ver categoria': 'View category',
     'Sites': 'Websites',
-    'Site institucional e ferramentas web, do layout ao código.': 'A corporate website and web tools, from layout to code.',
+    'Site institucional, landing page e ferramentas web, do layout ao código.': 'A corporate website, a landing page and web tools, from layout to code.',
     'Campanha OAB/PE': 'OAB/PE Campaign',
     'Campanha 360º: identidade, peças digitais, impressas e de rua.': '360º campaign: identity, digital, print and outdoor pieces.',
     'Projetos selecionados de João Alberto em design digital, sites, identidade visual, campanhas, CRM, gamificação e iGaming.': 'Selected projects by João Alberto in digital design, websites, brand identity, campaigns, CRM, gamification and iGaming.',

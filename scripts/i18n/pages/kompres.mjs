@@ -41,5 +41,73 @@ export default {
     'Página inicial do Kompres, site de imagens e PDFs': 'Kompres home page, an images and PDF website',
     'Página inicial do Kompres: compressor de imagens online e grátis': 'Kompres home page: free online image compressor',
     'Navegação para a página anterior': 'Navigation to the previous page',
+    // seção "O site em telas"
+    '03 — O SITE EM TELAS': '03 — THE SITE IN SCREENS',
+    'A ferramenta e as outras páginas.': 'The tool and the other pages.',
+    'Compressor: modo, qualidade, formato de saída e área para arrastar': 'Compressor: mode, quality, output format and drop area',
+    'Guia: como comprimir imagens online': 'Guide: how to compress images online',
+    'Juntar, dividir e comprimir PDF': 'Merge, split and compress PDF',
+    'Remover fundo de imagem': 'Remove image background',
+    'Redimensionar imagens em lote': 'Resize images in bulk',
+    'Início': 'Home',
+    'Compressor': 'Compressor',
+    'PDF': 'PDF',
+    'Versão para celular': 'Mobile version',
+    'Email Generator': 'Email Generator',
+    // style guide e design final
+    'A identidade em código.': 'The identity, in code.',
+    '04 — DESIGN FINAL': '04 — FINAL DESIGN',
+    'Design final.': 'Final design.',
+    'Tipografia': 'Typography',
+    'Cores': 'Colors',
+    'Componentes': 'Components',
+    'Título': 'Heading',
+    'Corpo': 'Body',
+    'Fonte': 'Font',
+    'Peso': 'Weight',
+    'Tamanho': 'Size',
+    'Em foco': 'Focused',
+    'Compressor de imagens online e grátis.': 'Free online image compressor.',
+    'Comprima e converta imagens em lote para WebP, PNG ou JPEG direto no navegador.': 'Compress and convert images in bulk to WebP, PNG or JPEG right in the browser.',
+    'QUALIDADE 82%': 'QUALITY 82%',
+    'Tema escuro': 'Dark theme',
+    'Destaque': 'Accent',
+    'Tema claro': 'Light theme',
+    'Comprimir tudo': 'Compress all',
+    'Baixar ZIP': 'Download ZIP',
+    'Remover fundo': 'Remove background',
+    'Tamanho máximo': 'Maximum size',
+    'Manter o nome do arquivo': 'Keep the file name',
+    'Grátis': 'Free',
+    'Compressor e conversor': 'Compressor and converter',
+    'Arraste suas imagens aqui ou clique para selecionar.': 'Drag your images here or click to select.',
+    'Compressor de imagens': 'Image compressor',
+    'Ferramentas de PDF, no computador e no celular': 'PDF tools, on desktop and mobile',
+    'Redimensionar imagens': 'Resize images',
+    'Guia de uso': 'User guide',
+    // style guide e design final
+    '04 — DESIGN FINAL · LANDING PAGE': '04 — FINAL DESIGN · LANDING PAGE',
+    'A landing page.': 'The landing page.',
+    '05 — DESIGN FINAL · APLICAÇÃO': '05 — FINAL DESIGN · THE APP',
+    'A aplicação.': 'The app.',
+    // style guide e design final
+
+    // style guide e design final
+
+    // style guide e design final
+    'Altura da linha': 'Line height',
+    'Marca': 'Brand',
+    'Lista': 'Select',
+    'Com erro': 'With error',
+    'Campo obrigatório': 'Required field',
+    'Concluído': 'Done',
+    'Atenção': 'Warning',
+    'Novo': 'New',
+    // style guide e design final
+
+    // style guide e design final
+
+    // style guide e design final
+
   },
 };

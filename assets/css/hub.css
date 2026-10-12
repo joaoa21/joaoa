@@ -599,7 +599,6 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.02);
   transition: transform .5s var(--ease-out);
 }
 
@@ -646,10 +645,6 @@ footer {
     border-color: var(--muted);
     box-shadow: 12px 12px 0 rgba(0, 0, 0, .35);
     transform: translate(-4px, -4px);
-  }
-
-  .pcard:hover .pcard-preview img {
-    transform: scale(1.07);
   }
 
   .pcard:hover .pcard-link i {
