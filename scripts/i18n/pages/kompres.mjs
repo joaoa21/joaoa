@@ -3,6 +3,11 @@ export default {
   en: 'en/projects/websites/kompres/index.html',
   ptUrl: '/projetos/sites/kompres/',
   enUrl: '/en/projects/websites/kompres/',
+  // dados estruturados (WebApplication)
+  jsonDict: {
+    'Kompres: site para comprimir, converter e redimensionar imagens em lote, remover fundos e organizar PDFs direto no navegador.': 'Kompres: a website to compress, convert and resize images in bulk, remove backgrounds and organize PDFs right in the browser.',
+    'Requires JavaScript': 'Requires JavaScript',
+  },
   dict: {
     'Kompres: imagens e PDFs no navegador | João Alberto': 'Kompres: images and PDFs in the browser | João Alberto',
     'Voltar para sites': 'Back to websites',

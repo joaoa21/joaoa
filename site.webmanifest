@@ -1,6 +1,7 @@
 {
-  "name": "João Alberto | Design Digital & Web",
+  "name": "João Alberto",
   "short_name": "João Alberto",
+  "description": "Web designer e desenvolvedor front-end: portfólio, criação de sites e blog.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f0f0f",

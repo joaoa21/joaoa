@@ -3,6 +3,11 @@ export default {
   en: 'en/projects/websites/email-generator/index.html',
   ptUrl: '/projetos/sites/email-generator/',
   enUrl: '/en/projects/websites/email-generator/',
+  // dados estruturados (WebApplication)
+  jsonDict: {
+    'Email Generator: ferramentas gratuitas para montar emails HTML compatíveis com Gmail e Outlook e gerar links de WhatsApp com mensagem pronta.': 'Email Generator: free tools to build HTML emails that work in Gmail and Outlook and to generate WhatsApp links with a ready message.',
+    'Requires JavaScript': 'Requires JavaScript',
+  },
   dict: {
     'Email Generator: emails HTML e WhatsApp | João Alberto': 'Email Generator: HTML emails and WhatsApp | João Alberto',
     'Voltar para sites': 'Back to websites',

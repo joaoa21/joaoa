@@ -3,7 +3,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const walk=async dir=>{const out=[];for(const e of await fs.readdir(dir,{withFileTypes:true})){if(e.name==='.git'||e.name==='node_modules')continue;const p=path.join(dir,e.name);out.push(...(e.isDirectory()?await walk(p):[p]));}return out;};
+// Pastas ignoradas pelo git (ex.: prospeccao/, videos/) não vão para o site: ficam fora da conferência
+const ignored=new Set((()=>{try{return execFileSync('git',['ls-files','-oi','--exclude-standard','--directory'],{cwd:root,encoding:'utf8'}).split(/\r?\n/).filter(Boolean).map(p=>path.resolve(root,p));}catch{return [];}})());
+const walk=async dir=>{const out=[];for(const e of await fs.readdir(dir,{withFileTypes:true})){if(e.name==='.git'||e.name==='node_modules'||ignored.has(path.join(dir,e.name)))continue;const p=path.join(dir,e.name);out.push(...(e.isDirectory()?await walk(p):[p]));}return out;};
 const relative=p=>path.relative(root,p).replaceAll('\\','/');
 const files=await walk(root), names=new Set(files.map(relative));
 const errors=[];let references=0,scripts=0,pages=0;

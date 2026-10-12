@@ -8,6 +8,7 @@ export const URLS = {
   '/projetos/oab/': '/en/projects/oab/',
   '/projetos/sites/': '/en/projects/websites/',
   '/projetos/sites/kompres/': '/en/projects/websites/kompres/',
+  '/projetos/sites/ms-corretora/': '/en/projects/websites/ms-corretora/',
   '/projetos/sites/email-generator/': '/en/projects/websites/email-generator/',
   '/projetos/identidade-visual/': '/en/projects/brand-identity/',
   '/criacao-de-sites/': '/en/web-design/',
@@ -23,6 +24,7 @@ export const KEEP = [
   'joaoa.com.br / 2026',
   'kompres.com.br ↗',
   'emailgenerator.com.br ↗',
+  'mscorretoraseguros.com.br ↗',
   'Jogo de Ouro · iGaming · CRM',
 ];
 
