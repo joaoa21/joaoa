@@ -5,6 +5,7 @@ export default {
   enUrl: '/en/projects/igaming/',
   keep: ['ocupa 2 colunas → 1266×600 -'],
   dict: {
+    'Ver o case completo': 'See the full case study',
     'Portfólio iGaming: CRM, Gamificação e Design | João Alberto': 'iGaming Portfolio: CRM, Gamification and Design | João Alberto',
     'Design para campanhas, CRM e gamificação. Uma seleção de peças e interfaces para o universo de iGaming.': 'Design for campaigns, CRM and gamification. A selection of assets and interfaces for the iGaming world.',
     'Tráfego pago': 'Paid ads',

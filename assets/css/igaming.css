@@ -237,6 +237,24 @@ html.js:not(.reduce-motion):not(.motion-fallback) .igaming-page :is(
   gap: 1.5rem;
 }
 
+/* link para o case completo, em Sites */
+.club-case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1.1rem;
+  color: var(--soft);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.club-case-link:hover {
+  color: var(--fg);
+}
+
 /* ---------- prévia clicável ---------- */
 .club-preview {
   position: relative;

@@ -10,6 +10,7 @@ export const URLS = {
   '/projetos/sites/kompres/': '/en/projects/websites/kompres/',
   '/projetos/sites/ms-corretora/': '/en/projects/websites/ms-corretora/',
   '/projetos/sites/propostaria/': '/en/projects/websites/propostaria/',
+  '/projetos/sites/clube-de-ouro/': '/en/projects/websites/clube-de-ouro/',
   '/projetos/sites/email-generator/': '/en/projects/websites/email-generator/',
   '/projetos/identidade-visual/': '/en/projects/brand-identity/',
   '/criacao-de-sites/': '/en/web-design/',
@@ -27,6 +28,7 @@ export const KEEP = [
   'emailgenerator.com.br ↗',
   'mscorretoraseguros.com.br ↗',
   'propostaria.com.br ↗',
+  'Clube de Ouro',
   'Jogo de Ouro · iGaming · CRM',
 ];
 
