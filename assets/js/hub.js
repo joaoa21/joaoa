@@ -98,6 +98,8 @@ toTop?.addEventListener('click', (event) => {
   } else {
     window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   }
+  // sem "#conteudo" no endereço
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
 });
 
 /* ---------- Animações de interface ---------- */

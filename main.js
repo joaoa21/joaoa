@@ -53,6 +53,24 @@ let degreeCurrent = 0;
 /* ---------- Menu mobile acessível ---------- */
 initMobileMenu({ lenis });
 
+/* ---------- Voltar ao topo sem "#topo" no endereço ----------
+   Logo, "Início" e a seta do rodapé sobem suave até o topo e deixam a URL limpa. */
+function scrollToTop() {
+  if (lenis) lenis.scrollTo(0);
+  else window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+}
+
+document.querySelectorAll('a[href="#topo"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    scrollToTop();
+  });
+});
+
+// quem chega com #topo no endereço (link antigo) fica com a URL limpa
+if (location.hash === '#topo') history.replaceState(null, '', location.pathname + location.search);
+
 /* ---------- HUD ---------- */
 function updateClock() {
   if (hudClock) {
