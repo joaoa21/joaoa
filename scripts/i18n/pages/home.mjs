@@ -12,8 +12,8 @@ export default {
   ],
   dict: {
     // seção "Do blog"
-    'Do blog': 'From the blog',
-    'O que aprendo nos projetos, escrito para quem cria: email HTML, CRM, design e web.': 'What I learn on projects, written for people who make things: HTML email, CRM, design and web. Posts in Portuguese.',
+    'Últimos posts': 'Latest posts',
+    'O que aprendo nos projetos, escrito para quem cria: sites, front-end, design, email HTML e CRM.': 'What I learn on projects, written for people who make things: websites, front-end, design, HTML email and CRM. Posts in Portuguese.',
     'Ver todos os posts': 'See all posts',
     // modal "Começar meu projeto"
     'Conte sobre o seu projeto': 'Tell me about your project',
