@@ -45,7 +45,7 @@
   transition: color .25s ease;
 }
 
-/* "+" que vira "×" quando o item abre */
+/* "+" que vira "×" quando o item abre (e volta ao fechar, junto com a animação de assets/js/services-list.js) */
 .svc-item-ic {
   position: relative;
   width: 2.75rem;
@@ -71,7 +71,7 @@
   transform: rotate(90deg);
 }
 
-.svc-item[open] .svc-item-ic {
+.svc-item[open]:not(.is-closing) .svc-item-ic {
   transform: rotate(45deg);
   border-color: var(--fg);
 }
@@ -89,14 +89,10 @@
 
 .svc-item-body {
   display: grid;
+  box-sizing: border-box;
   gap: .9rem;
   max-width: 46rem;
   padding: 0 0 1.8rem 4.4rem;
-  animation: svc-item-in .35s cubic-bezier(.22, 1, .36, 1);
-}
-
-@keyframes svc-item-in {
-  from { opacity: 0; transform: translateY(-6px); }
 }
 
 .svc-item-body p {
@@ -224,6 +220,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .svc-item-body { animation: none; }
   .svc-item-ic { transition: none; }
 }
