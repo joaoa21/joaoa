@@ -183,3 +183,87 @@
   display: inline;
   border-radius: 0;
 }
+
+/* ---------- ajustes: painel mais compacto e hover sem sublinhado ---------- */
+@media (min-width: 861px) {
+  .proj-menu {
+    width: min(48rem, calc(100vw - 2rem));
+    padding: .7rem .7rem 0;
+    border-radius: 20px;
+  }
+}
+
+.proj-menu-grid {
+  gap: .35rem;
+}
+
+.nav-links .proj-menu-card {
+  padding: .45rem .45rem .7rem;
+  border-radius: 14px;
+  transition: background-color .25s ease;
+}
+
+.proj-menu-card img {
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  transition: filter .3s ease;
+}
+
+.proj-menu-card strong {
+  margin: .65rem .15rem .15rem;
+  font-size: .92rem;
+}
+
+.proj-menu-card span {
+  margin: 0 .15rem;
+  font-size: .78rem;
+}
+
+/* hover: o card ganha um fundo suave, sem sublinhado nem movimento */
+@media (hover: hover) and (pointer: fine) {
+  .proj-menu-card:hover img {
+    transform: none;
+    filter: brightness(1.04);
+  }
+
+  .proj-menu-card:hover strong {
+    text-decoration: none;
+  }
+
+  .nav-links .proj-menu-card:hover {
+    background-color: #f2f0ea !important;
+  }
+}
+
+/* "Ver todos os projetos": seta que anda no hover */
+.proj-menu-foot {
+  margin-top: .45rem;
+  padding: .75rem .6rem .85rem;
+}
+
+.nav-links .proj-menu-foot a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem .75rem !important;
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color .25s ease;
+}
+
+.nav-links .proj-menu-foot a::after {
+  content: "→";
+  transition: transform .3s cubic-bezier(.22, 1, .36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-links .proj-menu-foot a:hover {
+    background-color: #f2f0ea !important;
+  }
+
+  .nav-links .proj-menu-foot a:hover::after {
+    transform: translateX(4px);
+  }
+}
