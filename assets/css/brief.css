@@ -1,0 +1,380 @@
+/* ============================================================
+   JOÃO ALBERTO — "COMEÇAR MEU PROJETO"
+   Modal em três etapas (serviço, detalhes, contato) que monta a
+   mensagem e abre o WhatsApp. Sem JavaScript, o botão é um link
+   direto para o WhatsApp. Comportamento em assets/js/brief.js.
+   ============================================================ */
+
+/* ---------- chamada abaixo das listas ("Não sabe qual serviço...?") ---------- */
+.brief-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .4rem .9rem;
+  margin: 2.6rem 0 0;
+  color: var(--soft);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.5;
+}
+
+.brief-open {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--fg);
+  font: inherit;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 5px;
+  cursor: pointer;
+  transition: text-underline-offset .25s ease;
+}
+
+.brief-open:hover {
+  text-underline-offset: 8px;
+}
+
+/* ---------- modal ---------- */
+/* o atributo hidden precisa vencer o display das peças (etapas, rodapé, voltar) */
+.brief [hidden] {
+  display: none !important;
+}
+
+.brief {
+  --b-ink: #121212;
+  --b-soft: #5f5d58;
+  --b-muted: #8f8c85;
+  --b-line: #e4e1da;
+  --b-paper: #f6f4ef;
+  --b-error: #b42318;
+
+  width: min(42rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 22px;
+  background: #fff;
+  color: var(--b-ink);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, .35);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.brief::backdrop {
+  background: rgba(10, 10, 10, .55);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.brief[open] {
+  animation: brief-in .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes brief-in {
+  from { opacity: 0; transform: translateY(14px) scale(.98); }
+}
+
+.brief-inner {
+  padding: clamp(1.6rem, 4vw, 2.8rem);
+}
+
+.brief-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brief-head h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+}
+
+.brief-head p {
+  margin: .6rem 0 0;
+  color: var(--b-soft);
+  font-size: .95rem;
+}
+
+.brief-close {
+  flex: 0 0 auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: -.4rem -.4rem 0 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--b-soft);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.brief-close:hover {
+  background: var(--b-paper);
+  color: var(--b-ink);
+}
+
+/* etapas: barra de progresso + rótulos */
+.brief-progress {
+  position: relative;
+  height: 3px;
+  margin: 1.8rem 0 .9rem;
+  background: var(--b-line);
+}
+
+.brief-progress span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 33.333%;
+  background: var(--b-ink);
+  transition: width .45s cubic-bezier(.22, 1, .36, 1);
+}
+
+.brief-steps {
+  display: flex;
+  gap: 1.6rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+  color: var(--b-muted);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.brief-steps li.is-done,
+.brief-steps li.is-current {
+  color: var(--b-ink);
+}
+
+.brief-step[hidden] {
+  display: none;
+}
+
+.brief-step > h3 {
+  margin: 0 0 1.2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+/* opções (serviço e prazo) */
+.brief-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .65rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.brief-options.is-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.brief-options legend {
+  margin-bottom: .7rem;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.brief-option {
+  position: relative;
+}
+
+.brief-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.brief-option span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.3rem;
+  padding: .6rem .8rem;
+  border: 1px solid var(--b-line);
+  border-radius: 12px;
+  font-size: .95rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.brief-option span:hover {
+  border-color: var(--b-ink);
+}
+
+.brief-option input:checked + span {
+  border-color: var(--b-ink);
+  background: var(--b-ink);
+  color: #fff;
+}
+
+.brief-option input:focus-visible + span {
+  outline: 2px solid var(--b-ink);
+  outline-offset: 2px;
+}
+
+/* campos */
+.brief-field {
+  display: grid;
+  gap: .5rem;
+  margin-bottom: 1.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.brief-field small {
+  color: var(--b-muted);
+  font-size: .95rem;
+  font-weight: 400;
+}
+
+.brief-field input,
+.brief-field textarea {
+  width: 100%;
+  padding: .85rem 1rem;
+  border: 1px solid var(--b-line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--b-ink);
+  font: inherit;
+  font-weight: 400;
+}
+
+.brief-field textarea {
+  min-height: 6.5rem;
+  resize: vertical;
+}
+
+.brief-field input:focus,
+.brief-field textarea:focus {
+  border-color: var(--b-ink);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(18, 18, 18, .08);
+}
+
+.brief-group {
+  margin-bottom: 1.3rem;
+}
+
+.brief-error {
+  min-height: 1.4em;
+  margin: .9rem 0 0;
+  color: var(--b-error);
+  font-size: .9rem;
+}
+
+/* rodapé com voltar / próximo */
+.brief-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--b-line);
+}
+
+.brief-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem 0;
+  border: 0;
+  background: none;
+  color: var(--b-soft);
+  font: inherit;
+  font-size: .95rem;
+  cursor: pointer;
+}
+
+.brief-back:hover {
+  color: var(--b-ink);
+}
+
+.brief-next {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin-left: auto;
+  padding: .95rem 1.5rem;
+  border: 0;
+  border-radius: 12px;
+  background: var(--b-ink);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s ease, background-color .2s ease;
+}
+
+.brief-next:hover {
+  background: #000;
+}
+
+.brief-next:active {
+  transform: translateY(1px);
+}
+
+/* tela final */
+.brief-done {
+  padding: 1rem 0 .4rem;
+}
+
+.brief-done h3 {
+  margin: 0 0 .6rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+
+.brief-done p {
+  margin: 0 0 1.4rem;
+  color: var(--b-soft);
+  line-height: 1.6;
+}
+
+.brief-done a {
+  color: var(--b-ink);
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .brief {
+    width: calc(100% - 1rem);
+    max-height: calc(100dvh - 1rem);
+    border-radius: 18px;
+  }
+
+  .brief-steps {
+    gap: .9rem;
+    font-size: .64rem;
+  }
+
+  .brief-options,
+  .brief-options.is-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brief-option span {
+    min-height: 3rem;
+    font-size: .88rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brief[open] { animation: none; }
+  .brief-progress span { transition: none; }
+}

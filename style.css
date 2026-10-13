@@ -1667,3 +1667,42 @@ footer {
     grid-column: 2;
   }
 }
+
+/* foto no "Sobre" (saiu da hero): embaixo do título no computador, entre título e texto no celular */
+.about-photo {
+  display: block;
+  width: clamp(7.5rem, 13vw, 11rem);
+  height: auto;
+  aspect-ratio: 1;
+  margin-top: 2.4rem;
+  border-radius: 22px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  transition: border-color .9s ease;
+}
+
+@media (min-width: 901px) {
+  .about-copy h2 {
+    grid-row: 1;
+  }
+
+  .about-photo {
+    grid-column: 1;
+    grid-row: 2 / span 3;
+    align-self: start;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-photo {
+    width: 7.5rem;
+    margin: 0 0 2rem;
+    border-radius: 18px;
+  }
+}
+
+/* "Como eu faço" virou uma seção própria (tema claro): sem a margem de quando ficava dentro dos serviços */
+.services--build .services-build {
+  margin-top: 0;
+  padding-top: 9rem;
+}

@@ -36,7 +36,7 @@
 <link href="/assets/css/icons.css" rel="stylesheet"/>
 <link href="/assets/css/hub.css" rel="stylesheet"/>
 <link href="/assets/css/sites.css" rel="stylesheet"/>
-<link href="/assets/css/servicos.css" rel="stylesheet"/><link href="/assets/css/services-list.css" rel="stylesheet"/>
+<link href="/assets/css/servicos.css" rel="stylesheet"/><link href="/assets/css/services-list.css" rel="stylesheet"/><link href="/assets/css/brief.css" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="/assets/css/brief.css" rel="stylesheet"/></noscript>
 <link href="/favicon.ico" rel="icon" sizes="48x48"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <script type="importmap">
   {
@@ -161,13 +161,14 @@
 <details class="svc-item"><summary><span class="svc-item-n mono">05.</span><h3>Redesign de sites</h3><span aria-hidden="true" class="svc-item-ic"></span></summary><div class="svc-item-body"><p>Seu site está antigo, lento ou não funciona bem no celular? Dá para modernizar sem perder o que já funciona.</p></div></details>
 <details class="svc-item"><summary><span class="svc-item-n mono">06.</span><h3>Projetos personalizados</h3><span aria-hidden="true" class="svc-item-ic"></span></summary><div class="svc-item-body"><p>Ferramentas web, sistemas e produtos digitais sob medida, além de emails HTML que funcionam no Gmail e no Outlook. Se o que você precisa não está nesta lista, me conta.</p><p class="svc-item-ex mono">Exemplos: <a href="/projetos/sites/kompres/">Kompres</a> · <a href="/projetos/sites/email-generator/">Email Generator</a> · <a href="/projetos/sites/clube-de-ouro/">Clube de Ouro</a></p></div></details>
 </div>
+<p class="brief-cta">Na dúvida sobre o que pedir? Me conta a ideia e eu ajudo a escolher. <a class="brief-open" href="https://wa.me/5581988780144?text=Oi%20Jo%C3%A3o!" rel="noopener" target="_blank">Começar meu projeto</a></p>
 </section>
 <!-- ============ COMO EU FAÇO ============ -->
 <section aria-labelledby="titulo-ferramentas" class="svc-section" id="ferramentas">
 <div class="svc-head">
 <p class="svc-label mono"><span></span>Ferramentas</p>
 <h2 class="svc-title" id="titulo-ferramentas">Como eu faço<span class="dot">.</span></h2>
-<p class="svc-lead">Cada projeto pede uma combinação diferente de ferramentas. O que se repete é o cuidado com cada detalhe, do primeiro esboço ao site no ar.</p>
+<p class="svc-lead">Escolho a ferramenta pelo que o projeto precisa, não o contrário. Estas são as que uso no dia a dia.</p>
 </div>
 <div class="build-groups">
 <div class="build-group"><h3>Design & identidade</h3><ul class="build-chips"><li>Figma</li><li>Photoshop</li><li>Illustrator</li><li>Identidade visual</li></ul></div>
@@ -175,6 +176,7 @@
 <div class="build-group"><h3>Email & CRM</h3><ul class="build-chips"><li>Email HTML</li><li>Gmail e Outlook</li><li>Gamificação</li><li>Programas de fidelidade</li></ul></div>
 <div class="build-group"><h3>IA aplicada</h3><ul class="build-chips"><li>IA no desenvolvimento</li><li>Imagens e key visuals com IA</li></ul></div>
 </div>
+<p class="brief-cta">Não precisa entender de ferramenta: essa parte fica comigo. <a class="brief-open" href="https://wa.me/5581988780144?text=Oi%20Jo%C3%A3o!" rel="noopener" target="_blank">Começar meu projeto</a></p>
 </section>
 
 <!-- ============ COMO FUNCIONA ============ -->
@@ -303,6 +305,44 @@
   <div class="contact-social-item"><a aria-label="LinkedIn" href="https://www.linkedin.com/in/joaoa210/" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i></a><span aria-hidden="true" class="contact-social-tooltip">LinkedIn</span></div>
 </nav>
 </section>
+<!-- ============ COMEÇAR MEU PROJETO (modal) ============ -->
+<dialog aria-labelledby="brief-title" class="brief" data-lenis-prevent="" id="brief">
+<form class="brief-inner" novalidate="">
+<div class="brief-head"><div><h2 id="brief-title">Conte sobre o seu projeto</h2><p>Três passos rápidos. No fim, a mensagem sai pronta no WhatsApp.</p></div><button aria-label="Fechar" class="brief-close" type="button">×</button></div>
+<div aria-hidden="true" class="brief-progress"><span></span></div>
+<ol class="brief-steps"><li>1. Serviço</li><li>2. Detalhes</li><li>3. Contato</li></ol>
+<div class="brief-step">
+<fieldset class="brief-options"><legend>Que tipo de projeto você precisa?</legend>
+<label class="brief-option"><input name="servico" type="radio" value="site-institucional"/><span>Site institucional</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="landing-page"/><span>Landing page</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="portfolio"/><span>Portfólio</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="loja-virtual"/><span>Loja virtual / e‑commerce</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="redesign"/><span>Redesign de site</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="personalizado"/><span>Projeto personalizado</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="nao-sei"/><span>Ainda não sei</span></label>
+</fieldset>
+</div>
+<div class="brief-step" hidden="">
+<h3>Conte um pouco mais</h3>
+<label class="brief-field">Qual é o objetivo principal?<input autocomplete="off" name="objetivo" placeholder="Ex.: vender pela internet, receber mais contatos, renovar a marca" type="text"/></label>
+<fieldset class="brief-options is-4 brief-group"><legend>Tem prazo?</legend>
+<label class="brief-option"><input name="prazo" type="radio" value="urgente"/><span>Urgente</span></label>
+<label class="brief-option"><input name="prazo" type="radio" value="1-2-semanas"/><span>1–2 semanas</span></label>
+<label class="brief-option"><input name="prazo" type="radio" value="1-mes"/><span>1 mês</span></label>
+<label class="brief-option"><input name="prazo" type="radio" value="sem-pressa"/><span>Sem pressa</span></label>
+</fieldset>
+<label class="brief-field">Algo mais que eu deva saber? <small>(opcional)</small><textarea name="detalhes" placeholder="Referências, o site atual, o que não pode faltar…"></textarea></label>
+</div>
+<div class="brief-step" hidden="">
+<h3>Como posso te chamar?</h3>
+<label class="brief-field">Nome<input autocomplete="name" name="nome" placeholder="Seu nome" type="text"/></label>
+<label class="brief-field">Empresa ou site <small>(opcional)</small><input autocomplete="organization" name="empresa" placeholder="Ex.: Studio Aurora ou aurora.com.br" type="text"/></label>
+</div>
+<div class="brief-done" hidden=""><h3 tabindex="-1">Mensagem pronta no WhatsApp.</h3><p>Abri o WhatsApp com tudo o que você contou. É só enviar, e eu respondo o quanto antes. Se a janela não abriu, <a href="https://wa.me/5581988780144?text=Oi%20Jo%C3%A3o!" rel="noopener" target="_blank">toque aqui</a>.</p></div>
+<p aria-live="polite" class="brief-error"></p>
+<div class="brief-foot"><button class="brief-back" hidden="" type="button"><i aria-hidden="true" class="fa-solid fa-arrow-left"></i>Voltar</button><button class="brief-next" type="submit"><span>Próximo</span><i aria-hidden="true" class="fa-solid fa-arrow-right"></i></button></div>
+</form>
+</dialog>
 </main>
 <!-- ============ FOOTER ============ -->
 <footer>
@@ -319,6 +359,6 @@
 <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
 <script src="/assets/js/hub.js" type="module"></script>
 <script src="/assets/js/servicos-motion.js" type="module"></script>
-<script src="/assets/js/lang-menu.js" defer></script>
+<script src="/assets/js/lang-menu.js" defer></script><script src="/assets/js/brief.js" defer></script>
 </body>
 </html>

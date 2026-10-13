@@ -54,6 +54,7 @@
     <noscript><link href="/assets/css/icons.css" rel="stylesheet"/></noscript>
     <link href="/style.css" rel="stylesheet" />
     <link href="/assets/css/mobile-home.css" rel="stylesheet" />
+    <link href="/assets/css/brief.css" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="/assets/css/brief.css" rel="stylesheet"/></noscript>
     <link href="/assets/css/services-list.css" rel="stylesheet" media="print" onload="this.media='all'" /><noscript><link href="/assets/css/services-list.css" rel="stylesheet" /></noscript>
     <link href="/favicon.ico" rel="icon" sizes="48x48"/><link href="/favicon.svg" rel="icon" type="image/svg+xml" />
     <script type="importmap">
@@ -222,16 +223,7 @@
           >
         </h1>
         <div class="hero-profile">
-          <img
-            alt="Photo of João Alberto"
-            class="hero-avatar"
-            decoding="async"
-            fetchpriority="high"
-            height="300"
-            src="/assets/img/joao-192.webp"
-            width="300"
-          />
-          <div class="hero-intro">
+                    <div class="hero-intro">
             <span class="mono">Front-end · UI Designer</span>
             <p class="hero-lead">
               Interfaces, websites, emails and campaigns for brands and digital products — from layout to code.
@@ -256,6 +248,7 @@
             <h2>
               From layout<br />to code<span class="dot">.</span>
             </h2>
+            <img alt="Photo of João Alberto" class="about-photo" decoding="async" height="300" loading="lazy" src="/assets/img/joao.webp" width="300" />
             <p>
               I'm a designer and front-end developer: I design interfaces and build them, too. Most recently, I worked on a CRM team, creating banners, pop-ups, HTML emails and the visual identity of missions, tournaments and loyalty programs.
             </p>
@@ -375,12 +368,12 @@
         </div>
       </section>
       <!-- ============ SERVIÇOS (resumo) ============ -->
-      <section class="services" id="servicos">
+      <section class="services" data-blob="services" data-theme="dark" id="servicos">
         <div class="sec-head mono">
           <span aria-hidden="true" class="sec-ic"><i class="fa-solid fa-globe"></i></span><span>03 — SERVICES</span>
         </div>
         <h2 class="projects-title services-title">What I do<span class="dot">.</span></h2>
-        <p class="services-lead">Every project starts with what your client needs to find when they arrive.</p>
+        <p class="services-lead">Six ways to put your business online, all designed and coded by me.</p>
         <div class="svc-acc">
 <details class="svc-item"><summary><span class="svc-item-n mono">01.</span><h3>Business websites</h3><span aria-hidden="true" class="svc-item-ic"></span></summary><div class="svc-item-body"><p>They present your company clearly and build trust: what you do, why choose you and contact always at hand.</p><p class="svc-item-ex mono">Example: <a href="/en/projects/websites/ms-corretora/">MS Corretora</a></p></div></details>
 <details class="svc-item"><summary><span class="svc-item-n mono">02.</span><h3>Landing pages</h3><span aria-hidden="true" class="svc-item-ic"></span></summary><div class="svc-item-body"><p>Pages focused on a single action, like selling, capturing leads or promoting a campaign, with the right message in every fold.</p><p class="svc-item-ex mono">Example: <a href="/en/projects/websites/propostaria/">Propostaria</a></p></div></details>
@@ -389,15 +382,20 @@
 <details class="svc-item"><summary><span class="svc-item-n mono">05.</span><h3>Website redesign</h3><span aria-hidden="true" class="svc-item-ic"></span></summary><div class="svc-item-body"><p>Is your website outdated, slow or broken on mobile? It can be modernized without losing what already works.</p></div></details>
 <details class="svc-item"><summary><span class="svc-item-n mono">06.</span><h3>Custom projects</h3><span aria-hidden="true" class="svc-item-ic"></span></summary><div class="svc-item-body"><p>Custom web tools, systems and digital products, plus HTML emails that work in Gmail and Outlook. If what you need is not on this list, tell me.</p><p class="svc-item-ex mono">Examples: <a href="/en/projects/websites/kompres/">Kompres</a> · <a href="/en/projects/websites/email-generator/">Email Generator</a> · <a href="/en/projects/websites/clube-de-ouro/">Clube de Ouro</a></p></div></details>
 </div>
+        <p class="brief-cta">Not sure what to ask for? Tell me the idea and I will help you choose. <a class="brief-open" href="https://wa.me/5581988780144?text=Hi%20Jo%C3%A3o!" rel="noopener" target="_blank">Start my project</a></p>
+        </section>
+      <!-- ============ COMO EU FAÇO · LIGHT ============ -->
+      <section class="services services--build" data-blob="build" data-theme="light" id="como-faco">
         <div class="services-build">
           <h2 class="projects-title services-title">How I do it<span class="dot">.</span></h2>
-          <p class="services-lead">Every project calls for a different mix of tools. What stays the same is the care for every detail, from the first sketch to the live site.</p>
+          <p class="services-lead">I pick the tool for what the project needs, not the other way around. These are the ones I use every day.</p>
           <div class="build-groups">
 <div class="build-group"><h3>Design & identity</h3><ul class="build-chips"><li>Figma</li><li>Photoshop</li><li>Illustrator</li><li>Visual identity</li></ul></div>
 <div class="build-group"><h3>Web development</h3><ul class="build-chips"><li>HTML & CSS</li><li>JavaScript</li><li>Astro</li><li>GSAP</li><li>Three.js</li><li>Git & GitHub</li><li>Netlify</li></ul></div>
 <div class="build-group"><h3>Email & CRM</h3><ul class="build-chips"><li>HTML email</li><li>Gmail and Outlook</li><li>Gamification</li><li>Loyalty programs</li></ul></div>
 <div class="build-group"><h3>Applied AI</h3><ul class="build-chips"><li>AI in development</li><li>AI images and key visuals</li></ul></div>
 </div>
+        <p class="brief-cta">No need to know the tools: that part is on me. <a class="brief-open" href="https://wa.me/5581988780144?text=Hi%20Jo%C3%A3o!" rel="noopener" target="_blank">Start my project</a></p>
         </div>
         <div class="projects-more">
           <a class="btn-sweep" href="/en/web-design/">
@@ -453,6 +451,44 @@
           </div>
         </div>
       </section>
+<!-- ============ COMEÇAR MEU PROJETO (modal) ============ -->
+<dialog aria-labelledby="brief-title" class="brief" data-lenis-prevent="" id="brief">
+<form class="brief-inner" novalidate="">
+<div class="brief-head"><div><h2 id="brief-title">Tell me about your project</h2><p>Three quick steps. At the end, the message is ready on WhatsApp.</p></div><button aria-label="Close" class="brief-close" type="button">×</button></div>
+<div aria-hidden="true" class="brief-progress"><span></span></div>
+<ol class="brief-steps"><li>1. Service</li><li>2. Details</li><li>3. Contact</li></ol>
+<div class="brief-step">
+<fieldset class="brief-options"><legend>What kind of project do you need?</legend>
+<label class="brief-option"><input name="servico" type="radio" value="site-institucional"/><span>Business website</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="landing-page"/><span>Landing page</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="portfolio"/><span>Portfolio</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="loja-virtual"/><span>Online store / e‑commerce</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="redesign"/><span>Website redesign</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="personalizado"/><span>Custom project</span></label>
+<label class="brief-option"><input name="servico" type="radio" value="nao-sei"/><span>Not sure yet</span></label>
+</fieldset>
+</div>
+<div class="brief-step" hidden="">
+<h3>Tell me a bit more</h3>
+<label class="brief-field">What is the main goal?<input autocomplete="off" name="objetivo" placeholder="e.g. sell online, get more leads, refresh the brand" type="text"/></label>
+<fieldset class="brief-options is-4 brief-group"><legend>Any deadline?</legend>
+<label class="brief-option"><input name="prazo" type="radio" value="urgente"/><span>Urgent</span></label>
+<label class="brief-option"><input name="prazo" type="radio" value="1-2-semanas"/><span>1–2 weeks</span></label>
+<label class="brief-option"><input name="prazo" type="radio" value="1-mes"/><span>1 month</span></label>
+<label class="brief-option"><input name="prazo" type="radio" value="sem-pressa"/><span>No rush</span></label>
+</fieldset>
+<label class="brief-field">Anything else I should know? <small>(optional)</small><textarea name="detalhes" placeholder="References, your current site, must-haves…"></textarea></label>
+</div>
+<div class="brief-step" hidden="">
+<h3>What should I call you?</h3>
+<label class="brief-field">Name<input autocomplete="name" name="nome" placeholder="Your name" type="text"/></label>
+<label class="brief-field">Company or website <small>(optional)</small><input autocomplete="organization" name="empresa" placeholder="e.g. Studio Aurora or aurora.com" type="text"/></label>
+</div>
+<div class="brief-done" hidden=""><h3 tabindex="-1">Your message is ready on WhatsApp.</h3><p>I opened WhatsApp with everything you shared. Just send it and I will reply as soon as I can. If the window did not open, <a href="https://wa.me/5581988780144?text=Hi%20Jo%C3%A3o!" rel="noopener" target="_blank">tap here</a>.</p></div>
+<p aria-live="polite" class="brief-error"></p>
+<div class="brief-foot"><button class="brief-back" hidden="" type="button"><i aria-hidden="true" class="fa-solid fa-arrow-left"></i>Back</button><button class="brief-next" type="submit"><span>Next</span><i aria-hidden="true" class="fa-solid fa-arrow-right"></i></button></div>
+</form>
+</dialog>
     </main>
     <!-- ============ FOOTER · sempre escuro (referência) ============ -->
     <footer>
@@ -470,5 +506,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
     <script src="/main.js" type="module"></script>
   <script src="/assets/js/lang-menu.js" defer></script>
+  <script src="/assets/js/brief.js" defer></script>
 </body>
 </html>
