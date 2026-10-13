@@ -1010,3 +1010,25 @@ footer {
     backdrop-filter: none;
   }
 }
+
+/* ============ ESCALA DE TEXTO: parágrafos maiores (páginas internas) ============ */
+:root {
+  /* escala de texto corrido do site (cresce com a largura da tela) */
+  --fs-body: clamp(1.0625rem, .95rem + .45vw, 1.1875rem);
+  --fs-lead: clamp(1.15rem, 1rem + .6vw, 1.375rem);
+  --fs-small: clamp(.95rem, .9rem + .2vw, 1.03rem);
+}
+
+.hub-desc {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+}
+
+.pcard-desc {
+  font-size: var(--fs-small);
+  line-height: 1.55;
+}
+
+.hub-grid--compact .pcard-desc {
+  font-size: var(--fs-small);
+}

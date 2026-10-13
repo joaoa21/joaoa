@@ -393,3 +393,8 @@ html.js:not(.reduce-motion):not(.motion-fallback) .igaming-page :is(
     animation: none;
   }
 }
+
+/* escala de texto: parágrafos maiores (variáveis em hub.css) */
+.club-desc {
+  font-size: var(--fs-body);
+}

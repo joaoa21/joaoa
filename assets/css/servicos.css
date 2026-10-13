@@ -503,3 +503,27 @@ html.js:not(.reduce-motion) .svc-page .svc-actions { animation: svc-rise .9s var
     animation: none;
   }
 }
+
+/* escala de texto: parágrafos maiores (variáveis em hub.css) */
+.svc-lead {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+}
+
+.svc-step p {
+  font-size: var(--fs-small);
+}
+
+.svc-list li {
+  font-size: var(--fs-body);
+}
+
+.svc-faq-list details p {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+}
+
+.svc-cards .pcard-desc {
+  font-size: var(--fs-small);
+  line-height: 1.55;
+}

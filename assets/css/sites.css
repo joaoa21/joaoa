@@ -148,3 +148,7 @@
 .sg-marks>span>span b{width:1.5rem!important;height:1.5rem!important;font-size:.9rem!important}
 .sg-col>.sg-panel:has(.sg-marks){display:flex;flex-direction:column}
 @media(max-width:560px){.sg-type-row{grid-template-columns:1fr;gap:.5rem}.sg-type-row dl{grid-template-columns:repeat(4,minmax(0,1fr))}.sg-marks{grid-auto-rows:3.4rem}}
+/* escala de texto: parágrafos maiores (variáveis em hub.css) */
+.site-intro-side p{font-size:var(--fs-body)}
+.site-features p{font-size:var(--fs-small)}
+.hub-grid--sites .pcard-desc,.site-card .pcard-desc{font-size:var(--fs-small);line-height:1.55}

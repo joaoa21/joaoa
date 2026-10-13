@@ -592,3 +592,18 @@ html.js:not(.reduce-motion):not(.motion-fallback) .case-reveal:not(.is-visible) 
     transition: none !important;
   }
 }
+
+/* escala de texto: parágrafos maiores (variáveis em hub.css) */
+.case-copy p,
+.scope-item p {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+}
+
+.case-lead {
+  font-size: var(--fs-lead);
+}
+
+.gallery-note {
+  font-size: var(--fs-small);
+}
