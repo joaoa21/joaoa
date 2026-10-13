@@ -301,6 +301,12 @@ main, .site-nav {
   gap: 1rem;
 }
 
+/* menu suspenso de Projetos: escondido até o nav-projects.css (carregado sem bloquear)
+   chegar; sem isto ele aparece aberto por um instante ao abrir a página */
+.proj-menu {
+  display: none;
+}
+
 .nav-links {
   display: flex;
   gap: .65rem;
