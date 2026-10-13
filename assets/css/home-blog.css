@@ -1,0 +1,123 @@
+/* ============================================================
+   JOÃO ALBERTO — "DO BLOG" NA HOME
+   Três posts mais recentes (capa, tema, tempo de leitura, título e data).
+   Os dados vêm de /blog/posts.json via assets/js/home-blog.js.
+   ============================================================ */
+
+.home-blog {
+  padding-bottom: 9rem;
+}
+
+.home-blog-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  margin-bottom: 3rem;
+}
+
+.home-blog-head .projects-title {
+  margin-bottom: 1.2rem;
+}
+
+.home-blog-head .services-lead {
+  margin-bottom: 0;
+}
+
+.home-blog-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-blog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.home-blog-cover {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--chip);
+}
+
+.home-blog-cover img,
+.home-blog-ph {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s cubic-bezier(.22, 1, .36, 1), filter .4s ease;
+}
+
+.home-blog-meta {
+  color: var(--muted);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.home-blog-card strong {
+  display: block;
+  margin: .65rem 0 .9rem;
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  line-height: 1.25;
+}
+
+.home-blog-card time {
+  margin-top: auto;
+  color: var(--soft);
+  font-size: .9rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-blog-card:hover .home-blog-cover img {
+    filter: brightness(1.08);
+  }
+
+  .home-blog-card:hover strong {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+}
+
+.home-blog-card:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 6px;
+  border-radius: 16px;
+}
+
+.home-blog .projects-more {
+  margin-top: 4rem;
+}
+
+@media (max-width: 900px) {
+  .home-blog-list {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .home-blog-cover {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-blog-cover img { transition: none; }
+}

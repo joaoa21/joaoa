@@ -11,6 +11,10 @@ export default {
     ['class="fa-brands fa-whatsapp"></i> (81)\n                98878-0144</a', 'class="fa-brands fa-whatsapp"></i> +55 81\n                98878-0144</a'],
   ],
   dict: {
+    // seção "Do blog"
+    'Do blog': 'From the blog',
+    'O que aprendo nos projetos, escrito para quem cria: email HTML, CRM, design e web.': 'What I learn on projects, written for people who make things: HTML email, CRM, design and web. Posts in Portuguese.',
+    'Ver todos os posts': 'See all posts',
     // modal "Começar meu projeto"
     'Conte sobre o seu projeto': 'Tell me about your project',
     'Três passos rápidos. No fim, a mensagem sai pronta no WhatsApp.': 'Three quick steps. At the end, the message is ready on WhatsApp.',
@@ -139,5 +143,5 @@ export default {
     'Identidade Visual': 'Visual Identity',
     'Gamificação': 'Gamification',
   },
-  keep: ['João Alberto', 'REC — PE / BR'],
+  keep: ['João Alberto', 'REC — PE / BR', 'Botão de email que funciona no Outlook: o guia do VML', 'Email HTML · 3 min de leitura', '29 set. 2026', 'Email no modo escuro: como evitar que sua campanha quebre', 'Email HTML · 3 min de leitura', '29 set. 2026', 'IA generativa na direção de arte: onde ajuda e onde atrapalha', 'Design &amp; Marca · 3 min de leitura', '29 set. 2026'],
 };
