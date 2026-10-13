@@ -1,0 +1,185 @@
+/* ============================================================
+   JOÃO ALBERTO — MENU SUSPENSO DE PROJETOS
+   Painel com as quatro categorias (capa, nome e resumo) que abre ao passar
+   o mouse ou focar "Projetos" no menu. Só CSS: :hover e :focus-within.
+   No celular (menu em tela cheia) o painel não aparece: "Projetos" é só o link.
+   ============================================================ */
+
+.nav-proj {
+  position: static;
+}
+
+/* setinha ao lado de "Projetos" (só no computador, onde o painel abre) */
+@media (max-width: 860px) {
+  .nav-proj > a::after {
+    content: none;
+  }
+}
+
+.nav-proj > a::after {
+  content: "";
+  width: .32rem;
+  height: .32rem;
+  margin-left: .15rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform .3s cubic-bezier(.22, 1, .36, 1);
+}
+
+.proj-menu {
+  display: none;
+}
+
+@media (min-width: 861px) {
+  .proj-menu {
+    --pm-ink: #121212;
+    --pm-soft: #66635c;
+    --pm-line: #e6e3dc;
+
+    position: absolute;
+    top: calc(100% + .7rem);
+    left: 50%;
+    z-index: 20;
+    display: block;
+    width: min(62rem, calc(100vw - 2rem));
+    padding: 1.2rem 1.2rem .4rem;
+    border-radius: 22px;
+    background: #fff;
+    color: var(--pm-ink);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -8px);
+    transition: opacity .25s ease, transform .35s cubic-bezier(.22, 1, .36, 1), visibility 0s linear .35s;
+  }
+
+  /* ponte invisível entre o menu e o painel: o mouse não "cai" no espaço entre os dois */
+  .proj-menu::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: .9rem;
+  }
+
+  .nav-proj:hover .proj-menu,
+  .nav-proj:focus-within .proj-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    transition-delay: 0s;
+  }
+
+  .nav-proj:hover > a::after,
+  .nav-proj:focus-within > a::after {
+    transform: translateY(1px) rotate(-135deg);
+  }
+}
+
+.proj-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.proj-menu-card {
+  display: block;
+  padding: 0;
+  border-radius: 14px;
+  background: none !important;
+  color: var(--pm-ink) !important;
+  text-decoration: none;
+}
+
+.proj-menu-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  border-radius: 14px;
+  object-fit: cover;
+  background: #ece9e2;
+  transition: transform .45s cubic-bezier(.22, 1, .36, 1);
+}
+
+.proj-menu-card strong {
+  display: block;
+  margin: .85rem .2rem .25rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+.proj-menu-card span {
+  display: block;
+  margin: 0 .2rem;
+  color: var(--pm-soft);
+  font-size: .85rem;
+  line-height: 1.4;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .proj-menu-card:hover img {
+    transform: translateY(-3px);
+  }
+
+  .proj-menu-card:hover strong {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.proj-menu-card:focus-visible {
+  outline: 2px solid var(--pm-ink);
+  outline-offset: 4px;
+}
+
+.proj-menu-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.1rem;
+  padding: .9rem .2rem;
+  border-top: 1px solid var(--pm-line);
+}
+
+.proj-menu-foot a {
+  padding: 0 !important;
+  background: none !important;
+  color: var(--pm-ink) !important;
+  font-size: .9rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proj-menu,
+  .proj-menu-card img,
+  .nav-proj > a::after {
+    transition: none;
+  }
+}
+
+/* os cards ficam dentro de .nav-links: anula o estilo de "pílula" dos itens do menu */
+.nav-links .proj-menu-card {
+  display: block;
+  gap: 0;
+  padding: 0;
+  border-radius: 14px;
+  font-size: inherit;
+  white-space: normal;
+}
+
+.nav-links .proj-menu-card::after,
+.nav-links .proj-menu-foot a::after {
+  content: none;
+}
+
+.nav-links .proj-menu-foot a {
+  display: inline;
+  border-radius: 0;
+}

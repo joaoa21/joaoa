@@ -33,6 +33,13 @@ export const KEEP = [
 ];
 
 export const COMMON = {
+  // menu suspenso de projetos
+  'CRM, gamificação e campanhas': 'CRM, gamification and campaigns',
+  'Marcas e aplicações · em breve': 'Brands and applications · coming soon',
+  'Institucionais, landing pages e ferramentas': 'Business sites, landing pages and tools',
+  'Campanha 360º · 2024': '360º campaign · 2024',
+  'Ver todos os projetos': 'View all projects',
+  'Categorias de projetos': 'Project categories',
   // navegação
   'Início': 'Home',
   'Sobre': 'About',
