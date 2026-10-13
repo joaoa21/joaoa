@@ -45,8 +45,8 @@ function init() {
     });
   });
 
-  // o que eu faço: os cards sobem em sequência
-  const cards = $$('.svc-card');
+  // o que eu faço: as linhas da lista sobem em sequência
+  const cards = $$('.svc-item');
   if (cards.length) {
     gsap.from(cards, {
       y: 40,
@@ -55,7 +55,7 @@ function init() {
       stagger: isMobile ? .08 : .09,
       ease,
       clearProps: 'transform,opacity,visibility',
-      scrollTrigger: onEnter('.svc-grid'),
+      scrollTrigger: onEnter('.svc-acc'),
     });
   }
 

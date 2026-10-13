@@ -1,0 +1,205 @@
+/* ============================================================
+   JOÃO ALBERTO — LISTA DE SERVIÇOS E "COMO EU CONSTRUO"
+   Usado na home (resumo dos serviços) e na página de criação de sites.
+   A lista é feita com <details>: abre e fecha mesmo sem JavaScript.
+   As cores vêm das variáveis de cada página (--fg, --soft, --muted, --line).
+   ============================================================ */
+
+/* ---------- Lista sanfonada de serviços ---------- */
+.svc-acc {
+  border-top: 1px solid var(--line);
+}
+
+.svc-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.svc-item > summary {
+  display: grid;
+  grid-template-columns: 3.4rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.55rem 0;
+  list-style: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.svc-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.svc-item-n {
+  color: var(--muted);
+  font-size: .8rem;
+  letter-spacing: .06em;
+}
+
+.svc-item h3 {
+  margin: 0;
+  color: var(--fg);
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -.025em;
+  line-height: 1.15;
+  transition: color .25s ease;
+}
+
+/* "+" que vira "×" quando o item abre */
+.svc-item-ic {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition: background-color .25s ease, border-color .25s ease, transform .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+.svc-item-ic::before,
+.svc-item-ic::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: .85rem;
+  height: 1.5px;
+  margin: -.75px 0 0 -.425rem;
+  background: var(--fg);
+}
+
+.svc-item-ic::after {
+  transform: rotate(90deg);
+}
+
+.svc-item[open] .svc-item-ic {
+  transform: rotate(45deg);
+  border-color: var(--fg);
+}
+
+.svc-item > summary:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .svc-item > summary:hover .svc-item-ic {
+    border-color: var(--fg);
+  }
+}
+
+.svc-item-body {
+  display: grid;
+  gap: .9rem;
+  max-width: 46rem;
+  padding: 0 0 1.8rem 4.4rem;
+  animation: svc-item-in .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes svc-item-in {
+  from { opacity: 0; transform: translateY(-6px); }
+}
+
+.svc-item-body p {
+  margin: 0;
+  color: var(--soft);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.svc-item-body a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--muted);
+}
+
+.svc-item-ex {
+  font-size: .72rem !important;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ---------- "Como eu construo" ---------- */
+.build-groups {
+  border-top: 1px solid var(--line);
+}
+
+.build-group {
+  display: grid;
+  grid-template-columns: minmax(0, 16rem) minmax(0, 1fr);
+  gap: 1.5rem 2.5rem;
+  align-items: start;
+  padding: 1.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.build-group h3 {
+  margin: .45rem 0 0;
+  color: var(--fg);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.build-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.build-chips li {
+  padding: .55rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--soft);
+  font-size: .9rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 760px) {
+  .svc-item > summary {
+    grid-template-columns: 2.6rem minmax(0, 1fr) auto;
+    gap: .75rem;
+    padding: 1.3rem 0;
+  }
+
+  .svc-item-ic {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .svc-item h3 {
+    font-size: 1.15rem;
+    text-wrap: balance;
+  }
+
+  .svc-item h3 .nowrap {
+    white-space: nowrap;
+  }
+
+  .svc-item-body {
+    padding-left: 0;
+  }
+
+  .build-group {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .build-group h3 {
+    margin-top: 0;
+  }
+
+  .build-chips li {
+    font-size: .84rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svc-item-body { animation: none; }
+  .svc-item-ic { transition: none; }
+}

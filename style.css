@@ -1621,3 +1621,20 @@ footer {
     backdrop-filter: none;
   }
 }
+
+/* ============ SERVIÇOS (resumo na home) ============ */
+.services {
+  padding-bottom: 9rem;
+}
+
+.services-title {
+  margin-bottom: 1.2rem;
+}
+
+.services-lead {
+  max-width: 38rem;
+  margin: 0 0 3rem;
+  color: var(--soft);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.5;
+}
