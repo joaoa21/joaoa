@@ -43,7 +43,7 @@ export default {
     'IA no desenvolvimento': 'AI in development',
     'Imagens e key visuals com IA': 'AI images and key visuals',
     'Ferramentas': 'Tools',
-    'Como eu construo': 'How I build',
+    'Como eu faço': 'How I do it',
     'Cada projeto pede uma combinação diferente de ferramentas. O que se repete é o cuidado com cada detalhe, do primeiro esboço ao site no ar.': 'Every project calls for a different mix of tools. What stays the same is the care for every detail, from the first sketch to the live site.',
     'Criação de Sites Profissionais e Landing Pages | João Alberto, Web Designer': 'Website Design & Development, Landing Pages | João Alberto, Web Designer',
     'SERVIÇOS': 'SERVICES',
