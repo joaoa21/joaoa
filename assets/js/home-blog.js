@@ -17,7 +17,7 @@
       : '<span aria-hidden="true" class="home-blog-ph"></span>';
     return `<li><a class="home-blog-card" href="${esc(post.url)}"><span class="home-blog-cover">${cover}</span>`
       + `<span class="home-blog-meta mono">${esc(post.category)} · ${esc(minutes(post.readingTime))}</span>`
-      + `<strong>${esc(post.title)}</strong>`
+      + `<strong><span>${esc(post.title)}</span></strong>`
       + `<time datetime="${esc(post.date)}">${esc(date)}</time></a></li>`;
   }
 

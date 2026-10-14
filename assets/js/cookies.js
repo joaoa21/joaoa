@@ -58,8 +58,9 @@
 .cookie-decline{background:transparent;color:#f2f0eb;border-color:rgba(242,240,235,.3)!important}
 .cookie-decline:hover{border-color:#f2f0eb!important}
 .cookie-actions button:focus-visible,.cookie-prefs:focus-visible{outline:2px solid #f2f0eb;outline-offset:3px}
-.cookie-prefs{padding:0;border:0;background:none;color:inherit;font:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-color:currentColor;opacity:.75;cursor:pointer}
-.cookie-prefs:hover{opacity:1}
+.cookie-prefs-line{margin-top:.9rem!important}
+.cookie-prefs{padding:0;border:0;background:none;color:inherit;font:inherit;font-size:.85rem;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;text-decoration-color:rgba(127,127,127,.5);opacity:.7;cursor:pointer;transition:opacity .2s ease,text-decoration-color .2s ease}
+.cookie-prefs:hover{opacity:1;text-decoration-color:currentColor}
 @media (max-width:720px){.cookie-banner{left:.75rem;right:.75rem;bottom:.75rem;width:auto;display:block;transform:translateY(12px)}.cookie-banner.is-in{transform:none}.cookie-actions{margin-top:1rem}.cookie-actions button{flex:1;width:auto}}
 @media (prefers-reduced-motion:reduce){.cookie-banner{transition:none}}`;
 
@@ -107,6 +108,7 @@
     if (!footer || footer.querySelector('.cookie-prefs')) return;
     if (!banner) build();
     const line = document.createElement('p');
+    line.className = 'cookie-prefs-line';
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'cookie-prefs';
