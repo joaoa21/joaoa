@@ -265,13 +265,24 @@ footer {
 
 .site-nav.scrolled {
   top: 1rem;
-  max-width: min(96%, 52rem);
+  max-width: min(96%, 56rem);
   padding: .8rem .6rem .8rem 1.25rem;
   border-color: var(--line);
   border-radius: 14px;
   background: var(--glass);
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
+}
+
+/* telas um pouco acima do menu de celular: na cápsula rolada, itens mais juntos para caber tudo */
+@media (min-width: 861px) and (max-width: 1000px) {
+  .site-nav.scrolled .nav-links {
+    gap: .4rem;
+  }
+
+  .site-nav.scrolled .nav-links > li > a {
+    padding-inline: .75rem;
+  }
 }
 
 .nav-logo {
