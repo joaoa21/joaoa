@@ -31,7 +31,8 @@ const DARK = `
     .dm-sage { color: ${C.sage} !important; }
     .dm-btn { background: ${C.sage} !important; color: ${C.ink} !important; }
     .dm-bar { background: #66795a !important; }
-    .dm-badge { background: ${C.sage} !important; color: ${C.ink} !important; }`;
+    .dm-badge { background: ${C.sage} !important; color: ${C.ink} !important; }
+    .dm-btn-text { color: ${C.ink} !important; }`;
 
 const FONTS = `<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">`;
 
@@ -76,7 +77,7 @@ function ladder(items) {
 function products(items, assets) {
   const cell = ({ art, alt, name, text, price, href }) => `<td class="col" width="33%" valign="top" style="padding:0 6px;">
         <a href="${href}" style="display:block;text-decoration:none;"><img src="${assets}/${art}.jpg" width="164" height="164" alt="${esc(alt)}" style="width:100%;max-width:164px;height:auto;border-radius:14px;margin:0 auto;"></a>
-        <p class="dm-text" style="margin:14px 0 4px;font-family:${FONT};font-size:15px;line-height:21px;font-weight:600;color:${C.ink};"><a href="${href}" class="dm-text" style="color:${C.ink};text-decoration:none;">${esc(name)}</a></p>
+        <p class="dm-text" style="margin:14px 0 4px;font-family:${FONT};font-size:15px;line-height:21px;font-weight:600;color:${C.ink};"><a href="${href}" style="color:${C.ink};text-decoration:none;"><span class="dm-text" style="color:${C.ink};">${esc(name)}</span></a></p>
         <p class="dm-muted" style="margin:0 0 8px;font-family:${FONT};font-size:13px;line-height:20px;color:${C.muted};">${esc(text)}</p>
         <p class="dm-sage" style="margin:0;font-family:${FONT};font-size:14px;line-height:20px;font-weight:600;color:${C.olive};">${esc(price)}</p>
       </td>`;
@@ -84,8 +85,12 @@ function products(items, assets) {
 }
 
 function render(c, assets) {
+  // O Outlook (web e novo app) recolore o texto de links, sobretudo com o app em tema escuro.
+  // Por isso a cor de todo texto de link fica também num <span> dentro do <a>.
   const cta = (href, label, dark) => {
-    const b = button({ href, label, bg: dark ? C.salmon : C.olive, color: dark ? C.ink : C.onOlive, radius: 10, font: FONT });
+    const color = dark ? C.ink : C.onOlive;
+    const b = button({ href, label, bg: dark ? C.salmon : C.olive, color, radius: 10, font: FONT })
+      .replace(`mso-hide:all;">${esc(label)}</a>`, `mso-hide:all;"><span${dark ? '' : ' class="dm-btn-text"'} style="color:${color};">${esc(label)}</span></a>`);
     return dark ? b : b.replace('class="btn"', 'class="btn dm-btn"');
   };
   return `
@@ -159,7 +164,7 @@ function render(c, assets) {
   <p class="dm-muted" style="margin:0 0 10px;font-family:${FONT};font-size:12px;line-height:19px;color:${C.muted};">${esc(c.footer.reason)}</p>
   <p class="dm-muted" style="margin:0 0 14px;font-family:${FONT};font-size:11px;line-height:17px;color:${C.muted};">${esc(c.footer.legal)}</p>
   <p class="dm-muted" style="margin:0 0 10px;font-family:${FONT};font-size:12px;line-height:18px;color:${C.muted};">${esc(c.footer.address)}</p>
-  <p style="margin:0;font-family:${FONT};font-size:12px;line-height:18px;">${c.footer.links.map((l) => `<a class="dm-muted" href="#" style="color:${C.muted};text-decoration:underline;">${esc(l)}</a>`).join(` <span class="dm-muted" style="color:${C.muted};">&nbsp;&middot;&nbsp;</span> `)}</p>
+  <p style="margin:0;font-family:${FONT};font-size:12px;line-height:18px;">${c.footer.links.map((l) => `<a href="#" style="color:${C.muted};text-decoration:underline;"><span class="dm-muted" style="color:${C.muted};text-decoration:underline;">${esc(l)}</span></a>`).join(` <span class="dm-muted" style="color:${C.muted};">&nbsp;&middot;&nbsp;</span> `)}</p>
 </td></tr>`;
 }
 
