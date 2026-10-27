@@ -89,9 +89,10 @@ function render(c, assets) {
     return dark ? b : b.replace('class="btn"', 'class="btn dm-btn"');
   };
   return `
-<!-- topo: logo -->
+<!-- topo: logo. O logo claro (modo escuro) começa escondido no próprio estilo inline, porque o Gmail
+     descarta o bloco de estilos do cabeçalho; o @media de modo escuro o mostra com !important. -->
 <tr><td align="center" style="padding:10px 40px 22px;text-align:center;">
-  <a href="${SITE}/" style="display:inline-block;"><img class="logo-light" src="${assets}/logo.png" width="220" height="22" alt="Flora Sophia" style="width:220px;height:22px;"><img class="logo-dark" src="${assets}/logo-dark.png" width="220" height="22" alt="Flora Sophia" style="width:220px;height:22px;"></a>
+  <a href="${SITE}/" style="display:inline-block;"><img class="logo-light" src="${assets}/logo.png" width="220" height="22" alt="Flora Sophia" style="width:220px;height:22px;"><img class="logo-dark" src="${assets}/logo-dark.png" width="220" height="22" alt="" style="display:none;width:220px;height:22px;max-height:0;overflow:hidden;mso-hide:all;"></a>
 </td></tr>
 
 <tr><td class="dm-card" style="background:${C.card};border-radius:20px;">
