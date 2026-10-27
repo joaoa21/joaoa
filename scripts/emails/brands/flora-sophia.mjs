@@ -42,6 +42,10 @@ const CSS = `
   .kicker { font-family: ${FONT}; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; }
   @media only screen and (max-width: 620px) {
     .hero-h1 { font-size: 36px !important; line-height: 42px !important; }
+    /* quadro da conta: no celular o preço desce para baixo da frase */
+    .math-cell { display: block !important; width: auto !important; text-align: left !important; padding-left: 0 !important; }
+    .math-price { padding-top: 4px !important; }
+    .math-gap { padding-top: 16px !important; }
   }`;
 
 const TABLE = 'role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"';
@@ -145,8 +149,10 @@ function render(c, assets) {
     <tr><td class="px" style="padding:12px 42px 0;">${products(c.products.items, assets)}</td></tr>
     <tr><td class="px" style="padding:4px 48px 0;">
       <table ${TABLE} ${SEP}><tr><td class="dm-tile" style="background:${C.sageSoft};border-radius:14px;padding:18px 22px;">
-        ${c.products.math.map(([a, b, d], i) => `<p class="dm-text" style="margin:${i ? 16 : 0}px 0 0;font-family:${FONT};font-size:14px;line-height:21px;color:${C.ink};">${rich(a)}</p>
-        <p class="dm-text" style="margin:4px 0 0;font-family:${FONT};font-size:15px;line-height:22px;font-weight:600;color:${C.ink};">${esc(b)} <span class="dm-badge" style="display:inline-block;background:${C.olive};color:${C.onOlive};border-radius:6px;padding:2px 8px;font-size:12px;line-height:18px;font-weight:700;letter-spacing:1px;margin-left:4px;">${esc(d)}</span></p>`).join('')}
+        <table ${TABLE}>${c.products.math.map(([a, b, d], i) => `<tr>
+          <td class="dm-text math-cell${i ? ' math-gap' : ''}" valign="middle" style="padding:${i ? 10 : 0}px 0 0;font-family:${FONT};font-size:14px;line-height:21px;color:${C.ink};">${rich(a)}</td>
+          <td class="dm-text math-cell math-price" align="right" valign="middle" style="padding:${i ? 10 : 0}px 0 0 12px;font-family:${FONT};font-size:15px;line-height:22px;font-weight:600;color:${C.ink};white-space:nowrap;">${esc(b)} <span class="dm-badge" style="display:inline-block;background:${C.olive};color:${C.onOlive};border-radius:6px;padding:2px 8px;font-size:12px;line-height:18px;font-weight:700;letter-spacing:1px;margin-left:6px;">${esc(d)}</span></td>
+        </tr>`).join('')}</table>
       </td></tr></table>
     </td></tr>
     <tr><td class="px" align="center" style="padding:26px 48px 44px;text-align:center;">${cta(BEST, c.products.cta)}</td></tr>

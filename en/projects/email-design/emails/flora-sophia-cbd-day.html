@@ -25,6 +25,10 @@
   .kicker { font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; }
   @media only screen and (max-width: 620px) {
     .hero-h1 { font-size: 36px !important; line-height: 42px !important; }
+    /* quadro da conta: no celular o preço desce para baixo da frase */
+    .math-cell { display: block !important; width: auto !important; text-align: left !important; padding-left: 0 !important; }
+    .math-price { padding-top: 4px !important; }
+    .math-gap { padding-top: 16px !important; }
   }
   @media only screen and (max-width: 620px) {
     .container { width: 100% !important; }
@@ -159,9 +163,13 @@
       </div></div><!--[if mso]></td></tr></table><![endif]--></div></td></tr>
     <tr><td class="px" style="padding:4px 48px 0;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr><td class="dm-tile" style="background:#e4ecdc;border-radius:14px;padding:18px 22px;">
-        <p class="dm-text" style="margin:0px 0 0;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;line-height:21px;color:#22291d;"><strong>The tincture and salve together</strong> already clear the 40% tier</p>
-        <p class="dm-text" style="margin:4px 0 0;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#22291d;">$144.98 <span class="dm-badge" style="display:inline-block;background:#3f4b38;color:#f6f3e6;border-radius:6px;padding:2px 8px;font-size:12px;line-height:18px;font-weight:700;letter-spacing:1px;margin-left:4px;">40% off</span></p><p class="dm-text" style="margin:16px 0 0;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;line-height:21px;color:#22291d;"><strong>All three</strong> unlock the full 50%</p>
-        <p class="dm-text" style="margin:4px 0 0;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#22291d;">$184.97 <span class="dm-badge" style="display:inline-block;background:#3f4b38;color:#f6f3e6;border-radius:6px;padding:2px 8px;font-size:12px;line-height:18px;font-weight:700;letter-spacing:1px;margin-left:4px;">50% off</span></p>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="dm-text math-cell" valign="middle" style="padding:0px 0 0;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;line-height:21px;color:#22291d;"><strong>The tincture and salve together</strong> already clear the 40% tier</td>
+          <td class="dm-text math-cell math-price" align="right" valign="middle" style="padding:0px 0 0 12px;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#22291d;white-space:nowrap;">$144.98 <span class="dm-badge" style="display:inline-block;background:#3f4b38;color:#f6f3e6;border-radius:6px;padding:2px 8px;font-size:12px;line-height:18px;font-weight:700;letter-spacing:1px;margin-left:6px;">40% off</span></td>
+        </tr><tr>
+          <td class="dm-text math-cell math-gap" valign="middle" style="padding:10px 0 0;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;line-height:21px;color:#22291d;"><strong>All three</strong> unlock the full 50%</td>
+          <td class="dm-text math-cell math-price" align="right" valign="middle" style="padding:10px 0 0 12px;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15px;line-height:22px;font-weight:600;color:#22291d;white-space:nowrap;">$184.97 <span class="dm-badge" style="display:inline-block;background:#3f4b38;color:#f6f3e6;border-radius:6px;padding:2px 8px;font-size:12px;line-height:18px;font-weight:700;letter-spacing:1px;margin-left:6px;">50% off</span></td>
+        </tr></table>
       </td></tr></table>
     </td></tr>
     <tr><td class="px" align="center" style="padding:26px 48px 44px;text-align:center;"><!--[if mso]>
