@@ -80,6 +80,9 @@ function addSwitch(html, current, ptUrl, enUrl) {
   return html;
 }
 
+/* Nomes dos breadcrumbs (BreadcrumbList) nos dados estruturados. */
+const CRUMBS = { 'Início': 'Home', 'Projetos': 'Projects', 'Sites': 'Websites', 'Campanha OAB/PE': 'OAB/PE Campaign' };
+
 /* Dados estruturados: endereços da própria página e idioma. */
 function jsonLd(html, dict) {
   return html.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (all, a, body, b) => {
@@ -116,7 +119,7 @@ export function build(cfg) {
   en = en.replace(/<link rel="alternate" hreflang="pt-BR"[^>]*\/><link rel="alternate" hreflang="en"[^>]*\/><link rel="alternate" hreflang="x-default"[^>]*\/>/, hreflangTags(cfg.ptUrl, cfg.enUrl));
   en = en.replace(new RegExp(`content="${SITE}${cfg.ptUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`, 'g'), `content="${SITE}${cfg.enUrl}"`);
   en = en.replace('<meta property="og:locale" content="pt_BR"/>', '<meta property="og:locale" content="en_US"/><meta property="og:locale:alternate" content="pt_BR"/>');
-  en = jsonLd(en, { ...(cfg.jsonDict || {}) });
+  en = jsonLd(en, { ...CRUMBS, ...(cfg.jsonDict || {}) });
   const { html, missing } = translate(en, { ...COMMON, ...cfg.dict });
   en = addSwitch(html, 'en', cfg.ptUrl, cfg.enUrl);
 

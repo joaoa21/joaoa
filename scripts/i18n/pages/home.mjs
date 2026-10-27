@@ -131,7 +131,7 @@ export default {
   jsonDict: {
     'João Alberto | Design Digital & Web': 'João Alberto | Digital Design & Web',
     'João Alberto | Web Designer e Criação de Sites': 'João Alberto | Front-end Developer & UI/Web Designer',
-    'Web Designer': 'Front-end Developer & UI/Web Designer',
+    'Web Designer e Desenvolvedor Front-end': 'Front-end Developer & UI/Web Designer',
     'Web designer e desenvolvedor front-end: criação de sites, landing pages, interfaces e emails HTML, do layout ao código.': 'Front-end developer and UI/web designer: websites, landing pages, interfaces and HTML emails, from layout to code.',
     'Recife, Pernambuco, Brasil': 'Recife, Pernambuco, Brazil',
     'João Alberto | Web Design e Criação de Sites': 'João Alberto Web Design',

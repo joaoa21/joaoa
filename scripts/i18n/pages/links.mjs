@@ -11,6 +11,7 @@ export default {
     'Web Designer &amp; Front-end.': 'Web Designer &amp; Front-end.',
     'Acesse meu site': 'Visit my website',
     'Meus projetos': 'My projects',
+    'Criação de sites': 'Website design',
     'Vamos conversar?': "Let's talk",
     'SITES': 'WEBSITES',
     'Imagens e PDFs direto no navegador': 'Images and PDFs right in the browser',

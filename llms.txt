@@ -1,0 +1,34 @@
+# João Alberto
+
+> Designer e desenvolvedor front-end em Recife (PE, Brasil). Cria sites, landing pages, interfaces e emails HTML do layout ao código, e atende empresas de todo o Brasil, com todo o processo online. Vem da direção de arte e do branding, então também cria a identidade visual junto com o site. English version: https://joaoa.com.br/en/
+
+Contato: WhatsApp +55 81 98878-0144 · joaoams6@gmail.com · LinkedIn https://www.linkedin.com/in/joaoa210/ · GitHub https://github.com/joaoa21 · Instagram https://www.instagram.com/joaoalbertoms2/
+
+## Serviços
+
+- [Criação de sites e landing pages](https://joaoa.com.br/criacao-de-sites/): sites institucionais, landing pages, portfólios, lojas virtuais e e-commerce, redesign de sites e projetos personalizados (ferramentas web e emails HTML), do design ao código.
+- Todo site sai com a base de SEO pronta: títulos e descrições, mapa do site, desempenho otimizado e cadastro no Google Search Console.
+- Preço e prazo dependem do projeto: depois de uma conversa rápida, ele envia uma proposta com escopo, prazo e valor definidos antes de começar.
+- Dá para incluir um painel para o cliente editar textos e imagens, ou combinar as atualizações com ele.
+
+## Projetos
+
+- [Todos os projetos](https://joaoa.com.br/projetos/): design digital, sites, identidade visual, campanhas, CRM e gamificação.
+- [Sites](https://joaoa.com.br/projetos/sites/): sites e experiências digitais, do conceito e design à implementação.
+- [MS Corretora de Seguros](https://joaoa.com.br/projetos/sites/ms-corretora/): site institucional com coberturas, seguradoras parceiras e cotação pelo WhatsApp.
+- [Propostaria](https://joaoa.com.br/projetos/sites/propostaria/): landing page de um app de propostas comerciais, com exemplo de proposta, demonstração de aceite com assinatura e planos.
+- [Clube de Ouro](https://joaoa.com.br/projetos/sites/clube-de-ouro/): programa de fidelidade com dez níveis, leaderboard e loja de recompensas, desenhado e programado do layout ao código.
+- [Kompres](https://joaoa.com.br/projetos/sites/kompres/): site para comprimir, converter e redimensionar imagens em lote, remover fundos e organizar PDFs direto no navegador.
+- [Email Generator](https://joaoa.com.br/projetos/sites/email-generator/): ferramentas gratuitas para montar emails HTML compatíveis com Gmail e Outlook e gerar links de WhatsApp com mensagem pronta.
+- [Campanha OAB/PE](https://joaoa.com.br/projetos/oab/): identidade visual e comunicação 360º para campanha à presidência da OAB Pernambuco.
+- [CRM e gamificação](https://joaoa.com.br/projetos/igaming/): email marketing, banners, pop-ups, widgets e campanhas digitais.
+
+## Blog
+
+- [Blog](https://joaoa.com.br/blog/): design digital, criação de sites, email HTML, CRM e identidade visual, na prática.
+- [Feed RSS](https://joaoa.com.br/blog/rss.xml): todos os posts, sempre atualizado.
+
+## Opcional
+
+- [Currículo](https://joaoa.com.br/cv/)
+- [Links](https://joaoa.com.br/links/)

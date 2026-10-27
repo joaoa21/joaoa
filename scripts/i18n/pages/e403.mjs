@@ -6,6 +6,7 @@ export default {
   noHreflang: true,
   dict: {
     'Acesso restrito | João Alberto': 'Restricted access | João Alberto',
+    'Esta área do site de João Alberto é restrita. Volte ao portfólio para ver projetos de design e web.': "This area of João Alberto's website is restricted. Head back to the portfolio to see design and web projects.",
     'ERRO 403': 'ERROR 403',
     '// ERRO 403': '// ERROR 403',
     'Acesso': 'Restricted',
