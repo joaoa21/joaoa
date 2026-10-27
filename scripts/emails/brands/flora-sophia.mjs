@@ -51,13 +51,15 @@ const kicker = (text, color, extra = '') => `<p class="kicker${color === C.olive
 const h2 = (text, color = C.ink, cls = 'dm-text') => `<h2 class="${cls}" style="margin:0 0 14px;font-family:${FONT};font-size:28px;line-height:36px;font-weight:600;letter-spacing:-0.3px;color:${color};">${esc(text)}</h2>`;
 const para = (text, color = C.text, cls = 'dm-text', size = 16) => `<p class="${cls}" style="margin:0;font-family:${FONT};font-size:${size}px;line-height:${Math.round(size * 1.65)}px;color:${color};">${rich(text, { link: C.olive })}</p>`;
 
-/** Colunas fluidas: divs inline-block com max-width. Ficam lado a lado quando cabem e empilham
-    sozinhas quando não cabem, sem media query. No Outlook do Windows uma tabela fantasma segura as colunas. */
+/** Colunas fluidas: divs inline-block de largura fixa com max-width:100%. Ficam lado a lado quando cabem
+    e empilham sozinhas quando não cabem, sem media query. No Outlook do Windows uma tabela fantasma segura
+    as colunas. Nada de width em % dentro de style: ao copiar a página, o Chrome troca esse valor pela
+    largura em px daquele momento, e o email colado volta a ser rígido. Largura em % só como atributo. */
 function columns(cells, widths, align = 'center', valign = 'top') {
   const w = (i) => (Array.isArray(widths) ? widths[i] : widths);
   const open = (i) => (i ? `<!--[if mso]></td><td width="${w(i)}" valign="${valign}"><![endif]-->`
     : `<!--[if mso]><table role="presentation" cellpadding="0" cellspacing="0" border="0" align="${align}"><tr><td width="${w(0)}" valign="${valign}"><![endif]-->`);
-  return `<div style="font-size:0;line-height:0;text-align:${align};">${cells.map((c, i) => `${open(i)}<div style="display:inline-block;width:100%;max-width:${w(i)}px;vertical-align:${valign};font-size:16px;line-height:normal;">${c}</div>`).join('')}<!--[if mso]></td></tr></table><![endif]--></div>`;
+  return `<div style="font-size:0;line-height:0;text-align:${align};">${cells.map((c, i) => `${open(i)}<div style="display:inline-block;width:${w(i)}px;max-width:100%;vertical-align:${valign};font-size:16px;line-height:normal;">${c}</div>`).join('')}<!--[if mso]></td></tr></table><![endif]--></div>`;
 }
 
 /** Faixa dos três degraus de desconto (empilha sozinha no celular). */
@@ -83,7 +85,7 @@ function ladder(items) {
 /** Três produtos lado a lado (empilham no celular). */
 function products(items, assets) {
   const cell = ({ art, alt, name, text, price, href }) => `<div style="padding:0 6px 22px;text-align:left;">
-        <a href="${href}" style="display:block;text-decoration:none;"><img src="${assets}/${art}.jpg" width="164" height="164" alt="${esc(alt)}" style="display:block;width:100%;max-width:164px;height:auto;border:0;border-radius:14px;margin:0 auto;"></a>
+        <a href="${href}" style="display:block;text-decoration:none;"><img src="${assets}/${art}.jpg" width="164" height="164" alt="${esc(alt)}" style="display:block;max-width:100%;height:auto;border:0;border-radius:14px;margin:0 auto;"></a>
         <p class="dm-text" style="margin:14px 0 4px;font-family:${FONT};font-size:15px;line-height:21px;font-weight:600;color:${C.ink};"><a href="${href}" style="color:${C.ink};text-decoration:none;"><span class="dm-text" style="color:${C.ink};">${esc(name)}</span></a></p>
         <p class="dm-muted" style="margin:0 0 8px;font-family:${FONT};font-size:13px;line-height:20px;color:${C.muted};">${esc(text)}</p>
         <p class="dm-sage" style="margin:0;font-family:${FONT};font-size:14px;line-height:20px;font-weight:600;color:${C.olive};">${esc(price)}</p>
@@ -122,7 +124,7 @@ function render(c, assets) {
       ${cta(SHOP, c.hero.cta, true)}
       <p style="margin:22px 0 0;font-family:${FONT};font-size:15px;line-height:23px;font-style:italic;color:${C.onOliveSoft};">${esc(c.hero.closing)}</p>
     </td></tr>
-    <tr><td style="background:#eae3d1;font-size:0;line-height:0;"><img class="fluid" src="${assets}/hero.jpg" width="600" height="300" alt="${esc(c.hero.alt)}" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
+    <tr><td style="background:#eae3d1;font-size:0;line-height:0;"><img class="fluid" src="${assets}/hero.jpg" width="600" height="300" alt="${esc(c.hero.alt)}" style="display:block;max-width:100%;height:auto;border:0;"></td></tr>
 
     <!-- 2. a escada -->
     <tr><td class="px" style="padding:44px 48px 8px;">
@@ -143,16 +145,14 @@ function render(c, assets) {
     <tr><td class="px" style="padding:12px 42px 0;">${products(c.products.items, assets)}</td></tr>
     <tr><td class="px" style="padding:4px 48px 0;">
       <table ${TABLE} ${SEP}><tr><td class="dm-tile" style="background:${C.sageSoft};border-radius:14px;padding:18px 22px;">
-        ${c.products.math.map(([a, b, d], i) => columns([
-          `<p class="dm-text" style="margin:0;padding:${i ? 10 : 0}px 12px 0 0;font-family:${FONT};font-size:14px;line-height:21px;color:${C.ink};">${rich(a)}</p>`,
-          `<p class="dm-text" style="margin:0;padding:${i ? 10 : 0}px 0 0;font-family:${FONT};font-size:15px;line-height:21px;font-weight:600;color:${C.ink};white-space:nowrap;">${esc(b)} <span class="dm-badge" style="display:inline-block;background:${C.olive};color:${C.onOlive};border-radius:6px;padding:2px 8px;font-size:12px;line-height:18px;font-weight:700;letter-spacing:1px;margin-left:6px;">${esc(d)}</span></p>`,
-        ], [300, 156], 'left', 'middle')).join('')}
+        ${c.products.math.map(([a, b, d], i) => `<p class="dm-text" style="margin:${i ? 16 : 0}px 0 0;font-family:${FONT};font-size:14px;line-height:21px;color:${C.ink};">${rich(a)}</p>
+        <p class="dm-text" style="margin:4px 0 0;font-family:${FONT};font-size:15px;line-height:22px;font-weight:600;color:${C.ink};">${esc(b)} <span class="dm-badge" style="display:inline-block;background:${C.olive};color:${C.onOlive};border-radius:6px;padding:2px 8px;font-size:12px;line-height:18px;font-weight:700;letter-spacing:1px;margin-left:4px;">${esc(d)}</span></p>`).join('')}
       </td></tr></table>
     </td></tr>
     <tr><td class="px" align="center" style="padding:26px 48px 44px;text-align:center;">${cta(BEST, c.products.cta)}</td></tr>
 
     <!-- 4. fechamento -->
-    <tr><td style="background:#6c8a5a;font-size:0;line-height:0;"><img class="fluid" src="${assets}/hand.jpg" width="600" height="220" alt="${esc(c.final.alt)}" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
+    <tr><td style="background:#6c8a5a;font-size:0;line-height:0;"><img class="fluid" src="${assets}/hand.jpg" width="600" height="220" alt="${esc(c.final.alt)}" style="display:block;max-width:100%;height:auto;border:0;"></td></tr>
     <tr><td class="px" align="center" style="background:${C.olive};border-radius:0 0 20px 20px;padding:40px 44px 44px;text-align:center;">
       ${kicker(c.final.kicker, C.sage)}
       ${h2(c.final.title, C.onOlive, '')}
@@ -257,9 +257,9 @@ export function build(email, lang, assets) {
     dark: DARK,
     body: email.render(lang, c, assets),
   })
-    // contêiner fluido: até 600px, mas encolhe no celular mesmo sem o <style> (email colado, Gmail).
+    // contêiner fluido (width="100%" no atributo, max-width 600px): encolhe no celular mesmo sem o <style>.
     // O Outlook do Windows continua preso aos 600px pela tabela fantasma do documentHtml.
     .replace('class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;"',
-      'class="container" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;margin:0 auto;"')
+      'class="container" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;"')
     .replace('</head>', `${FONTS}\n</head>`);
 }
