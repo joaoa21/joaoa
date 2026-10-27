@@ -45,7 +45,8 @@ function resolveFile(t) {
   return found;
 }
 const file = resolveFile(target);
-const html = fs.readFileSync(file, 'utf8');
+// o trecho web-only (seletor claro/escuro da página no site) não vai no email
+const html = fs.readFileSync(file, 'utf8').replace(/<!--web-only-->[\s\S]*?<!--\/web-only-->\s*/g, '');
 
 // imagens locais não chegam a quem recebe: avisa antes de enviar
 if (/src="https?:\/\/(127\.0\.0\.1|localhost)/.test(html)) {

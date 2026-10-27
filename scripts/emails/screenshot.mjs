@@ -44,6 +44,7 @@ await send('Page.navigate', { url });
 await sleep(2500);
 await ev('document.fonts.ready.then(() => true)');
 await sleep(500);
+await ev("document.getElementById('theme-switch')?.remove(), true"); // o seletor da página não entra no PNG
 const height = await ev('Math.ceil(document.documentElement.scrollHeight)');
 await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 2, mobile: false });
 await sleep(300);

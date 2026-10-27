@@ -251,6 +251,52 @@ export const emails = [
   },
 ];
 
+/** Seletor claro/escuro só para a página no site (fica entre <!--web-only--> e <!--/web-only-->).
+    Não faz parte do email: o send-test.mjs, o inline.mjs e o screenshot.mjs tiram esse trecho.
+    Ele liga ou desliga o próprio @media (prefers-color-scheme: dark) do email, então mostra
+    exatamente o que um cliente de email em modo escuro mostraria. Só aparece em http(s) com JS. */
+function themeSwitch(lang) {
+  const [light, dark, label] = lang === 'pt' ? ['Claro', 'Escuro', 'Tema do email'] : ['Light', 'Dark', 'Email theme'];
+  return `<!--web-only-->
+<div id="theme-switch" role="group" aria-label="${label}" hidden><button type="button" data-mode="light">${light}</button><button type="button" data-mode="dark">${dark}</button></div>
+<style>
+  #theme-switch { position: fixed; right: 16px; bottom: 16px; z-index: 10; display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(34, 41, 29, 0.9); border: 1px solid rgba(246, 243, 230, 0.18); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); font: 600 13px/1 system-ui, -apple-system, 'Segoe UI', sans-serif; -webkit-user-select: none; user-select: none; }
+  #theme-switch[hidden] { display: none; }
+  #theme-switch button { all: unset; cursor: pointer; padding: 9px 15px; border-radius: 999px; color: #d6d9c9; }
+  #theme-switch button[aria-pressed="true"] { background: #f6f3e6; color: #22291d; }
+  #theme-switch button:focus-visible { outline: 2px solid #8bb696; outline-offset: 2px; }
+</style>
+<script>
+(function () {
+  if (!/^https?:$/.test(location.protocol)) return;
+  var box = document.getElementById('theme-switch');
+  var rules = [];
+  for (var i = 0; i < document.styleSheets.length; i++) {
+    try {
+      var list = document.styleSheets[i].cssRules;
+      for (var j = 0; j < list.length; j++) {
+        if (list[j].media && list[j].media.mediaText.indexOf('prefers-color-scheme') > -1) rules.push(list[j]);
+      }
+    } catch (e) {}
+  }
+  if (!rules.length) return;
+  var buttons = box.querySelectorAll('button');
+  function set(mode, save) {
+    rules.forEach(function (r) { r.media.mediaText = mode === 'dark' ? 'all' : 'not all'; });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-mode') === mode)); });
+    if (save) { try { localStorage.setItem('email-theme', mode); } catch (e) {} }
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('email-theme'); } catch (e) {}
+  set(saved === 'dark' || saved === 'light' ? saved : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  buttons.forEach(function (b) { b.addEventListener('click', function () { set(b.getAttribute('data-mode'), true); }); });
+  box.hidden = false;
+})();
+</script>
+<!--/web-only-->
+`;
+}
+
 /** HTML final de um email. */
 export function build(email, lang, assets) {
   const c = email.copy[lang];
@@ -267,5 +313,6 @@ export function build(email, lang, assets) {
     // O Outlook do Windows continua preso aos 600px pela tabela fantasma do documentHtml.
     .replace('class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;"',
       'class="container" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;"')
-    .replace('</head>', `${FONTS}\n</head>`);
+    .replace('</head>', `${FONTS}\n</head>`)
+    .replace('</body>', `${themeSwitch(lang)}</body>`);
 }
