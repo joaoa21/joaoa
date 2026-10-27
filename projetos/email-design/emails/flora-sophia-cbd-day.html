@@ -65,17 +65,19 @@
 <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
 <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;">
 
-<!-- topo: logo. O logo claro (modo escuro) começa escondido no próprio estilo inline, porque o Gmail
-     descarta o bloco de estilos do cabeçalho; o @media de modo escuro o mostra com !important. -->
-<tr><td align="center" style="padding:10px 40px 22px;text-align:center;">
-  <a href="https://www.florasophiabotanicals.com/" style="display:inline-block;"><img class="logo-light" src="https://joaoa.com.br/assets/email-design/flora-sophia/logo.png" width="220" height="22" alt="Flora Sophia" style="width:220px;height:22px;"><img class="logo-dark" src="https://joaoa.com.br/assets/email-design/flora-sophia/logo-dark.png" width="220" height="22" alt="" style="display:none;width:220px;height:22px;max-height:0;overflow:hidden;mso-hide:all;"></a>
-</td></tr>
+<!-- topo: só um respiro acima do cartão; o logo fica dentro do hero -->
+<tr><td style="height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>
 
 <tr><td class="dm-card" style="background:#fdfbf6;border-radius:20px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;">
 
     <!-- 1. hero -->
-    <tr><td align="center" style="background:#3f4b38;border-radius:20px 20px 0 0;padding:44px 44px 40px;text-align:center;">
+    <tr><td align="center" style="background:#3f4b38;border-radius:20px 20px 0 0;padding:36px 44px 40px;text-align:center;">
+      <!-- Logo único, creme, sobre o verde (que não muda no modo escuro). Sem troca de logos por CSS:
+           o Gmail descarta o cabeçalho, e copiar a página num navegador em modo escuro grava qual logo
+           estava escondido, então qualquer troca acaba mostrando os dois ou nenhum. -->
+      <a href="https://www.florasophiabotanicals.com/" style="display:inline-block;"><img src="https://joaoa.com.br/assets/email-design/flora-sophia/logo-dark.png" width="200" height="20" alt="Flora Sophia" style="display:block;width:200px;height:20px;margin:0 auto;"></a>
+      <table role="presentation" width="64" align="center" cellpadding="0" cellspacing="0" border="0" style="margin:26px auto 30px;"><tr><td style="border-top:1px solid #5b6a52;font-size:0;line-height:0;">&nbsp;</td></tr></table>
       <p class="kicker" style="margin:0 0 14px;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:11px;line-height:16px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;color:#8bb696;">VIP Early Access</p>
       <h1 class="hero-h1" style="margin:0 0 14px;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:46px;line-height:52px;font-weight:500;letter-spacing:-1px;color:#f6f3e6;">The Sale Is Yours First.</h1>
       <p style="margin:0 0 28px;font-family:'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17px;line-height:27px;color:#d6d9c9;">Up to 50% off National CBD Day Sale</p>

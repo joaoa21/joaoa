@@ -89,17 +89,19 @@ function render(c, assets) {
     return dark ? b : b.replace('class="btn"', 'class="btn dm-btn"');
   };
   return `
-<!-- topo: logo. O logo claro (modo escuro) começa escondido no próprio estilo inline, porque o Gmail
-     descarta o bloco de estilos do cabeçalho; o @media de modo escuro o mostra com !important. -->
-<tr><td align="center" style="padding:10px 40px 22px;text-align:center;">
-  <a href="${SITE}/" style="display:inline-block;"><img class="logo-light" src="${assets}/logo.png" width="220" height="22" alt="Flora Sophia" style="width:220px;height:22px;"><img class="logo-dark" src="${assets}/logo-dark.png" width="220" height="22" alt="" style="display:none;width:220px;height:22px;max-height:0;overflow:hidden;mso-hide:all;"></a>
-</td></tr>
+<!-- topo: só um respiro acima do cartão; o logo fica dentro do hero -->
+<tr><td style="height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>
 
 <tr><td class="dm-card" style="background:${C.card};border-radius:20px;">
   <table ${TABLE} ${SEP}>
 
     <!-- 1. hero -->
-    <tr><td align="center" style="background:${C.olive};border-radius:20px 20px 0 0;padding:44px 44px 40px;text-align:center;">
+    <tr><td align="center" style="background:${C.olive};border-radius:20px 20px 0 0;padding:36px 44px 40px;text-align:center;">
+      <!-- Logo único, creme, sobre o verde (que não muda no modo escuro). Sem troca de logos por CSS:
+           o Gmail descarta o cabeçalho, e copiar a página num navegador em modo escuro grava qual logo
+           estava escondido, então qualquer troca acaba mostrando os dois ou nenhum. -->
+      <a href="${SITE}/" style="display:inline-block;"><img src="${assets}/logo-dark.png" width="200" height="20" alt="Flora Sophia" style="display:block;width:200px;height:20px;margin:0 auto;"></a>
+      <table role="presentation" width="64" align="center" cellpadding="0" cellspacing="0" border="0" style="margin:26px auto 30px;"><tr><td style="border-top:1px solid ${C.oliveLine};font-size:0;line-height:0;">&nbsp;</td></tr></table>
       ${kicker(c.hero.kicker, C.sage)}
       <h1 class="hero-h1" style="margin:0 0 14px;font-family:${FONT};font-size:46px;line-height:52px;font-weight:500;letter-spacing:-1px;color:${C.onOlive};">${esc(c.hero.title)}</h1>
       <p style="margin:0 0 28px;font-family:${FONT};font-size:17px;line-height:27px;color:${C.onOliveSoft};">${esc(c.hero.sub)}</p>
