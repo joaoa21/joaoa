@@ -1,5 +1,6 @@
 // Exporta um email em PNG (desktop, 2x) com Chrome headless, para enviar como imagem.
 // Uso: node scripts/emails/screenshot.mjs <marca-id> [largura=720]   (SCHEME=dark grava <marca-id>-dark.png)
+//   largura abaixo de 620 = celular: emula um aparelho móvel e grava <marca-id>-mobile[-dark].png
 //   lê  http://127.0.0.1:4173/en/projects/email-design/emails/<marca-id>.html (preview do site rodando,
 //   com os emails gerados por ASSETS_BASE=http://127.0.0.1:4173 node scripts/emails/build.mjs)
 //   grava scripts/emails/export/<marca-id>.png (pasta ignorada pelo git)
@@ -15,7 +16,8 @@ if (!id) throw new Error('Informe o email: node scripts/emails/screenshot.mjs fl
 const width = Number(process.argv[3] || 720);
 const url = process.env.EMAIL_URL || `http://127.0.0.1:4173/en/projects/email-design/emails/${id}.html`;
 const scheme = process.env.SCHEME || 'light';
-const out = path.join(ROOT, 'scripts/emails/export', `${id}${scheme === 'dark' ? '-dark' : ''}.png`);
+const mobile = width < 620;
+const out = path.join(ROOT, 'scripts/emails/export', `${id}${mobile ? '-mobile' : ''}${scheme === 'dark' ? '-dark' : ''}.png`);
 await fs.mkdir(path.dirname(out), { recursive: true });
 
 const CHROME = process.env.CHROME || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
@@ -39,14 +41,18 @@ const ev = async (expression) => (await send('Runtime.evaluate', { expression, a
 
 await send('Page.enable');
 await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: scheme }] });
-await send('Emulation.setDeviceMetricsOverride', { width, height: 1000, deviceScaleFactor: 2, mobile: false });
+await send('Emulation.setDeviceMetricsOverride', { width, height: 1000, deviceScaleFactor: 2, mobile });
 await send('Page.navigate', { url });
 await sleep(2500);
 await ev('document.fonts.ready.then(() => true)');
 await sleep(500);
+if ((await ev('location.href')).startsWith('chrome-error')) {
+  chrome.kill();
+  throw new Error(`Não abriu ${url}. O preview do site está rodando (porta 4173)?`);
+}
 await ev("document.getElementById('theme-switch')?.remove(), true"); // o seletor da página não entra no PNG
 const height = await ev('Math.ceil(document.documentElement.scrollHeight)');
-await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 2, mobile: false });
+await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 2, mobile });
 await sleep(300);
 const shot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip: { x: 0, y: 0, width, height, scale: 1 } });
 await fs.writeFile(out, Buffer.from(shot.data, 'base64'));
