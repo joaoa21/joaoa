@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<script>
+  (() => {
+    const root = document.documentElement;
+    root.classList.add('js');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      root.classList.add('reduce-motion');
+    }
+
+    window.__hubMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 1800);
+    // garantia própria da página: se igaming-motion.js não carregar, as peças aparecem
+    window.__igamingMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 2600);
+  })();
+</script>
+<link href="https://joaoa.com.br/projetos/email-design/" rel="canonical"/><link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/email-design/"/><link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/email-design/"/><link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/email-design/"/><meta content="#0f0f0f" name="theme-color"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Email Design: emails HTML para CRM e marketing | João Alberto</title>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="João Alberto"/>
+<meta property="og:title" content="Email Design: emails HTML para CRM e marketing | João Alberto"/>
+<meta property="og:description" content="Portfólio de email design de João Alberto: emails HTML responsivos, com modo escuro e compatíveis com o Outlook, para CRM, lançamentos, transacionais e newsletters."/>
+<meta property="og:url" content="https://joaoa.com.br/projetos/email-design/"/>
+<meta property="og:image" content="https://joaoa.com.br/assets/img/og-email-design.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Emails HTML de João Alberto no modo claro, no escuro e no celular"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Email Design: emails HTML para CRM e marketing | João Alberto"/>
+<meta name="twitter:description" content="Portfólio de email design de João Alberto: emails HTML responsivos, com modo escuro e compatíveis com o Outlook, para CRM, lançamentos, transacionais e newsletters."/>
+<meta name="twitter:image" content="https://joaoa.com.br/assets/img/og-email-design.jpg"/>
+<meta name="twitter:image:alt" content="Emails HTML de João Alberto no modo claro, no escuro e no celular"/>
+<meta content="Portfólio de email design de João Alberto: emails HTML responsivos, com modo escuro e compatíveis com o Outlook, para CRM, lançamentos, transacionais e newsletters." name="description"/>
+<link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin=""/><link href="/assets/css/fonts.css" rel="stylesheet"/>
+<link href="/assets/css/icons.css" rel="stylesheet"/>
+<link href="/assets/css/hub.css" rel="stylesheet"/>
+<link href="/favicon.ico" rel="icon" sizes="48x48"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"
+    }
+  }
+  </script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Email Design | João Alberto",
+  "description": "Portfólio de email design de João Alberto: emails HTML responsivos, com modo escuro e compatíveis com o Outlook, para CRM, lançamentos, transacionais e newsletters.",
+  "url": "https://joaoa.com.br/projetos/email-design/",
+  "inLanguage": "pt-BR",
+  "isPartOf": {
+    "@id": "https://joaoa.com.br/#website"
+  },
+  "author": {
+    "@id": "https://joaoa.com.br/#person"
+  },
+  "about": ["Email marketing", "Email HTML", "CRM"]
+}</script><link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><link href="/assets/css/igaming.css" rel="stylesheet"/><link href="/assets/css/email-design.css" rel="stylesheet"/><link rel="stylesheet" href="/assets/css/contact-socials.css"/>
+<script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script><script defer src="/assets/js/cookies.js"></script><link href="/assets/css/nav-projects.css" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="/assets/css/nav-projects.css" rel="stylesheet"/></noscript><link href="/assets/css/lang-menu.css" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="/assets/css/lang-menu.css" rel="stylesheet"/></noscript>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://joaoa.com.br/"}, {"@type": "ListItem", "position": 2, "name": "Projetos", "item": "https://joaoa.com.br/projetos/"}, {"@type": "ListItem", "position": 3, "name": "Email Design", "item": "https://joaoa.com.br/projetos/email-design/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+<!-- ============ 3D STAGE ============ -->
+<canvas aria-hidden="true" id="stage"></canvas>
+<!-- ============ HUD ============ -->
+<div aria-hidden="true" class="hud">
+<div class="hud-corner hud-bl mono">
+<span>REC — PE / BR</span>
+<span>8.05°S · 34.88°W</span>
+</div>
+<div class="hud-corner hud-br mono">
+<span>©2026</span>
+<span id="hudClock">00:00:00</span>
+</div>
+</div>
+<!-- ============ NAVBAR ============ -->
+<header class="site-nav" id="nav">
+<a aria-label="João Alberto — página inicial" class="nav-logo" href="/">João Alberto</a>
+<nav aria-label="Navegação principal" class="nav-menu" id="navMenu">
+<ul class="nav-links">
+<li><a href="/#topo">Início</a></li>
+<li><a href="/#sobre">Sobre</a></li>
+<li class="nav-proj"><a aria-current="page" href="/projetos/">Projetos</a><div class="proj-menu" aria-label="Categorias de projetos"><ul class="proj-menu-grid"><li><a class="proj-menu-card" href="/projetos/igaming/"><img alt="" decoding="async" height="320" loading="lazy" src="/assets/projetos/1-sm.webp" width="480"/><strong>iGaming</strong><span>CRM, gamificação e campanhas</span></a></li><li><a class="proj-menu-card" href="/projetos/identidade-visual/"><img alt="" decoding="async" height="320" loading="lazy" src="/assets/projetos/2-sm.webp" width="480"/><strong>Identidade Visual</strong><span>Marcas e aplicações · em breve</span></a></li><li><a class="proj-menu-card" href="/projetos/sites/"><img alt="" decoding="async" height="320" loading="lazy" src="/assets/projetos/3-sm.webp" width="480"/><strong>Sites</strong><span>Institucionais, landing pages e ferramentas</span></a></li><li><a class="proj-menu-card" href="/projetos/email-design/"><img alt="" decoding="async" height="320" loading="lazy" src="/assets/projetos/5-sm.webp" width="480"/><strong>Email Design</strong><span>Emails HTML para CRM e marketing</span></a></li><li><a class="proj-menu-card" href="/projetos/oab/"><img alt="" decoding="async" height="320" loading="lazy" src="/assets/projetos/4-sm.webp" width="480"/><strong>Campanha OAB/PE</strong><span>Campanha 360º · 2024</span></a></li><!--lang--><li class="nav-lang"><details class="lang-menu"><summary aria-label="Idioma: Português"><span aria-hidden="true" class="flag flag-br"></span>PT</summary><ul class="lang-list"><li><a href="/projetos/email-design/" hreflang="pt-BR" lang="pt-BR" aria-current="true"><span aria-hidden="true" class="flag flag-br"></span>Português</a></li><li><a href="/en/projects/email-design/" hreflang="en" lang="en"><span aria-hidden="true" class="flag flag-us"></span>English</a></li></ul></details></li><!--/lang--></ul><div class="proj-menu-foot"><a href="/projetos/">Ver todos os projetos</a></div></div></li>
+<li><a href="/criacao-de-sites/">Serviços</a></li>
+<li><a href="/blog/">Blog</a></li>
+</ul>
+<a class="nav-cta" href="/#contato">
+        Fale comigo
+        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</a>
+</nav>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menu" class="nav-mobile-toggle" id="navToggle" type="button">
+<span></span>
+<span></span>
+</button>
+</header>
+<main class="igaming-page ed-page" id="conteudo">
+<!-- ============ CABEÇALHO ============ -->
+<header class="hub-head">
+<a class="hub-back-link mono" href="/projetos/" aria-label="Voltar para a página de projetos">
+<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+<span>Voltar para projetos</span>
+</a>
+<div class="hub-label mono"><span></span>PORTFÓLIO</div>
+<h1 class="hub-title">Email Design<span class="dot">.</span></h1>
+<p class="hub-desc">Emails HTML que funcionam do Gmail ao Outlook, no modo claro e no escuro. Campanhas de CRM em produção e sequências para SaaS, e-commerce, finanças e conteúdo.</p>
+</header>
+<!-- ============ COMO EU FAÇO ============ -->
+<section class="work-section ed-skills" aria-labelledby="titulo-como">
+<h2 class="ed-skills-title mono" id="titulo-como">Em cada email</h2>
+<ul class="ed-skills-list">
+<li><strong>HTML para email</strong><span>Layout em tabelas e estilos inline, pensado para Gmail, Apple Mail e Outlook.</span></li>
+<li><strong>Outlook no Windows</strong><span>Botões em VML e ajustes condicionais para o Outlook desktop, que ignora boa parte do CSS.</span></li>
+<li><strong>Modo escuro</strong><span>Cores e logo próprios para o modo escuro, inclusive no Outlook.com e no app do Outlook.</span></li>
+<li><strong>Responsivo</strong><span>Colunas que empilham, imagens fluidas e textos ajustados para telas pequenas.</span></li>
+<li><strong>Acessibilidade</strong><span>Texto alternativo nas imagens, idioma declarado, pré-cabeçalho e leitura mesmo com as imagens bloqueadas.</span></li>
+<li><strong>CRM e ciclo de vida</strong><span>Boas-vindas, onboarding, carrinho abandonado, transacionais, segurança e newsletters.</span></li>
+</ul>
+</section>
+<!-- ============ FILTROS ============ -->
+<div class="gallery-nav ed-filters" role="group" aria-label="Filtrar emails por tipo">
+<button type="button" data-filter="all" aria-pressed="true">Todos</button>
+<button type="button" data-filter="marketing" aria-pressed="false">Marketing</button>
+<button type="button" data-filter="lifecycle" aria-pressed="false">Ciclo de vida</button>
+<button type="button" data-filter="transactional" aria-pressed="false">Transacional</button>
+</div>
+<!--emails-->
+<section class="work-section ed-group" id="crm" aria-labelledby="titulo-crm">
+<div class="s-head">
+<div class="s-head-left">
+<span class="s-num">// 01</span>
+<h2 class="s-title" id="titulo-crm">CRM em produção<span class="dot">.</span></h2>
+</div>
+<p class="ed-group-text">Campanhas da rotina de CRM de uma plataforma de entretenimento, disparadas para a base pelo Smartico: promoções, torneios, missões e o conteúdo do dia.</p>
+</div>
+<div class="ed-grid">
+<article class="ed-card" data-filter="marketing" data-html="/projetos/igaming/emails/email-01.html" data-light="/projetos/igaming/assets/emails/email-01.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Menino de Ouro: super odd no tênis&quot;"><img alt="Prévia do email &quot;Menino de Ouro: super odd no tênis&quot;" decoding="async" loading="lazy" src="/projetos/igaming/assets/emails/email-01.webp" width="600" height="900"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>CRM</span><span>Promoção</span></p>
+<h3 class="ed-subject">Menino de Ouro: super odd no tênis</h3>
+<a class="ed-html" href="/projetos/igaming/emails/email-01.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/igaming/emails/email-02.html" data-light="/projetos/igaming/assets/emails/email-02.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Le Bunny chegou: 10 giros grátis&quot;"><img alt="Prévia do email &quot;Le Bunny chegou: 10 giros grátis&quot;" decoding="async" loading="lazy" src="/projetos/igaming/assets/emails/email-02.webp" width="600" height="900"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>CRM</span><span>Promoção</span></p>
+<h3 class="ed-subject">Le Bunny chegou: 10 giros grátis</h3>
+<a class="ed-html" href="/projetos/igaming/emails/email-02.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/igaming/emails/email-03.html" data-light="/projetos/igaming/assets/emails/email-03.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Promoção relâmpago no Aviator&quot;"><img alt="Prévia do email &quot;Promoção relâmpago no Aviator&quot;" decoding="async" loading="lazy" src="/projetos/igaming/assets/emails/email-03.webp" width="600" height="900"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>CRM</span><span>Promoção</span></p>
+<h3 class="ed-subject">Promoção relâmpago no Aviator</h3>
+<a class="ed-html" href="/projetos/igaming/emails/email-03.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/igaming/emails/email-04.html" data-light="/projetos/igaming/assets/emails/email-04.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Hoje é dia de bola rolando&quot;"><img alt="Prévia do email &quot;Hoje é dia de bola rolando&quot;" decoding="async" loading="lazy" src="/projetos/igaming/assets/emails/email-04.webp" width="600" height="900"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>CRM</span><span>Conteúdo</span></p>
+<h3 class="ed-subject">Hoje é dia de bola rolando</h3>
+<a class="ed-html" href="/projetos/igaming/emails/email-04.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/igaming/emails/email-05.html" data-light="/projetos/igaming/assets/emails/email-05.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Torneio Liga das Nações&quot;"><img alt="Prévia do email &quot;Torneio Liga das Nações&quot;" decoding="async" loading="lazy" src="/projetos/igaming/assets/emails/email-05.webp" width="600" height="900"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>CRM</span><span>Gamificação</span></p>
+<h3 class="ed-subject">Torneio Liga das Nações</h3>
+<a class="ed-html" href="/projetos/igaming/emails/email-05.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/igaming/emails/email-06.html" data-light="/projetos/igaming/assets/emails/email-06.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Coelho de Ouro: 50% de cashback&quot;"><img alt="Prévia do email &quot;Coelho de Ouro: 50% de cashback&quot;" decoding="async" loading="lazy" src="/projetos/igaming/assets/emails/email-06.webp" width="600" height="900"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>CRM</span><span>Promoção</span></p>
+<h3 class="ed-subject">Coelho de Ouro: 50% de cashback</h3>
+<a class="ed-html" href="/projetos/igaming/emails/email-06.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/igaming/emails/email-07.html" data-light="/projetos/igaming/assets/emails/email-07.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Missão Aviator&quot;"><img alt="Prévia do email &quot;Missão Aviator&quot;" decoding="async" loading="lazy" src="/projetos/igaming/assets/emails/email-07.webp" width="600" height="900"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>CRM</span><span>Gamificação</span></p>
+<h3 class="ed-subject">Missão Aviator</h3>
+<a class="ed-html" href="/projetos/igaming/emails/email-07.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/igaming/emails/email-08.html" data-light="/projetos/igaming/assets/emails/email-08.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Giros extras na recarga&quot;"><img alt="Prévia do email &quot;Giros extras na recarga&quot;" decoding="async" loading="lazy" src="/projetos/igaming/assets/emails/email-08.webp" width="600" height="900"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>CRM</span><span>Promoção</span></p>
+<h3 class="ed-subject">Giros extras na recarga</h3>
+<a class="ed-html" href="/projetos/igaming/emails/email-08.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+</div>
+</section>
+<section class="work-section ed-group" id="saas" aria-labelledby="titulo-saas">
+<div class="s-head">
+<div class="s-head-left">
+<span class="s-num">// 02</span>
+<h2 class="s-title" id="titulo-saas">Produto e SaaS<span class="dot">.</span></h2>
+</div>
+<p class="ed-group-text">Lançamento de recurso, dica de uso, relatório semanal e emails de conta: a comunicação que acompanha a pessoa do cadastro ao uso diário.</p>
+</div>
+<div class="ed-grid">
+<article class="ed-card" data-filter="marketing" data-html="/projetos/email-design/emails/kompres-remover-fundo.html" data-light="/assets/email-design/previews/kompres-remover-fundo-pt-claro.webp" data-dark="/assets/email-design/previews/kompres-remover-fundo-pt-escuro.webp" data-mobile="/assets/email-design/previews/kompres-remover-fundo-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Novo no Kompres: remova o fundo de qualquer imagem&quot;"><img alt="Prévia do email &quot;Novo no Kompres: remova o fundo de qualquer imagem&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/kompres-remover-fundo-pt-claro.webp" width="960" height="1760"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Kompres</span><span>Lançamento</span></p>
+<h3 class="ed-subject">Novo no Kompres: remova o fundo de qualquer imagem</h3>
+<a class="ed-html" href="/projetos/email-design/emails/kompres-remover-fundo.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="lifecycle" data-html="/projetos/email-design/emails/kompres-tamanho-maximo.html" data-light="/assets/email-design/previews/kompres-tamanho-maximo-pt-claro.webp" data-dark="/assets/email-design/previews/kompres-tamanho-maximo-pt-escuro.webp" data-mobile="/assets/email-design/previews/kompres-tamanho-maximo-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Dica: imagens no peso exato que você precisa&quot;"><img alt="Prévia do email &quot;Dica: imagens no peso exato que você precisa&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/kompres-tamanho-maximo-pt-claro.webp" width="960" height="1962"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Kompres</span><span>Dica de uso</span></p>
+<h3 class="ed-subject">Dica: imagens no peso exato que você precisa</h3>
+<a class="ed-html" href="/projetos/email-design/emails/kompres-tamanho-maximo.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/email-design/emails/kompres-pdf.html" data-light="/assets/email-design/previews/kompres-pdf-pt-claro.webp" data-dark="/assets/email-design/previews/kompres-pdf-pt-escuro.webp" data-mobile="/assets/email-design/previews/kompres-pdf-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Tudo o que o Kompres faz com PDF&quot;"><img alt="Prévia do email &quot;Tudo o que o Kompres faz com PDF&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/kompres-pdf-pt-claro.webp" width="960" height="1898"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Kompres</span><span>Newsletter</span></p>
+<h3 class="ed-subject">Tudo o que o Kompres faz com PDF</h3>
+<a class="ed-html" href="/projetos/email-design/emails/kompres-pdf.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/email-design/emails/email-generator-modelos.html" data-light="/assets/email-design/previews/email-generator-modelos-pt-claro.webp" data-dark="/assets/email-design/previews/email-generator-modelos-pt-escuro.webp" data-mobile="/assets/email-design/previews/email-generator-modelos-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Oito modelos de email, um clique para trocar&quot;"><img alt="Prévia do email &quot;Oito modelos de email, um clique para trocar&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/email-generator-modelos-pt-claro.webp" width="960" height="1734"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Email Generator</span><span>Lançamento</span></p>
+<h3 class="ed-subject">Oito modelos de email, um clique para trocar</h3>
+<a class="ed-html" href="/projetos/email-design/emails/email-generator-modelos.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="lifecycle" data-html="/projetos/email-design/emails/email-generator-avisos.html" data-light="/assets/email-design/previews/email-generator-avisos-pt-claro.webp" data-dark="/assets/email-design/previews/email-generator-avisos-pt-escuro.webp" data-mobile="/assets/email-design/previews/email-generator-avisos-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Antes de enviar, o gerador confere o seu email&quot;"><img alt="Prévia do email &quot;Antes de enviar, o gerador confere o seu email&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/email-generator-avisos-pt-claro.webp" width="960" height="1694"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Email Generator</span><span>Dica de uso</span></p>
+<h3 class="ed-subject">Antes de enviar, o gerador confere o seu email</h3>
+<a class="ed-html" href="/projetos/email-design/emails/email-generator-avisos.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="lifecycle" data-html="/projetos/email-design/emails/trackik-resumo-semanal.html" data-light="/assets/email-design/previews/trackik-resumo-semanal-pt-claro.webp" data-dark="/assets/email-design/previews/trackik-resumo-semanal-pt-escuro.webp" data-mobile="/assets/email-design/previews/trackik-resumo-semanal-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Sua semana no Trackik: seusite.com.br&quot;"><img alt="Prévia do email &quot;Sua semana no Trackik: seusite.com.br&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/trackik-resumo-semanal-pt-claro.webp" width="960" height="2259"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Trackik</span><span>Relatório</span></p>
+<h3 class="ed-subject">Sua semana no Trackik: seusite.com.br</h3>
+<a class="ed-html" href="/projetos/email-design/emails/trackik-resumo-semanal.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/email-design/emails/trackik-mapa-de-calor.html" data-light="/assets/email-design/previews/trackik-mapa-de-calor-pt-claro.webp" data-dark="/assets/email-design/previews/trackik-mapa-de-calor-pt-escuro.webp" data-mobile="/assets/email-design/previews/trackik-mapa-de-calor-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Novo no Trackik: veja onde as pessoas clicam&quot;"><img alt="Prévia do email &quot;Novo no Trackik: veja onde as pessoas clicam&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/trackik-mapa-de-calor-pt-claro.webp" width="960" height="1634"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Trackik</span><span>Lançamento</span></p>
+<h3 class="ed-subject">Novo no Trackik: veja onde as pessoas clicam</h3>
+<a class="ed-html" href="/projetos/email-design/emails/trackik-mapa-de-calor.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="transactional" data-html="/projetos/email-design/emails/authik-confirmar-email.html" data-light="/assets/email-design/previews/authik-confirmar-email-pt-claro.webp" data-dark="/assets/email-design/previews/authik-confirmar-email-pt-escuro.webp" data-mobile="/assets/email-design/previews/authik-confirmar-email-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Confirme seu e-mail no Trackik&quot;"><img alt="Prévia do email &quot;Confirme seu e-mail no Trackik&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/authik-confirmar-email-pt-claro.webp" width="960" height="1350"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Authik</span><span>Transacional</span></p>
+<h3 class="ed-subject">Confirme seu e-mail no Trackik</h3>
+<a class="ed-html" href="/projetos/email-design/emails/authik-confirmar-email.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="transactional" data-html="/projetos/email-design/emails/authik-senha-alterada.html" data-light="/assets/email-design/previews/authik-senha-alterada-pt-claro.webp" data-dark="/assets/email-design/previews/authik-senha-alterada-pt-escuro.webp" data-mobile="/assets/email-design/previews/authik-senha-alterada-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;A senha da sua conta no Trackik foi alterada&quot;"><img alt="Prévia do email &quot;A senha da sua conta no Trackik foi alterada&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/authik-senha-alterada-pt-claro.webp" width="960" height="1350"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Authik</span><span>Segurança</span></p>
+<h3 class="ed-subject">A senha da sua conta no Trackik foi alterada</h3>
+<a class="ed-html" href="/projetos/email-design/emails/authik-senha-alterada.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="transactional" data-html="/projetos/email-design/emails/propostaria-proposta-assinada.html" data-light="/assets/email-design/previews/propostaria-proposta-assinada-pt-claro.webp" data-dark="/assets/email-design/previews/propostaria-proposta-assinada-pt-escuro.webp" data-mobile="/assets/email-design/previews/propostaria-proposta-assinada-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Marina Alves assinou a proposta &quot;Reforma do apartamento 802&quot;&quot;"><img alt="Prévia do email &quot;Marina Alves assinou a proposta &quot;Reforma do apartamento 802&quot;&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/propostaria-proposta-assinada-pt-claro.webp" width="960" height="1664"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Propostaria</span><span>Transacional</span></p>
+<h3 class="ed-subject">Marina Alves assinou a proposta "Reforma do apartamento 802"</h3>
+<a class="ed-html" href="/projetos/email-design/emails/propostaria-proposta-assinada.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="lifecycle" data-html="/projetos/email-design/emails/propostaria-primeira-proposta.html" data-light="/assets/email-design/previews/propostaria-primeira-proposta-pt-claro.webp" data-dark="/assets/email-design/previews/propostaria-primeira-proposta-pt-escuro.webp" data-mobile="/assets/email-design/previews/propostaria-primeira-proposta-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Sua primeira proposta pode sair hoje&quot;"><img alt="Prévia do email &quot;Sua primeira proposta pode sair hoje&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/propostaria-primeira-proposta-pt-claro.webp" width="960" height="1793"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Propostaria</span><span>Onboarding</span></p>
+<h3 class="ed-subject">Sua primeira proposta pode sair hoje</h3>
+<a class="ed-html" href="/projetos/email-design/emails/propostaria-primeira-proposta.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+</div>
+</section>
+<section class="work-section ed-group" id="ecommerce" aria-labelledby="titulo-ecommerce">
+<div class="s-head">
+<div class="s-head-left">
+<span class="s-num">// 03</span>
+<h2 class="s-title" id="titulo-ecommerce">E-commerce<span class="dot">.</span></h2>
+</div>
+<p class="ed-group-text">Carrinho abandonado, pedido a caminho, coleção nova e liquidação: os momentos em que o email mais pesa na venda.</p>
+</div>
+<div class="ed-grid">
+<article class="ed-card" data-filter="lifecycle" data-html="/projetos/email-design/emails/mare-carrinho.html" data-light="/assets/email-design/previews/mare-carrinho-pt-claro.webp" data-dark="/assets/email-design/previews/mare-carrinho-pt-escuro.webp" data-mobile="/assets/email-design/previews/mare-carrinho-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Seu café ficou esperando&quot;"><img alt="Prévia do email &quot;Seu café ficou esperando&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/mare-carrinho-pt-claro.webp" width="960" height="1709"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Maré Café</span><span>Carrinho abandonado</span></p>
+<h3 class="ed-subject">Seu café ficou esperando</h3>
+<a class="ed-html" href="/projetos/email-design/emails/mare-carrinho.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="transactional" data-html="/projetos/email-design/emails/mare-pedido-enviado.html" data-light="/assets/email-design/previews/mare-pedido-enviado-pt-claro.webp" data-dark="/assets/email-design/previews/mare-pedido-enviado-pt-escuro.webp" data-mobile="/assets/email-design/previews/mare-pedido-enviado-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Seu pedido #4821 saiu para entrega&quot;"><img alt="Prévia do email &quot;Seu pedido #4821 saiu para entrega&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/mare-pedido-enviado-pt-claro.webp" width="960" height="1904"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Maré Café</span><span>Transacional</span></p>
+<h3 class="ed-subject">Seu pedido #4821 saiu para entrega</h3>
+<a class="ed-html" href="/projetos/email-design/emails/mare-pedido-enviado.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/email-design/emails/lume-colecao.html" data-light="/assets/email-design/previews/lume-colecao-pt-claro.webp" data-dark="/assets/email-design/previews/lume-colecao-pt-escuro.webp" data-mobile="/assets/email-design/previews/lume-colecao-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Outono no Atelier Lume: a coleção Terra chegou&quot;"><img alt="Prévia do email &quot;Outono no Atelier Lume: a coleção Terra chegou&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/lume-colecao-pt-claro.webp" width="960" height="1577"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Atelier Lume</span><span>Lançamento</span></p>
+<h3 class="ed-subject">Outono no Atelier Lume: a coleção Terra chegou</h3>
+<a class="ed-html" href="/projetos/email-design/emails/lume-colecao.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/email-design/emails/lume-sale.html" data-light="/assets/email-design/previews/lume-sale-pt-claro.webp" data-dark="/assets/email-design/previews/lume-sale-pt-escuro.webp" data-mobile="/assets/email-design/previews/lume-sale-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Só para quem assina: 30% em toda a coleção de verão&quot;"><img alt="Prévia do email &quot;Só para quem assina: 30% em toda a coleção de verão&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/lume-sale-pt-claro.webp" width="960" height="1608"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Atelier Lume</span><span>Promoção</span></p>
+<h3 class="ed-subject">Só para quem assina: 30% em toda a coleção de verão</h3>
+<a class="ed-html" href="/projetos/email-design/emails/lume-sale.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+</div>
+</section>
+<section class="work-section ed-group" id="finance" aria-labelledby="titulo-finance">
+<div class="s-head">
+<div class="s-head-left">
+<span class="s-num">// 04</span>
+<h2 class="s-title" id="titulo-finance">Finanças e seguros<span class="dot">.</span></h2>
+</div>
+<p class="ed-group-text">Resumo do mês, alerta de acesso, renovação e boas-vindas. Assuntos em que clareza e confiança vêm antes de qualquer oferta.</p>
+</div>
+<div class="ed-grid">
+<article class="ed-card" data-filter="lifecycle" data-html="/projetos/email-design/emails/nimbus-resumo-mensal.html" data-light="/assets/email-design/previews/nimbus-resumo-mensal-pt-claro.webp" data-dark="/assets/email-design/previews/nimbus-resumo-mensal-pt-escuro.webp" data-mobile="/assets/email-design/previews/nimbus-resumo-mensal-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Seu outubro na Nimbus: você guardou R$ 820&quot;"><img alt="Prévia do email &quot;Seu outubro na Nimbus: você guardou R$ 820&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/nimbus-resumo-mensal-pt-claro.webp" width="960" height="1886"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Nimbus</span><span>Relatório</span></p>
+<h3 class="ed-subject">Seu outubro na Nimbus: você guardou R$ 820</h3>
+<a class="ed-html" href="/projetos/email-design/emails/nimbus-resumo-mensal.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="transactional" data-html="/projetos/email-design/emails/nimbus-novo-acesso.html" data-light="/assets/email-design/previews/nimbus-novo-acesso-pt-claro.webp" data-dark="/assets/email-design/previews/nimbus-novo-acesso-pt-escuro.webp" data-mobile="/assets/email-design/previews/nimbus-novo-acesso-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Novo acesso à sua conta Nimbus&quot;"><img alt="Prévia do email &quot;Novo acesso à sua conta Nimbus&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/nimbus-novo-acesso-pt-claro.webp" width="960" height="1404"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Nimbus</span><span>Segurança</span></p>
+<h3 class="ed-subject">Novo acesso à sua conta Nimbus</h3>
+<a class="ed-html" href="/projetos/email-design/emails/nimbus-novo-acesso.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="lifecycle" data-html="/projetos/email-design/emails/ms-corretora-renovacao.html" data-light="/assets/email-design/previews/ms-corretora-renovacao-pt-claro.webp" data-dark="/assets/email-design/previews/ms-corretora-renovacao-pt-escuro.webp" data-mobile="/assets/email-design/previews/ms-corretora-renovacao-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Carlos, seu seguro auto vence em 30 dias&quot;"><img alt="Prévia do email &quot;Carlos, seu seguro auto vence em 30 dias&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/ms-corretora-renovacao-pt-claro.webp" width="960" height="1709"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>MS Corretora</span><span>Lembrete</span></p>
+<h3 class="ed-subject">Carlos, seu seguro auto vence em 30 dias</h3>
+<a class="ed-html" href="/projetos/email-design/emails/ms-corretora-renovacao.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="lifecycle" data-html="/projetos/email-design/emails/ms-corretora-boas-vindas.html" data-light="/assets/email-design/previews/ms-corretora-boas-vindas-pt-claro.webp" data-dark="/assets/email-design/previews/ms-corretora-boas-vindas-pt-escuro.webp" data-mobile="/assets/email-design/previews/ms-corretora-boas-vindas-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Bem-vindo à MS Corretora&quot;"><img alt="Prévia do email &quot;Bem-vindo à MS Corretora&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/ms-corretora-boas-vindas-pt-claro.webp" width="960" height="1818"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>MS Corretora</span><span>Boas-vindas</span></p>
+<h3 class="ed-subject">Bem-vindo à MS Corretora</h3>
+<a class="ed-html" href="/projetos/email-design/emails/ms-corretora-boas-vindas.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+</div>
+</section>
+<section class="work-section ed-group" id="content" aria-labelledby="titulo-content">
+<div class="s-head">
+<div class="s-head-left">
+<span class="s-num">// 05</span>
+<h2 class="s-title" id="titulo-content">Conteúdo e newsletter<span class="dot">.</span></h2>
+</div>
+<p class="ed-group-text">Curadoria da semana e guias que levam o leitor de volta ao site, com hierarquia clara entre destaque e lista.</p>
+</div>
+<div class="ed-grid">
+<article class="ed-card" data-filter="marketing" data-html="/projetos/email-design/emails/novo-save-save-da-semana.html" data-light="/assets/email-design/previews/novo-save-save-da-semana-pt-claro.webp" data-dark="/assets/email-design/previews/novo-save-save-da-semana-pt-escuro.webp" data-mobile="/assets/email-design/previews/novo-save-save-da-semana-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Save da semana: GTA 6, Enshrouded e dinheiro no GTA Online&quot;"><img alt="Prévia do email &quot;Save da semana: GTA 6, Enshrouded e dinheiro no GTA Online&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/novo-save-save-da-semana-pt-claro.webp" width="960" height="1770"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Novo Save</span><span>Newsletter</span></p>
+<h3 class="ed-subject">Save da semana: GTA 6, Enshrouded e dinheiro no GTA Online</h3>
+<a class="ed-html" href="/projetos/email-design/emails/novo-save-save-da-semana.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="ed-card" data-filter="marketing" data-html="/projetos/email-design/emails/novo-save-extraction-shooters.html" data-light="/assets/email-design/previews/novo-save-extraction-shooters-pt-claro.webp" data-dark="/assets/email-design/previews/novo-save-extraction-shooters-pt-escuro.webp" data-mobile="/assets/email-design/previews/novo-save-extraction-shooters-pt-celular.webp">
+<button class="ed-thumb" type="button" aria-label="Abrir a prévia do email &quot;Quer jogar extraction shooter sem grupo? Comece por aqui&quot;"><img alt="Prévia do email &quot;Quer jogar extraction shooter sem grupo? Comece por aqui&quot;" decoding="async" loading="lazy" src="/assets/email-design/previews/novo-save-extraction-shooters-pt-claro.webp" width="960" height="1704"/></button>
+<div class="ed-meta">
+<p class="ed-kicker mono"><span>Novo Save</span><span>Conteúdo</span></p>
+<h3 class="ed-subject">Quer jogar extraction shooter sem grupo? Comece por aqui</h3>
+<a class="ed-html" href="/projetos/email-design/emails/novo-save-extraction-shooters.html" rel="noopener" target="_blank">Ver o HTML <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+</div>
+</section>
+<!--/emails-->
+<!-- ============ VISUALIZADOR ============ -->
+<dialog class="ed-viewer" aria-labelledby="edViewerTitle">
+<header class="ed-viewer-head">
+<div class="ed-viewer-info">
+<p class="ed-viewer-kicker mono"></p>
+<p class="ed-viewer-title" id="edViewerTitle"></p>
+</div>
+<div class="ed-viewer-tabs" role="group" aria-label="Versão do email">
+<button type="button" data-variant="light" aria-pressed="true"><i aria-hidden="true" class="fa-solid fa-sun"></i>Claro</button>
+<button type="button" data-variant="dark" aria-pressed="false"><i aria-hidden="true" class="fa-solid fa-moon"></i>Escuro</button>
+<button type="button" data-variant="mobile" aria-pressed="false"><svg aria-hidden="true" width="12" height="14" viewBox="0 0 12 14"><rect x="1.5" y=".75" width="9" height="12.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 10.75h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Celular</button>
+</div>
+<a class="ed-viewer-html" href="#" rel="noopener" target="_blank"><i aria-hidden="true" class="fa-solid fa-code"></i><span class="ed-viewer-html-label">Ver o HTML</span></a>
+<button class="ed-viewer-close" type="button" aria-label="Fechar a prévia"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+</header>
+<div class="ed-viewer-body" data-lenis-prevent=""><img alt="" decoding="async" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div>
+</dialog>
+<!-- ============ VOLTAR ============ -->
+<section aria-label="Navegação de retorno" class="hub-back-section">
+<a class="btn-sweep btn-sweep-back" href="/projetos/">
+<span>Voltar aos projetos</span>
+<span aria-hidden="true" class="sweep-ic"><i class="fa-solid fa-arrow-left"></i></span>
+</a>
+</section>
+<!-- ============ CTA ============ -->
+<section aria-labelledby="titulo-contato" class="hub-cta">
+<h2 id="titulo-contato">Vamos trabalhar juntos<span class="dot">?</span></h2>
+<a class="btn" href="https://wa.me/5581988780144?text=Oi%20Jo%C3%A3o!" rel="noopener" target="_blank">
+<span>Entre em contato</span>
+<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</a>
+<nav aria-label="Redes sociais" class="contact-networks">
+  <div class="contact-social-item"><a aria-label="GitHub" href="https://github.com/joaoa21" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-github"></i></a><span aria-hidden="true" class="contact-social-tooltip">GitHub</span></div>
+  <div class="contact-social-item"><a aria-label="Instagram" href="https://www.instagram.com/joaoalbertoms2/" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-instagram"></i></a><span aria-hidden="true" class="contact-social-tooltip">Instagram</span></div>
+  <div class="contact-social-item"><a aria-label="LinkedIn" href="https://www.linkedin.com/in/joaoa210/" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i></a><span aria-hidden="true" class="contact-social-tooltip">LinkedIn</span></div>
+</nav>
+</section>
+</main>
+<!-- ============ FOOTER ============ -->
+<footer>
+<div class="footer-info">
+<p>João Alberto © 2026 — Design digital &amp; web</p>
+<p class="mono">RECIFE — PE / BRASIL</p>
+</div>
+<a aria-label="Voltar ao topo" class="to-top" href="#conteudo">
+<i aria-hidden="true" class="fa-solid fa-arrow-up"></i>
+</a>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+<script src="/assets/js/hub.js" type="module"></script>
+<script src="/assets/js/email-design.js" defer></script>
+<script src="/assets/js/igaming-motion.js" type="module"></script>
+<script src="/assets/js/lang-menu.js" defer></script>
+</body>
+</html>

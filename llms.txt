@@ -20,6 +20,7 @@ Contato: WhatsApp +55 81 98878-0144 · joaoams6@gmail.com · LinkedIn https://ww
 - [Clube de Ouro](https://joaoa.com.br/projetos/sites/clube-de-ouro/): programa de fidelidade com dez níveis, leaderboard e loja de recompensas, desenhado e programado do layout ao código.
 - [Kompres](https://joaoa.com.br/projetos/sites/kompres/): site para comprimir, converter e redimensionar imagens em lote, remover fundos e organizar PDFs direto no navegador.
 - [Email Generator](https://joaoa.com.br/projetos/sites/email-generator/): ferramentas gratuitas para montar emails HTML compatíveis com Gmail e Outlook e gerar links de WhatsApp com mensagem pronta.
+- [Email Design](https://joaoa.com.br/projetos/email-design/): emails HTML responsivos, com modo escuro e compatíveis com o Outlook: campanhas de CRM em produção e sequências para SaaS, e-commerce, finanças e seguros e newsletters. Versão em inglês: https://joaoa.com.br/en/projects/email-design/
 - [Campanha OAB/PE](https://joaoa.com.br/projetos/oab/): identidade visual e comunicação 360º para campanha à presidência da OAB Pernambuco.
 - [CRM e gamificação](https://joaoa.com.br/projetos/igaming/): email marketing, banners, pop-ups, widgets e campanhas digitais.
 

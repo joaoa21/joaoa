@@ -13,6 +13,7 @@ export const URLS = {
   '/projetos/sites/clube-de-ouro/': '/en/projects/websites/clube-de-ouro/',
   '/projetos/sites/email-generator/': '/en/projects/websites/email-generator/',
   '/projetos/identidade-visual/': '/en/projects/brand-identity/',
+  '/projetos/email-design/': '/en/projects/email-design/',
   '/criacao-de-sites/': '/en/web-design/',
 };
 
@@ -37,6 +38,13 @@ export const COMMON = {
   'CRM, gamificação e campanhas': 'CRM, gamification and campaigns',
   'Marcas e aplicações · em breve': 'Brands and applications · coming soon',
   'Institucionais, landing pages e ferramentas': 'Business sites, landing pages and tools',
+  'Emails HTML para CRM e marketing': 'HTML emails for CRM and marketing',
+  // nomes das categorias no menu de projetos
+  'Identidade Visual': 'Brand Identity',
+  'Sites': 'Websites',
+  'Campanha OAB/PE': 'OAB/PE Campaign',
+  'Prévia de emails HTML no modo claro e no escuro': 'Preview of HTML emails in light and dark mode',
+  'CRM · LANÇAMENTOS · TRANSACIONAIS': 'CRM · LAUNCHES · TRANSACTIONAL',
   'Campanha 360º · 2024': '360º campaign · 2024',
   'Ver todos os projetos': 'View all projects',
   'Categorias de projetos': 'Project categories',

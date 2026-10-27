@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/',
   enUrl: '/en/projects/',
   dict: {
+    'Emails HTML responsivos, com modo escuro, para CRM, lançamentos e transacionais.': 'Responsive HTML emails with dark mode, for CRM, launches and transactional messages.',
     'Projetos de Design, Web e iGaming | João Alberto': 'Design, Web and iGaming Projects | João Alberto',
     'Trabalhos selecionados em design e web.': 'Selected work in design and web.',
     'Banners, pop-ups, widgets, emails e gamificação para CRM.': 'Banners, pop-ups, widgets, emails and gamification for CRM.',

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Arte dos emails do Trackik</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root { --violet: #5850ec; --violet2: #7c7bff; --ink: #09090c; --card: #141418; --line: #24242c; --soft: #a1a1b0; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #888; padding: 40px; display: grid; gap: 40px; justify-content: start; }
+  section { position: relative; overflow: hidden; }
+  .logo { display: flex; align-items: center; gap: 12px; width: max-content; }
+  .logo svg { width: 46px; height: 46px; }
+  .logo span { font: 700 32px/1 'Geist', sans-serif; letter-spacing: -.03em; color: #fff; }
+
+  /* gráfico de visitas da semana */
+  .chart { width: 600px; height: 320px; background: var(--ink); padding: 40px 44px 36px; }
+  .chart .grid { position: absolute; inset: 40px 44px 64px; background: repeating-linear-gradient(#24242c 0 1px, transparent 1px 52px); }
+  .bars { position: absolute; left: 60px; right: 60px; bottom: 64px; height: 200px; display: flex; align-items: flex-end; gap: 22px; }
+  .bars i { flex: 1; border-radius: 8px 8px 0 0; background: linear-gradient(180deg, var(--violet2), var(--violet)); }
+  .bars i.dim { background: #2c2b52; }
+  .days { position: absolute; left: 60px; right: 60px; bottom: 30px; display: flex; gap: 22px; }
+  .days b { flex: 1; height: 8px; border-radius: 4px; background: #24242c; }
+  .live { position: absolute; right: 44px; top: 30px; display: flex; gap: 8px; align-items: center; padding: 8px 12px; border-radius: 999px; background: #1b1b22; }
+  .live i { width: 10px; height: 10px; border-radius: 50%; background: #3ddc84; box-shadow: 0 0 0 4px rgba(61,220,132,.2); }
+  .live b { width: 50px; height: 8px; border-radius: 4px; background: #3a3a46; }
+
+  /* mapa de calor sobre uma página */
+  .heat { width: 600px; height: 320px; background: #eceaf9; }
+  .page { position: absolute; left: 90px; top: 34px; width: 420px; height: 320px; border-radius: 12px 12px 0 0; background: #fff; box-shadow: 0 20px 50px rgba(40,30,120,.18); padding: 22px; }
+  .page .nav { display: flex; gap: 10px; margin-bottom: 26px; } .page .nav i { width: 46px; height: 9px; border-radius: 5px; background: #e4e3ef; } .page .nav i:first-child { width: 80px; background: #c9c7e8; }
+  .page .h { width: 70%; height: 22px; border-radius: 6px; background: #1d1d26; margin-bottom: 12px; }
+  .page .p { width: 85%; height: 9px; border-radius: 5px; background: #e4e3ef; margin-bottom: 8px; }
+  .page .cta { width: 130px; height: 36px; border-radius: 8px; background: var(--violet); margin: 18px 0 22px; }
+  .page .cards { display: flex; gap: 12px; } .page .cards i { flex: 1; height: 90px; border-radius: 10px; background: #f1f0f8; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(14px); mix-blend-mode: multiply; }
+</style></head><body>
+
+<section data-art="logo-dark" data-w="auto" data-h="50" class="logo">
+  <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#5850ec"/><path d="M8 21 L13 15 L17.5 18.5 L24 10" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span>Trackik</span>
+</section>
+
+<section data-art="grafico" data-w="600" data-h="320" class="chart">
+  <div class="grid"></div>
+  <div class="live"><i></i><b></b></div>
+  <div class="bars"><i class="dim" style="height:46%"></i><i class="dim" style="height:58%"></i><i class="dim" style="height:52%"></i><i class="dim" style="height:70%"></i><i class="dim" style="height:64%"></i><i style="height:82%"></i><i style="height:96%"></i></div>
+  <div class="days"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+</section>
+
+<section data-art="mapa" data-w="600" data-h="320" class="heat">
+  <div class="page">
+    <div class="nav"><i></i><i></i><i></i><i></i></div>
+    <div class="h"></div><div class="p"></div><div class="p" style="width:65%"></div>
+    <div class="cta"></div>
+    <div class="cards"><i></i><i></i><i></i></div>
+  </div>
+  <div class="blob" style="left:118px;top:150px;width:150px;height:110px;background:radial-gradient(circle,#ff3b3b 0,#ffb020 45%,rgba(255,240,0,.0) 72%);"></div>
+  <div class="blob" style="left:300px;top:60px;width:110px;height:70px;background:radial-gradient(circle,#ffb020 0,rgba(255,240,0,.0) 70%);"></div>
+  <div class="blob" style="left:330px;top:230px;width:120px;height:90px;background:radial-gradient(circle,#ff7a1a 0,#ffd93b 40%,rgba(255,240,0,0) 72%);"></div>
+  <div class="blob" style="left:150px;top:240px;width:90px;height:70px;background:radial-gradient(circle,#ffd93b 0,rgba(255,240,0,0) 70%);"></div>
+</section>
+</body></html>

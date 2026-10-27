@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Arte dos emails do Atelier Lume (marca fictícia)</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&display=swap" rel="stylesheet">
+<style>
+  :root { --bone: #f3efe8; --ink: #141414; --clay: #b9785a; --sage: #8a9a7b; --rose: #e8cfc4; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #888; padding: 40px; display: grid; gap: 40px; justify-content: start; }
+  section { position: relative; overflow: hidden; }
+  .logo { width: max-content; padding: 0 4px; }
+  .logo span { font: 500 34px/1 'Bodoni Moda', serif; letter-spacing: .32em; color: var(--ink); text-transform: uppercase; }
+  .logo.dark span { color: var(--bone); }
+  .art { width: 600px; height: 320px; }
+  .sq { width: 160px; height: 160px; }
+</style></head><body>
+
+<section data-art="logo" data-w="auto" data-h="40" class="logo"><span>Atelier Lume</span></section>
+<section data-art="logo-dark" data-w="auto" data-h="40" class="logo dark"><span>Atelier Lume</span></section>
+
+<!-- nova coleção: três peças penduradas em tons de outono -->
+<section data-art="colecao" data-w="600" data-h="320" class="art" style="background:#e9e2d6;">
+  <svg viewBox="0 0 600 320" style="position:absolute;inset:0">
+    <path d="M60 40h480" stroke="#141414" stroke-width="3"/>
+    <g transform="translate(150 40)"><path d="M0 0v18" stroke="#141414" stroke-width="2"/><path d="M-50 40c20-14 30-22 50-22s30 8 50 22l18 50-26 6v180H-58V96l-26-6z" fill="#b9785a"/></g>
+    <g transform="translate(300 40)"><path d="M0 0v18" stroke="#141414" stroke-width="2"/><path d="M-44 40c16-12 26-22 44-22s28 10 44 22l10 40-18 4 14 196H-48l14-196-18-4z" fill="#141414"/><path d="M-10 22l10 30 10-30" stroke="#e9e2d6" stroke-width="3" fill="none"/></g>
+    <g transform="translate(450 40)"><path d="M0 0v18" stroke="#141414" stroke-width="2"/><path d="M-50 40c20-14 30-22 50-22s30 8 50 22l18 50-26 6v150H-58V96l-26-6z" fill="#8a9a7b"/></g>
+  </svg>
+</section>
+
+<!-- produtos (miniaturas quadradas) -->
+<section data-art="casaco" data-w="160" data-h="160" class="sq" style="background:#e9e2d6;">
+  <svg viewBox="0 0 160 160" style="position:absolute;inset:0"><path d="M80 18v10" stroke="#141414" stroke-width="2"/><path d="M50 38c12-8 18-12 30-12s18 4 30 12l10 30-16 4v72H56V72l-16-4z" fill="#b9785a"/></svg>
+</section>
+<section data-art="vestido" data-w="160" data-h="160" class="sq" style="background:#e8cfc4;">
+  <svg viewBox="0 0 160 160" style="position:absolute;inset:0"><path d="M80 18v10" stroke="#141414" stroke-width="2"/><path d="M56 38c10-8 16-12 24-12s14 4 24 12l6 24-12 3 14 81H48l14-81-12-3z" fill="#141414"/></svg>
+</section>
+
+<!-- liquidação: etiqueta -->
+<section data-art="sale" data-w="600" data-h="320" class="art" style="background:#141414;">
+  <svg viewBox="0 0 600 320" style="position:absolute;inset:0">
+    <g transform="rotate(-8 300 160)"><path d="M190 90h220l40 70-40 70H190z" fill="#f3efe8"/><circle cx="420" cy="160" r="12" fill="#141414"/><path d="M432 160c40 0 70-30 110-30" stroke="#b9785a" stroke-width="4" fill="none"/>
+    <text x="300" y="186" text-anchor="middle" font-family="Bodoni Moda, serif" font-size="76" font-weight="600" fill="#141414">30%</text></g>
+  </svg>
+</section>
+</body></html>

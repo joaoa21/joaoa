@@ -940,10 +940,10 @@ footer {
 
 
 /* ============ GRID COMPACTO (página Projetos) ============
-   Quatro cards numa fileira no desktop: cabem numa tela só e as imagens
+   Cinco cards numa fileira no desktop: cabem numa tela só e as imagens
    (720px) ficam nítidas também em telas retina. */
 .hub-grid--compact {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
@@ -986,6 +986,7 @@ footer {
 
 @media (max-width: 1100px) {
   .hub-grid--compact {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
   }
 

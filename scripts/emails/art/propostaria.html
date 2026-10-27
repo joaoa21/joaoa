@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Arte dos emails da Propostaria (conceito)</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Instrument+Sans:wght@500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+  :root { --folha: #fcfcfa; --mesa: #e9eae6; --caneta: #2440c8; --caneta-escura: #1a2f99; --marca: #f5d547; --carimbo: #6b3fa0; --grafite: #5e6371; --pauta: #d5d9e2; --tinta: #1a1e2b; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #888; padding: 40px; display: grid; gap: 40px; justify-content: start; }
+  section { position: relative; overflow: hidden; }
+  .logo { width: max-content; padding: 4px 6px 14px; }
+  .logo span { position: relative; font: 500 40px/1 'Newsreader', Georgia, serif; letter-spacing: -.01em; color: var(--tinta); }
+  .logo span::after { content: ""; position: absolute; left: 2%; right: 8%; bottom: -6px; height: 10px; border-bottom: 2.5px solid var(--caneta); border-radius: 0 0 60% 40% / 0 0 100% 100%; transform: rotate(-1.5deg); }
+  .logo.dark span { color: #f2f3f7; } .logo.dark span::after { border-color: #8ea0ff; }
+
+  /* proposta assinada */
+  .signed { width: 600px; height: 320px; background: var(--mesa); }
+  .doc { position: absolute; left: 150px; top: 34px; width: 300px; height: 340px; background: var(--folha); border-radius: 6px; box-shadow: 0 18px 40px rgba(26,30,43,.16); padding: 26px 28px; transform: rotate(-2deg); }
+  .doc i { display: block; height: 8px; border-radius: 4px; background: var(--pauta); margin-bottom: 9px; }
+  .doc i.t { width: 60%; height: 14px; background: var(--tinta); margin-bottom: 18px; }
+  .doc i.hl { background: var(--marca); width: 70%; }
+  .doc .line { position: absolute; left: 28px; right: 28px; top: 214px; border-top: 1.5px solid var(--grafite); }
+  .doc .sig { position: absolute; left: 40px; top: 160px; font: 54px/1 'Mrs Saint Delafield', cursive; color: var(--caneta-escura); transform: rotate(-6deg); }
+  .stamp { position: absolute; right: 70px; top: 150px; width: 128px; height: 128px; border-radius: 50%; border: 4px solid var(--carimbo); display: grid; place-items: center; transform: rotate(14deg); opacity: .9; }
+  .stamp::before { content: ""; position: absolute; inset: 8px; border-radius: 50%; border: 1.5px solid var(--carimbo); }
+  .stamp svg { width: 56px; height: 56px; }
+
+  /* primeira proposta: três etapas */
+  .flow { width: 600px; height: 320px; background: var(--folha); display: flex; align-items: center; justify-content: center; gap: 26px; }
+  .card { width: 140px; height: 180px; border-radius: 10px; background: #fff; border: 1.5px solid var(--pauta); padding: 18px 16px; display: grid; align-content: start; gap: 9px; box-shadow: 0 10px 24px rgba(26,30,43,.08); }
+  .card .n { width: 34px; height: 34px; border-radius: 50%; background: var(--caneta); color: #fff; display: grid; place-items: center; font: 600 16px/1 'Instrument Sans', sans-serif; margin-bottom: 8px; }
+  .card i { display: block; height: 8px; border-radius: 4px; background: var(--pauta); }
+  .card i.hl { background: var(--marca); width: 75%; }
+  .card .sig { font: 34px/1 'Mrs Saint Delafield', cursive; color: var(--caneta-escura); margin-top: 6px; }
+  .arrow { width: 26px; height: 2px; background: var(--grafite); position: relative; } .arrow::after { content: ""; position: absolute; right: -2px; top: -5px; width: 10px; height: 10px; border-top: 2px solid var(--grafite); border-right: 2px solid var(--grafite); transform: rotate(45deg); }
+</style></head><body>
+
+<section data-art="logo" data-w="auto" data-h="60" class="logo"><span>Propostaria</span></section>
+<section data-art="logo-dark" data-w="auto" data-h="60" class="logo dark"><span>Propostaria</span></section>
+
+<section data-art="assinada" data-w="600" data-h="320" class="signed">
+  <div class="doc">
+    <i class="t"></i><i></i><i class="hl"></i><i></i><i style="width:80%"></i><i></i><i style="width:55%"></i>
+    <div class="sig">Marina Alves</div><div class="line"></div>
+  </div>
+  <div class="stamp"><svg viewBox="0 0 24 24" fill="none" stroke="#6b3fa0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+</section>
+
+<section data-art="etapas" data-w="600" data-h="320" class="flow">
+  <div class="card"><div class="n">1</div><i class="hl"></i><i></i><i style="width:60%"></i><i></i></div>
+  <div class="arrow"></div>
+  <div class="card"><div class="n">2</div><i></i><i class="hl"></i><i style="width:70%"></i><i></i></div>
+  <div class="arrow"></div>
+  <div class="card"><div class="n">3</div><i></i><i style="width:60%"></i><div class="sig">Marina</div></div>
+</section>
+</body></html>

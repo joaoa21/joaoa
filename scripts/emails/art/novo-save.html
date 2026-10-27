@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Arte dos emails do Novo Save</title>
+<style>
+  :root { --lime: #b7f34a; --ink: #111111; --canvas: #f5f3ed; --moss: #2e3a2e; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #888; padding: 40px; display: grid; gap: 40px; justify-content: start; }
+  section { position: relative; overflow: hidden; }
+  .logo { width: max-content; } .logo img { display: block; height: 48px; }
+
+  /* save da semana: controle em pixel art sobre grade */
+  .week { width: 600px; height: 320px; background: var(--ink);
+    background-image: linear-gradient(rgba(183,243,74,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(183,243,74,.08) 1px, transparent 1px);
+    background-size: 20px 20px; }
+  .pad { position: absolute; left: 150px; top: 80px; width: 300px; height: 160px; }
+  .px { position: absolute; width: 20px; height: 20px; }
+  .bar { position: absolute; left: 0; right: 0; height: 8px; background: var(--lime); }
+  .hud { position: absolute; left: 24px; top: 22px; display: flex; gap: 8px; }
+  .hud i { width: 16px; height: 16px; background: var(--lime); } .hud i.e { background: transparent; outline: 3px solid var(--lime); outline-offset: -3px; }
+  .xp { position: absolute; right: 24px; top: 26px; width: 160px; height: 12px; outline: 3px solid var(--lime); }
+  .xp i { position: absolute; left: 0; top: 0; bottom: 0; width: 68%; background: var(--lime); }
+
+  /* guia: mapa com rota até a extração */
+  .map { width: 600px; height: 320px; background: var(--moss);
+    background-image: radial-gradient(circle at 20% 30%, rgba(183,243,74,.10) 0 60px, transparent 61px), radial-gradient(circle at 75% 70%, rgba(183,243,74,.10) 0 80px, transparent 81px),
+      linear-gradient(rgba(245,243,237,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(245,243,237,.06) 1px, transparent 1px);
+    background-size: auto, auto, 40px 40px, 40px 40px; }
+  .map svg { position: absolute; inset: 0; width: 600px; height: 320px; }
+</style></head><body>
+
+<section data-art="logo" data-w="auto" data-h="48" class="logo"><img src="file:///C:/dev/novo-save/public/brand/logotipo-horizontal-claro.svg" alt=""></section>
+<section data-art="logo-dark" data-w="auto" data-h="48" class="logo"><img src="file:///C:/dev/novo-save/public/brand/logotipo-horizontal-escuro.svg" alt=""></section>
+
+<section data-art="semana" data-w="600" data-h="320" class="week">
+  <div class="hud"><i></i><i></i><i></i><i class="e"></i><i class="e"></i></div>
+  <div class="xp"><i></i></div>
+  <svg class="pad" viewBox="0 0 30 16" shape-rendering="crispEdges">
+    <!-- corpo do controle em blocos de 1 unidade (= 10px) -->
+    <path fill="#b7f34a" d="M4 2h22v1h2v2h1v6h-1v2h-2v1h-4v-1h-2v-2h-8v2h-2v1H4v-1H2v-2H1V5h1V3h2z"/>
+    <path fill="#111111" d="M6 5h2v2h2v2H8v2H6V9H4V7h2zM22 5h2v2h-2zM24 7h2v2h-2zM20 7h2v2h-2zM22 9h2v2h-2zM13 6h4v1h-4z"/>
+  </svg>
+  <div class="bar" style="bottom:0"></div>
+</section>
+
+<section data-art="guia" data-w="600" data-h="320" class="map">
+  <svg viewBox="0 0 600 320" fill="none">
+    <path d="M70 260 C 150 250, 170 170, 250 160 S 380 210, 430 130 S 500 70, 530 64" stroke="#b7f34a" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>
+    <circle cx="70" cy="260" r="12" fill="#f5f3ed"/><circle cx="70" cy="260" r="5" fill="#2e3a2e"/>
+    <rect x="236" y="146" width="28" height="28" fill="#111111" stroke="#b7f34a" stroke-width="3"/>
+    <rect x="416" y="116" width="28" height="28" fill="#111111" stroke="#b7f34a" stroke-width="3"/>
+    <g transform="translate(530 64)"><rect x="-26" y="-26" width="52" height="52" fill="#b7f34a"/><path d="M-12 0h24M0 -12v24" stroke="#111111" stroke-width="5"/></g>
+    <g stroke="#f5f3ed" stroke-width="3" opacity=".5"><circle cx="160" cy="90" r="34"/><path d="M160 46v18M160 116v18M116 90h18M186 90h18"/></g>
+  </svg>
+</section>
+</body></html>

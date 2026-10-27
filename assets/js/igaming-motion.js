@@ -17,7 +17,7 @@ const root = document.documentElement;
 const isCrawler = /bot|crawl|spider|slurp|facebookexternalhit/i.test(navigator.userAgent);
 const page = $('.igaming-page');
 
-const ITEM_SELECTOR = '.card, .banner, .widget, .gamif-card, .gamif-banner, .email-card';
+const ITEM_SELECTOR = '.card, .banner, .widget, .gamif-card, .gamif-banner, .email-card, .ed-card';
 
 function showAll() {
   root.classList.add('motion-fallback');

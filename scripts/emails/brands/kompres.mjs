@@ -47,7 +47,7 @@ function layout({ lang, art, artAlt, artBg, kicker, title, intro, content, cta, 
   const t = T[lang];
   const body = `
 <tr><td class="px" align="center" style="padding:8px 40px 24px;text-align:center;">
-  <a href="${SITE}/" style="display:inline-block;"><img class="logo-light" src="${assets}/logo.png" width="168" height="28" alt="Kompres" style="width:168px;height:28px;"><img class="logo-dark" src="${assets}/logo-dark.png" width="168" height="28" alt="Kompres" style="width:168px;height:28px;"></a>
+  <a href="${SITE}/" style="display:inline-block;"><img class="logo-light" src="${assets}/logo.png" width="168" height="28" alt="Kompres" style="width:168px;height:28px;"><img class="logo-dark" src="${assets}/logo-dark.png" width="168" height="28" alt="" style="display:none;max-height:0;overflow:hidden;mso-hide:all;width:168px;height:28px;"></a>
 </td></tr>
 <tr><td class="dm-card" style="background:${C.card};border-radius:20px;overflow:hidden;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Arte dos emails da Nimbus (marca fictícia)</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --night: #0b1d1f; --deep: #10292c; --mint: #5ff2c1; --mint2: #b8fbe4; --fog: #9fb8b9; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #888; padding: 40px; display: grid; gap: 40px; justify-content: start; }
+  section { position: relative; overflow: hidden; }
+  .logo { display: flex; align-items: center; gap: 10px; width: max-content; }
+  .logo svg { width: 44px; height: 44px; }
+  .logo span { font: 700 32px/1 'Space Grotesk', sans-serif; letter-spacing: -.03em; color: #fff; }
+  .month { width: 600px; height: 320px; background: var(--night); }
+  .icon { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; }
+  .icon svg { width: 32px; height: 32px; }
+</style></head><body>
+
+<section data-art="logo-dark" data-w="auto" data-h="48" class="logo">
+  <svg viewBox="0 0 44 44"><rect width="44" height="44" rx="12" fill="#5ff2c1"/><path d="M12 28c0-4 3-7 7-7 1-4 4-6 8-6 5 0 8 4 8 8 2 0 4 2 4 4s-2 4-4 4H15c-2 0-3-1-3-3z" fill="#0b1d1f"/></svg>
+  <span>Nimbus</span>
+</section>
+
+<section data-art="mes" data-w="600" data-h="320" class="month">
+  <svg viewBox="0 0 600 320" style="position:absolute;inset:0">
+    <defs><linearGradient id="a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5ff2c1" stop-opacity=".45"/><stop offset="1" stop-color="#5ff2c1" stop-opacity="0"/></linearGradient></defs>
+    <g stroke="#1b3b3e" stroke-width="1"><path d="M40 80h520M40 140h520M40 200h520M40 260h520"/></g>
+    <path d="M40 230 C 100 220, 130 180, 190 186 S 280 230, 330 170 S 430 110, 470 120 S 540 80, 560 70 V 290 H 40 Z" fill="url(#a)"/>
+    <path d="M40 230 C 100 220, 130 180, 190 186 S 280 230, 330 170 S 430 110, 470 120 S 540 80, 560 70" stroke="#5ff2c1" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="560" cy="70" r="9" fill="#0b1d1f" stroke="#5ff2c1" stroke-width="4"/>
+    <g fill="#10292c"><rect x="60" y="34" width="150" height="22" rx="11"/></g>
+    <rect x="68" y="42" width="60" height="6" rx="3" fill="#5ff2c1"/>
+  </svg>
+</section>
+
+<section data-art="icone-alerta" data-w="64" data-h="64" class="icon" style="background:#fff1e8;">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r=".8" fill="#c2410c"/></svg>
+</section>
+</body></html>

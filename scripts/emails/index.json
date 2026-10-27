@@ -1,5 +1,29 @@
 [
   {
+    "brand": "authik",
+    "id": "confirmar-email",
+    "type": "transactional",
+    "subject": "Confirme seu e-mail no Trackik"
+  },
+  {
+    "brand": "authik",
+    "id": "senha-alterada",
+    "type": "security",
+    "subject": "A senha da sua conta no Trackik foi alterada"
+  },
+  {
+    "brand": "email-generator",
+    "id": "modelos",
+    "type": "launch",
+    "subject": "Oito modelos de email, um clique para trocar"
+  },
+  {
+    "brand": "email-generator",
+    "id": "avisos",
+    "type": "tip",
+    "subject": "Antes de enviar, o gerador confere o seu email"
+  },
+  {
     "brand": "flora-sophia",
     "id": "cbd-day",
     "type": "promo",
@@ -22,5 +46,89 @@
     "id": "pdf",
     "type": "newsletter",
     "subject": "Tudo o que o Kompres faz com PDF"
+  },
+  {
+    "brand": "lume",
+    "id": "colecao",
+    "type": "launch",
+    "subject": "Outono no Atelier Lume: a coleção Terra chegou"
+  },
+  {
+    "brand": "lume",
+    "id": "sale",
+    "type": "promo",
+    "subject": "Só para quem assina: 30% em toda a coleção de verão"
+  },
+  {
+    "brand": "mare",
+    "id": "carrinho",
+    "type": "cart",
+    "subject": "Seu café ficou esperando"
+  },
+  {
+    "brand": "mare",
+    "id": "pedido-enviado",
+    "type": "transactional",
+    "subject": "Seu pedido #4821 saiu para entrega"
+  },
+  {
+    "brand": "ms-corretora",
+    "id": "renovacao",
+    "type": "reminder",
+    "subject": "Carlos, seu seguro auto vence em 30 dias"
+  },
+  {
+    "brand": "ms-corretora",
+    "id": "boas-vindas",
+    "type": "welcome",
+    "subject": "Bem-vindo à MS Corretora"
+  },
+  {
+    "brand": "nimbus",
+    "id": "resumo-mensal",
+    "type": "report",
+    "subject": "Seu outubro na Nimbus: você guardou R$ 820"
+  },
+  {
+    "brand": "nimbus",
+    "id": "novo-acesso",
+    "type": "security",
+    "subject": "Novo acesso à sua conta Nimbus"
+  },
+  {
+    "brand": "novo-save",
+    "id": "save-da-semana",
+    "type": "newsletter",
+    "subject": "Save da semana: GTA 6, Enshrouded e dinheiro no GTA Online"
+  },
+  {
+    "brand": "novo-save",
+    "id": "extraction-shooters",
+    "type": "content",
+    "subject": "Quer jogar extraction shooter sem grupo? Comece por aqui"
+  },
+  {
+    "brand": "propostaria",
+    "id": "proposta-assinada",
+    "type": "transactional",
+    "subject": "Marina Alves assinou a proposta \"Reforma do apartamento 802\""
+  },
+  {
+    "brand": "propostaria",
+    "id": "primeira-proposta",
+    "type": "onboarding",
+    "subject": "Sua primeira proposta pode sair hoje"
+  },
+  {
+    "brand": "trackik",
+    "id": "resumo-semanal",
+    "type": "report",
+    "subject": "Sua semana no Trackik: seusite.com.br"
+  },
+  {
+    "brand": "trackik",
+    "id": "mapa-de-calor",
+    "type": "launch",
+    "subject": "Novo no Trackik: veja onde as pessoas clicam"
   }
 ]

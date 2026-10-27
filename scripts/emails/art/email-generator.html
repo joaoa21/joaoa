@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Arte dos emails do Email Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --paper: #f4f1ea; --ink: #191713; --soft: #4a463e; --line: #d8d3c6; --cobalt: #1d3fd6; --stamp: #c8451f; --wa: #128c4b; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #888; padding: 40px; display: grid; gap: 40px; justify-content: start; }
+  section { position: relative; overflow: hidden; }
+  .logo { display: flex; align-items: center; gap: 12px; width: max-content; }
+  .logo i { width: 48px; height: 48px; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font: italic 500 30px/1 'Fraunces', serif; padding-bottom: 4px; }
+  .logo span { font: 600 32px/1 'Fraunces', serif; letter-spacing: -.02em; color: var(--ink); }
+  .logo.dark i { background: var(--paper); color: var(--ink); }
+  .logo.dark span { color: var(--paper); }
+
+  /* modelos: quatro miniaturas de email */
+  .models { width: 600px; height: 320px; background: var(--ink); display: flex; gap: 18px; align-items: flex-end; justify-content: center; padding: 0 30px; }
+  .mini { width: 120px; height: 248px; border-radius: 8px 8px 0 0; background: #fff; padding: 12px 10px; display: grid; align-content: start; gap: 7px; }
+  .mini b { display: block; height: 8px; border-radius: 4px; background: var(--line); }
+  .mini .t { height: 12px; width: 70%; background: var(--ink); }
+  .mini .img { height: 56px; border-radius: 4px; }
+  .mini .btn { height: 18px; width: 60%; border-radius: 4px; margin-top: 4px; }
+  .m1 .img { background: linear-gradient(135deg, #1d3fd6, #6b86ff); } .m1 .btn { background: var(--cobalt); }
+  .m2 { background: #fdf3e7; } .m2 .img { background: var(--stamp); border-radius: 50%; width: 56px; } .m2 .btn { background: var(--stamp); }
+  .m3 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; } .m3 .grid i { height: 38px; border-radius: 4px; background: #e8e3d6; } .m3 .btn { background: var(--ink); }
+  .m4 { background: #f7f2ff; } .m4 .img { background: repeating-linear-gradient(45deg, #b49cff 0 8px, #d6c9ff 8px 16px); } .m4 .btn { background: #6b3fa0; }
+  .m2, .m4 { transform: translateY(18px); }
+  .tag { position: absolute; top: 26px; left: 30px; font: 600 14px/1 'Archivo', sans-serif; letter-spacing: .14em; color: var(--paper); text-transform: uppercase; opacity: .6; }
+
+  /* avisos: lista de conferência */
+  .checks { width: 600px; height: 320px; background: var(--paper); }
+  .sheet { position: absolute; left: 70px; top: 40px; width: 300px; height: 300px; background: #fff; border: 1.5px solid var(--ink); border-radius: 8px; padding: 22px; display: grid; gap: 16px; align-content: start; }
+  .row { display: flex; gap: 12px; align-items: center; }
+  .row i { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; color: #fff; font: 700 14px/1 'Archivo', sans-serif; font-style: normal; }
+  .row b { flex: 1; height: 10px; border-radius: 5px; background: var(--line); }
+  .ok i { background: var(--wa); } .warn i { background: var(--stamp); } .warn b { background: #f2c9bc; }
+  .seal { position: absolute; right: 64px; top: 70px; width: 160px; height: 160px; border-radius: 50%; border: 3px solid var(--cobalt); display: grid; place-items: center; transform: rotate(-10deg); }
+  .seal::before { content: ""; position: absolute; inset: 8px; border-radius: 50%; border: 1.5px dashed var(--cobalt); }
+  .seal svg { width: 70px; height: 70px; }
+</style></head><body>
+
+<section data-art="logo" data-w="auto" data-h="52" class="logo"><i>e.</i><span>Email Generator</span></section>
+<section data-art="logo-dark" data-w="auto" data-h="52" class="logo dark"><i>e.</i><span>Email Generator</span></section>
+
+<section data-art="modelos" data-w="600" data-h="320" class="models">
+  <div class="mini m1"><b class="t"></b><b class="img"></b><b></b><b></b><b class="btn"></b></div>
+  <div class="mini m2"><b class="t"></b><b class="img"></b><b></b><b></b><b class="btn"></b></div>
+  <div class="mini m3"><b class="t"></b><div class="grid"><i></i><i></i><i></i><i></i></div><b></b><b class="btn"></b></div>
+  <div class="mini m4"><b class="t"></b><b class="img"></b><b></b><b></b><b class="btn"></b></div>
+</section>
+
+<section data-art="avisos" data-w="600" data-h="320" class="checks">
+  <div class="sheet">
+    <div class="row ok"><i>&#10003;</i><b></b></div>
+    <div class="row ok"><i>&#10003;</i><b style="max-width:70%"></b></div>
+    <div class="row warn"><i>!</i><b></b></div>
+    <div class="row ok"><i>&#10003;</i><b style="max-width:80%"></b></div>
+    <div class="row warn"><i>!</i><b style="max-width:60%"></b></div>
+    <div class="row ok"><i>&#10003;</i><b style="max-width:75%"></b></div>
+  </div>
+  <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="#1d3fd6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v11H4zM4 7l8 6 8-6"/></svg></div>
+</section>
+</body></html>

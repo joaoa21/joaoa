@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Arte dos emails da Maré Café (marca fictícia)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root { --cream: #f6efe6; --brown: #3b2418; --terra: #c8553d; --sand: #e7d6c1; --sea: #2f6f73; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #888; padding: 40px; display: grid; gap: 40px; justify-content: start; }
+  section { position: relative; overflow: hidden; }
+  .logo { display: flex; align-items: center; gap: 10px; width: max-content; }
+  .logo svg { width: 46px; height: 46px; }
+  .logo span { font: 400 36px/1 'DM Serif Display', serif; color: var(--brown); }
+  .logo.dark span { color: var(--cream); }
+
+  .bag { position: absolute; }
+  /* pacote de café (miniatura quadrada do produto) */
+  .product { width: 160px; height: 160px; background: var(--sand); }
+  /* carrinho: pacote + xícara sobre fundo terracota */
+  .cart { width: 600px; height: 320px; background: var(--terra); }
+  .cup { position: absolute; }
+  /* pedido enviado: caixa com onda */
+  .ship { width: 600px; height: 320px; background: var(--sea); }
+</style></head><body>
+
+<section data-art="logo" data-w="auto" data-h="50" class="logo">
+  <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#3b2418"/><path d="M8 28c4-4 8-4 12 0s8 4 12 0 6-3 8-2" stroke="#f6efe6" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M8 20c4-4 8-4 12 0s8 4 12 0 6-3 8-2" stroke="#c8553d" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+  <span>Maré Café</span>
+</section>
+<section data-art="logo-dark" data-w="auto" data-h="50" class="logo dark">
+  <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#f6efe6"/><path d="M8 28c4-4 8-4 12 0s8 4 12 0 6-3 8-2" stroke="#3b2418" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M8 20c4-4 8-4 12 0s8 4 12 0 6-3 8-2" stroke="#c8553d" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+  <span>Maré Café</span>
+</section>
+
+<section data-art="pacote" data-w="160" data-h="160" class="product">
+  <svg viewBox="0 0 160 160" style="position:absolute;inset:0"><path d="M50 30h60l8 20v84c0 4-3 6-6 6H48c-3 0-6-2-6-6V50z" fill="#3b2418"/><path d="M50 30h60l8 20H42z" fill="#2a1910"/><rect x="56" y="70" width="48" height="40" rx="4" fill="#f6efe6"/><path d="M62 92c4-4 8-4 12 0s8 4 12 0 6-3 12-2" stroke="#c8553d" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+</section>
+
+<section data-art="carrinho" data-w="600" data-h="320" class="cart">
+  <svg viewBox="0 0 600 320" style="position:absolute;inset:0">
+    <ellipse cx="300" cy="292" rx="210" ry="12" fill="rgba(0,0,0,.15)"/>
+    <path d="M180 60h110l14 34v190c0 6-4 10-10 10H176c-6 0-10-4-10-10V94z" fill="#3b2418"/>
+    <path d="M180 60h110l14 34H166z" fill="#2a1910"/>
+    <rect x="190" y="140" width="90" height="74" rx="6" fill="#f6efe6"/>
+    <path d="M200 182c7-7 14-7 21 0s14 7 21 0 11-5 22-3" stroke="#c8553d" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M360 190h120v62c0 22-18 40-40 40h-40c-22 0-40-18-40-40z" fill="#f6efe6"/>
+    <path d="M480 206h12c14 0 22 10 22 22s-8 22-22 22h-14" stroke="#f6efe6" stroke-width="10" fill="none"/>
+    <path d="M392 160c-8-14 8-22 0-36M420 160c-8-14 8-22 0-36M448 160c-8-14 8-22 0-36" stroke="#f6efe6" stroke-width="5" fill="none" stroke-linecap="round" opacity=".7"/>
+  </svg>
+</section>
+
+<section data-art="enviado" data-w="600" data-h="320" class="ship">
+  <svg viewBox="0 0 600 320" style="position:absolute;inset:0">
+    <path d="M0 250c50-24 100-24 150 0s100 24 150 0 100-24 150 0 100 24 150 0v70H0z" fill="#255a5d"/>
+    <path d="M220 110l80-36 80 36v100l-80 36-80-36z" fill="#e7d6c1"/>
+    <path d="M220 110l80 36 80-36M300 146v100" stroke="#c9b293" stroke-width="4" fill="none"/>
+    <path d="M260 92l80 36" stroke="#c8553d" stroke-width="12"/>
+    <path d="M420 120h70M440 150h60M410 180h50" stroke="#f6efe6" stroke-width="8" stroke-linecap="round" opacity=".6"/>
+  </svg>
+</section>
+</body></html>
