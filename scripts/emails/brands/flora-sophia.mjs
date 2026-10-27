@@ -5,14 +5,18 @@
    Só em inglês (o teste é internacional); a versão "pt" repete a mesma copy. */
 import { button, documentHtml, esc, rich } from '../lib.mjs';
 
+// Cores oficiais do tema da loja (variáveis --color-* e settings do Shopify em florasophiabotanicals.com):
+// #22291d texto e botão, #f6f5e2 texto do botão, #505841 link, #4c6f56 destaque, #63685e texto claro,
+// #fcfaf7 fundo, #e8e7d3 secundária, #81c6ab e #e2a888 cores das linhas de produto.
+// Todo par de texto e fundo passa no WCAG AA (4.5:1), nos dois modos. O modo escuro deriva do #22291d.
 const C = {
-  bg: '#f1ecdf', card: '#fdfbf6', cream: '#f6f3e6',
-  olive: '#3f4b38', oliveDeep: '#34402e', oliveLine: '#5b6a52',
-  ink: '#22291d', text: '#3c4336', muted: '#6b7064', line: '#e3dccb',
-  sage: '#8bb696', sageSoft: '#e4ecdc', salmon: '#e2a888', brown: '#59492d',
-  onOlive: '#f6f3e6', onOliveSoft: '#d6d9c9',
+  bg: '#e8e7d3', card: '#fcfaf7', cream: '#f6f5e2',
+  olive: '#505841', oliveDeep: '#22291d', oliveLine: '#63685e',
+  ink: '#22291d', text: '#22291d', muted: '#63685e', line: '#e8e7d3',
+  sage: '#81c6ab', sageSoft: '#e8e7d3', salmon: '#e2a888', brown: '#59492d', green: '#4c6f56',
+  onOlive: '#f6f5e2', onOliveSoft: '#e8e7d3',
   // modo escuro
-  dBg: '#171a14', dCard: '#22271e', dText: '#ece8d9', dMuted: '#b3b4a6', dLine: '#3a4034', dTile: '#2b3127',
+  dBg: '#171a14', dCard: '#22291d', dText: '#f6f5e2', dMuted: '#b0b1ab', dLine: '#3a4034', dTile: '#2b3127',
 };
 const FONT = "'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif";
 const SITE = 'https://www.florasophiabotanicals.com';
@@ -30,7 +34,7 @@ const DARK = `
     .dm-tile { background: ${C.dTile} !important; border-color: ${C.dLine} !important; }
     .dm-sage { color: ${C.sage} !important; }
     .dm-btn { background: ${C.sage} !important; color: ${C.ink} !important; }
-    .dm-bar { background: #66795a !important; }
+    .dm-bar { background: ${C.green} !important; }
     .dm-badge { background: ${C.sage} !important; color: ${C.ink} !important; }
     .dm-btn-text { color: ${C.ink} !important; }`;
 
@@ -71,7 +75,7 @@ function tiers(items) {
   const cell = ({ pct, label, hot }) => `<div style="padding:0 5px 10px;">
         <table ${TABLE} ${SEP}><tr><td align="center" style="background:${hot ? C.salmon : C.oliveDeep};border:1px solid ${hot ? C.salmon : C.oliveLine};border-radius:14px;padding:18px 8px 16px;">
           <p style="margin:0 0 4px;font-family:${FONT};font-size:34px;line-height:38px;font-weight:600;letter-spacing:-1px;color:${hot ? C.ink : C.onOlive};">${esc(pct)}</p>
-          <p style="margin:0;font-family:${FONT};font-size:11px;line-height:16px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:${hot ? C.brown : C.sage};">${esc(label)}</p>
+          <p style="margin:0;font-family:${FONT};font-size:11px;line-height:16px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:${hot ? C.ink : C.sage};">${esc(label)}</p>
         </td></tr></table>
       </div>`;
   return columns(items.map(cell), 170);
@@ -102,7 +106,7 @@ function render(c, assets) {
   // Por isso a cor de todo texto de link fica também num <span> dentro do <a>.
   const cta = (href, label, dark) => {
     const color = dark ? C.ink : C.onOlive;
-    const b = button({ href, label, bg: dark ? C.salmon : C.olive, color, radius: 10, font: FONT })
+    const b = button({ href, label, bg: dark ? C.salmon : C.ink, color, radius: 10, font: FONT })
       .replace(`mso-hide:all;">${esc(label)}</a>`, `mso-hide:all;"><span${dark ? '' : ' class="dm-btn-text"'} style="color:${color};">${esc(label)}</span></a>`);
     return dark ? b : b.replace('class="btn"', 'class="btn dm-btn"');
   };
@@ -120,7 +124,7 @@ function render(c, assets) {
            estava escondido, então qualquer troca acaba mostrando os dois ou nenhum. -->
       <a href="${SITE}/" style="display:inline-block;"><img src="${assets}/logo-dark.png" width="200" height="20" alt="Flora Sophia" style="display:block;width:200px;height:20px;margin:0 auto;"></a>
       <table role="presentation" width="64" align="center" cellpadding="0" cellspacing="0" border="0" style="margin:26px auto 30px;"><tr><td style="border-top:1px solid ${C.oliveLine};font-size:0;line-height:0;">&nbsp;</td></tr></table>
-      ${kicker(c.hero.kicker, C.sage)}
+      ${kicker(c.hero.kicker, C.onOliveSoft)}
       <h1 class="hero-h1" style="margin:0 0 14px;font-family:${FONT};font-size:46px;line-height:52px;font-weight:500;letter-spacing:-1px;color:${C.onOlive};">${esc(c.hero.title)}</h1>
       <p style="margin:0 0 28px;font-family:${FONT};font-size:17px;line-height:27px;color:${C.onOliveSoft};">${esc(c.hero.sub)}</p>
       ${tiers(c.hero.tiers)}
@@ -151,7 +155,7 @@ function render(c, assets) {
       <table ${TABLE} ${SEP}><tr><td class="dm-tile" style="background:${C.sageSoft};border-radius:14px;padding:18px 22px;">
         <table ${TABLE}>${c.products.math.map(([a, b, d], i) => `<tr>
           <td class="dm-text math-cell${i ? ' math-gap' : ''}" valign="middle" style="padding:${i ? 10 : 0}px 0 0;font-family:${FONT};font-size:14px;line-height:21px;color:${C.ink};">${rich(a)}</td>
-          <td class="dm-text math-cell math-price" align="right" valign="middle" style="padding:${i ? 10 : 0}px 0 0 12px;font-family:${FONT};font-size:15px;line-height:22px;font-weight:600;color:${C.ink};white-space:nowrap;">${esc(b)} <span class="dm-badge" style="display:inline-block;background:${C.olive};color:${C.onOlive};border-radius:6px;padding:2px 8px;font-size:12px;line-height:18px;font-weight:700;letter-spacing:1px;margin-left:6px;">${esc(d)}</span></td>
+          <td class="dm-text math-cell math-price" align="right" valign="middle" style="padding:${i ? 10 : 0}px 0 0 12px;font-family:${FONT};font-size:15px;line-height:22px;font-weight:600;color:${C.ink};white-space:nowrap;">${esc(b)} <span class="dm-badge" style="display:inline-block;background:${C.ink};color:${C.onOlive};border-radius:6px;padding:2px 8px;font-size:12px;line-height:18px;font-weight:700;letter-spacing:1px;margin-left:6px;">${esc(d)}</span></td>
         </tr>`).join('')}</table>
       </td></tr></table>
     </td></tr>
@@ -160,7 +164,7 @@ function render(c, assets) {
     <!-- 4. fechamento -->
     <tr><td style="background:#6c8a5a;font-size:0;line-height:0;"><img class="fluid" src="${assets}/hand.jpg" width="600" height="220" alt="${esc(c.final.alt)}" style="display:block;max-width:100%;height:auto;border:0;"></td></tr>
     <tr><td class="px" align="center" style="background:${C.olive};border-radius:0 0 20px 20px;padding:40px 44px 44px;text-align:center;">
-      ${kicker(c.final.kicker, C.sage)}
+      ${kicker(c.final.kicker, C.onOliveSoft)}
       ${h2(c.final.title, C.onOlive, '')}
       <p style="margin:0 0 18px;font-family:${FONT};font-size:16px;line-height:26px;color:${C.onOliveSoft};">${esc(c.final.text)}</p>
       <p style="margin:0 0 4px;font-family:Arial,sans-serif;font-size:20px;line-height:24px;letter-spacing:3px;color:${C.salmon};">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
