@@ -187,13 +187,26 @@ if (dryRun) {
   process.exit(0);
 }
 
-const pass = (process.env.SMTP_PASS || await ask('Senha de app (não aparece ao digitar): ', { hidden: true })).replace(/\s+/g, '');
+const pass = (process.env.SMTP_PASS || await ask('Senha de app (não aparece ao digitar): ', { hidden: true }))
+  .replace(/\x1b\[20[01]~/g, '') // marcas que alguns terminais põem em volta do texto colado
+  .replace(/[\s\x00-\x1f\x7f]+/g, '');
 if (!pass) { console.error('Sem senha, nada enviado.'); process.exit(1); }
+// a senha de app do Google tem sempre 16 letras (aparece como "abcd efgh ijkl mnop").
+// Confere antes de conectar: tentativas de login erradas podem bloquear a conta por um tempo.
+if (!/^[a-z]{16}$/i.test(pass)) {
+  console.error(`Isso não parece uma senha de app: ela tem 16 letras e você digitou ${pass.length} caractere(s).`);
+  console.error('A senha normal da conta não funciona aqui. Gere uma em https://myaccount.google.com/apppasswords');
+  process.exit(1);
+}
 
 try {
   await send({ user, pass, to, message });
   console.log('Enviado. Confira a caixa de entrada (e o spam, no primeiro envio).');
 } catch (e) {
   console.error(`Não enviou: ${e.message}`);
+  if (/5\.7\.9|5\.7\.8/.test(e.message)) {
+    console.error('O Gmail não aceitou a senha. Use uma senha de app nova (https://myaccount.google.com/apppasswords),');
+    console.error('copiada inteira, e confira se o Gmail digitado é o mesmo da conta onde ela foi criada.');
+  }
   process.exit(1);
 }
