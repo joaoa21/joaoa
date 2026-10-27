@@ -124,7 +124,10 @@ function render(c, assets) {
            estava escondido, então qualquer troca acaba mostrando os dois ou nenhum. -->
       <a href="${SITE}/" style="display:inline-block;"><img src="${assets}/logo-dark.png" width="200" height="20" alt="Flora Sophia" style="display:block;width:200px;height:20px;margin:0 auto;"></a>
       <table role="presentation" width="64" align="center" cellpadding="0" cellspacing="0" border="0" style="margin:26px auto 30px;"><tr><td style="border-top:1px solid ${C.oliveLine};font-size:0;line-height:0;">&nbsp;</td></tr></table>
-      ${kicker(c.hero.kicker, C.onOliveSoft)}
+      <!-- selo VIP: tabela para o Outlook do Windows também pintar o fundo -->
+      <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin:0 auto 22px;"><tr><td style="background:${C.sage};border-radius:999px;padding:6px 16px;">
+        <p class="kicker" style="margin:0;font-family:${FONT};font-size:11px;line-height:16px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:${C.ink};">${esc(c.hero.kicker)}</p>
+      </td></tr></table>
       <h1 class="hero-h1" style="margin:0 0 14px;font-family:${FONT};font-size:46px;line-height:52px;font-weight:500;letter-spacing:-1px;color:${C.onOlive};">${esc(c.hero.title)}</h1>
       <p style="margin:0 0 28px;font-family:${FONT};font-size:17px;line-height:27px;color:${C.onOliveSoft};">${esc(c.hero.sub)}</p>
       ${tiers(c.hero.tiers)}
