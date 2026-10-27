@@ -1,0 +1,20 @@
+[
+  {
+    "brand": "kompres",
+    "id": "remover-fundo",
+    "type": "launch",
+    "subject": "Novo no Kompres: remova o fundo de qualquer imagem"
+  },
+  {
+    "brand": "kompres",
+    "id": "tamanho-maximo",
+    "type": "tip",
+    "subject": "Dica: imagens no peso exato que você precisa"
+  },
+  {
+    "brand": "kompres",
+    "id": "pdf",
+    "type": "newsletter",
+    "subject": "Tudo o que o Kompres faz com PDF"
+  }
+]

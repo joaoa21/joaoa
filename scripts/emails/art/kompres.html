@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Arte dos emails do Kompres</title>
+<!-- Artes dos emails do Kompres, renderizadas em PNG por scripts/emails/render-art.mjs.
+     Cada <section data-art="nome" data-w data-h> vira assets/email-design/kompres/nome.png (2x).
+     Sem texto nas imagens: a mesma arte serve para o email em português e em inglês. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --lime: #b8f55a; --ink: #0c0c0d; --green: #3d7000; --paper: #f2f0eb; --card: #ffffff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #888; padding: 40px; display: grid; gap: 40px; justify-content: start; }
+  section { position: relative; overflow: hidden; }
+
+  /* ---------- logo ---------- */
+  .logo { display: flex; align-items: center; gap: 14px; width: max-content; padding: 0; background: transparent; }
+  .logo svg { width: 52px; height: 52px; }
+  .logo span { font: 800 38px/1 'Syne', sans-serif; white-space: nowrap; letter-spacing: -.02em; color: var(--ink); }
+  .logo.on-dark span { color: #f0f0ee; }
+
+  /* ---------- 1. remover fundo: antes e depois ---------- */
+  .bg-remove { width: 600px; height: 320px; background: var(--ink); }
+  .bg-remove .half { position: absolute; top: 0; bottom: 0; width: 50%; }
+  .bg-remove .before { left: 0; background:
+      radial-gradient(120% 90% at 30% 20%, #e9d7bd 0%, #c9ad89 55%, #9c8061 100%); }
+  .bg-remove .after { right: 0; background-color: #fff;
+      background-image: linear-gradient(45deg, #e6e6e6 25%, transparent 25%), linear-gradient(-45deg, #e6e6e6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #e6e6e6 75%), linear-gradient(-45deg, transparent 75%, #e6e6e6 75%);
+      background-size: 22px 22px; background-position: 0 0, 0 11px, 11px -11px, -11px 0; }
+  .bg-remove .shelf { position: absolute; left: 0; width: 50%; bottom: 0; height: 74px; background: linear-gradient(#b39672, #8d7154); }
+  .bg-remove .object { position: absolute; left: 50%; top: 32px; width: 200px; margin-left: -100px; }
+  .bg-remove .shadow { position: absolute; left: 196px; top: 266px; width: 104px; height: 18px; border-radius: 50%; background: rgba(0,0,0,.28); filter: blur(4px); }
+  .bg-remove .handle { position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; margin-left: -2px; background: var(--lime); }
+  .bg-remove .knob { position: absolute; left: 50%; top: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: var(--lime); box-shadow: 0 6px 18px rgba(0,0,0,.35); display: grid; place-items: center; }
+  .bg-remove .knob svg { width: 22px; height: 22px; }
+
+  /* ---------- 2. tamanho-alvo: arquivo pesado vira leve ---------- */
+  .target { width: 600px; height: 320px; background: var(--lime); }
+  .target .file { position: absolute; border-radius: 14px; background: var(--card); box-shadow: 0 18px 40px rgba(12,12,13,.18); overflow: hidden; }
+  .target .file .img { position: absolute; inset: 0 0 34% 0; background: linear-gradient(135deg, #2b2b2e, #0c0c0d); }
+  .target .file .img::after { content: ""; position: absolute; left: 14%; bottom: 0; width: 72%; height: 58%; background: linear-gradient(180deg, var(--lime), #7fbf2a); clip-path: polygon(0 100%, 30% 35%, 52% 70%, 72% 20%, 100% 100%); }
+  .target .file .sun { position: absolute; right: 18%; top: 14%; width: 15%; aspect-ratio: 1; border-radius: 50%; background: #f2f0eb; }
+  .target .file b { position: absolute; left: 0; right: 0; bottom: 0; height: 34%; display: grid; place-items: center; font: 500 26px/1 'DM Mono', monospace; color: var(--ink); letter-spacing: -.02em; }
+  .target .big { left: 54px; top: 46px; width: 210px; height: 228px; }
+  .target .small { right: 70px; top: 96px; width: 120px; height: 130px; }
+  .target .small b { font-size: 17px; color: var(--green); }
+  .target .arrow { position: absolute; left: 282px; top: 140px; width: 112px; height: 40px; }
+
+  /* ---------- 3. PDF: páginas que se juntam ---------- */
+  .pdf { width: 600px; height: 320px; background: var(--card); }
+  .pdf .page { position: absolute; width: 132px; height: 176px; border-radius: 10px; background: #fff; border: 2px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); padding: 18px 16px; }
+  .pdf .page i { display: block; height: 9px; border-radius: 5px; background: #d9d6ce; margin-bottom: 10px; }
+  .pdf .page i:first-child { width: 70%; height: 14px; background: var(--ink); margin-bottom: 16px; }
+  .pdf .page i.s { width: 55%; }
+  .pdf .page .ph { height: 46px; border-radius: 6px; background: var(--lime); margin-bottom: 10px; }
+  .pdf .p1 { left: 28px; top: 74px; transform: rotate(-8deg); }
+  .pdf .p2 { left: 116px; top: 50px; transform: rotate(3deg); }
+  .pdf .p3 { left: 204px; top: 80px; transform: rotate(-3deg); }
+  .pdf .stack { position: absolute; right: 36px; top: 52px; width: 150px; height: 200px; }
+  .pdf .stack .page { left: 0; top: 0; width: 150px; height: 200px; }
+  .pdf .stack .page:nth-child(1) { transform: translate(14px, 14px); }
+  .pdf .stack .page:nth-child(2) { transform: translate(7px, 7px); }
+  .pdf .tag { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); }
+  .pdf .plus { position: absolute; left: 372px; top: 136px; width: 34px; height: 34px; }
+</style>
+</head>
+<body>
+
+<!-- logo para fundo claro -->
+<section data-art="logo" data-w="auto" data-h="56" class="logo">
+  <svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="18" fill="#B8F55A"/><path d="M31.254 32.35V30.222L53.18 44.32H39.044L20.424 31.4L37.6 20H51.128L31.254 32.35ZM11 20H20.5V44.32H11V20Z" fill="#0C0C0D"/></svg>
+  <span>Kompres</span>
+</section>
+
+<!-- logo para fundo escuro (modo escuro) -->
+<section data-art="logo-dark" data-w="auto" data-h="56" class="logo on-dark">
+  <svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="18" fill="#B8F55A"/><path d="M31.254 32.35V30.222L53.18 44.32H39.044L20.424 31.4L37.6 20H51.128L31.254 32.35ZM11 20H20.5V44.32H11V20Z" fill="#0C0C0D"/></svg>
+  <span>Kompres</span>
+</section>
+
+<!-- 1. lançamento: remover fundo -->
+<section data-art="remover-fundo" data-w="600" data-h="320" class="bg-remove">
+  <div class="half before"></div>
+  <div class="half after"></div>
+  <div class="shelf"></div>
+  <!-- objeto: frasco de produto (a sombra fica só do lado com fundo) -->
+  <div class="shadow"></div>
+  <svg class="object" viewBox="0 0 236 260">
+    <rect x="88" y="6" width="60" height="44" rx="10" fill="#0c0c0d"/>
+    <rect x="98" y="46" width="40" height="18" fill="#2b2b2e"/>
+    <rect x="52" y="60" width="132" height="190" rx="34" fill="#f2f0eb"/>
+    <rect x="52" y="60" width="132" height="190" rx="34" fill="url(#gl)"/>
+    <rect x="70" y="120" width="96" height="84" rx="12" fill="#b8f55a"/>
+    <rect x="84" y="140" width="56" height="10" rx="5" fill="#0c0c0d"/>
+    <rect x="84" y="160" width="40" height="8" rx="4" fill="#3d7000"/>
+    <rect x="66" y="76" width="16" height="150" rx="8" fill="#fff" opacity=".55"/>
+    <defs><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".12"/></linearGradient></defs>
+  </svg>
+  <div class="handle"></div>
+  <div class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="#0c0c0d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></div>
+</section>
+
+<!-- 2. dica: tamanho-alvo -->
+<section data-art="tamanho-alvo" data-w="600" data-h="320" class="target">
+  <div class="file big"><div class="img"></div><div class="sun"></div><b>2 MB</b></div>
+  <svg class="arrow" viewBox="0 0 112 40" fill="none"><path d="M4 20h92" stroke="#0c0c0d" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 12"/><path d="M88 6l18 14-18 14" stroke="#0c0c0d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="file small"><div class="img"></div><div class="sun"></div><b>200 KB</b></div>
+</section>
+
+<!-- 3. newsletter: PDF -->
+<section data-art="pdf" data-w="600" data-h="320" class="pdf">
+  <div class="page p1"><i></i><div class="ph"></div><i></i><i class="s"></i></div>
+  <div class="page p2"><i></i><i></i><i></i><i class="s"></i><i></i></div>
+  <div class="page p3"><i></i><div class="ph"></div><i></i><i class="s"></i></div>
+  <svg class="plus" viewBox="0 0 34 34"><path d="M2 17h30M17 2v30" stroke="#0c0c0d" stroke-width="5" stroke-linecap="round"/></svg>
+  <div class="stack"><div class="page"></div><div class="page"></div><div class="page"><i></i><div class="ph"></div><i></i><i></i><i class="s"></i><i></i><i class="s"></i></div></div>
+</section>
+
+</body>
+</html>
