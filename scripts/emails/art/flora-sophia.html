@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Flora Sophia email art</title>
+<!-- Artes do email de teste para a Flora Sophia Botanicals (Blossom Ecom), renderizadas em PNG 2x
+     por scripts/emails/render-art.mjs. As fotos de origem (site da marca) ficam em art/flora-sophia/.
+     Sem texto nas imagens: todo o texto do email é HTML ao vivo.
+     Depois de renderizar, as fotos (hero, hand, tincture, salve, gummies) são convertidas para JPEG
+     qualidade 80 (o email usa .jpg; PNG de foto pesa até 500 KB). Os logos ficam em PNG transparente. -->
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #888; padding: 40px; display: grid; gap: 40px; justify-content: start; }
+  section { position: relative; overflow: hidden; }
+
+  /* logo: PNG da marca (900x90, escuro sobre transparente), a 220px de largura */
+  .logo { height: 22px; width: max-content; }
+  .logo img { display: block; height: 22px; width: auto; }
+  .logo.on-dark img { filter: brightness(0) invert(1) sepia(.3) brightness(.98); }
+
+  /* hero: a linha de produtos da home, recortada para 600x300 */
+  .hero { width: 600px; height: 300px; background: #eae3d1 url(flora-sophia/hero.jpg) no-repeat; background-size: 840px auto; background-position: right -58px; }
+
+  /* produtos: 164x164, foto cobrindo o quadro */
+  .tile { width: 164px; height: 164px; background-repeat: no-repeat; background-size: cover; background-position: center; }
+  .tincture { background-image: url(flora-sophia/tincture.jpg); background-size: 250px auto; background-position: center 48%; }
+  .salve { background-image: url(flora-sophia/salve.jpg); background-size: 190px auto; }
+  .gummies { background-image: url(flora-sophia/gummies.jpg); background-size: 200px auto; background-position: center 55%; }
+
+  /* fechamento: a mão com as gomas, 600x220 */
+  .hand { width: 600px; height: 220px; background: url(flora-sophia/gummies.png) no-repeat; background-size: 600px auto; background-position: center 82%; }
+</style>
+</head>
+<body>
+<section data-art="logo" data-w="auto" data-h="22" class="logo"><img src="flora-sophia/logo.png" alt=""></section>
+<section data-art="logo-dark" data-w="auto" data-h="22" class="logo on-dark"><img src="flora-sophia/logo.png" alt=""></section>
+<section data-art="hero" data-w="600" data-h="300" class="hero"></section>
+<section data-art="tincture" data-w="164" data-h="164" class="tile tincture"></section>
+<section data-art="salve" data-w="164" data-h="164" class="tile salve"></section>
+<section data-art="gummies" data-w="164" data-h="164" class="tile gummies"></section>
+<section data-art="hand" data-w="600" data-h="220" class="hand"></section>
+</body>
+</html>

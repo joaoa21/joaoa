@@ -1,5 +1,11 @@
 [
   {
+    "brand": "flora-sophia",
+    "id": "cbd-day",
+    "type": "promo",
+    "subject": "VIP early access: up to 50% off for National CBD Day"
+  },
+  {
     "brand": "kompres",
     "id": "remover-fundo",
     "type": "launch",
