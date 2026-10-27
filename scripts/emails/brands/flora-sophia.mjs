@@ -7,14 +7,15 @@ import { button, documentHtml, esc, rich } from '../lib.mjs';
 
 // Cores oficiais do tema da loja (variáveis --color-* e settings do Shopify em florasophiabotanicals.com):
 // #22291d texto e botão, #f6f5e2 texto do botão, #505841 link, #4c6f56 destaque, #63685e texto claro,
-// #fcfaf7 fundo, #e8e7d3 secundária, #81c6ab e #e2a888 cores das linhas de produto.
+// #fcfaf7 fundo, #81c6ab e #e2a888 cores das linhas de produto. Os beges vêm do que o site mostra:
+// #e9e3d1 é o fundo das fotos (o hero da home) e #f2ede3 o tom claro medido nas páginas.
 // Todo par de texto e fundo passa no WCAG AA (4.5:1), nos dois modos. O modo escuro deriva do #22291d.
 const C = {
-  bg: '#e8e7d3', card: '#fcfaf7', cream: '#f6f5e2',
+  bg: '#f2ede3', card: '#fcfaf7', cream: '#f6f5e2',
   olive: '#505841', oliveDeep: '#22291d', oliveLine: '#63685e',
-  ink: '#22291d', text: '#22291d', muted: '#63685e', line: '#e8e7d3',
-  sage: '#81c6ab', sageSoft: '#e8e7d3', salmon: '#e2a888', brown: '#59492d', green: '#4c6f56',
-  onOlive: '#f6f5e2', onOliveSoft: '#e8e7d3',
+  ink: '#22291d', text: '#22291d', muted: '#63685e', line: '#e9e3d1',
+  sage: '#81c6ab', sageSoft: '#e9e3d1', salmon: '#e2a888', brown: '#59492d', green: '#4c6f56',
+  onOlive: '#f6f5e2', onOliveSoft: '#e9e3d1',
   // modo escuro
   dBg: '#171a14', dCard: '#22291d', dText: '#f6f5e2', dMuted: '#b0b1ab', dLine: '#3a4034', dTile: '#2b3127',
 };
