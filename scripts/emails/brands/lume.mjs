@@ -54,7 +54,7 @@ export const emails = [
     rows: (k, c, lang) => [
       k.header({ href: SITE }),
       k.open(),
-      k.hero({ art: 'colecao', alt: c.alt, bg: '#e9e2d6' }),
+      k.hero({ art: 'colecao', ext: 'jpg', alt: c.alt, bg: '#e9e2d6' }),
       k.intro(c), k.tiles(c.tiles), k.text(c.text, { top: 8 }),
       k.cta({ href: SITE, label: c.cta }), k.space(36),
       k.close(), k.footer(lang),

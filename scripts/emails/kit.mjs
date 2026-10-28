@@ -50,9 +50,9 @@ export function createKit(theme) {
       return `<tr><td class="dm-card" style="background:${c.card};border-radius:${r};${border}"><table ${TABLE} ${SEP}>`;
     },
     close: () => `</table></td></tr>`,
-    hero({ art, alt, bg, top = true }) {
+    hero({ art, alt, bg, top = true, ext = 'png' }) {
       const r = top && theme.header !== 'bar' ? `${R}px ${R}px 0 0` : '0';
-      return `<tr><td style="background:${bg ?? c.card};border-radius:${r};font-size:0;line-height:0;"><img class="fluid" src="${theme.assets}/${art}.png" width="600" height="320" alt="${esc(alt)}" style="width:100%;max-width:600px;height:auto;border-radius:${r};"></td></tr>`;
+      return `<tr><td style="background:${bg ?? c.card};border-radius:${r};font-size:0;line-height:0;"><img class="fluid" src="${theme.assets}/${art}.${ext}" width="600" height="320" alt="${esc(alt)}" style="width:100%;max-width:600px;height:auto;border-radius:${r};"></td></tr>`;
     },
     /** Selo/ícone pequeno no lugar da imagem de topo (emails transacionais). */
     badge({ art, alt, size = 64 }) {
