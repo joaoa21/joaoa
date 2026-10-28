@@ -9,6 +9,8 @@ export default {
     ['<a class="toolbar-portfolio" href="/projetos/"', '<a class="toolbar-portfolio" href="/en/projects/"'],
   ],
   dict: {
+    '(kompres.com.br): mais de 30 ferramentas web de imagem e PDF que rodam no navegador, inclusive com IA (remover fundo e melhorar resolução), usadas pelo time de CRM e abertas ao público.': '(kompres.com.br): more than 30 web tools for images and PDFs that run in the browser, AI included (background removal and upscaling), used by the CRM team and open to the public.',
+    '(emailgenerator.com.br): gerador de emails HTML com 8 modelos compatíveis com Gmail e Outlook e gerador de links de WhatsApp com link curto e QR Code, criados para escalar a produção de campanhas.': '(emailgenerator.com.br): an HTML email generator with 8 templates that work in Gmail and Outlook and a WhatsApp link generator with short links and QR Codes, built to scale campaign production.',
     'Currículo | João Alberto, Front-end, UI e Web Designer': 'Résumé | João Alberto, Front-end Developer & UI/Web Designer',
     'Pular para o currículo': 'Skip to résumé',
     'Portfólio': 'Portfolio',

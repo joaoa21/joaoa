@@ -4,6 +4,13 @@ export default {
   ptUrl: '/projetos/sites/',
   enUrl: '/en/projects/websites/',
   dict: {
+    'Mais de 30 ferramentas de imagem e PDF no navegador: comprimir, recortar, marca d\'água, remover fundo com IA e organizar PDFs.': 'More than 30 image and PDF tools in the browser: compress, crop, watermark, AI background removal and organizing PDFs.',
+    '+30 ferramentas': '30+ tools',
+    'IA no navegador': 'In-browser AI',
+    'Imagens e PDF': 'Images and PDF',
+    'Emails HTML a partir de 8 modelos, compatíveis com Gmail e Outlook, e links de WhatsApp com link curto e QR Code.': 'HTML emails from 8 templates that work in Gmail and Outlook, plus WhatsApp links with a short link and QR Code.',
+    '8 modelos': '8 templates',
+    'Link curto e QR Code': 'Short link and QR Code',
     'Sites e Experiências Web | João Alberto': 'Websites and Web Experiences | João Alberto',
     'Sites': 'Websites',
     'INSTITUCIONAL': 'CORPORATE',

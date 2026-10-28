@@ -60,7 +60,7 @@ export const GROUPS = [
     id: 'ecommerce',
     pt: { title: 'E-commerce', text: 'Carrinho abandonado, pedido a caminho, coleção nova e liquidação: os momentos em que o email mais pesa na venda.' },
     en: { title: 'E-commerce', text: 'Abandoned cart, order on its way, new collection and sale: the moments where email drives the most revenue.' },
-    brands: ['mare', 'lume'],
+    brands: ['mare', 'lume', 'flora-sophia'],
   },
   {
     id: 'finance',

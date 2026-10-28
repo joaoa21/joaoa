@@ -177,7 +177,7 @@ export const emails = [
         steps: [
           'Arraste as imagens para o Kompres. Podem ser várias de uma vez.',
           'Em **Tamanho máximo por arquivo**, digite o limite. Por exemplo: 200 KB.',
-          'Confira o resultado e clique em **Baixar ZIP** para levar todas de uma vez.',
+          'Confira o resultado e clique em **Baixar todas** para levar tudo de uma vez.',
         ],
         cta: 'Comprimir imagens',
         note: '**Referência:** para banners de site, 200 KB costuma ser um bom limite. Em emails, mire em menos de 100 KB por imagem.',
@@ -192,7 +192,7 @@ export const emails = [
         steps: [
           'Drop your images into Kompres. As many as you like at once.',
           'Under **maximum size per file** (Tamanho máximo por arquivo), type the limit. For example: 200 KB.',
-          'Check the result and hit **Download ZIP** (Baixar ZIP) to grab them all at once.',
+          'Check the result and hit **Download all** (Baixar todas) to grab everything at once.',
         ],
         cta: 'Compress images',
         note: '**Rule of thumb:** for website banners, 200 KB is usually a good limit. For emails, aim for under 100 KB per image.',

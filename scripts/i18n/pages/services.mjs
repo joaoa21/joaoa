@@ -23,6 +23,8 @@ export default {
     ['/assets/img/og-servicos.jpg', '/assets/img/og-servicos-en.jpg'],
   ],
   dict: {
+    'Mais de 30 ferramentas de imagem e PDF, com IA, direto no navegador.': 'More than 30 image and PDF tools, with AI, right in the browser.',
+    'Emails HTML com 8 modelos para Gmail e Outlook e links de WhatsApp com QR Code.': 'HTML emails with 8 templates for Gmail and Outlook, plus WhatsApp links with a QR Code.',
     // modal "Começar meu projeto"
     'Conte sobre o seu projeto': 'Tell me about your project',
     'Três passos rápidos. No fim, a mensagem sai pronta no WhatsApp.': 'Three quick steps. At the end, the message is ready on WhatsApp.',
