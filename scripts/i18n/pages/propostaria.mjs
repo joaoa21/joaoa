@@ -6,7 +6,7 @@ export default {
   // dados estruturados (CreativeWork)
   jsonDict: {
     'Landing page da Propostaria': 'Propostaria landing page',
-    'Landing page da Propostaria, app de propostas comerciais: exemplo de proposta que muda com o ramo, demonstração de aceite com assinatura e planos, do design ao código.': 'Landing page for Propostaria, a business-proposal app: a sample proposal that changes with the trade, a signature acceptance demo and plans, from design to code.',
+    'Landing page da Propostaria, app de propostas comerciais: proposta de exemplo que muda com o ramo, demonstração de aceite com assinatura e planos.': 'Landing page for Propostaria, a business-proposal app: a sample proposal that changes with the trade, a signature acceptance demo and plans, from design to code.',
     'Landing page': 'Landing page',
   },
   dict: {
@@ -38,7 +38,7 @@ export default {
     'Outro site, outra ideia.': 'Another website, another idea.',
     'Voltar aos sites': 'Back to websites',
     'Vamos criar seu próximo site': "Let's build your next website",
-    'Landing page da Propostaria, app de propostas comerciais: exemplo de proposta que muda com o ramo, demonstração de aceite com assinatura e planos, do design ao código.': 'Landing page for Propostaria, a business-proposal app: a sample proposal that changes with the trade, a signature acceptance demo and plans, from design to code.',
+    'Landing page da Propostaria, app de propostas comerciais: proposta de exemplo que muda com o ramo, demonstração de aceite com assinatura e planos.': 'Landing page for Propostaria, a business-proposal app: a sample proposal that changes with the trade, a signature acceptance demo and plans, from design to code.',
     'Página inicial da landing page da Propostaria': 'Propostaria landing page home',
     'Página inicial da landing page da Propostaria: título, seletor de ramo e proposta de exemplo': 'Propostaria landing page home: headline, trade selector and sample proposal',
     'Navegação para a página anterior': 'Navigation to the previous page',

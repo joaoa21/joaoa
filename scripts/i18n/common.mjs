@@ -39,6 +39,7 @@ export const COMMON = {
   'Marcas e aplicações · em breve': 'Brands and applications · coming soon',
   'Institucionais, landing pages e ferramentas': 'Business sites, landing pages and tools',
   'Emails HTML para CRM e marketing': 'HTML emails for CRM and marketing',
+  'Como funciona a criação de sites': 'How my web design service works',
   // nomes das categorias no menu de projetos
   'Identidade Visual': 'Brand Identity',
   'Sites': 'Websites',

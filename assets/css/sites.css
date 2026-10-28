@@ -152,3 +152,8 @@
 .site-intro-side p{font-size:var(--fs-body)}
 .site-features p{font-size:var(--fs-small)}
 .hub-grid--sites .pcard-desc,.site-card .pcard-desc{font-size:var(--fs-small);line-height:1.55}
+/* Link para a página de serviços, abaixo do botão de contato (cases e índice de sites) */
+.cta-service-link{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;margin-top:.75rem;color:var(--soft);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:color .2s}
+.cta-service-link:hover{color:var(--fg)}
+.cta-service-link i{transition:transform .3s var(--ease-out,ease)}
+.cta-service-link:hover i{transform:translateX(3px)}
