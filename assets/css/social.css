@@ -1,0 +1,48 @@
+/* Social Media (joaoa.com.br): feed rolando + stories passando.
+   Segue o Ink/Paper: duas cores, tons por transparência, hover com inversão total e sem movimento. */
+
+.sm-intro { padding-bottom: 3rem; }
+.sm-head { display: flex; align-items: end; justify-content: space-between; gap: 1.5rem; margin-bottom: 2.5rem; }
+.sm-head h2 { font-family: var(--font-sans); font-weight: 600; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: -.04em; color: var(--fg); }
+.sm-head .mono { display: block; margin-bottom: 1rem; color: var(--muted); font-size: var(--fs-small, .8rem); letter-spacing: .08em; }
+.sm-arrows { display: flex; gap: .75rem; }
+.sm-arrow { width: 3.5rem; height: 3.5rem; display: grid; place-items: center; border-radius: 50%; background: transparent; color: var(--fg); border: 1px solid var(--line); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.sm-arrow:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.sm-arrow:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+
+/* ---------- Feed rolando ---------- */
+.sm-feed { padding: 0 0 6rem; }
+.sm-wall { position: relative; height: min(100vh, 980px); overflow: hidden; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; padding: 0 14px;
+  -webkit-mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent); }
+.sm-feed-col { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; will-change: transform; }
+.sm-feed-item { display: block; width: 100%; }
+.sm-feed-item img { display: block; width: 100%; height: auto; border-radius: 8px; }
+
+/* ---------- Stories ---------- */
+.sm-stories { padding: 2rem 0 6rem; overflow: hidden; }
+.sm-window { overflow: hidden; }
+.sm-rail { list-style: none; margin: 0; padding: 0; display: flex; width: max-content; will-change: transform; }
+.sm-story { flex: none; width: clamp(180px, 16vw, 240px); margin-right: 16px; }
+.sm-story-card { position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; background: #000; color: #fff; overflow: hidden; border-radius: var(--radius, 10px); }
+.sm-story-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sm-story-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 30%; z-index: 1; pointer-events: none; background: linear-gradient(rgba(0,0,0,.55), transparent); }
+.sm-story-bars { position: absolute; z-index: 2; left: 12px; right: 12px; top: 12px; display: flex; gap: 4px; }
+.sm-story-bars i { flex: 1; height: 2px; border-radius: 2px; background: rgba(255,255,255,.35); overflow: hidden; }
+.sm-story-bars b { display: block; height: 100%; width: 0; background: #fff; }
+.sm-story-bars i.is-done b { width: 100%; }
+.sm-story-meta { position: absolute; z-index: 2; left: 12px; right: 12px; top: 26px; display: flex; align-items: center; gap: 10px; }
+.sm-story-avatar { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--paper); color: var(--ink); font: 500 11px/1 var(--font-mono); letter-spacing: .02em; }
+.sm-story-name { font: 600 13px/1.2 var(--font-sans); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-shadow: 0 1px 3px rgba(0,0,0,.4); }
+
+@media (max-width: 760px) {
+  .sm-head { align-items: start; flex-direction: column; }
+  .sm-arrows { display: none; }
+  .sm-story { width: 50vw; margin-right: 12px; }
+  .sm-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0 10px; height: 165vw; max-height: 820px; }
+  .sm-feed-col { gap: 10px; }
+  .sm-feed-col:nth-child(n+3) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sm-feed .sm-arrows { display: none; }
+  .sm-wall { height: auto; -webkit-mask-image: none; mask-image: none; }
+}

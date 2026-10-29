@@ -28,6 +28,7 @@ export const URLS = {
   '/projetos/identidade-visual/venda-bar-arretado/': '/en/projects/brand-identity/venda-bar-arretado/',
   '/projetos/identidade-visual/duoplay/': '/en/projects/brand-identity/duoplay/',
   '/projetos/email-design/': '/en/projects/email-design/',
+  '/projetos/social-media/': '/en/projects/social-media/',
   '/criacao-de-sites/': '/en/web-design/',
 };
 
@@ -52,6 +53,11 @@ export const KEEP = [
 ];
 
 export const COMMON = {
+  'Posts, carrosséis e stories': 'Posts, carousels and stories',
+  'Social Media': 'Social Media',
+  'Posts, carrosséis e stories para eventos, shows e marcas de varejo, saúde e serviços.': 'Posts, carousels and stories for events, shows and brands in retail, health and services.',
+  'Mural de posts de redes sociais': 'Wall of social media posts',
+  'POSTS · CARROSSÉIS · STORIES': 'POSTS · CAROUSELS · STORIES',
   // cases de sites em pranchas
   'Apresentação do projeto Email Generator com a ficha técnica': 'Email Generator project overview with the fact sheet',
   'Celular com o site Email Generator aberto, em duas fotos': 'Phone with the Email Generator website open, in two photos',
