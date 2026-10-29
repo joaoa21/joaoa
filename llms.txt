@@ -17,6 +17,9 @@ Contato: WhatsApp +55 81 98878-0144 · joaoams6@gmail.com · LinkedIn https://ww
 - [Sites](https://joaoa.com.br/projetos/sites/): sites e experiências digitais, do conceito e design à implementação.
 - [MS Corretora de Seguros](https://joaoa.com.br/projetos/sites/ms-corretora/): site institucional com coberturas, seguradoras parceiras e cotação pelo WhatsApp.
 - [Propostaria](https://joaoa.com.br/projetos/sites/propostaria/): landing page de um app de propostas comerciais, com exemplo de proposta, demonstração de aceite com assinatura e planos.
+- [Vértice Facilities](https://joaoa.com.br/projetos/sites/vertice/): site institucional de uma empresa de facilities de Recife, com limpeza de fachadas por drone, página de vagas e pedido de orçamento.
+- [Ziga Agency (site)](https://joaoa.com.br/projetos/sites/ziga-agency/): site da Ziga, agência de branding, design e web de Recife e João Pessoa, com design system próprio, fundo animado em código e portfólio por categoria.
+- [Novo Save (site)](https://joaoa.com.br/projetos/sites/novo-save/): portal de games com cara de revista: manchete, últimas notícias, guias, reviews e uma página por jogo, com painel de publicação e busca.
 - [Clube de Ouro](https://joaoa.com.br/projetos/sites/clube-de-ouro/): programa de fidelidade com dez níveis, leaderboard e loja de recompensas, desenhado e programado do layout ao código.
 - [Kompres](https://joaoa.com.br/projetos/sites/kompres/): mais de 30 ferramentas de imagem e PDF que rodam no navegador: comprimir, converter, redimensionar, recortar, marca d'água, remover fundo e melhorar resolução com IA, juntar, dividir, organizar, comprimir e assinar PDFs.
 - [Email Generator](https://joaoa.com.br/projetos/sites/email-generator/): ferramentas gratuitas para criar emails HTML a partir de 8 modelos, compatíveis com Gmail e Outlook, e gerar links de WhatsApp com mensagem, link curto e QR Code.

@@ -8,9 +8,6 @@ export default {
     'Email Generator: ferramentas gratuitas para montar emails HTML compatíveis com Gmail e Outlook e gerar links de WhatsApp com mensagem pronta.': 'Email Generator: free tools to build HTML emails that work in Gmail and Outlook and to generate WhatsApp links with a ready message.',
     'Requires JavaScript': 'Requires JavaScript',
   },
-  raw: [
-    ['/assets/projetos/sites/email-generator/hero.webp', '/assets/projetos/sites/email-generator/hero-en.webp'],
-  ],
   dict: {
     'Email Generator no computador e no celular: o editor de email e a página inicial': 'Email Generator on desktop and mobile: the email editor and the home page',
     'Editor e versão para celular · emailgenerator.com.br': 'Editor and mobile version · emailgenerator.com.br',

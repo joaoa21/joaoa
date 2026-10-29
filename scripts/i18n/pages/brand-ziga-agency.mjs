@@ -8,6 +8,8 @@ export default {
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'A mesma marca, agora no site.': 'The same brand, now on the website.',
+    'O site da Ziga Agency': 'The Ziga Agency website',
     'Ziga Agency | Identidade visual | João Alberto': 'Ziga Agency | Brand identity | João Alberto',
     'Voltar para identidade visual': 'Back to brand identity',
     'IDENTIDADE VISUAL / AGÊNCIA': 'BRAND IDENTITY / AGENCY',

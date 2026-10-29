@@ -9,9 +9,6 @@ export default {
     'Landing page da Propostaria, app de propostas comerciais: proposta de exemplo que muda com o ramo, demonstração de aceite com assinatura e planos.': 'Landing page for Propostaria, a business-proposal app: a sample proposal that changes with the trade, a signature acceptance demo and plans, from design to code.',
     'Landing page': 'Landing page',
   },
-  raw: [
-    ['/assets/projetos/sites/kompres/cover.webp', '/assets/projetos/sites/kompres/cover-en.webp'],
-  ],
   dict: {
     'Landing page da Propostaria no computador e no celular, com propostas de exemplo e uma proposta aceita com assinatura': 'Propostaria landing page on desktop and mobile, with sample proposals and a proposal accepted with a signature',
     'Landing page e propostas de exemplo · propostaria.com.br': 'Landing page and sample proposals · propostaria.com.br',

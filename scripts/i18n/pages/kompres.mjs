@@ -8,10 +8,6 @@ export default {
     'Kompres: site para comprimir, converter e redimensionar imagens em lote, remover fundos e organizar PDFs direto no navegador.': 'Kompres: a website to compress, convert and resize images in bulk, remove backgrounds and organize PDFs right in the browser.',
     'Requires JavaScript': 'Requires JavaScript',
   },
-  raw: [
-    ['/assets/projetos/sites/email-generator/cover.webp', '/assets/projetos/sites/email-generator/cover-en.webp'],
-    ['/assets/projetos/sites/kompres/hero.webp', '/assets/projetos/sites/kompres/hero-en.webp'],
-  ],
   dict: {
     'Kompres no computador e no celular: o compressor em lote e a página inicial': 'Kompres on desktop and mobile: the batch compressor and the home page',
     'Compressor e versão para celular · kompres.com.br': 'Compressor and mobile version · kompres.com.br',

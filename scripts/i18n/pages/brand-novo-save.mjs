@@ -8,6 +8,8 @@ export default {
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'A mesma marca, agora no site.': 'The same brand, now on the website.',
+    'O site do Novo Save': 'The Novo Save website',
     'Novo Save | Identidade visual | João Alberto': 'Novo Save | Brand identity | João Alberto',
     'Voltar para identidade visual': 'Back to brand identity',
     'IDENTIDADE VISUAL / MÍDIA': 'BRAND IDENTITY / MEDIA',
