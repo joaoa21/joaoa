@@ -1,104 +1,254 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <script>
   (() => {
     const root = document.documentElement;
-    root.classList.add('js', 'error-motion');
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) root.classList.add('reduce-motion');
-    window.__errorMotionFallback = window.setTimeout(() => root.classList.add('motion-fallback'), 1800);
+    root.classList.add('js');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      root.classList.add('reduce-motion');
+    }
+
+    window.__hubMotionFallback = window.setTimeout(() => {
+      root.classList.add('motion-fallback');
+    }, 1800);
   })();
 </script>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Brand Identity · Under construction | João Alberto</title>
+<link href="https://joaoa.com.br/en/projects/brand-identity/" rel="canonical"/><link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/identidade-visual/"/><link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/brand-identity/"/><link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/identidade-visual/"/><meta content="#0f0f0f" name="theme-color"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brand Identity | João Alberto</title>
 <meta property="og:locale" content="en_US"/><meta property="og:locale:alternate" content="pt_BR"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="João Alberto"/>
-<meta property="og:title" content="Brand Identity · Under construction | João Alberto"/>
-<meta property="og:description" content="This area of the portfolio is under construction. Meanwhile, check out the OAB/PE campaign."/>
+<meta property="og:title" content="Brand Identity | João Alberto"/>
+<meta property="og:description" content="Brand identities created by João Alberto: symbol, colors, typography and applications for brands in insurance, law, retail, industry, media and more."/>
 <meta property="og:url" content="https://joaoa.com.br/en/projects/brand-identity/"/>
-<meta property="og:image" content="https://joaoa.com.br/assets/img/og-cover-en.jpg"/>
+<meta property="og:image" content="https://joaoa.com.br/assets/img/og-identidade-visual.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="João Alberto — digital design and web: interfaces, websites, brands and campaigns"/>
+<meta property="og:image:alt" content="Covers of brand identities created by João Alberto"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Brand Identity · Under construction | João Alberto"/>
-<meta name="twitter:description" content="This area of the portfolio is under construction. Meanwhile, check out the OAB/PE campaign."/>
-<meta name="twitter:image" content="https://joaoa.com.br/assets/img/og-cover-en.jpg"/>
-<meta name="twitter:image:alt" content="João Alberto — digital design and web: interfaces, websites, brands and campaigns"/>
-<meta content="The brand identity area of João Alberto's portfolio is under construction. Meanwhile, check out the OAB/PE campaign." name="description"/>
-<meta content="noindex, follow" name="robots"/>
-<link href="https://joaoa.com.br/en/projects/brand-identity/" rel="canonical"/><link rel="alternate" hreflang="pt-BR" href="https://joaoa.com.br/projetos/identidade-visual/"/><link rel="alternate" hreflang="en" href="https://joaoa.com.br/en/projects/brand-identity/"/><link rel="alternate" hreflang="x-default" href="https://joaoa.com.br/projetos/identidade-visual/"/>
-<meta content="#0f0f0f" name="theme-color"/>
+<meta name="twitter:title" content="Brand Identity | João Alberto"/>
+<meta name="twitter:description" content="Brand identities created by João Alberto: symbol, colors, typography and applications for brands in insurance, law, retail, industry, media and more."/>
+<meta name="twitter:image" content="https://joaoa.com.br/assets/img/og-identidade-visual.jpg"/>
+<meta name="twitter:image:alt" content="Covers of brand identities created by João Alberto"/>
+<meta content="Brand identities created by João Alberto: symbol, colors, typography and applications for brands in insurance, law, retail, industry, media and more." name="description"/>
 <link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin=""/><link href="/assets/css/fonts.css" rel="stylesheet"/>
 <link href="/assets/css/icons.css" rel="stylesheet"/>
-<link href="/error.css" rel="stylesheet"/>
-<link href="/assets/css/obras.css" rel="stylesheet"/>
+<link href="/assets/css/hub.css" rel="stylesheet"/>
 <link href="/favicon.ico" rel="icon" sizes="48x48"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"}}</script>
-<link href="/site.webmanifest" rel="manifest"/>
-<link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
-<script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script><script defer src="/assets/js/cookies.js"></script>
-<link href="/assets/css/lang-menu.css" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="/assets/css/lang-menu.css" rel="stylesheet"/></noscript>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"
+    }
+  }
+  </script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Identidade Visual | João Alberto",
+  "url": "https://joaoa.com.br/en/projects/brand-identity/",
+  "isPartOf": {
+    "@id": "https://joaoa.com.br/#website"
+  },
+  "author": {
+    "@id": "https://joaoa.com.br/#person"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "MS Corretora",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/ms-corretora/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Ziga Agency",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/ziga-agency/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Novo Save",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/novo-save/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Mind",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/mind/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Weld Inox",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/weld-inox/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Luna Advocacia",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/luna-advocacia/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "Albuquerque Advogados",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/albuquerque-advogados/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "Braço Forte",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/braco-forte/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "name": "Supermercado O Cestão",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/supermercado-cestao/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "name": "Venda Bar Arretado",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/venda-bar-arretado/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "name": "DuoPlay",
+        "url": "https://joaoa.com.br/en/projects/brand-identity/duoplay/"
+      }
+    ]
+  }
+}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://joaoa.com.br/en/"}, {"@type": "ListItem", "position": 2, "name": "Projects", "item": "https://joaoa.com.br/en/projects/"}, {"@type": "ListItem", "position": 3, "name": "Brand Identity", "item": "https://joaoa.com.br/en/projects/brand-identity/"}]}</script><link href="/site.webmanifest" rel="manifest"/><link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/><link href="/assets/css/sites.css" rel="stylesheet"/><link rel="stylesheet" href="/assets/css/contact-socials.css"/>
+<script>/* Analytics apenas no domínio publicado: não conta testes locais nem deploy previews. */if(/^(www\.)?joaoa\.com\.br$/.test(location.hostname)){const s=document.createElement("script");s.src="https://analytics-hub-production-9abd.up.railway.app/t.js";s.dataset.key="pk_J6q-HyvEwzSgOsFA5fSfirbjriPcvcSf";s.defer=true;document.head.appendChild(s);}</script><script defer src="/assets/js/cookies.js"></script><link href="/assets/css/nav-projects.css" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="/assets/css/nav-projects.css" rel="stylesheet"/></noscript><link href="/assets/css/lang-menu.css" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="/assets/css/lang-menu.css" rel="stylesheet"/></noscript>
+
 </head>
-<body data-error="obras">
+<body>
+<a class="skip-link" href="#conteudo">Skip to content</a>
+<!-- ============ 3D STAGE ============ -->
 <canvas aria-hidden="true" id="stage"></canvas>
-<a aria-label="João Alberto — home page" class="brand" href="/en/">João Alberto</a>
-<!--lang--><details class="lang-menu lang-corner"><summary aria-label="Language: English"><span aria-hidden="true" class="flag flag-us"></span>EN</summary><ul class="lang-list"><li><a href="/projetos/identidade-visual/" hreflang="pt-BR" lang="pt-BR"><span aria-hidden="true" class="flag flag-br"></span>Português</a></li><li><a href="/en/projects/brand-identity/" hreflang="en" lang="en" aria-current="true"><span aria-hidden="true" class="flag flag-us"></span>English</a></li></ul></details><!--/lang-->
-
-<!-- fitas de interdição atravessando a tela -->
-<div aria-hidden="true" class="obras-tapes">
-<div class="obras-tape obras-tape--a"><div class="obras-tape-track"><span>Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress — </span><span>Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress — </span></div></div>
-<div class="obras-tape obras-tape--b"><div class="obras-tape-track"><span>Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress — </span><span>Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress — Under construction — Do not cross — Brand identity — Work in progress — </span></div></div>
-</div>
-
-<div aria-hidden="true" class="hud mono">
+<!-- ============ HUD ============ -->
+<div aria-hidden="true" class="hud">
+<div class="hud-corner hud-bl mono">
 <span>REC — PE / BR</span>
-<span>Expected delivery: soon</span>
+<span>8.05°S · 34.88°W</span>
 </div>
-
-<main class="error-shell">
-<div aria-hidden="true" class="error-visual">
-<div class="obra-scene">
-<span class="barricade-light barricade-light--left"></span>
-<span class="barricade-light barricade-light--right"></span>
-<span class="barricade-post barricade-post--left"></span>
-<span class="barricade-post barricade-post--right"></span>
-<div class="barricade-board barricade-board--top"><span class="barricade-plate mono">UNDER CONSTRUCTION</span></div>
-<div class="barricade-board barricade-board--bottom"></div>
-<span class="barricade-foot barricade-foot--left"></span>
-<span class="barricade-foot barricade-foot--right"></span>
-<span class="barricade-ground"></span>
-<div class="obra-cone"><span class="obra-cone-body"></span><span class="obra-cone-base"></span></div>
+<div class="hud-corner hud-br mono">
+<span>©2026</span>
+<span id="hudClock">00:00:00</span>
 </div>
 </div>
-
-<div class="error-copy">
-<span class="error-label mono">// Brand identity</span>
-<h1>Under<br/>construction<span class="dot">.</span></h1>
-<p class="error-description">
-This area is being rebuilt to present each brand with its full process, from concept to applications. While the work is in progress, the OAB/PE campaign is ready to visit.
-</p>
-<div class="actions">
-<a class="btn" href="/en/projects/oab/">
-<span>View the OAB/PE campaign</span>
+<!-- ============ NAVBAR ============ -->
+<header class="site-nav" id="nav">
+<a aria-label="João Alberto — home page" class="nav-logo" href="/en/">João Alberto</a>
+<nav aria-label="Main navigation" class="nav-menu" id="navMenu">
+<ul class="nav-links">
+<li><a href="/en/#topo">Home</a></li>
+<li><a href="/en/#sobre">About</a></li>
+<li class="nav-proj"><a aria-current="page" href="/en/projects/">Projects</a><div class="proj-menu" aria-label="Project categories"><ul class="proj-menu-grid"><li><a class="proj-menu-card" href="/en/projects/igaming/"><img alt="" decoding="async" height="320" loading="lazy" src="/assets/projetos/1-sm.webp" width="480"/><strong>iGaming</strong><span>CRM, gamification and campaigns</span></a></li><li><a class="proj-menu-card" href="/en/projects/brand-identity/"><img alt="" decoding="async" height="320" loading="lazy" src="/assets/projetos/2-sm.webp" width="480"/><strong>Brand Identity</strong><span>Brands and applications</span></a></li><li><a class="proj-menu-card" href="/en/projects/websites/"><img alt="" decoding="async" height="320" loading="lazy" src="/assets/projetos/3-sm.webp" width="480"/><strong>Websites</strong><span>Business sites, landing pages and tools</span></a></li><li><a class="proj-menu-card" href="/en/projects/email-design/"><img alt="" decoding="async" height="320" loading="lazy" src="/assets/projetos/5-sm.webp" width="480"/><strong>Email Design</strong><span>HTML emails for CRM and marketing</span></a></li><li><a class="proj-menu-card" href="/en/projects/oab/"><img alt="" decoding="async" height="320" loading="lazy" src="/assets/projetos/4-sm.webp" width="480"/><strong>OAB/PE Campaign</strong><span>360º campaign · 2024</span></a></li></ul><div class="proj-menu-foot"><a href="/en/projects/">View all projects</a></div></div></li>
+<li><a href="/en/web-design/">Services</a></li>
+<li><a href="/blog/">Blog</a></li>
+<!--lang--><li class="nav-lang"><details class="lang-menu"><summary aria-label="Language: English"><span aria-hidden="true" class="flag flag-us"></span>EN</summary><ul class="lang-list"><li><a href="/projetos/identidade-visual/" hreflang="pt-BR" lang="pt-BR"><span aria-hidden="true" class="flag flag-br"></span>Português</a></li><li><a href="/en/projects/brand-identity/" hreflang="en" lang="en" aria-current="true"><span aria-hidden="true" class="flag flag-us"></span>English</a></li></ul></details></li><!--/lang--></ul>
+<a class="nav-cta" href="/en/#contato">
+        Let's talk
+        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</a>
+</nav>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="Open menu" class="nav-mobile-toggle" id="navToggle" type="button">
+<span></span>
+<span></span>
+</button>
+</header>
+<main id="conteudo">
+<!-- ============ CABEÇALHO ============ -->
+<header class="hub-head">
+<a class="hub-back-link mono" href="/en/projects/" aria-label="Back to the projects page">
+<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+<span>Back to projects</span>
+</a>
+<div class="hub-label mono"><span></span>PORTFOLIO</div>
+<h1 class="hub-title">Brand Identity<span class="dot">.</span></h1>
+<p class="hub-desc">Brands built from the symbol to the applications: concept, colors, typography, stationery, storefront, uniforms and social media. Open each project to see the full presentation.</p>
+</header>
+<!-- ============ GRID DE CARDS ============ -->
+<section aria-label="Brand identities created by João Alberto" class="hub-grid hub-grid--sites hub-grid--brands"><a class="pcard site-card" href="/en/projects/brand-identity/ms-corretora/">
+<div class="pcard-preview"><img alt="MS Corretora logo next to a family in front of their home at sunset" decoding="async" width="1280" height="800" src="/assets/projetos/identidade-visual/ms-corretora/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">INSURANCE</p><h2 class="pcard-title">MS Corretora</h2><p class="pcard-desc">MS Corretora has worked for over 15 years in life, auto, home, motorcycle, travel and business insurance.</p><ul class="site-tags" aria-label="Highlights"><li>Applications</li><li>Social</li><li>Website</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a>
+<a class="pcard site-card" href="/en/projects/brand-identity/ziga-agency/">
+<div class="pcard-preview"><img alt="Cover: Brand, website, communication and sales designed together, with the Ziga logo on black" decoding="async" width="1280" height="800" src="/assets/projetos/identidade-visual/ziga-agency/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">AGENCY</p><h2 class="pcard-title">Ziga Agency</h2><p class="pcard-desc">Ziga is a branding and web agency from Recife. The agency's own brand was designed like the work it delivers: a single rule, of 90° and 45°, applied from the brand to the website, from communication to sales.</p><ul class="site-tags" aria-label="Highlights"><li>Website</li><li>Communication</li><li>Sales materials</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a>
+<a class="pcard site-card" href="/en/projects/brand-identity/novo-save/">
+<div class="pcard-preview"><img alt="Novo Save start screen: the logo on black and the PRESS START prompt" decoding="async" width="1280" height="800" src="/assets/projetos/identidade-visual/novo-save/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">MEDIA</p><h2 class="pcard-title">Novo Save</h2><p class="pcard-desc">Novo Save is an independent gaming outlet: curated news, guides that solve problems and honest recommendations.</p><ul class="site-tags" aria-label="Highlights"><li>Design system</li><li>Website</li><li>Instagram</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a>
+<a class="pcard site-card" href="/en/projects/brand-identity/mind/">
+<div class="pcard-preview"><img alt="Mind logo over a night photo of a container port" decoding="async" loading="lazy" width="1280" height="800" src="/assets/projetos/identidade-visual/mind/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">INFRASTRUCTURE</p><h2 class="pcard-title">Mind</h2><p class="pcard-desc">Mind structures and optimizes infrastructure businesses in the port, airport, highway, sanitation and energy sectors.</p><ul class="site-tags" aria-label="Highlights"><li>Typography</li><li>Stationery</li><li>Uniform</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a>
+<a class="pcard site-card" href="/en/projects/brand-identity/weld-inox/">
+<div class="pcard-preview"><img alt="Weld Inox logo next to a photo of TIG welding on a stainless steel tube" decoding="async" loading="lazy" width="1280" height="800" src="/assets/projetos/identidade-visual/weld-inox/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">INDUSTRY</p><h2 class="pcard-title">Weld Inox</h2><p class="pcard-desc">Weld Inox works with welding supplies and abrasives and is run by the founder's family. The new symbol starts from the W of the old brand, gains electrode tips and a circle that speaks of continuity.</p><ul class="site-tags" aria-label="Highlights"><li>Stationery</li><li>Uniform</li><li>Social</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a>
+<a class="pcard site-card" href="/en/projects/brand-identity/luna-advocacia/">
+<div class="pcard-preview"><img alt="Luna Advocacia logo over a dark office in shades of green" decoding="async" loading="lazy" width="1280" height="800" src="/assets/projetos/identidade-visual/luna-advocacia/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">LAW</p><h2 class="pcard-title">Luna Advocacia</h2><p class="pcard-desc">Luna Advocacia practices corporate criminal law. The symbol is an L made of three triangles, one for each area of the firm: Criminal, Corporate and Tax Law.</p><ul class="site-tags" aria-label="Highlights"><li>Logo</li><li>Stationery</li><li>Signage</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a>
+<a class="pcard site-card" href="/en/projects/brand-identity/albuquerque-advogados/">
+<div class="pcard-preview"><img alt="Albuquerque Advogados logo over a night photo of classical columns" decoding="async" loading="lazy" width="1280" height="800" src="/assets/projetos/identidade-visual/albuquerque-advogados/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">LAW</p><h2 class="pcard-title">Albuquerque Advogados</h2><p class="pcard-desc">The Albuquerque Advogados symbol places two columns side by side, on a base and with beveled tops.</p><ul class="site-tags" aria-label="Highlights"><li>Logo</li><li>Stationery</li><li>Signage</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a>
+<a class="pcard site-card" href="/en/projects/brand-identity/braco-forte/">
+<div class="pcard-preview"><img alt="Braço Forte logo over an equipment yard at sunset" decoding="async" loading="lazy" width="1280" height="800" src="/assets/projetos/identidade-visual/braco-forte/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">RENTALS</p><h2 class="pcard-title">Braço Forte</h2><p class="pcard-desc">Braço Forte works in equipment rentals. The italic initials BF get an orange block with a cut corner, which carries the brand from the uniform to the truck and to the equipment itself.</p><ul class="site-tags" aria-label="Highlights"><li>Graphic elements</li><li>Card</li><li>Uniforms</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a>
+<a class="pcard site-card" href="/en/projects/brand-identity/supermercado-cestao/">
+<div class="pcard-preview"><img alt="Supermercado O Cestão storefront at dusk, with the red sign lit up" decoding="async" loading="lazy" width="1280" height="800" src="/assets/projetos/identidade-visual/supermercado-cestao/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">RETAIL</p><h2 class="pcard-title">Supermercado O Cestão</h2><p class="pcard-desc">O Cestão is the neighborhood supermarket, with new deals every week. The brand combines an orange C and a shopping basket, and becomes storefront, shopping bag, uniform and a campaign for each day.</p><ul class="site-tags" aria-label="Highlights"><li>Storefront</li><li>Campaigns</li><li>Social media</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a>
+<a class="pcard site-card" href="/en/projects/brand-identity/venda-bar-arretado/">
+<div class="pcard-preview"><img alt="Yellow storefront of Venda Bar Arretado at night, with the sign under the pergola and wooden tables" decoding="async" loading="lazy" width="1280" height="800" src="/assets/projetos/identidade-visual/venda-bar-arretado/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">BAR</p><h2 class="pcard-title">Venda Bar Arretado</h2><p class="pcard-desc">Venda is the corner bar that looks like a backcountry general store. The brand cuts out the name by hand, like a painted sign, and scatters sun, cactus, moon and hummingbird across the menus and coasters.</p><ul class="site-tags" aria-label="Highlights"><li>Menus</li><li>Coasters</li><li>Uniform</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a>
+<a class="pcard site-card" href="/en/projects/brand-identity/duoplay/">
+<div class="pcard-preview"><img alt="DuoPlay logo embroidered on dark fabric" decoding="async" loading="lazy" width="1280" height="800" src="/assets/projetos/identidade-visual/duoplay/cover.webp"/></div>
+<div class="pcard-body"><p class="site-card-kind mono">STREAMING</p><h2 class="pcard-title">DuoPlay</h2><p class="pcard-desc">DuoPlay is a livestream and video channel run by a duo. The symbol joins two interlocked play buttons: the duo's partnership and the play of games, streams and videos.</p><ul class="site-tags" aria-label="Highlights"><li>Overlays</li><li>Stream screens</li><li>Badges</li></ul><span class="pcard-link">View the project <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></span></div></a></section>
+<!-- ============ VOLTAR ============ -->
+<section aria-label="Back navigation" class="hub-back-section">
+<a class="btn-sweep btn-sweep-back" href="/en/projects/">
+<span>Back to projects</span>
+<span aria-hidden="true" class="sweep-ic"><i class="fa-solid fa-arrow-left"></i></span>
+</a>
+</section>
+<!-- ============ CTA ============ -->
+<section aria-labelledby="titulo-contato" class="hub-cta">
+<h2 id="titulo-contato">Let's create your brand<span class="dot">?</span></h2>
+<a class="btn" href="https://wa.me/5581988780144?text=Hi%20Jo%C3%A3o!" rel="noopener" target="_blank">
+<span>Get in touch</span>
 <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
 </a>
-<a class="btn btn--ghost" href="/en/projects/">
-<span>All projects</span>
-<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-</a>
-</div>
-</div>
+<nav aria-label="Social networks" class="contact-networks">
+  <div class="contact-social-item"><a aria-label="GitHub" href="https://github.com/joaoa21" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-github"></i></a><span aria-hidden="true" class="contact-social-tooltip">GitHub</span></div>
+  <div class="contact-social-item"><a aria-label="Instagram" href="https://www.instagram.com/joaoalbertoms2/" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-instagram"></i></a><span aria-hidden="true" class="contact-social-tooltip">Instagram</span></div>
+  <div class="contact-social-item"><a aria-label="LinkedIn" href="https://www.linkedin.com/in/joaoa210/" rel="noopener" target="_blank"><span aria-hidden="true" class="contact-social-fill"></span><i aria-hidden="true" class="fa-brands fa-linkedin-in"></i></a><span aria-hidden="true" class="contact-social-tooltip">LinkedIn</span></div>
+</nav>
+</section>
 </main>
-
-<noscript>
-<p class="noscript-message">JavaScript is disabled, but the buttons still work.</p>
-</noscript>
+<!-- ============ FOOTER ============ -->
+<footer>
+<div class="footer-info">
+<p>João Alberto © 2026 — Digital design &amp; web</p>
+<p class="mono">RECIFE — PE / BRAZIL</p>
+</div>
+<a aria-label="Back to top" class="to-top" href="#conteudo">
+<i aria-hidden="true" class="fa-solid fa-arrow-up"></i>
+</a>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.13/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
-<script src="/error.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="/assets/js/hub.js" type="module"></script>
 <script src="/assets/js/lang-menu.js" defer></script>
 </body>
 </html>

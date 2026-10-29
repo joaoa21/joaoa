@@ -3,6 +3,10 @@ export default {
   en: 'en/projects/websites/index.html',
   ptUrl: '/projetos/sites/',
   enUrl: '/en/projects/websites/',
+  raw: [
+    ['/assets/projetos/sites/email-generator/cover.webp', '/assets/projetos/sites/email-generator/cover-en.webp'],
+    ['/assets/projetos/sites/kompres/cover.webp', '/assets/projetos/sites/kompres/cover-en.webp'],
+  ],
   dict: {
     'Mais de 30 ferramentas de imagem e PDF no navegador: comprimir, recortar, marca d\'água, remover fundo com IA e organizar PDFs.': 'More than 30 image and PDF tools in the browser: compress, crop, watermark, AI background removal and organizing PDFs.',
     '+30 ferramentas': '30+ tools',

@@ -322,3 +322,21 @@ function galleries(gsap, ScrollTrigger, mobile) {
     onEnter: reveal,
   });
 }
+
+// No celular o vídeo 4:5 só carrega e toca quando aparece; no desktop toca o 8:5.
+(function () {
+  var mq = window.matchMedia("(max-width: 760px)");
+  var calmo = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".bc-board-video").forEach(function (fig) {
+    var d = fig.querySelector(".bc-board-d"), m = fig.querySelector(".bc-board-m");
+    if (calmo) { fig.querySelectorAll("video").forEach(function (v) { v.removeAttribute("autoplay"); v.pause(); v.controls = true; }); return; }
+    function pick() {
+      var on = mq.matches ? m : d, off = mq.matches ? d : m;
+      off.pause(); on.preload = "auto"; on.muted = true; var p = on.play(); if (p) p.catch(function () {});
+    }
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (e) { if (e[0].isIntersecting) pick(); else { d.pause(); m.pause(); } }, { threshold: .25 }).observe(fig);
+    } else pick();
+    mq.addEventListener && mq.addEventListener("change", pick);
+  });
+})();

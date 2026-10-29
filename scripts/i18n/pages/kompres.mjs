@@ -8,7 +8,13 @@ export default {
     'Kompres: site para comprimir, converter e redimensionar imagens em lote, remover fundos e organizar PDFs direto no navegador.': 'Kompres: a website to compress, convert and resize images in bulk, remove backgrounds and organize PDFs right in the browser.',
     'Requires JavaScript': 'Requires JavaScript',
   },
+  raw: [
+    ['/assets/projetos/sites/email-generator/cover.webp', '/assets/projetos/sites/email-generator/cover-en.webp'],
+    ['/assets/projetos/sites/kompres/hero.webp', '/assets/projetos/sites/kompres/hero-en.webp'],
+  ],
   dict: {
+    'Kompres no computador e no celular: o compressor em lote e a página inicial': 'Kompres on desktop and mobile: the batch compressor and the home page',
+    'Compressor e versão para celular · kompres.com.br': 'Compressor and mobile version · kompres.com.br',
     'Kompres: mais de 30 ferramentas de imagem e PDF direto no navegador, de comprimir e recortar a remover fundo com IA, organizar e assinar PDFs.': 'Kompres: more than 30 image and PDF tools right in the browser, from compressing and cropping to AI background removal and organizing and signing PDFs.',
     'Mais de 30 ferramentas de imagem e PDF, do compressor em lote à assinatura de PDF, tudo direto no navegador e sem enviar arquivos.': 'More than 30 image and PDF tools, from batch compression to PDF signing, all right in the browser without uploading files.',
     'O Kompres surgiu na rotina do time de CRM em que eu trabalhava, para acabar com a conversão manual de PNG para WebP antes de publicar cada banner. Com o uso, virou uma caixa com mais de 30 ferramentas. Nas imagens: comprimir até um tamanho exato em KB, redimensionar, recortar, girar, aplicar marca d\'água, desfocar áreas, converter HEIC, SVG e favicon, criar GIF e, com IA, remover o fundo e melhorar a resolução. Nos PDFs: juntar, dividir, organizar, comprimir, assinar, numerar e extrair o texto.': 'Kompres started in the routine of the CRM team I worked with, to end the manual PNG-to-WebP conversion before publishing every banner. With use, it became a box of more than 30 tools. For images: compress to an exact size in KB, resize, crop, rotate, add a watermark, blur areas, convert HEIC, SVG and favicons, make GIFs and, with AI, remove backgrounds and upscale. For PDFs: merge, split, organize, compress, sign, number pages and extract text.',

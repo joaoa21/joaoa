@@ -10,6 +10,8 @@ export default {
     'Produto digital': 'Digital product',
   },
   dict: {
+    'Clube de Ouro no computador e no celular, com o nível atual, a premiação semanal e o título de Imperador': 'Clube de Ouro on desktop and mobile, with the current level, the weekly prize and the Emperor title',
+    'Programa no computador e no celular · Clube de Ouro': 'Program on desktop and mobile · Clube de Ouro',
     'Clube de Ouro: programa de fidelidade gamificado | João Alberto': 'Clube de Ouro: gamified loyalty program | João Alberto',
     'Voltar para sites': 'Back to websites',
     'SITES / PRODUTO DIGITAL': 'WEBSITES / DIGITAL PRODUCT',

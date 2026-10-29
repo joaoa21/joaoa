@@ -10,6 +10,8 @@ export default {
     'Site institucional': 'Corporate website',
   },
   dict: {
+    'Site da MS Corretora de Seguros no computador e no celular, com as fotos, o card de diferenciais e o logo': 'MS Corretora de Seguros website on desktop and mobile, with the photos, the highlights card and the logo',
+    'Site no computador e no celular · mscorretoraseguros.com.br': 'Website on desktop and mobile · mscorretoraseguros.com.br',
     'MS Corretora de Seguros: site institucional | João Alberto': 'MS Corretora de Seguros: corporate website | João Alberto',
     'Voltar para sites': 'Back to websites',
     'SITES / INSTITUCIONAL': 'WEBSITES / CORPORATE',

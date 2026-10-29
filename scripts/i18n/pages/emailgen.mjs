@@ -8,7 +8,12 @@ export default {
     'Email Generator: ferramentas gratuitas para montar emails HTML compatíveis com Gmail e Outlook e gerar links de WhatsApp com mensagem pronta.': 'Email Generator: free tools to build HTML emails that work in Gmail and Outlook and to generate WhatsApp links with a ready message.',
     'Requires JavaScript': 'Requires JavaScript',
   },
+  raw: [
+    ['/assets/projetos/sites/email-generator/hero.webp', '/assets/projetos/sites/email-generator/hero-en.webp'],
+  ],
   dict: {
+    'Email Generator no computador e no celular: o editor de email e a página inicial': 'Email Generator on desktop and mobile: the email editor and the home page',
+    'Editor e versão para celular · emailgenerator.com.br': 'Editor and mobile version · emailgenerator.com.br',
     'Email Generator: crie emails HTML a partir de 8 modelos, compatíveis com Gmail e Outlook, e gere links de WhatsApp com mensagem, link curto e QR Code.': 'Email Generator: build HTML emails from 8 templates that work in Gmail and Outlook, and create WhatsApp links with a message, short link and QR Code.',
     'Ferramentas gratuitas para criar emails HTML a partir de 8 modelos, compatíveis com Gmail e Outlook, e gerar links de WhatsApp com mensagem, link curto e QR Code.': 'Free tools to build HTML emails from 8 templates that work in Gmail and Outlook, and to create WhatsApp links with a message, short link and QR Code.',
     'O Email Generator nasceu para dar escala à produção de emails de campanha do time. Hoje são 8 modelos de layout, de newsletter a cupom e convite, que trocam a estrutura sem perder o conteúdo, num editor em etapas no estilo do Canva. A prévia mostra desktop e celular enquanto você edita e, antes de copiar, o gerador aponta o que falta: link de descadastro, texto alternativo, botão sem link. O HTML sai compatível com Gmail e Outlook (VML), pronto para a plataforma de envio ou para colar direto no Gmail.': 'Email Generator was born to scale the team\'s campaign email production. Today it has 8 layout templates, from newsletter to coupon and invitation, that swap the structure without losing the content, in a step-by-step editor in the style of Canva. The preview shows desktop and mobile while you edit and, before you copy, the generator points out what is missing: unsubscribe link, alt text, a button without a link. The HTML works in Gmail and Outlook (VML), ready for the sending platform or to paste straight into Gmail.',

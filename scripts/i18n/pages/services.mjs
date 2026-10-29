@@ -21,6 +21,8 @@ export default {
   raw: [
     ['?text=Oi%20Jo%C3%A3o!%20Quero%20um%20or%C3%A7amento%20de%20site.', '?text=Hi%20Jo%C3%A3o!%20I%27d%20like%20a%20website%20quote.'],
     ['/assets/img/og-servicos.jpg', '/assets/img/og-servicos-en.jpg'],
+    ['/assets/projetos/sites/email-generator/cover.webp', '/assets/projetos/sites/email-generator/cover-en.webp'],
+    ['/assets/projetos/sites/kompres/cover.webp', '/assets/projetos/sites/kompres/cover-en.webp'],
   ],
   dict: {
     'Mais de 30 ferramentas de imagem e PDF, com IA, direto no navegador.': 'More than 30 image and PDF tools, with AI, right in the browser.',

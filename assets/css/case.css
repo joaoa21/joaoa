@@ -607,3 +607,23 @@ html.js:not(.reduce-motion):not(.motion-fallback) .case-reveal:not(.is-visible) 
 .gallery-note {
   font-size: var(--fs-small);
 }
+
+/* Case de identidade visual (joaoa.com.br): pranchas no estilo Behance.
+   Desktop: largas 8:5 inteiras e verticais 4:5 em pares, sem espaço entre elas, na largura do case.
+   Celular: cada larga vira dois slides 4:5, na mesma sequência do carrossel. */
+.bc-boards { width: min(calc(100% - (var(--pad) * 2)), var(--case-container)); margin: 0 auto 4rem; }
+.bc-board { margin: 0; }
+.bc-board img, .bc-board video { display: block; width: 100%; height: auto; }
+.bc-board-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bc-board .bc-board-m { display: none; }
+.bc-board-video { aspect-ratio: 8 / 5; background: #0E1B33; }
+.bc-case .site-intro-side .case-meta { margin-top: 0; }
+@media (max-width: 760px) {
+  .bc-boards { width: 100%; }
+  .bc-board-pair { grid-template-columns: 1fr; }
+  .bc-board-w.has-m .bc-board-d { display: none; }
+  .bc-board.bc-board-w.has-m .bc-board-m { display: block; }
+  .bc-board-video { aspect-ratio: 4 / 5; }
+  .bc-board.bc-board-video .bc-board-d { display: none; }
+  .bc-board.bc-board-video .bc-board-m { display: block; }
+}
