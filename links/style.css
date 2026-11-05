@@ -451,6 +451,7 @@ html.light .theme-toggle .knob {
 /* ============ REDES SOCIAIS ============ */
 .socials {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
