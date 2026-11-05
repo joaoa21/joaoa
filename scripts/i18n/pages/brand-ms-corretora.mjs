@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/ms-corretora/',
   enUrl: '/en/projects/brand-identity/ms-corretora/',
   jsonDict: {
+    'Identidade visual da MS Corretora: símbolo, versões, cores e aplicações.': 'MS Corretora brand identity: symbol, versions, colors and applications.',
     'Identidade visual: MS Corretora': 'MS Corretora: brand identity',
     'Identidade Visual': 'Brand Identity',
   },

@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/braco-forte/',
   enUrl: '/en/projects/brand-identity/braco-forte/',
   jsonDict: {
+    'Identidade visual da Braço Forte: símbolo, versões, cores e aplicações.': 'Braço Forte brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Braço Forte': 'Braço Forte: brand identity',
     'Identidade Visual': 'Brand Identity',
   },

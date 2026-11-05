@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/duoplay/',
   enUrl: '/en/projects/brand-identity/duoplay/',
   jsonDict: {
+    'Identidade visual da DuoPlay: símbolo, versões, cores e aplicações.': 'DuoPlay brand identity: symbol, versions, colors and applications.',
     'Identidade visual: DuoPlay': 'DuoPlay: brand identity',
     'Identidade Visual': 'Brand Identity',
   },

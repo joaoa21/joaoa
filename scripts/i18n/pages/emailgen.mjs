@@ -5,10 +5,13 @@ export default {
   enUrl: '/en/projects/websites/email-generator/',
   // dados estruturados (WebApplication)
   jsonDict: {
+    'Case do Email Generator, gerador de email HTML com 8 modelos para Gmail e Outlook e links de WhatsApp com QR Code. Veja as telas e teste a ferramenta.': 'Email Generator case study: an HTML email builder with 8 templates for Gmail and Outlook, plus WhatsApp links with QR Code. See the screens and try the tool.',
     'Email Generator: ferramentas gratuitas para montar emails HTML compatíveis com Gmail e Outlook e gerar links de WhatsApp com mensagem pronta.': 'Email Generator: free tools to build HTML emails that work in Gmail and Outlook and to generate WhatsApp links with a ready message.',
     'Requires JavaScript': 'Requires JavaScript',
   },
   dict: {
+    'Os botões já saem prontos para o Outlook clássico.': 'Buttons come ready for classic Outlook.',
+    'Entenda o botão em VML': 'Read about the VML button (in Portuguese)',
     'Email Generator no computador e no celular: o editor de email e a página inicial': 'Email Generator on desktop and mobile: the email editor and the home page',
     'Editor e versão para celular · emailgenerator.com.br': 'Editor and mobile version · emailgenerator.com.br',
     'Case do Email Generator, gerador de email HTML com 8 modelos para Gmail e Outlook e links de WhatsApp com QR Code. Veja as telas e teste a ferramenta.': 'Email Generator case study: an HTML email builder with 8 templates for Gmail and Outlook, plus WhatsApp links with QR Code. See the screens and try the tool.',

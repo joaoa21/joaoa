@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/ziga-agency/',
   enUrl: '/en/projects/brand-identity/ziga-agency/',
   jsonDict: {
+    'Identidade visual da Ziga Agency: símbolo, versões, cores e aplicações.': 'Ziga Agency brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Ziga Agency': 'Ziga Agency: brand identity',
     'Identidade Visual': 'Brand Identity',
   },

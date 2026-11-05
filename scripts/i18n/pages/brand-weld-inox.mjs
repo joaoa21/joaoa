@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/weld-inox/',
   enUrl: '/en/projects/brand-identity/weld-inox/',
   jsonDict: {
+    'Identidade visual da Weld Inox: símbolo, versões, cores e aplicações.': 'Weld Inox brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Weld Inox': 'Weld Inox: brand identity',
     'Identidade Visual': 'Brand Identity',
   },

@@ -9,6 +9,7 @@
 .site-lead{font-size:clamp(1.2rem,2.2vw,1.8rem);line-height:1.35;color:var(--soft)}
 .site-intro-side{display:grid;justify-items:start;gap:1.5rem;min-width:0}
 .site-intro-side p{color:var(--soft);line-height:1.7;max-width:42ch}
+.site-intro-side p a{color:var(--fg);text-underline-offset:.2em}
 .site-address{font-size:.6rem;letter-spacing:.06em;text-transform:none;overflow-wrap:anywhere;color:var(--muted)}
 .site-showcase{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--chip)}
 .site-showcase img{display:block;width:100%;height:auto}

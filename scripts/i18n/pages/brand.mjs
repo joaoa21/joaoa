@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/',
   enUrl: '/en/projects/brand-identity/',
   jsonDict: {
+    'Identidade Visual | João Alberto': 'Brand Identity | João Alberto',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {

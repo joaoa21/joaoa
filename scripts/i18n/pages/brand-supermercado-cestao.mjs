@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/supermercado-cestao/',
   enUrl: '/en/projects/brand-identity/supermercado-cestao/',
   jsonDict: {
+    'Identidade visual do Supermercado O Cestão: símbolo, versões, cores e aplicações.': 'Supermercado O Cestão brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Supermercado O Cestão': 'Supermercado O Cestão: brand identity',
     'Identidade Visual': 'Brand Identity',
   },

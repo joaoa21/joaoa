@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/venda-bar-arretado/',
   enUrl: '/en/projects/brand-identity/venda-bar-arretado/',
   jsonDict: {
+    'Identidade visual do Venda Bar Arretado: símbolo, versões, cores e aplicações.': 'Venda Bar Arretado brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Venda Bar Arretado': 'Venda Bar Arretado: brand identity',
     'Identidade Visual': 'Brand Identity',
   },

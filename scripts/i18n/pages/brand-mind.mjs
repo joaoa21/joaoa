@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/mind/',
   enUrl: '/en/projects/brand-identity/mind/',
   jsonDict: {
+    'Identidade visual da Mind: símbolo, versões, cores e aplicações.': 'Mind brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Mind': 'Mind: brand identity',
     'Identidade Visual': 'Brand Identity',
   },

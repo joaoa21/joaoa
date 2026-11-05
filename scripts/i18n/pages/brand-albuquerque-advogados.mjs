@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/albuquerque-advogados/',
   enUrl: '/en/projects/brand-identity/albuquerque-advogados/',
   jsonDict: {
+    'Identidade visual da Albuquerque Advogados: símbolo, versões, cores e aplicações.': 'Albuquerque Advogados brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Albuquerque Advogados': 'Albuquerque Advogados: brand identity',
     'Identidade Visual': 'Brand Identity',
   },

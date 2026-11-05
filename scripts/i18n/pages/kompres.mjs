@@ -5,6 +5,7 @@ export default {
   enUrl: '/en/projects/websites/kompres/',
   // dados estruturados (WebApplication)
   jsonDict: {
+    'Kompres: mais de 30 ferramentas de imagem e PDF direto no navegador, de comprimir e recortar a remover fundo com IA, organizar e assinar PDFs.': 'Kompres: more than 30 image and PDF tools right in the browser, from compressing and cropping to AI background removal and organizing and signing PDFs.',
     'Kompres: site para comprimir, converter e redimensionar imagens em lote, remover fundos e organizar PDFs direto no navegador.': 'Kompres: a website to compress, convert and resize images in bulk, remove backgrounds and organize PDFs right in the browser.',
     'Requires JavaScript': 'Requires JavaScript',
   },

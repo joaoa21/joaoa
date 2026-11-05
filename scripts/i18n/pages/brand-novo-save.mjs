@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/novo-save/',
   enUrl: '/en/projects/brand-identity/novo-save/',
   jsonDict: {
+    'Identidade visual do Novo Save: símbolo, versões, cores e aplicações.': 'Novo Save brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Novo Save': 'Novo Save: brand identity',
     'Identidade Visual': 'Brand Identity',
   },

@@ -4,6 +4,7 @@ export default {
   ptUrl: '/projetos/identidade-visual/luna-advocacia/',
   enUrl: '/en/projects/brand-identity/luna-advocacia/',
   jsonDict: {
+    'Identidade visual da Luna Advocacia: símbolo, versões, cores e aplicações.': 'Luna Advocacia brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Luna Advocacia': 'Luna Advocacia: brand identity',
     'Identidade Visual': 'Brand Identity',
   },
