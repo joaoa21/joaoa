@@ -5,7 +5,7 @@ export default {
   enUrl: '/en/projects/',
   dict: {
     'Emails HTML responsivos, com modo escuro, para CRM, lançamentos e transacionais.': 'Responsive HTML emails with dark mode, for CRM, launches and transactional messages.',
-    'Projetos de Design, Web e iGaming | João Alberto': 'Design, Web and iGaming Projects | João Alberto',
+    'Portfólio de Web Design, Sites e Email | João Alberto': 'Web Design, Websites and Email Portfolio | João Alberto',
     'Trabalhos selecionados em design e web.': 'Selected work in design and web.',
     'Banners, pop-ups, widgets, emails e gamificação para CRM.': 'Banners, pop-ups, widgets, emails and gamification for CRM.',
     'Identidade Visual': 'Brand Identity',
@@ -16,7 +16,7 @@ export default {
     'Site institucional, landing page e ferramentas web, do layout ao código.': 'A corporate website, a landing page and web tools, from layout to code.',
     'Campanha OAB/PE': 'OAB/PE Campaign',
     'Campanha 360º: identidade, peças digitais, impressas e de rua.': '360º campaign: identity, digital, print and outdoor pieces.',
-    'Projetos selecionados de João Alberto em design digital, sites, identidade visual, campanhas, CRM, gamificação e iGaming.': 'Selected projects by João Alberto in digital design, websites, brand identity, campaigns, CRM, gamification and iGaming.',
+    'Portfólio de João Alberto: sites, identidade visual, email marketing, social media e campanhas digitais, com cases do design ao código.': "João Alberto's portfolio: websites, brand identity, email marketing, social media and digital campaigns, with case studies from design to code.",
     'Projetos de João Alberto: iGaming, sites, campanhas e identidade visual': 'Projects by João Alberto: iGaming, websites, campaigns and brand identity',
     'Categorias e projetos selecionados': 'Categories and selected projects',
     'Prévia do projeto iGaming': 'Preview of the iGaming project',

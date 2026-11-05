@@ -6,7 +6,7 @@ export default {
   keep: ['ocupa 2 colunas → 1266×600 -'],
   dict: {
     'Ver o case completo': 'See the full case study',
-    'Portfólio iGaming: CRM, Gamificação e Design | João Alberto': 'iGaming Portfolio: CRM, Gamification and Design | João Alberto',
+    'Criativos para iGaming: Banners, Email e CRM | João Alberto': 'iGaming Creatives: Banners, Email and CRM | João Alberto',
     'Design para campanhas, CRM e gamificação. Uma seleção de peças e interfaces para o universo de iGaming.': 'Design for campaigns, CRM and gamification. A selection of assets and interfaces for the iGaming world.',
     'Tráfego pago': 'Paid ads',
     'Tráfego Pago': 'Paid Ads',
@@ -34,7 +34,7 @@ export default {
     'Experiência interativa': 'Interactive experience',
     'Fechar': 'Close',
     'Carregando experiência…': 'Loading experience…',
-    'Projetos de João Alberto para iGaming: CRM, gamificação, email marketing, banners, pop-ups, widgets e campanhas digitais.': "João Alberto's iGaming projects: CRM, gamification, email marketing, banners, pop-ups, widgets and digital campaigns.",
+    'Criativos para iGaming: banners, pop-ups, widgets, email marketing e gamificação para campanhas e CRM. Veja peças e interfaces do portfólio de João Alberto.': "iGaming creatives: banners, pop-ups, widgets, email marketing and gamification for campaigns and CRM. See pieces and interfaces from João Alberto's portfolio.",
     'Banners de iGaming criados por João Alberto': 'iGaming banners created by João Alberto',
     'Categorias de iGaming': 'iGaming categories',
     // anúncios
