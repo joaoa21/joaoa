@@ -1,7 +1,6 @@
 /* ============================================================
    JOÃO ALBERTO — HOME
    Interações essenciais, navegação, temas e animações de interface.
-   O efeito Three.js é carregado separadamente em blob.js.
    ============================================================ */
 
 import { initMobileMenu } from '/assets/js/nav.js';
@@ -41,14 +40,16 @@ if (window.Lenis && !reduced) {
 const siteNav = document.getElementById('nav');
 const hudClock = document.getElementById('hudClock');
 const hudDeg = document.getElementById('hudDeg');
-const sections = [...document.querySelectorAll('[data-blob]')];
+const hud = document.querySelector('.hud');
+const sections = [...document.querySelectorAll('section[data-theme]')];
 const navSectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
 
-let blobController = null;
 let activeSection = null;
 let scrollFrame = 0;
 let degreeTarget = 0;
 let degreeCurrent = 0;
+let degreeRunning = false;
+let degreeShown = null;
 
 /* ---------- Menu mobile acessível ---------- */
 initMobileMenu({ lenis });
@@ -81,11 +82,8 @@ function updateClock() {
 updateClock();
 window.setInterval(updateClock, 1000);
 
-/* ---------- Tema e seção ativa ---------- */
-function applyTheme(theme) {
-  document.body.classList.toggle('light', theme === 'light');
-}
-
+/* ---------- Seção ativa ----------
+   As cores das seções são fixas (CSS, data-theme): aqui só o item do menu e a HUD acompanham. */
 function setActiveNavLink(section) {
   navSectionLinks.forEach((link) => {
     const isCurrent = link.getAttribute('href') === `#${section.id}`;
@@ -97,7 +95,7 @@ function setActiveNavLink(section) {
 function syncSection() {
   if (!sections.length) return;
 
-  // Uma seção assume o tema quando o topo dela passa do meio da tela.
+  // Uma seção assume quando o topo dela passa do meio da tela.
   let candidate = sections[0];
   for (const section of sections) {
     if (section.offsetTop <= window.scrollY + window.innerHeight * 0.5) {
@@ -114,7 +112,7 @@ function syncSection() {
 
   if (candidate !== activeSection) {
     activeSection = candidate;
-    applyTheme(candidate.dataset.theme);
+    hud?.classList.toggle('on-light', candidate.dataset.theme === 'light');
     setActiveNavLink(candidate);
   }
 }
@@ -127,16 +125,7 @@ function updateFromScroll() {
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   degreeTarget = maxScroll > 0 ? (window.scrollY / maxScroll) * 360 : 0;
   syncSection();
-  syncBlobExit();
-}
-
-/* ---------- Blob só no hero: some conforme o hero sai da tela ---------- */
-const heroSection = document.querySelector('.hero');
-
-function syncBlobExit() {
-  if (!blobController || !heroSection) return;
-  const rect = heroSection.getBoundingClientRect();
-  blobController.setExit(rect.height > 0 ? -rect.top / rect.height : 0);
+  startDegree();
 }
 
 function requestScrollUpdate() {
@@ -147,79 +136,36 @@ window.addEventListener('scroll', requestScrollUpdate, { passive: true });
 window.addEventListener('resize', requestScrollUpdate, { passive: true });
 requestScrollUpdate();
 
+/* O contador só anima enquanto o valor muda: com a página parada, não há trabalho nenhum. */
+function showDegree() {
+  const rounded = Math.round(degreeCurrent);
+  if (rounded === degreeShown) return;
+  degreeShown = rounded;
+  if (hudDeg) hudDeg.textContent = `${rounded}°`;
+}
+
 function animateDegree() {
   degreeCurrent += (degreeTarget - degreeCurrent) * 0.12;
-  if (hudDeg) hudDeg.textContent = `${Math.round(degreeCurrent)}°`;
+  showDegree();
+  if (Math.abs(degreeTarget - degreeCurrent) > 0.05) requestAnimationFrame(animateDegree);
+  else degreeRunning = false;
+}
+
+function startDegree() {
+  if (reduced || degreeRunning) return;
+  degreeRunning = true;
   requestAnimationFrame(animateDegree);
 }
 
 if (reduced) {
   const syncReducedDegree = () => {
     degreeCurrent = degreeTarget;
-    if (hudDeg) hudDeg.textContent = `${Math.round(degreeCurrent)}°`;
+    showDegree();
   };
   window.addEventListener('scroll', syncReducedDegree, { passive: true });
   window.addEventListener('resize', syncReducedDegree, { passive: true });
   requestAnimationFrame(syncReducedDegree);
-} else {
-  requestAnimationFrame(animateDegree);
 }
 
 /* ---------- Animações de interface (assets/js/home-motion.js) ---------- */
 initHomeMotion();
-
-/* ---------- Three.js isolado: falhas não afetam a interface ----------
-   O blob é decorativo: só começa a baixar depois que a página carregou,
-   para não disputar rede e processador com o texto da abertura.
-   Também espera a primeira pintura com conteúdo chegar à tela: em aparelhos
-   sem placa de vídeo (como o teste do PageSpeed), montar o 3D antes disso
-   segura a exibição do texto por mais de 1 s. Em celulares comuns essa
-   pintura acontece bem antes do carregamento, então nada muda na tela. */
-const stage = document.getElementById('stage');
-
-const firstContentfulPaint = new Promise((resolve) => {
-  if (!('PerformanceObserver' in window) || performance.getEntriesByName('first-contentful-paint').length) {
-    resolve();
-    return;
-  }
-  try {
-    const observer = new PerformanceObserver((list) => {
-      if (list.getEntriesByName('first-contentful-paint').length) {
-        observer.disconnect();
-        resolve();
-      }
-    });
-    observer.observe({ type: 'paint', buffered: true });
-  } catch {
-    resolve();
-  }
-  window.setTimeout(resolve, 4000); // navegadores sem a métrica: não espera para sempre
-});
-
-const afterLoad = (task) => {
-  const run = () => firstContentfulPaint.then(() => (
-    'requestIdleCallback' in window ? window.requestIdleCallback(task, { timeout: 800 }) : window.setTimeout(task, 200)
-  ));
-  if (document.readyState === 'complete') run();
-  else window.addEventListener('load', run, { once: true });
-};
-
-if (stage) afterLoad(() => {
-  import('./blob.js')
-    .then(({ initBlob }) => {
-      blobController = initBlob({
-        canvas: stage,
-        hero: heroSection,
-        reducedMotion: reduced
-      });
-
-      document.documentElement.classList.toggle('no-blob', !blobController);
-      syncBlobExit();
-    })
-    .catch((error) => {
-      console.warn('Efeito 3D indisponível; a home continuará funcionando.', error);
-      stage.remove();
-      document.documentElement.classList.add('no-blob');
-    });
-});
-

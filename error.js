@@ -168,15 +168,3 @@ function barricade(timeline, visual, mobile) {
   if (lights.length) timeline.from(lights, { opacity: 0, scale: 0.4, duration: 0.4, stagger: 0.1, ease: 'back.out(2)', clearProps: 'opacity,transform' }, 0.95);
   if (cone) timeline.from(cone, { x: 30, opacity: 0, rotation: 12, duration: 0.8, ease: 'back.out(1.7)', clearProps: 'opacity,transform' }, 0.85);
 }
-
-/* ---------- blob de fundo ---------- */
-const canvas = document.getElementById('stage');
-
-if (canvas) {
-  import('./error-blob.js')
-    .then(({ initErrorBlob }) => initErrorBlob({ canvas, reducedMotion }))
-    .catch((error) => {
-      console.warn('O efeito 3D da página de erro não pôde ser carregado.', error);
-      canvas.remove();
-    });
-}

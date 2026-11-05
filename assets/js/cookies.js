@@ -45,7 +45,7 @@
   }
 
   const CSS = `
-.cookie-banner{position:fixed;left:50%;bottom:1rem;z-index:2147483000;display:grid;grid-template-columns:1fr auto;align-items:center;gap:0 1.5rem;width:min(52rem,calc(100vw - 2rem));padding:1.15rem 1.2rem 1.2rem;border:1px solid rgba(242,240,235,.14);border-radius:18px;background:rgba(15,15,15,.88);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:0 24px 60px rgba(0,0,0,.35);color:#f2f0eb;font-size:.92rem;line-height:1.5;opacity:0;transform:translate(-50%,12px);transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1)}
+.cookie-banner{position:fixed;left:50%;bottom:1rem;z-index:2147483000;display:grid;grid-template-columns:1fr auto;align-items:center;gap:0 1.5rem;width:min(52rem,calc(100vw - 2rem));padding:1.15rem 1.2rem 1.2rem;border:1px solid rgba(242,240,235,.14);border-radius:18px;background:rgba(15,15,15,.97);box-shadow:0 24px 60px rgba(0,0,0,.35);color:#f2f0eb;font-size:.92rem;line-height:1.5;opacity:0;transform:translate(-50%,12px);transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1)}
 .cookie-banner.is-in{opacity:1;transform:translate(-50%,0)}
 .cookie-banner[hidden]{display:none}
 .cookie-banner strong{display:block;margin-bottom:.35rem;font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,240,235,.6);font-family:"DM Mono",ui-monospace,monospace}

@@ -58,13 +58,6 @@
     <link href="/assets/css/home-blog.css" rel="stylesheet" media="print" onload="this.media='all'" /><noscript><link href="/assets/css/home-blog.css" rel="stylesheet" /></noscript>
     <link href="/assets/css/services-list.css" rel="stylesheet" media="print" onload="this.media='all'" /><noscript><link href="/assets/css/services-list.css" rel="stylesheet" /></noscript>
     <link href="/favicon.ico" rel="icon" sizes="48x48"/><link href="/favicon.svg" rel="icon" type="image/svg+xml" />
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"
-        }
-      }
-    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -169,8 +162,6 @@
 </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <!-- ============ 3D STAGE ============ -->
-    <canvas aria-hidden="true" id="stage"></canvas>
     <!-- ============ HUD ============ -->
     <div aria-hidden="true" class="hud">
       <div class="hud-corner hud-bl mono">
@@ -216,8 +207,8 @@
     </header>
     <main id="main-content" tabindex="-1">
       <!-- ============ HERO · DARK ============ -->
-      <section class="hero" data-blob="hero" data-theme="dark" id="topo">
-        <div class="mobile-blob-slot" data-blob-anchor="hero" aria-hidden="true"></div>
+      <section class="hero" data-theme="dark" id="topo">
+        <div class="nuvem-slot" aria-hidden="true"><div class="nuvem"></div></div>
         <h1 class="hero-title">
           <span class="line"><em>Digital design</em></span>
           <span class="line"
@@ -243,7 +234,7 @@
         </div>
       </section>
       <!-- ============ SOBRE · LIGHT ============ -->
-      <section class="about" data-blob="about" data-theme="light" id="sobre">
+      <section class="about" data-theme="light" id="sobre">
         <div class="sec-head mono"><span aria-hidden="true" class="sec-ic"><i class="fa-solid fa-user"></i></span><span>01 — ABOUT</span></div>
         <div class="about-grid">
           <div class="about-copy">
@@ -267,7 +258,6 @@
       <!-- ============ PROJETOS · DARK ============ -->
       <section
         class="projects"
-        data-blob="projects"
         data-theme="dark"
         id="projetos"
       >
@@ -409,7 +399,7 @@
         </div>
       </section>
       <!-- ============ SERVIÇOS (resumo) ============ -->
-      <section class="services" data-blob="services" data-theme="dark" id="servicos">
+      <section class="services" data-theme="dark" id="servicos">
         <div class="sec-head mono">
           <span aria-hidden="true" class="sec-ic"><i class="fa-solid fa-globe"></i></span><span>03 — SERVICES</span>
         </div>
@@ -426,7 +416,7 @@
         <p class="brief-cta">Not sure what to ask for? Tell me the idea and I will help you choose. <a class="brief-open" href="https://wa.me/5581988780144?text=Hi%20Jo%C3%A3o!" rel="noopener" target="_blank">Start my project</a></p>
         </section>
       <!-- ============ COMO EU FAÇO · LIGHT ============ -->
-      <section class="services services--build" data-blob="build" data-theme="light" id="como-faco">
+      <section class="services services--build" data-theme="light" id="como-faco">
         <div class="services-build">
           <h2 class="projects-title services-title">How I do it<span class="dot">.</span></h2>
           <p class="services-lead">I pick the tool for what the project needs, not the other way around. These are the ones I use every day.</p>
@@ -446,7 +436,7 @@
         </div>
       </section>
       <!-- ============ DO BLOG · DARK ============ -->
-      <section class="home-blog" data-blob="blog" data-theme="dark" id="blog">
+      <section class="home-blog" data-theme="dark" id="blog">
         <div class="sec-head mono">
           <span aria-hidden="true" class="sec-ic"><i class="fa-solid fa-envelope-open-text"></i></span><span>04 — BLOG</span>
         </div>
@@ -467,7 +457,6 @@
       <!-- ============ CONTATO · LIGHT (referência) ============ -->
       <section
         class="contact"
-        data-blob="contact"
         data-theme="light"
         id="contato"
       >

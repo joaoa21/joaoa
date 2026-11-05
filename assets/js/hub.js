@@ -1,6 +1,6 @@
 /* ============================================================
    JOÃO ALBERTO — HUB DE PORTFÓLIO
-   Navegação, HUD, Lenis, reveals e inicialização do blob.
+   Navegação, HUD, Lenis e reveals.
    ============================================================ */
 
 import { initMobileMenu } from './nav.js';
@@ -323,29 +323,6 @@ function setupInterfaceAnimations() {
 }
 
 setupInterfaceAnimations();
-
-/* ---------- Blob (carregado apenas quando a página possui canvas) ---------- */
-const blobCanvas = document.getElementById('stage');
-
-if (blobCanvas) {
-  import('./blob-hub.js')
-    .then(({ initProjectBlob }) => {
-      const blobController = initProjectBlob({
-        canvas: blobCanvas,
-        anchor: document.querySelector('.hub-head'),
-        reducedMotion: reduced
-      });
-
-      // Só descarta o WebGL quando a página sai de vez; no back-forward cache ela volta viva.
-      window.addEventListener('pagehide', (event) => {
-        if (!event.persisted) blobController?.destroy();
-      });
-    })
-    .catch((error) => {
-      console.error('Não foi possível carregar o blob do hub:', error);
-      blobCanvas.remove();
-    });
-}
 
 // Pause page smoothing while an interactive portfolio dialog owns scrolling.
 document.addEventListener('portfolio:preview', event => {

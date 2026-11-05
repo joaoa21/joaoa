@@ -1,7 +1,6 @@
 /* ============================================================
    JOÃO ALBERTO — LINKS
    Tema, acessibilidade e animações essenciais.
-   O efeito Three.js vive isolado em blob.js.
    ============================================================ */
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -57,10 +56,6 @@ function applyTheme(theme, save = true) {
       localStorage.setItem('joaoa-theme', normalizedTheme);
     } catch {}
   }
-
-  window.dispatchEvent(new CustomEvent('site-theme-change', {
-    detail: { theme: normalizedTheme }
-  }));
 }
 
 const initialTheme = root.classList.contains('light') ? 'light' : 'dark';

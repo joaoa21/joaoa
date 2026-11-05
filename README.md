@@ -8,9 +8,9 @@ Meu site pessoal: portfólio, cases, currículo e página de links, desenhado e 
 
 ## Destaques
 
-- **Blob 3D interativo** em Three.js com shader próprio, reaproveitado em várias páginas por um núcleo único (`blob-core.js`), com limite de *pixel ratio* e menos partículas no celular.
+- **Nuvem de pontos leve:** uma imagem WebP girando só com CSS (`assets/img/nuvem.webp` e `nuvem-sm.webp`), sem 3D e sem depender de aceleração de vídeo.
 - **Animações com GSAP** (ScrollTrigger e SplitText) e rolagem suave com Lenis, respeitando "reduzir movimento" do sistema e com *fallback* caso o script não carregue.
-- **Performance:** Lighthouse **100 no desktop**. A entrada da home é feita em CSS (não espera o JavaScript), o 3D só carrega depois da página, as fontes são hospedadas no próprio site, os ícones são SVG no lugar de uma fonte de ícones e as galerias carregam miniaturas, baixando o original só ao ampliar.
+- **Performance:** Lighthouse **100 no desktop**. A entrada da home é feita em CSS (não espera o JavaScript), as fontes são hospedadas no próprio site, os ícones são SVG no lugar de uma fonte de ícones e as galerias carregam miniaturas, baixando o original só ao ampliar.
 - **Acessibilidade:** Lighthouse **100**. Link para pular ao conteúdo, galeria em `<dialog>` acessível, textos animados que continuam legíveis para leitores de tela e navegação por teclado.
 - **SEO e compartilhamento:** títulos e descrições por página, Open Graph e X/Twitter com imagens próprias, dados estruturados (`Person`, `WebSite`), sitemap e Search Console.
 - **Blog no mesmo domínio:** o blog é um projeto Astro separado ([joaoa-blog](https://github.com/joaoa21/joaoa-blog)), servido em `/blog` por proxy do Netlify, sem mudar a stack do portfólio.
@@ -18,7 +18,7 @@ Meu site pessoal: portfólio, cases, currículo e página de links, desenhado e 
 
 ## Stack
 
-HTML · CSS · JavaScript (ES modules) · Three.js · GSAP · Lenis · Netlify
+HTML · CSS · JavaScript (ES modules) · GSAP · Lenis · Netlify
 
 ---
 
@@ -26,7 +26,7 @@ HTML · CSS · JavaScript (ES modules) · Three.js · GSAP · Lenis · Netlify
 
 | Rota | Arquivos | O que é |
 | --- | --- | --- |
-| `/` | `index.html`, `style.css`, `main.js`, `blob.js` | Home, com o blob 3D e as animações de entrada (`assets/js/home-motion.js`) |
+| `/` | `index.html`, `style.css`, `main.js` | Home, com cores fixas por seção (`data-theme`) e as animações de entrada (`assets/js/home-motion.js`) |
 | `/criacao-de-sites/` | `criacao-de-sites/`, `assets/css/servicos.css`, `assets/js/servicos-motion.js` | Página de serviço (SEO): tipos de projeto, processo animado na rolagem, o que todo site inclui, projetos e perguntas frequentes |
 | `/projetos/` | `projetos/index.html` | Hub com todas as categorias |
 | `/projetos/igaming/` | `projetos/igaming/` | Peças de CRM e gamificação, emails em HTML e o Clube de Ouro |
@@ -47,8 +47,6 @@ HTML · CSS · JavaScript (ES modules) · Three.js · GSAP · Lenis · Netlify
   - `igaming.css`, `sites.css` e `obras.css`: estilos das páginas específicas.
   - `mobile-home.css`: ajustes da home no celular.
 - **Scripts** em `assets/js/`:
-  - `blob-core.js`: núcleo do blob em Three.js (renderizador, shader, mouse, loop), usado pela home, projetos, links e páginas de erro.
-  - `blob-hub.js`: posição e comportamento do blob no hub de projetos.
   - `hub.js`: navegação, Lenis e animações do hub.
   - `case.js`: animações dos cases (OAB e sites).
   - `igaming-motion.js` e `club-preview.js`: página de iGaming e modal do Clube de Ouro.

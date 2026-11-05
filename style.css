@@ -19,15 +19,18 @@
   --soft: rgba(242,240,235,.72);
   --line: rgba(242,240,235,.14);
   --chip: rgba(242,240,235,.07);
-  --glass: rgba(15,15,15,.6);
+  --glass: rgba(15,15,15,.92);
   --font-sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "DM Mono", "JetBrains Mono", monospace;
   --r: 10px;
   /* raio padrão (referência) */
   --pad: clamp(1.25rem, 4vw, 4rem);
+  /* espaço entre o limite de uma seção e o conteúdo */
+  --sec-y: clamp(5rem, 12vw, 9rem);
 }
 
-body.light {
+/* Cada seção tem a própria cor, fixa: nada muda na página enquanto se rola. */
+[data-theme="light"] {
   color-scheme: light;
   --bg: var(--paper);
   --fg: #121212;
@@ -35,7 +38,8 @@ body.light {
   --soft: rgba(18,18,18,.7);
   --line: rgba(18,18,18,.14);
   --chip: rgba(18,18,18,.06);
-  --glass: rgba(242,240,235,.65);
+  background: var(--bg);
+  color: var(--fg);
 }
 
 html {
@@ -58,7 +62,6 @@ body {
   font-weight: 400;
   min-width: 320px;
   overflow-x: hidden;
-  transition: background-color .9s ease, color .9s ease;
 }
 
 body.no-scroll {
@@ -182,14 +185,39 @@ html.home-motion:not(.reduce-motion) .hud-deg {
 
 /* ============ 3D STAGE ============ */
 
-#stage {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+/* ============ NUVEM (imagem girando em CSS, sem 3D) ============ */
+.nuvem-slot {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: 5vw;
+  --nuvem-size: min(30vw, 58vh, 600px);
+  width: var(--nuvem-size);
+  aspect-ratio: 1;
+  margin-top: calc(var(--nuvem-size) / -2);
   pointer-events: none;
 }
+
+.nuvem-slot .nuvem {
+  width: 100%;
+  height: 100%;
+  opacity: .62;
+}
+
+.hero > *:not(.nuvem-slot) {
+  position: relative;
+  z-index: 1;
+}
+
+.nuvem {
+  background: url(/assets/img/nuvem.webp) center / contain no-repeat;
+  pointer-events: none;
+  will-change: transform;
+  animation: nuvem-gira 240s linear infinite, nuvem-entra 1.6s ease .2s backwards;
+}
+@keyframes nuvem-gira { to { transform: rotate(360deg); } }
+@keyframes nuvem-entra { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .nuvem { animation: none; } }
 
 main, .site-nav {
   position: relative;
@@ -205,6 +233,11 @@ main, .site-nav {
   pointer-events: none;
 }
 
+/* sobre seção clara: só a HUD troca de cor, sem recalcular a página inteira */
+.hud.on-light {
+  --muted: rgba(18,18,18,.48);
+}
+
 .hud-corner {
   position: fixed;
   display: flex;
@@ -212,7 +245,7 @@ main, .site-nav {
   gap: .3rem;
   font-size: .6rem;
   color: var(--muted);
-  transition: color .9s ease;
+  transition: color .3s ease;
 }
 
 .hud-bl {
@@ -236,7 +269,7 @@ main, .site-nav {
   align-items: center;
   gap: .45rem;
   color: var(--muted);
-  transition: color .9s ease;
+  transition: color .3s ease;
 }
 
 .hud-deg i {
@@ -280,8 +313,6 @@ main, .site-nav {
   padding: .8rem .6rem .8rem 1.25rem;
   border-radius: 14px;
   background: var(--glass);
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
   border-color: var(--line);
 }
 
@@ -700,6 +731,7 @@ h1, h2 {
 
 .hero {
   min-height: 100svh;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -708,7 +740,8 @@ h1, h2 {
 
 .hero-title {
   font-weight: 600;
-  font-size: clamp(3.2rem, 9.5vw, 8.5rem);
+  /* acompanha a largura e a altura da tela: cresce em monitores grandes sem colar no topo em telas baixas */
+  font-size: clamp(3.2rem, min(7.4vw, 14vh), 8rem);
   line-height: .98;
 }
 
@@ -1253,7 +1286,7 @@ footer {
   }
 
   .about {
-    /* Reserva um espaço real para o blob depois das competências. */
+    /* Reserva um espaço depois das competências. */
     padding-bottom: 11.5rem;
   }
 
@@ -1628,17 +1661,6 @@ footer {
   padding-top: 9rem;
 }
 
-/* ============ MENU MOBILE ABERTO DEPOIS DE ROLAR ============
-   A barra rolada usa backdrop-filter, que prende elementos "fixed" dentro
-   dela: o menu de tela cheia abria espremido dentro da barra. Enquanto o
-   menu está aberto (body.no-scroll), a barra fica sem o desfoque. */
-@media (max-width: 860px) {
-  body.no-scroll .site-nav {
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-  }
-}
-
 /* ============ SERVIÇOS (resumo na home) ============ */
 .services {
   padding-bottom: 9rem;
@@ -1749,4 +1771,27 @@ footer {
 
 .services-lead {
   font-size: var(--fs-lead);
+}
+
+/* ============ RITMO DAS SEÇÕES ============
+   Com as cores fixas, o limite de cada seção aparece: o espaço acima e abaixo
+   do conteúdo é sempre o mesmo. Entre duas seções da mesma cor (Projetos e
+   Serviços), o espaço de baixo cai pela metade, porque os dois se somam sem corte. */
+main .sec-head,
+main > .services--build .services-build {
+  padding-top: var(--sec-y);
+}
+
+main > .about,
+main > .services,
+main > .home-blog {
+  padding-bottom: var(--sec-y);
+}
+
+main > .projects {
+  padding-bottom: calc(var(--sec-y) / 2);
+}
+
+main > .contact {
+  padding-block: var(--sec-y);
 }
