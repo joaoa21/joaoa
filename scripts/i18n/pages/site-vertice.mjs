@@ -8,5 +8,6 @@ export default {
     'Site Vértice Facilities': 'Vértice Facilities website',
   },
   dict: {
+    'Outro site, outra ideia.': 'Another website, another idea.',
   },
 };

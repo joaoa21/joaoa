@@ -8,5 +8,6 @@ export default {
     'Site Novo Save': 'Novo Save website',
   },
   dict: {
+    'Outro site, outra ideia.': 'Another website, another idea.',
   },
 };
