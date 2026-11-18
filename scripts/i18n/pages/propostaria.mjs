@@ -10,6 +10,8 @@ export default {
     'Landing page': 'Landing page',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'A página usa Newsreader nos títulos, Instrument Sans no texto e Mrs Saint Delafield na assinatura, com o azul caneta e o amarelo marca-texto sobre tons de papel.': 'The page uses Newsreader for headings, Instrument Sans for text and Mrs Saint Delafield for the signature, with pen blue and highlighter yellow over paper tones.',
     'Landing page da Propostaria no computador e no celular, com propostas de exemplo e uma proposta aceita com assinatura': 'Propostaria landing page on desktop and mobile, with sample proposals and a proposal accepted with a signature',
     'Landing page e propostas de exemplo · propostaria.com.br': 'Landing page and sample proposals · propostaria.com.br',
     'Propostaria: landing page do app de propostas | João Alberto': 'Propostaria: landing page for the proposals app | João Alberto',

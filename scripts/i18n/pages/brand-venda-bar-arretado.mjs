@@ -4,11 +4,18 @@ export default {
   ptUrl: '/projetos/identidade-visual/venda-bar-arretado/',
   enUrl: '/en/projects/brand-identity/venda-bar-arretado/',
   jsonDict: {
+    'Identidade visual do Venda Bar Arretado: lettering à mão, cores do sertão, desenhos em xilogravura, cardápios, porta-copos, neon e uniforme.': 'Brand identity for Venda Bar Arretado: hand-cut lettering, backlands colors, woodcut drawings, menus, coasters, a neon sign and uniforms.',
     'Identidade visual do Venda Bar Arretado: símbolo, versões, cores e aplicações.': 'Venda Bar Arretado brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Venda Bar Arretado': 'Venda Bar Arretado: brand identity',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Letreiro pintado, sertão no cardápio.': 'Hand-painted sign, the backlands on the menu.',
+    'A Venda é o bar de esquina com cara de bodega do sertão: cerveja gelada, espetinho na brasa e caldinho no fim da tarde. A marca recorta o nome à mão, como letreiro pintado: cada letra tem sua inclinação, nenhuma fica na linha, e os traços soltos nas pontas lembram o pincel.': 'Venda is the corner bar that looks like a backlands general store: cold beer, grilled skewers and bean broth in the late afternoon. The brand cuts the name by hand, like a painted sign: each letter has its own slant, none sits on the line, and the loose strokes at the ends recall the brush.',
+    'O amarelo vem das paredes da casa, o azul dos azulejos e o caramelo das cadeiras de madeira e da cerveja. Sol, lua, cacto, beija-flor e canecas, em traço de xilogravura, decoram o cardápio. Staatliches fica nos títulos, e Josefin Sans nos itens e preços.': "The yellow comes from the bar's walls, the blue from the tiles and the caramel from the wooden chairs and the beer. Sun, moon, cactus, hummingbird and mugs, drawn in woodcut style, decorate the menu. Staatliches is used for titles, and Josefin Sans for items and prices.",
+    'Fiz um cardápio para cada noite, do happy hour à quarta em dobro e ao festival de espetinhos, além de porta-copos, caneca, balde, letreiro em neon, camiseta e avental.': 'I made a menu for each night, from happy hour to double Wednesday and the skewer festival, plus coasters, a beer mug, a bucket, a neon sign, a T-shirt and an apron.',
+    'Identidade visual do Venda Bar Arretado: lettering à mão, cores do sertão, desenhos em xilogravura, cardápios, porta-copos, neon e uniforme.': 'Brand identity for Venda Bar Arretado: hand-cut lettering, backlands colors, woodcut drawings, menus, coasters, a neon sign and uniforms.',
     'Venda Bar Arretado | Identidade visual | João Alberto': 'Venda Bar Arretado | Brand identity | João Alberto',
     'Voltar para identidade visual': 'Back to brand identity',
     'Chega mais, chefia.': 'Come on in, boss.',

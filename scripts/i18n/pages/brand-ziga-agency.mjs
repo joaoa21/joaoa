@@ -4,11 +4,18 @@ export default {
   ptUrl: '/projetos/identidade-visual/ziga-agency/',
   enUrl: '/en/projects/brand-identity/ziga-agency/',
   jsonDict: {
+    'Identidade visual da Ziga Agency, agência de branding e web: um Z de 90° e 45°, cores, tipografia, site, email, redes, mupi e proposta comercial.': 'Brand identity for Ziga Agency, a branding and web agency: a Z of 90° and 45°, colors, typography, website, email, social media, street posters and a business proposal.',
     'Identidade visual da Ziga Agency: símbolo, versões, cores e aplicações.': 'Ziga Agency brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Ziga Agency': 'Ziga Agency: brand identity',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Uma marca só, em todo lugar.': 'One brand, everywhere.',
+    'Quando o logo vem de um lugar, o site de outro e as redes de um terceiro, a empresa parece várias. A Ziga nasceu para cuidar de tudo com a mesma equipe. Por isso, a marca da própria agência foi pensada como o trabalho que ela entrega: uma regra só, aplicada da marca à venda.': "When the logo comes from one place, the website from another and social media from a third, the company looks like several. Ziga was born to handle everything with the same team. So the agency's own brand was designed like the work it delivers: a single rule, applied from the brand to the sale.",
+    'Tudo sai de traços retos a 90° e 45°, sem curva em lugar nenhum. Os dois traços do Z não se fecham, para dar movimento, e o lettering e o chanfro das peças usam os mesmos ângulos. A paleta junta creme, preto e coral, com Space Grotesk nos títulos e Inter no texto.': "Everything comes from straight strokes at 90° and 45°, with no curves anywhere. The two strokes of the Z don't close, to create movement, and the lettering and the chamfer of the pieces use the same angles. The palette brings together cream, black and coral, with Space Grotesk for headings and Inter for text.",
+    'O projeto foi dividido em quatro capítulos: marca, com papelaria e camiseta; site, em base escura e com o coral só na ação principal; comunicação, do email ao Instagram, ao LinkedIn e ao mupi; e venda, com a proposta comercial e o funil de projetos no CRM.': 'The project was split into four chapters: brand, with stationery and a T-shirt; website, on a dark base with coral only on the main action; communication, from email to Instagram, LinkedIn and street posters; and sales, with the business proposal and the project pipeline in the CRM.',
+    'Identidade visual da Ziga Agency, agência de branding e web: um Z de 90° e 45°, cores, tipografia, site, email, redes, mupi e proposta comercial.': 'Brand identity for Ziga Agency, a branding and web agency: a Z of 90° and 45°, colors, typography, website, email, social media, street posters and a business proposal.',
     'Todas as identidades': 'All brand identities',
     'Outra marca, outra história.': 'Another brand, another story.',
     'Ziga Agency | Identidade visual | João Alberto': 'Ziga Agency | Brand identity | João Alberto',

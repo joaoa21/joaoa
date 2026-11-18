@@ -10,6 +10,11 @@ export default {
     'Site institucional': 'Corporate website',
   },
   dict: {
+    'Do design ao código: HTML, CSS e JavaScript, com animações de rolagem (GSAP e Lenis), perguntas frequentes, dados para compartilhamento nas redes e páginas de erro próprias, publicado no Netlify.': 'From design to code: HTML, CSS and JavaScript, with scroll animations (GSAP and Lenis), FAQs, social sharing data and custom error pages, published on Netlify.',
+    'Sobre o projeto': 'About the project',
+    'São doze coberturas em cartões, cada uma com atalho para a sua página, e dez páginas de seguro com coberturas, detalhes, passo a passo e perguntas frequentes, prontas para aparecer no Google. Seguradoras parceiras e diferenciais da corretora respondem às dúvidas antes do contato, e a cotação monta a mensagem e abre o WhatsApp com os dados preenchidos.': "There are twelve coverages in cards, each with a shortcut to its own page, and ten insurance pages with coverage, details, step by step and FAQs, ready to show up on Google. Partner insurers and the broker's strengths answer questions before contact, and the quote form builds the message and opens WhatsApp with the details filled in.",
+    'A marca da corretora também tem um case:': "The broker's brand has its own case too:",
+    'identidade visual da MS Corretora': 'MS Corretora brand identity',
     'Site da MS Corretora de Seguros no computador e no celular, com as fotos, o card de diferenciais e o logo': 'MS Corretora de Seguros website on desktop and mobile, with the photos, the highlights card and the logo',
     'Site no computador e no celular · mscorretoraseguros.com.br': 'Website on desktop and mobile · mscorretoraseguros.com.br',
     'MS Corretora de Seguros: site institucional | João Alberto': 'MS Corretora de Seguros: corporate website | João Alberto',

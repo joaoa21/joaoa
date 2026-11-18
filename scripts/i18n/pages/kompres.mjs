@@ -10,6 +10,8 @@ export default {
     'Requires JavaScript': 'Requires JavaScript',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Cada ferramenta tem a sua página, com abas no topo para passar de uma a outra sem perder o arquivo e um guia com as perguntas que as pessoas buscam no Google. Fiz a marca, a interface e o código, em Astro e JavaScript.': 'Each tool has its own page, with tabs at the top to move from one to another without losing the file and a guide with the questions people search for on Google. I made the brand, the interface and the code, in Astro and JavaScript.',
     'Kompres no computador e no celular: o compressor em lote e a página inicial': 'Kompres on desktop and mobile: the batch compressor and the home page',
     'Compressor e versão para celular · kompres.com.br': 'Compressor and mobile version · kompres.com.br',
     'Kompres: mais de 30 ferramentas de imagem e PDF direto no navegador, de comprimir e recortar a remover fundo com IA, organizar e assinar PDFs.': 'Kompres: more than 30 image and PDF tools right in the browser, from compressing and cropping to AI background removal and organizing and signing PDFs.',

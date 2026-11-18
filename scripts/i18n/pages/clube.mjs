@@ -10,6 +10,8 @@ export default {
     'Produto digital': 'Digital product',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'O jogador não precisa se inscrever: toda atividade elegível gera pontos. Os Pontos de XP levam pelos dez níveis, cada um com o seu mini-game e novas vantagens, e os Pontos de Leaderboard disputam premiações diárias, semanais e mensais.': "Players don't need to sign up: every eligible activity earns points. XP Points take them through the ten levels, each with its own mini-game and new perks, and Leaderboard Points compete for daily, weekly and monthly prizes.",
     'Apresentação do site Clube de Ouro': 'Clube de Ouro website presentation',
     'Capa do case Clube de Ouro: Um programa de fidelidade que se explica jogando, com o site no computador e no celular': 'Clube de Ouro case cover: A loyalty program that explains itself through play, with the website on desktop and mobile',
     'Apresentação do projeto Clube de Ouro com a ficha técnica': 'Clube de Ouro project overview with the fact sheet',

@@ -4,11 +4,18 @@ export default {
   ptUrl: '/projetos/identidade-visual/duoplay/',
   enUrl: '/en/projects/brand-identity/duoplay/',
   jsonDict: {
+    'Identidade visual da DuoPlay, canal de lives e vídeos: símbolo de dois plays, cores, overlays, telas de live, alertas, selos de inscrito e uniforme.': 'Brand identity for DuoPlay, a live stream and video channel: a two-play symbol, colors, overlays, stream screens, alerts, subscriber badges and shirts.',
     'Identidade visual da DuoPlay: símbolo, versões, cores e aplicações.': 'DuoPlay brand identity: symbol, versions, colors and applications.',
     'Identidade visual: DuoPlay': 'DuoPlay: brand identity',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Uma identidade para a live inteira.': 'An identity for the whole stream.',
+    'A DuoPlay é um canal de lives e vídeos feito por uma dupla. A identidade precisava funcionar em toda a transmissão, da tela de início ao fim da live, e também no canal e nas redes.': 'DuoPlay is a live stream and video channel run by a duo. The identity had to work across the whole broadcast, from the starting screen to the end of the stream, and also on the channel and social media.',
+    'O símbolo junta dois plays interligados: a ligação entre eles representa a parceria da dupla e o play de tudo o que ela faz, jogos, lives e vídeos. A paleta tem azul-noite, roxo Play e menta.': "The symbol joins two interlinked play icons: the link between them stands for the duo's partnership and the play in everything they do, games, streams and videos. The palette has night blue, Play purple and mint.",
+    'Desenhei as telas de início, pausa, offline e encerramento, o overlay com o chat, os alertas de inscrição e doação, os selos de inscrito, que mudam com o tempo de canal, e o uniforme da dupla.': "I designed the starting, break, offline and ending screens, the overlay with the chat, the subscription and donation alerts, the subscriber badges, which change with time on the channel, and the duo's shirts.",
+    'Identidade visual da DuoPlay, canal de lives e vídeos: símbolo de dois plays, cores, overlays, telas de live, alertas, selos de inscrito e uniforme.': 'Brand identity for DuoPlay, a live stream and video channel: a two-play symbol, colors, overlays, stream screens, alerts, subscriber badges and shirts.',
     'DuoPlay | Identidade visual | João Alberto': 'DuoPlay | Brand identity | João Alberto',
     'Voltar para identidade visual': 'Back to brand identity',
     'Dois plays, uma dupla.': 'Two plays, one duo.',

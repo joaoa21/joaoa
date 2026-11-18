@@ -5,11 +5,11 @@ export default {
   ptUrl: '/projetos/social-media/',
   enUrl: '/en/projects/social-media/',
   jsonDict: {
-    'Social Media | João Alberto': 'Social Media | João Alberto',
+    'Social Media: Posts, Carrosséis e Stories | João Alberto': 'Social Media: Posts, Carousels and Stories | João Alberto',
     'Design para redes sociais: posts, carrosséis, stories e campanhas para varejo, saúde, serviços, eventos e shows.': 'Social media design: posts, carousels, stories and campaigns for retail, health, services, events and shows.',
   },
   dict: {
-    'Social Media | João Alberto': 'Social Media | João Alberto',
+    'Social Media: Posts, Carrosséis e Stories | João Alberto': 'Social Media: Posts, Carousels and Stories | João Alberto',
     'Vamos alinhar as suas redes': "Let's get your social media in shape",
     'Design para redes sociais: posts, carrosséis, stories e campanhas para varejo, saúde, serviços, eventos e shows.': 'Social media design: posts, carousels, stories and campaigns for retail, health, services, events and shows.',
     'Mural de posts de redes sociais criados por João Alberto': 'Wall of social media posts designed by João Alberto',

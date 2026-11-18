@@ -4,11 +4,18 @@ export default {
   ptUrl: '/projetos/identidade-visual/mind/',
   enUrl: '/en/projects/brand-identity/mind/',
   jsonDict: {
+    'Identidade visual da Mind, consultoria em infraestrutura: símbolo de quatro peças em losango, cores, tipografia, papelaria, crachá e uniforme.': 'Brand identity for Mind, an infrastructure consultancy: a four-piece diamond symbol, colors, typography, stationery, ID badges and uniforms.',
     'Identidade visual da Mind: símbolo, versões, cores e aplicações.': 'Mind brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Mind': 'Mind: brand identity',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Quatro peças, um losango.': 'Four pieces, one diamond.',
+    'A Mind estrutura e otimiza negócios em infraestrutura, com experiência nos setores portuário, aeroportuário, rodoviário, de saneamento e de energia. A marca precisava passar a segurança de uma consultoria técnica com uma linguagem atual.': 'Mind structures and optimizes infrastructure businesses, with experience in ports, airports, highways, sanitation and energy. The brand needed to convey the reliability of a technical consultancy in a modern language.',
+    'O símbolo usa uma mesma peça quatro vezes, girada de 90 em 90 graus, para desenhar um losango com os vértices abertos. A paleta combina preto, azul Mind, grafite e cinza, com Orbitron nos títulos e Poppins nos textos.': 'The symbol uses the same piece four times, rotated 90 degrees each time, to draw a diamond with open corners. The palette combines black, Mind blue, graphite and gray, with Orbitron for headings and Poppins for text.',
+    'O projeto, de 2024, inclui aplicações em muro, contêiner, cartão, placa, crachá, uniforme e redes sociais.': 'The project, from 2024, includes applications on a wall, a shipping container, business cards, a sign, ID badges, uniforms and social media.',
+    'Identidade visual da Mind, consultoria em infraestrutura: símbolo de quatro peças em losango, cores, tipografia, papelaria, crachá e uniforme.': 'Brand identity for Mind, an infrastructure consultancy: a four-piece diamond symbol, colors, typography, stationery, ID badges and uniforms.',
     'Mind | Identidade visual | João Alberto': 'Mind | Brand identity | João Alberto',
     'Voltar para identidade visual': 'Back to brand identity',
     'A Mind estrutura e otimiza negócios em infraestrutura, nos setores portuário, aeroportuário, rodoviário, de saneamento e de energia. O símbolo reúne quatro peças iguais que formam um losango aberto.': 'Mind structures and optimizes infrastructure businesses in the port, airport, highway, sanitation and energy sectors. The symbol brings together four identical pieces that form an open diamond.',

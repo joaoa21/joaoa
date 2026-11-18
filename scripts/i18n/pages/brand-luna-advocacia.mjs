@@ -4,11 +4,18 @@ export default {
   ptUrl: '/projetos/identidade-visual/luna-advocacia/',
   enUrl: '/en/projects/brand-identity/luna-advocacia/',
   jsonDict: {
+    'Identidade visual da Luna Advocacia, direito penal e corporativo: um L de três triângulos, versões, cores, papelaria, sinalização e posts das áreas.': 'Brand identity for Luna Advocacia, a criminal and corporate law firm: an L made of three triangles, versions, colors, stationery, signage and practice area posts.',
     'Identidade visual da Luna Advocacia: símbolo, versões, cores e aplicações.': 'Luna Advocacia brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Luna Advocacia': 'Luna Advocacia: brand identity',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Firmeza no penal, clareza no corporativo.': 'Firm in criminal law, clear in corporate law.',
+    'A Luna é um escritório de advocacia penal e corporativa. A nova marca precisava manter a ligação com o símbolo antigo e com o nome do escritório, e mostrar de forma simples as três frentes em que ele atua.': "Luna is a criminal and corporate law firm. The new brand needed to keep the link with the old symbol and the firm's name, and show in a simple way the three areas it works in.",
+    'O símbolo é a letra L, que mantém o elo com a marca antiga, formada por três triângulos: os três pilares da Luna, Direito Penal, Societário e Tributário. O verde Luna e o grafite ganham um degradê verde no símbolo, e os triângulos viram padrão.': "The symbol is the letter L, which keeps the tie to the old brand, made of three triangles: Luna's three pillars, Criminal, Corporate and Tax Law. Luna green and graphite get a green gradient in the symbol, and the triangles become a pattern.",
+    'A identidade chegou à recepção, à porta de vidro, aos cartões, à papelaria, às pastas e a uma série de posts que apresenta cada área de atuação.': 'The identity reached the reception, the glass door, business cards, stationery, folders and a series of posts presenting each practice area.',
+    'Identidade visual da Luna Advocacia, direito penal e corporativo: um L de três triângulos, versões, cores, papelaria, sinalização e posts das áreas.': 'Brand identity for Luna Advocacia, a criminal and corporate law firm: an L made of three triangles, versions, colors, stationery, signage and practice area posts.',
     'Luna Advocacia | Identidade visual | João Alberto': 'Luna Advocacia | Brand identity | João Alberto',
     'Voltar para identidade visual': 'Back to brand identity',
     'Um L feito de três pilares.': 'An L made of three pillars.',

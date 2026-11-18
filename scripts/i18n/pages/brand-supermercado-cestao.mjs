@@ -4,11 +4,18 @@ export default {
   ptUrl: '/projetos/identidade-visual/supermercado-cestao/',
   enUrl: '/en/projects/brand-identity/supermercado-cestao/',
   jsonDict: {
+    'Identidade visual do Supermercado O Cestão: C com cesta de compras, cores, campanhas semanais, panfletos, fachada, sacola, uniforme e redes.': 'Brand identity for Supermercado O Cestão: a C with a shopping basket, colors, weekly campaigns, flyers, storefront, bags, uniforms and social media.',
     'Identidade visual do Supermercado O Cestão: símbolo, versões, cores e aplicações.': 'Supermercado O Cestão brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Supermercado O Cestão': 'Supermercado O Cestão: brand identity',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Uma campanha para cada dia.': 'A campaign for every day.',
+    'O Cestão é o supermercado do bairro: carne, hortifruti, mercearia e limpeza num só lugar, com oferta nova toda semana. A marca junta um C laranja, um arco grosso com pontas arredondadas, e uma cesta de compras dentro dele, com a alça saindo do arco.': 'Cestão is the neighborhood supermarket: meat, produce, groceries and cleaning supplies in one place, with new deals every week. The brand combines an orange C, a thick arc with rounded ends, and a shopping basket inside it, with the handle coming out of the arc.',
+    'Vermelho, laranja e branco formam a base, e cada campanha ganha a sua cor: carne na segunda e terça, hortifruti na quinta e sexta, Baratíssimo no fim de semana e São João em junho. Nos panfletos, o preço é sempre o maior da peça.': 'Red, orange and white form the base, and each campaign gets its own color: meat on Monday and Tuesday, produce on Thursday and Friday, Baratíssimo on weekends and São João in June. On the flyers, the price is always the largest element.',
+    'A identidade aparece na fachada, nas sacolas, nas cestas, no uniforme, na van de entrega, nos panfletos e no feed do Instagram.': 'The identity shows up on the storefront, bags, baskets, uniforms, the delivery van, flyers and the Instagram feed.',
+    'Identidade visual do Supermercado O Cestão: C com cesta de compras, cores, campanhas semanais, panfletos, fachada, sacola, uniforme e redes.': 'Brand identity for Supermercado O Cestão: a C with a shopping basket, colors, weekly campaigns, flyers, storefront, bags, uniforms and social media.',
     'Supermercado O Cestão | Identidade visual | João Alberto': 'Supermercado O Cestão | Brand identity | João Alberto',
     'Voltar para identidade visual': 'Back to brand identity',
     'O Cestão': 'O Cestão',

@@ -4,11 +4,18 @@ export default {
   ptUrl: '/projetos/identidade-visual/weld-inox/',
   enUrl: '/en/projects/brand-identity/weld-inox/',
   jsonDict: {
+    'Identidade visual da Weld Inox, empresa familiar de soldas e abrasivos: um W com pontas de eletrodo, cores, grafismo, fachada, van, uniforme e posts.': 'Brand identity for Weld Inox, a family-run welding and abrasives company: a W with electrode tips, colors, graphics, storefront, van, uniforms and posts.',
     'Identidade visual da Weld Inox: símbolo, versões, cores e aplicações.': 'Weld Inox brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Weld Inox': 'Weld Inox: brand identity',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Um W que solda, protege e continua.': 'A W that welds, protects and carries on.',
+    'A Weld Inox trabalha com soldas e abrasivos e é uma empresa familiar, hoje conduzida pela esposa e pelos filhos do fundador. A nova identidade precisava parecer atual sem romper com o símbolo antigo, que os clientes já reconheciam.': "Weld Inox works with welding supplies and abrasives and is a family business, now run by the founder's wife and children. The new identity needed to look modern without breaking from the old symbol, which customers already recognized.",
+    'O símbolo mantém a letra W, que remete à marca antiga. As pontas lembram a ponta de um eletrodo de solda, um dos principais produtos da loja, e o círculo fala de confiança, segurança e continuidade, como a família que seguiu o negócio do fundador. A paleta usa azul-marinho, azul Weld e um degradê no círculo, e o pulso do símbolo vira textura.': "The symbol keeps the letter W, a nod to the old brand. The tips recall the tip of a welding electrode, one of the store's main products, and the circle speaks of trust, safety and continuity, like the family that carried on the founder's business. The palette uses navy, Weld blue and a gradient in the circle, and the symbol's pulse becomes a texture.",
+    'As aplicações incluem fachada, caixa e discos de corte, cartaz em abrigo de ônibus, van, camisas polo, cartões, papel timbrado, posts e o logo animado.': 'The applications include the storefront, a box and cutting discs, a bus shelter poster, a van, polo shirts, business cards, letterhead, posts and the animated logo.',
+    'Identidade visual da Weld Inox, empresa familiar de soldas e abrasivos: um W com pontas de eletrodo, cores, grafismo, fachada, van, uniforme e posts.': 'Brand identity for Weld Inox, a family-run welding and abrasives company: a W with electrode tips, colors, graphics, storefront, van, uniforms and posts.',
     'Weld Inox | Identidade visual | João Alberto': 'Weld Inox | Brand identity | João Alberto',
     'Voltar para identidade visual': 'Back to brand identity',
     'IDENTIDADE VISUAL / INDÚSTRIA': 'BRAND IDENTITY / INDUSTRY',

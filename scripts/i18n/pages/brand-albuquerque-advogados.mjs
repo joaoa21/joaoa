@@ -4,11 +4,18 @@ export default {
   ptUrl: '/projetos/identidade-visual/albuquerque-advogados/',
   enUrl: '/en/projects/brand-identity/albuquerque-advogados/',
   jsonDict: {
+    'Identidade visual do Albuquerque Advogados: símbolo de duas colunas, azul-marinho e vermelho, versões, papelaria, placa e recepção do escritório.': "Brand identity for Albuquerque Advogados: a two-column symbol, navy and red, logo versions, stationery, signage and the firm's reception.",
     'Identidade visual da Albuquerque Advogados: símbolo, versões, cores e aplicações.': 'Albuquerque Advogados brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Albuquerque Advogados': 'Albuquerque Advogados: brand identity',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Duas colunas, uma presença sóbria.': 'Two columns, a sober presence.',
+    'O Albuquerque Advogados queria uma marca sóbria e atual. O símbolo usa duas colunas, uma referência à arquitetura clássica do direito: elas ficam lado a lado sobre uma base, como num edifício clássico, com as quinas de cima cortadas para dentro, uma de frente para a outra.': 'Albuquerque Advogados wanted a sober, modern brand. The symbol uses two columns, a reference to the classical architecture of law: they stand side by side on a base, like a classical building, with the top corners cut inward, facing each other.',
+    'O nome em caixa alta larga dá presença ao escritório. A paleta junta azul-marinho, vermelho, gelo e branco, e o próprio símbolo vira padrão gráfico.': 'The name in wide capitals gives the firm presence. The palette brings together navy, red, ice and white, and the symbol itself becomes a graphic pattern.',
+    'A identidade foi aplicada na recepção, nos cartões, na placa de inox da fachada e na papelaria: papel timbrado, envelope e pasta.': 'The identity was applied to the reception, business cards, the stainless steel sign on the facade and the stationery: letterhead, envelope and folder.',
+    'Identidade visual do Albuquerque Advogados: símbolo de duas colunas, azul-marinho e vermelho, versões, papelaria, placa e recepção do escritório.': "Brand identity for Albuquerque Advogados: a two-column symbol, navy and red, logo versions, stationery, signage and the firm's reception.",
     'Albuquerque Advogados | Identidade visual | João Alberto': 'Albuquerque Advogados | Brand identity | João Alberto',
     'Voltar para identidade visual': 'Back to brand identity',
     'Solidez com desenho atual.': 'Solidity with a modern design.',

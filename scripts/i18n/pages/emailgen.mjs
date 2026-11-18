@@ -10,6 +10,8 @@ export default {
     'Requires JavaScript': 'Requires JavaScript',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Ferramentas para criar emails HTML a partir de 8 modelos, compatíveis com Gmail e Outlook, e gerar links de WhatsApp com mensagem, link curto e QR Code.': 'Tools to build HTML emails from 8 templates that work in Gmail and Outlook, and to generate WhatsApp links with a message, short link and QR code.',
     'Os botões já saem prontos para o Outlook clássico.': 'Buttons come ready for classic Outlook.',
     'Entenda o botão em VML': 'Read about the VML button (in Portuguese)',
     'Email Generator no computador e no celular: o editor de email e a página inicial': 'Email Generator on desktop and mobile: the email editor and the home page',

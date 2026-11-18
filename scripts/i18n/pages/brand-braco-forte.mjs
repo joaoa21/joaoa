@@ -4,11 +4,18 @@ export default {
   ptUrl: '/projetos/identidade-visual/braco-forte/',
   enUrl: '/en/projects/brand-identity/braco-forte/',
   jsonDict: {
+    'Identidade visual da Braço Forte, locação de equipamentos: iniciais BF num bloco laranja, versões, cores, grafismo, cartão, uniformes, caminhão e fachada.': 'Brand identity for Braço Forte, an equipment rental company: BF initials in an orange block, versions, colors, graphics, business card, uniforms, truck and storefront.',
     'Identidade visual da Braço Forte: símbolo, versões, cores e aplicações.': 'Braço Forte brand identity: symbol, versions, colors and applications.',
     'Identidade visual: Braço Forte': 'Braço Forte: brand identity',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
+    'Sobre o projeto': 'About the project',
+    'Iniciais em um bloco.': 'Initials in a block.',
+    'A Braço Forte trabalha com locação de equipamentos. A marca precisava ser direta e resistente, para funcionar do cartão ao uniforme, da fachada ao caminhão e ao próprio equipamento.': 'Braço Forte rents out equipment. The brand needed to be direct and tough, working from the business card to the uniform, from the storefront to the truck and the equipment itself.',
+    'O símbolo usa as iniciais BF em itálico, com o mesmo desenho do nome, dentro de um bloco laranja que perde a quina de baixo numa curva suave. Grafite, laranja e off-white formam a paleta, e as faixas do uniforme viram grafismo.': 'The symbol uses the initials BF in italics, drawn like the name, inside an orange block that loses its bottom corner in a soft curve. Graphite, orange and off-white make up the palette, and the uniform stripes become a graphic element.',
+    'As aplicações vão do cartão de visita à fachada, ao baú do caminhão, ao capacete, à placa do compactador e às camisas e polos da equipe.': "The applications range from the business card to the storefront, the truck body, the helmet, the plate on the compactor and the team's shirts and polos.",
+    'Identidade visual da Braço Forte, locação de equipamentos: iniciais BF num bloco laranja, versões, cores, grafismo, cartão, uniformes, caminhão e fachada.': 'Brand identity for Braço Forte, an equipment rental company: BF initials in an orange block, versions, colors, graphics, business card, uniforms, truck and storefront.',
     'Braço Forte | Identidade visual | João Alberto': 'Braço Forte | Brand identity | João Alberto',
     'Voltar para identidade visual': 'Back to brand identity',
     'IDENTIDADE VISUAL / LOCAÇÕES': 'BRAND IDENTITY / RENTALS',

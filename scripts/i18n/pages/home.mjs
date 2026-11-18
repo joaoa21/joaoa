@@ -92,7 +92,7 @@ export default {
     'João Alberto | Web Designer em Recife e Criação de Sites': 'Web Designer & Front-end Developer | João Alberto',
     'Pular para o conteúdo': 'Skip to content',
     'Design digital': 'Digital design',
-    'Web Designer': 'Front-end · UI Designer',
+    'Web designer e desenvolvedor front-end': 'Web designer and front-end developer',
     'Interfaces, sites, emails e campanhas para marcas e produtos digitais — do layout ao código.': 'Interfaces, websites, emails and campaigns for brands and digital products — from layout to code.',
     'Ver projetos': 'View projects',
     'Sobre mim': 'About me',

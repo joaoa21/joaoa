@@ -8,6 +8,8 @@
 /portfolio/index.html /projetos/igaming/ 301
 /portfolio/* /projetos/igaming/:splat 301
 /projetos/oab/oab-pe-2024.html  /projetos/oab/  301
+/projetos/oab/oab-pe-2024  /projetos/oab/  301
+/projetos/oab/oab-pe-2024/  /projetos/oab/  301
 /403  /403.html  403
 /404  /404.html  404
 # Site da Ziga retirado do portfólio em 06/11/2026
@@ -19,6 +21,8 @@
 /en/403  /en/403.html  403
 /en/*    /en/404.html  404
 # Blog (projeto Astro separado, publicado em joaoablog.netlify.app): servido no mesmo domínio
+# /blog sem barra vai para a versão com barra, como as outras rotas
+/blog  /blog/  301
 /blog/*   https://joaoablog.netlify.app/blog/:splat  200
 
 /*    /404.html  404

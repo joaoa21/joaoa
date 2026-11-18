@@ -4,11 +4,11 @@ export default {
   ptUrl: '/projetos/identidade-visual/',
   enUrl: '/en/projects/brand-identity/',
   jsonDict: {
-    'Identidade Visual | João Alberto': 'Brand Identity | João Alberto',
+    'Identidade Visual e Criação de Logo | João Alberto': 'Brand Identity and Logo Design | João Alberto',
     'Identidade Visual': 'Brand Identity',
   },
   dict: {
-    'Identidade Visual | João Alberto': 'Brand Identity | João Alberto',
+    'Identidade Visual e Criação de Logo | João Alberto': 'Brand Identity and Logo Design | João Alberto',
     'Marcas criadas do símbolo às aplicações: conceito, cores, tipografia, papelaria, fachada, uniforme e redes. Abra cada projeto para ver a apresentação completa.': 'Brands built from the symbol to the applications: concept, colors, typography, stationery, storefront, uniforms and social media. Open each project to see the full presentation.',
     'A MS Corretora atua há mais de 15 anos com seguros de vida, auto, residencial, moto, viagem e empresarial.': 'MS Corretora has worked for over 15 years in life, auto, home, motorcycle, travel and business insurance.',
     'Aplicações': 'Applications',
