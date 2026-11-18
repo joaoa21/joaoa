@@ -399,3 +399,14 @@ html.js:not(.reduce-motion):not(.motion-fallback) .igaming-page :is(
 .club-desc {
   font-size: var(--fs-body);
 }
+
+/* ============ TEXTO DAS SEÇÕES E PERGUNTAS FREQUENTES ============ */
+.s-desc{max-width:60ch;margin-top:1rem;color:var(--soft);font-size:clamp(.98rem,1.2vw,1.06rem);line-height:1.6}
+.s-desc a,.ig-faq-item a{color:var(--fg);text-underline-offset:.2em}
+.ig-faq{max-width:56rem;border-top:1px solid var(--line)}
+.ig-faq-item{border-bottom:1px solid var(--line)}
+.ig-faq-item summary{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.4rem 0;cursor:pointer;list-style:none;font-size:clamp(1.05rem,1.6vw,1.25rem);font-weight:600;letter-spacing:-.02em}
+.ig-faq-item summary::-webkit-details-marker{display:none}
+.ig-faq-item summary::after{content:"+";flex:none;color:var(--muted);font-weight:400;font-size:1.4rem;transition:transform .3s ease}
+.ig-faq-item[open] summary::after{transform:rotate(45deg)}
+.ig-faq-item p{max-width:62ch;padding:0 0 1.5rem;color:var(--soft);line-height:1.65}
